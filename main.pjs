@@ -1,0 +1,168 @@
+// Life & Legacy - Life Simulator (v0.1.03.008)
+// Lists used by the game for random names (also duplicated in JS as fallback)
+
+generateText = {import:ai-text-plugin}
+generateImage = {import:text-to-image-plugin}
+generateImageAdv = {import:advanced-text-to-image-plugin}
+kv = {import:kv-plugin}
+favicon = {import:favicon-plugin}
+remember = {import:remember-plugin}
+superFetch = {import:super-fetch-plugin}
+dynamicImport = {import:dynamic-import-plugin}
+mermaid = {import:mermaid-graph-plugin}
+nestedAtlas = {import:nested-plugin}
+
+$meta
+  title = Life & Legacy — Life Simulator
+  description = Live a life, found a dynasty: traits, prestige, feasts, schemes & heirs meet school, careers, love, crime & fame — with an AI biographer and photorealistic AI portraits. 7 save slots, autosave, download/import lives.
+  image = https://user.uploads.dev/file/4c0fbe4483ca65fe3d7fafee247811e6.png
+  icon = https://user.uploads.dev/file/d4659a7a90b9af4a59527380632bf03f.png
+  header
+    mode = minimal
+
+firstNamesMale
+  James
+  Liam
+  Noah
+  Oliver
+  Ethan
+  Mason
+  Lucas
+  Aiden
+  Mateo
+  Leo
+  Kai
+  Felix
+  Hugo
+  Ivan
+  Ravi
+  Kenji
+  Omar
+  Diego
+  Elias
+  Theo
+
+firstNamesFemale
+  Olivia
+  Emma
+  Ava
+  Sophia
+  Isabella
+  Mia
+  Luna
+  Sofia
+  Aria
+  Zoe
+  Ruby
+  Nora
+  Freya
+  Priya
+  Yuki
+  Amara
+  Elena
+  Clara
+  Mila
+  Ivy
+
+lastNames
+  Smith
+  Johnson
+  Garcia
+  Kim
+  Chen
+  Rossi
+  Silva
+  Novak
+  Haddad
+  Tanaka
+  Okafor
+  Dubois
+  Moreau
+  Costa
+  Weber
+  Ali
+  Rahman
+  Lopez
+  Kumar
+  Fischer
+  Santos
+  Meyer
+  Park
+  Ivanov
+
+// ---- Hall of Fates: procedural atlas for the nested-plugin explorer (Help modal) ----
+// Generative flavor only: every visit unfolds a different corner of the multiverse.
+atlasRoot
+  n = {5-5}
+  name = Hall of Fates
+  description = Every visit unfolds a different corner of the multiverse. Click to explore.
+  atlas_gilded {1-1}
+  atlas_ruin {1-1}
+  atlas_wild {1-1}
+  atlas_omen {1-1}
+  atlas_tide {1-1}
+
+atlas_gilded
+  n = {2-2}
+  name = Gilded Reaches
+  description = Kingdoms where the roofs are gold and the debts are golden too.
+  marble_court {1-1}
+  harbor_lights {1-1}
+
+marble_court
+  description = A court of white stone where every whisper is a treaty and every treaty has a footnote.
+
+harbor_lights
+  description = Lanterns on black water. Ships leave full and return full of stories.
+
+atlas_ruin
+  n = {2-2}
+  name = Quiet Ruins
+  description = Empires that kept perfect records of their own endings.
+  sunken_library {1-1}
+  hollow_tower {1-1}
+
+sunken_library
+  description = Shelves below the tideline. The books are dry; nobody knows why.
+
+hollow_tower
+  description = A lighthouse with no lamp. Sailors steer by the absence.
+
+atlas_wild
+  n = {2-2}
+  name = Unmapped Wilds
+  description = The map ends here. The pencils are nervous.
+  whispering_steppe {1-1}
+  glass_desert {1-1}
+
+whispering_steppe
+  description = Grass that repeats the last thing you said, slightly kinder.
+
+glass_desert
+  description = A desert of fulgurite and old lightning. Bring soft shoes.
+
+atlas_omen
+  n = {2-2}
+  name = Omens & Oracles
+  description = Futures sold by weight. No refunds, no exchanges, no eye contact.
+  coin_oracle {1-1}
+  moth_archive {1-1}
+
+coin_oracle
+  description = She flips one coin and reads both sides. Both sides are yours.
+
+moth_archive
+  description = Every unwritten letter ends up here, filed under almost.
+
+atlas_tide
+  n = {2-2}
+  name = Far Tides
+  description = Islands that only exist between one census and the next.
+  salt_village {1-1}
+  drowned_bell {1-1}
+
+salt_village
+  description = Houses of pressed salt. It rains once a decade and everyone moves.
+
+drowned_bell
+  description = It rings for storms a week early. The village trusts it completely.

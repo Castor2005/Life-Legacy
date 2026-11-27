@@ -1,0 +1,16 @@
+{
+  "app": "full-game",
+  "exportedAt": "2026-11-27T09:51:47.073Z",
+  "rootFiles": [
+    "main.pjs",
+    "index.html"
+  ],
+  "tree": "src/",
+  "files": 877,
+  "versions": {
+    "app": "0.1.03.008",
+    "save": 7,
+    "content": 4,
+    "eventSchema": 1
+  }
+}
