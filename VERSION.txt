@@ -1,4 +1,4 @@
-Life & Legacy v0.1.06
+Life & Legacy v0.1.07
 SAVE 7 / CONTENT 4 / EVENT SCHEMA 1
 Playable demo: https://castor2005.github.io/Life-Legacy/docs/
 Canonical stamp: LL.APP_VERSION in src/engine/migrate.js

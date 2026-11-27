@@ -1,11 +1,15 @@
 # Life & Legacy — Changelog
 
-Current version: **v0.1.06** (canonical stamp: `LL.APP_VERSION` in `src/engine/migrate.js`).
+Current version: **v0.1.07** (canonical stamp: `LL.APP_VERSION` in `src/engine/migrate.js`).
 Save format `SAVE_VERSION = 7`, content `CONTENT_VERSION = 4`, event schema `EVENT_SCHEMA = 1`.
 Patch rule (declared 2026-11-27, standing until the next minor/major is declared): every
 game-tree change ships as the next `v0.1.03.00N` with a CHANGELOG entry — no silent changes.
 
 ---
+
+## v0.1.07 — 2026-11-28 — No other games' names anywhere
+
+- Removed every mention of other games' names from the shipped game: the title, tagline, style header, and one history line are all reworded, and a full sweep verifies no other game's name remains in `main.pjs`, `index.html`, or anywhere under `src/`. SAVE 7 unchanged, no migration bump.
 
 ## v0.1.06 — 2026-11-27 — Full audit: cross-life AI guard + flatline fix
 
@@ -424,7 +428,7 @@ game-tree change ships as the next `v0.1.03.00N` with a CHANGELOG entry — no s
 
 ## v0.0.01 — First playable life sim
 
-- Core **birth → death loop**: CK3-style traits, childhood → school (majors, scholarships) → 40
+- Core **birth → death loop**: heritage traits, childhood → school (majors, scholarships) → 40
   careers → love/weddings/twins → feasts, hunts, elections, startups → fame, prestige, dynasty,
   heirs → ribbon + AI obituary.
 - **Yearly pipeline**: world tick → jail short-circuit → calendar → body/work/money → social/family/

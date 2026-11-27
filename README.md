@@ -1,8 +1,8 @@
-# Life & Legacy — BitLife × CK3 Life Simulator (v0.1.06)
+# Life & Legacy — Life Simulator (v0.1.07)
 
 Version history: see `CHANGELOG.md`.
 
-Browser life-sim: born with CK3 traits → school (majors, scholarships) → 40 careers → love/weddings/twins → feasts/hunts/elections/startups → fame, prestige, dynasty, heirs → ribbon + AI obituary.
+Browser life-sim: born with heritage traits → school (majors, scholarships) → 40 careers → love/weddings/twins → feasts/hunts/elections/startups → fame, prestige, dynasty, heirs → ribbon + AI obituary.
 Photorealistic AI portraits (locked seed + appearance DNA for consistency) + cinematic event stills.
 
 ## Files

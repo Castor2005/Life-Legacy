@@ -1,11 +1,21 @@
 # Life & Legacy — Changelog
 
-Current version: **v0.1.05** (canonical stamp: `LL.APP_VERSION` in `src/engine/migrate.js`).
+Current version: **v0.1.07** (canonical stamp: `LL.APP_VERSION` in `src/engine/migrate.js`).
 Save format `SAVE_VERSION = 7`, content `CONTENT_VERSION = 4`, event schema `EVENT_SCHEMA = 1`.
 Patch rule (declared 2026-11-27, standing until the next minor/major is declared): every
 game-tree change ships as the next `v0.1.03.00N` with a CHANGELOG entry — no silent changes.
 
 ---
+
+## v0.1.07 — 2026-11-28 — No other games' names anywhere
+
+- Removed every mention of other games' names from the shipped game: the title, tagline, style header, and one history line are all reworded, and a full sweep verifies no other game's name remains in `main.pjs`, `index.html`, or anywhere under `src/`. SAVE 7 unchanged, no migration bump.
+
+## v0.1.06 — 2026-11-27 — Full audit: cross-life AI guard + flatline fix
+
+- Full extensive test pass over the whole game (user: "TEST EVRYTHING EXTENSIVELY THEN BUG FIX THEM ALL"): static battery green (namespace-lint 47 files 0/0/0, typo-scan 0 hits, validate-content 797 events/0 errors, validate-mods ok) and runtime harnesses green (migration-test 40/40, parity ok:true 2101 pass/0 condFail/0 fxFail over 728 events, perf budgets pass, soak-test ok:true 0 failed/0 invariant fails/errDelta 0). Live: verb sweep 173/173 with 0 throws, event modal fire/choice/close with the double-click guard holding, i18n EN→ES→EN, all 5 themes, music toggle + SFX enable-flip verified (false→true→false, 12/12 bank sounds), all 15 modals open/close, Anya fallback routes + a live AI ask, company war, gestation→birth, heat raids at design rate, houses ally/aid/sabotage, romance flows, community offline note, grounding empty-valid, import/export round-trip via validateSave, auto mode through open modals, viewports 390px + 1920px clean, one live director custom scene (mechanics applied) + one live portrait (real JPEG). Bug log stayed at 0 throughout.
+- **BUG #1 (real, fixed): cross-life AI contamination.** A director scene staged in life A could resolve after life B started and apply its money/log to B (proven with a held-AI experiment: +$5 landed in the wrong life). Cause: async AI completions never checked life identity — cancellation only came from UI buttons. Fix = ASYNC-GEN GUARD: `__lifeGen` counter + `bumpLifeGen()` in `state.js` (also retires portrait/desc/evImg/chatArt tokens and cancels staged director runs), bumped once per identity change at the top of `afterLoad()` (covers new/load/import/heir/growTo/boot), capture-and-discard in `runDirector` (2 gates), `resolveSceneChoice`/`resolveSceneCustom`, `aiCustomResponse`/`aiCustomEvent`, `fireAIEvent`, the chat-ask funnel, `writeObituary`/`writeLegacySummary`, `chatArt`, plus an S-identity check in `aiAdjudicateBg`. Verified: a held-AI cross-life run is discarded cleanly with the UI reset (no money, no log, no stuck staging), and a same-life scene still applies. Stubbed AI throughout, no quota burned.
+- **BUG #2 (real, fixed): flatline at 0 HP didn't kill.** Two stacked causes: (a) risk 1 was multiplied by the genetics longevity bend (~0.94), so ~6% of flatlines silently survived with no crisis at all; (b) the code routed 0 HP into a survivable saving-throw crisis despite the documented "flatline kills outright" rule. Fix (`yearly.js`): capture `__flat = g.health <= 0` at function entry (before focus/PCG heals can resurrect it) and `die(pickDeath())` inside the existing `!growShield` gate after the undying check. Verified: forced 0 HP → dead with cause + death screen; crisis path re-verified separately (3 choices, fight-to-survive works). Silent-year callers unaffected (only the shielded growTo path uses silent). Incidental finding, not a bug: kids get fully random names at birth, so a "Freya Okafor" heir after "Freya Costa" is the heir taking the parent's surname by design (heir flow verified end-to-end: will → flatline → death screen → continue as heir with genome, succession log, ~90% estate). SAVE 7 unchanged (no save-shape change), no migration bump.
 
 ## v0.1.05 — 2026-11-27 — Choose your person (suitors, casual vs dating, breakup)
 
@@ -418,7 +428,7 @@ game-tree change ships as the next `v0.1.03.00N` with a CHANGELOG entry — no s
 
 ## v0.0.01 — First playable life sim
 
-- Core **birth → death loop**: CK3-style traits, childhood → school (majors, scholarships) → 40
+- Core **birth → death loop**: heritage traits, childhood → school (majors, scholarships) → 40
   careers → love/weddings/twins → feasts, hunts, elections, startups → fame, prestige, dynasty,
   heirs → ribbon + AI obituary.
 - **Yearly pipeline**: world tick → jail short-circuit → calendar → body/work/money → social/family/

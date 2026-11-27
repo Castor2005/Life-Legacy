@@ -1,4 +1,4 @@
-# LIFE & LEGACY — Architecture (v0.1.06)
+# LIFE & LEGACY — Architecture (v0.1.07)
 
 One-page contract for anyone touching this engine. Read this before adding a
 file, a global, or a save field. Details live in `src/README.md` (systems)

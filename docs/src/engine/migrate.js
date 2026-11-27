@@ -23,7 +23,7 @@ window.LL=(window.LL||{v:1,files:[]});
 LL.SAVE_VERSION = 7;
 LL.CONTENT_VERSION = 4;
 LL.EVENT_SCHEMA = 1;
-LL.APP_VERSION = "v0.1.06";
+LL.APP_VERSION = "v0.1.07";
 
 /* ============ save migrations (ordered, idempotent) ============
  * Moved verbatim out of life.js migrate() and split into steps. Every step

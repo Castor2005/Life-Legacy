@@ -1,6 +1,6 @@
 {
  "app": "Life-Legacy",
- "exportedAt": "2026-11-27T19:09:57.867Z",
+ "exportedAt": "2026-11-27T20:16:16.268Z",
  "pages": "https://castor2005.github.io/Life-Legacy/docs/",
  "rootFiles": [
   "main.pjs",
@@ -11,7 +11,7 @@
  "server": "server.js (optional Firebase/Gemini hosting)",
  "files": 1802,
  "versions": {
-  "app": "0.1.06",
+  "app": "0.1.07",
   "save": 7,
   "content": 4,
   "eventSchema": 1
