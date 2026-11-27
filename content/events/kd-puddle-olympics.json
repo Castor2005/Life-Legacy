@@ -1,0 +1,45 @@
+{
+ "id": "kd-puddle-olympics",
+ "minAge": 5,
+ "maxAge": 11,
+ "title": "Puddle games",
+ "tags": [
+  "kid",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Post-storm: biggest splash, longest jump, best cannonball.",
+ "choices": [
+  {
+   "label": "Enter everything",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Splash gold. Socks: sacrificed. Glory: eternal."
+    }
+   ]
+  },
+  {
+   "label": "Judge fairly",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your scoring is beyond reproach. Athletes weep with joy."
+    }
+   ]
+  }
+ ]
+}

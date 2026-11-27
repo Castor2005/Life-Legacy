@@ -1,0 +1,66 @@
+{
+ "id": "tax-season",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "First tax season",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "It is {{s.firstName}}'s first tax season. W-2s, 1099s, and a refund that could be real money.",
+ "choices": [
+  {
+   "label": "DIY filing",
+   "hint": "smarts check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "stats.smarts",
+      "gt": 50
+     },
+     "then": [
+      {
+       "op": "money",
+       "amount": "1400"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Refund: $1,400! You did that with a free app."
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(300)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You owe $300. Math humbles."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Hire an accountant ($250)",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(250)"
+    },
+    {
+     "op": "money",
+     "amount": "900"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A pro finds deductions. Net plus $650 after the fee."
+    }
+   ]
+  }
+ ]
+}

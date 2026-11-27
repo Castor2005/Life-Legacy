@@ -1,0 +1,48 @@
+{
+ "id": "ad-piano-return",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Keys again",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The childhood piano follows you as inheritance. It waits.",
+ "choices": [
+  {
+   "label": "Lessons restart",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(600)"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Scales return like old friends. Recital by spring."
+    }
+   ]
+  },
+  {
+   "label": "Kids learn first",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(800)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The kids take lessons on it. The house fills with practice."
+    }
+   ]
+  }
+ ]
+}

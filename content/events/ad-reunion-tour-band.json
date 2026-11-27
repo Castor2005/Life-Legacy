@@ -1,0 +1,49 @@
+{
+ "id": "ad-reunion-tour-band",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "One more show",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The old band reunites for one show. Practice starts Tuesday.",
+ "choices": [
+  {
+   "label": "Sell it out",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "900"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sold out local hall. You play like it is 2009."
+    }
+   ]
+  },
+  {
+   "label": "Record the night",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Filmed forever. The group chat replays it monthly."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "kd-owl-pellets",
+ "minAge": 7,
+ "maxAge": 12,
+ "title": "Owl pellet lab",
+ "tags": [
+  "kid",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Science class dissects owl pellets. Bones included.",
+ "choices": [
+  {
+   "label": "Reconstruct the mouse",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Full skeleton assembled. Nature is metal. A+ earned."
+    }
+   ]
+  },
+  {
+   "label": "Sketch everything",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your labeled drawings go on the classroom wall."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "id": "sr-downsize-decision",
+ "minAge": 65,
+ "maxAge": 85,
+ "title": "Rightsizing",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The big house echoes. A cottage beckons.",
+ "choices": [
+  {
+   "label": "Sell and simplify",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "80000"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Equity freed: 80,000 dollars. The cottage fits like a hug."
+    }
+   ]
+  },
+  {
+   "label": "Stay and rent rooms",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "9000"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two rooms rented to students. Income plus young energy."
+    }
+   ]
+  }
+ ]
+}

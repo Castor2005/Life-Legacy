@@ -1,0 +1,158 @@
+{
+ "id": "ex-break-pet-woods",
+ "minAge": 20,
+ "maxAge": 55,
+ "title": "Leash in the woods",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "sex",
+      "truthy": true
+     },
+     {
+      "p": "sex.claims",
+      "truthy": true
+     }
+    ]
+   },
+   {
+    "p": "sex.claims.length",
+    "truthy": true
+   }
+  ]
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "c",
+    "expr": "s.sex&&s.sex.claims&&s.sex.claims.length?s.sex.claims[s.sex.claims.length-1]:null"
+   },
+   {
+    "name": "n",
+    "expr": "c?c.name:\"your pet\""
+   }
+  ],
+  "template": "Dawn woods, no people for miles. {{n}} wears the collar under her coat, shaking: 'Walk me, owner. Use me where anyone could see.'"
+ },
+ "choices": [
+  {
+   "label": "Walk and use her",
+   "hint": "public break",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c",
+     "expr": "s.sex.claims[s.sex.claims.length-1]"
+    },
+    {
+     "op": "let",
+     "name": "nm",
+     "expr": "c.name"
+    },
+    {
+     "op": "histLog",
+     "name": "nm",
+     "acts": [
+      "\"public\"",
+      "\"bondage\"",
+      "\"oral\""
+     ]
+    },
+    {
+     "op": "kink",
+     "id": "public"
+    },
+    {
+     "op": "kink",
+     "id": "exhibition"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "obedience",
+     "value": "clamp(c.obedience+12)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "own",
+     "value": "clamp(c.own+10)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "corr",
+     "value": "clamp(c.corr+8)"
+    },
+    {
+     "op": "corr",
+     "delta": "7"
+    },
+    {
+     "op": "scandal",
+     "delta": "10"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "14"
+    },
+    {
+     "op": "chance",
+     "p": "0.25",
+     "then": [
+      {
+       "op": "money",
+       "amount": "-(1200)"
+      },
+      {
+       "op": "set",
+       "path": "prestige",
+       "value": "max(0,(s.prestige||0)-10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Hiker with a phone. Scatter, dress, fine $1,200 — but not before she cums on your fingers behind the oak. The photo exists. So does the memory."
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "Leashed trail walk, bent over a fallen log and fucked with birdsong, cumming with your hand over her mouth. No witnesses. Total ownership."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Hike vanilla",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Birds, boots, hand-holding. The collar stays home. Still lovely."
+    }
+   ]
+  }
+ ]
+}

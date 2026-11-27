@@ -1,0 +1,45 @@
+{
+ "id": "tn-pen-pal-college",
+ "minAge": 15,
+ "maxAge": 17,
+ "title": "Decisions season",
+ "tags": [
+  "teen",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Everyone discusses colleges. Your list is blank.",
+ "choices": [
+  {
+   "label": "Tour three",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Big, small, weird: you visit all three. Clarity arrives."
+    }
+   ]
+  },
+  {
+   "label": "Gap year thought",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Work, travel, then decide. The pressure lifts."
+    }
+   ]
+  }
+ ]
+}

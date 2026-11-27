@@ -1,0 +1,50 @@
+{
+ "id": "kd-spelling-safari",
+ "minAge": 5,
+ "maxAge": 9,
+ "title": "Word safari",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The teacher hides vocabulary cards around the school like treasure.",
+ "choices": [
+  {
+   "label": "Find them all",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(4))"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Every card found. Vocabulary: conquered."
+    }
+   ]
+  },
+  {
+   "label": "Team up",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You split the map. Both teams win the hunt."
+    }
+   ]
+  }
+ ]
+}

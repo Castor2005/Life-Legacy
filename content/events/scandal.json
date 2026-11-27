@@ -1,0 +1,80 @@
+{
+ "id": "scandal",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "Leaked screenshots?!",
+ "tags": [
+  "adult-life",
+  "status"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Old messages of yours leak. Context is missing. The internet is furious (for now).",
+ "choices": [
+  {
+   "label": "Apologize sincerely",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "set",
+     "path": "fame",
+     "value": "clamp((s.fame||0)+8)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A real apology lands. The storm passes — followers stay."
+    }
+   ]
+  },
+  {
+   "label": "Clap back",
+   "hint": "risky fame",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "stats.social",
+      "gt": 60
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "fame",
+       "value": "clamp((s.fame||0)+14)"
+      },
+      {
+       "op": "set",
+       "path": "followers",
+       "value": "(s.followers||0)+15000"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The clapback goes HARD. Memes crown you. +fame!"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(10)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-(8)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Ratio'd into dust. Log off for a week."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

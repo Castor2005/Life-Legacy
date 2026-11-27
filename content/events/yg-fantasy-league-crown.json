@@ -1,0 +1,56 @@
+{
+ "id": "yg-fantasy-league-crown",
+ "minAge": 20,
+ "maxAge": 29,
+ "title": "Fantasy glory",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your fantasy team is one Sunday from the league crown.",
+ "choices": [
+  {
+   "label": "Trust the stats",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "600"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Champions! 600 dollars and a year of bragging rights."
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "Second place. The group chat shows no mercy."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Lose with style",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Funniest manager award. The trophy is a tiny toilet. Cherished."
+    }
+   ]
+  }
+ ]
+}

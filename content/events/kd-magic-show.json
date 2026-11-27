@@ -1,0 +1,45 @@
+{
+ "id": "kd-magic-show",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "Birthday magician",
+ "tags": [
+  "kid",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your cousin's party needs entertainment. You own a cape.",
+ "choices": [
+  {
+   "label": "Learn three tricks",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cards, coins, a vanished grape. The kids lose it."
+    }
+   ]
+  },
+  {
+   "label": "Assistant role",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Best volunteered-from-audience ever. Suspicion: zero."
+    }
+   ]
+  }
+ ]
+}

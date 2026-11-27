@@ -1,0 +1,50 @@
+{
+ "id": "kd-talent-flute",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "Recorder recital",
+ "tags": [
+  "kid",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The school concert features your recorder solo. The bar is low, the stakes feel high.",
+ "choices": [
+  {
+   "label": "Practice daily",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hot Cross Buns, flawless. Grandma weeps."
+    }
+   ]
+  },
+  {
+   "label": "Add dance moves",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You miss a note but the spin saves the show."
+    }
+   ]
+  }
+ ]
+}

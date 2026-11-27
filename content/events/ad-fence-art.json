@@ -1,0 +1,49 @@
+{
+ "id": "ad-fence-art",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Fence gallery",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The back fence begs for color. The HOA allows murals.",
+ "choices": [
+  {
+   "label": "Paint the seasons",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Four seasons, forty feet. Walkers stop daily."
+    }
+   ]
+  },
+  {
+   "label": "Kids paint too",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Handprints border the masterpiece. Imperfect, perfect."
+    }
+   ]
+  }
+ ]
+}

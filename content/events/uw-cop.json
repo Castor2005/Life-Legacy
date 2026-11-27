@@ -1,0 +1,96 @@
+{
+ "id": "uw-cop",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "The officer's envelope",
+ "tags": [
+  "adult-life",
+  "underworld",
+  "crime",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "underworld",
+    "truthy": true
+   },
+   {
+    "p": "underworld.rank",
+    "gte": 1
+   }
+  ]
+ },
+ "text": "A precinct officer likes {{s.firstName}}'s operation and dislikes paperwork. {{500+(s.underworld?s.underworld.rank*250:0)}} a month keeps the patrols elsewhere.",
+ "choices": [
+  {
+   "label": "Pay the cut",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c",
+     "expr": "500+s.underworld.rank*250"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.money<c"
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "heat",
+       "value": "min(100,(s.heat||0)+15)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You can't pay. The officer stops smiling."
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(c)"
+      },
+      {
+       "op": "set",
+       "path": "heat",
+       "value": "max(0,(s.heat||0)-15)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Envelope delivered. Patrols develop blindness. -${{c}}."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Refuse",
+   "hint": "heat+, rep+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "heat",
+     "value": "min(100,(s.heat||0)+25)"
+    },
+    {
+     "op": "set",
+     "path": "underworld.rep",
+     "value": "s.underworld.rep+(3)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nobody owns you. Sirens feel closer already — but the street saw you stand tall."
+    }
+   ]
+  }
+ ]
+}

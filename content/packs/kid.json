@@ -1,0 +1,6233 @@
+{
+ "pack": "kid",
+ "events": [
+  {
+   "id": "prodigy-hum",
+   "minAge": 3,
+   "maxAge": 5,
+   "title": "Little melody",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "{{s.firstName}} hums a perfect little melody nobody taught them.",
+   "choices": [
+    {
+     "label": "Nurture it",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A toy piano appears. The house fills with plinks."
+      }
+     ]
+    },
+    {
+     "label": "Cute, moving on",
+     "hint": "—",
+     "effects": [
+      {
+       "op": "outcome",
+       "tpl": "The melody fades like a dream."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "night-fever",
+   "minAge": 0,
+   "maxAge": 5,
+   "title": "Midnight fever",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "{{s.firstName}} wakes burning up at 2am, crying.",
+   "choices": [
+    {
+     "label": "ER visit",
+     "hint": "money-, health+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(300)"
+      },
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Just a virus. Fluids, rest, relief. -$300."
+      }
+     ]
+    },
+    {
+     "label": "Cool cloth & wait",
+     "hint": "risky",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.75",
+       "then": [
+        {
+         "op": "stat",
+         "key": "health",
+         "delta": "2"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Fever breaks by dawn. Phew."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "health",
+         "delta": "-(10)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "It got worse — a clinic visit anyway. Health suffers."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dog-friend",
+   "minAge": 2,
+   "maxAge": 6,
+   "title": "Stray dog",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A scruffy stray follows {{s.firstName}} home, tail wagging.",
+   "choices": [
+    {
+     "label": "Adopt him (Biscuit)",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "addPet",
+       "name": "\"Biscuit\"",
+       "petType": "🐶",
+       "rel": 80
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Biscuit joins the family. Best decision ever."
+      }
+     ]
+    },
+    {
+     "label": "Find the owner",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Owner found, tears of joy. Karma +."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "swallow-coin",
+   "minAge": 1,
+   "maxAge": 5,
+   "title": "Magic trick gone wrong",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "{{s.firstName}} swallowed a coin. 'For magic,' they explain.",
+   "choices": [
+    {
+     "label": "Doctor, now",
+     "hint": "money-",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(150)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "All clear. The coin passes. The magic fizzles."
+      }
+     ]
+    },
+    {
+     "label": "Wait & watch",
+     "hint": "risky",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.8",
+       "then": [
+        {
+         "op": "outcome",
+         "tpl": "It passes naturally. Never speak of this."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "health",
+         "delta": "-(8)"
+        },
+        {
+         "op": "money",
+         "amount": "-(400)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Complications — a procedure. -$400, health -."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lost-tooth",
+   "minAge": 5,
+   "maxAge": 8,
+   "title": "Wobbly tooth",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A tooth hangs by a thread at dinner.",
+   "choices": [
+    {
+     "label": "Tie it to a door!",
+     "hint": "fun",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "5"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "SLAM. Tooth flies. Tooth fairy pays $5."
+      }
+     ]
+    },
+    {
+     "label": "Let it fall naturally",
+     "hint": "safe",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "It falls into cereal. Fairy still pays $5."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bully",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Playground bully",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A bigger kid keeps stealing {{s.firstName}}'s ball and calling names.",
+   "choices": [
+    {
+     "label": "Stand up to them",
+     "hint": "fitness/social check",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "any": [
+         {
+          "p": "stats.fitness",
+          "gt": 40
+         },
+         {
+          "p": "stats.social",
+          "gt": 45
+         }
+        ]
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "social",
+         "delta": "8"
+        },
+        {
+         "op": "stat",
+         "key": "discipline",
+         "delta": "5"
+        },
+        {
+         "op": "outcome",
+         "tpl": "You face them down. They back off. Respect earned."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "-(8)"
+        },
+        {
+         "op": "stat",
+         "key": "health",
+         "delta": "-(4)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "It ends in the dirt with a bloody nose. Lesson learned."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Tell a teacher",
+     "hint": "safe+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Teacher intervenes. Bullying stops. Some kids call you snitch."
+      }
+     ]
+    },
+    {
+     "label": "Learn to fight (gym)",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Three months of practice. Nobody steals your ball again."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "spelling-bee",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Spelling bee finals",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "{{s.firstName}} made the school spelling bee finals. Word: 'serendipity'.",
+   "choices": [
+    {
+     "label": "Go for glory",
+     "hint": "smarts check",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "p": "stats.smarts",
+        "gt": 45
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "12"
+        },
+        {
+         "op": "money",
+         "amount": "200"
+        },
+        {
+         "op": "outcome",
+         "tpl": "S-E-R-E-N-D-I-P-I-T-Y! Trophy + $200 prize!"
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "-(5)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "You spell 'surrendipity'. The crowd groans kindly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Do your best, no pressure",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Third place. Proud anyway."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stray-cat",
+   "minAge": 5,
+   "maxAge": 12,
+   "title": "Porch kitten",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A tiny kitten appears on the porch during rain.",
+   "choices": [
+    {
+     "label": "Keep her (Miso)",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "addPet",
+       "name": "\"Miso\"",
+       "petType": "🐱",
+       "rel": 75
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Miso moves in and rules the house immediately."
+      }
+     ]
+    },
+    {
+     "label": "Shelter her",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "10"
+      },
+      {
+       "op": "money",
+       "amount": "-(40)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Shelter donation $40. She finds a great home."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "broken-window",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "CRASH!",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Baseball + neighbor's window = disaster. Mr. Henderson storms out.",
+   "choices": [
+    {
+     "label": "Confess & pay",
+     "hint": "money-, karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(120)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "8"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Mowing lawns all summer to pay $120. Character built."
+      }
+     ]
+    },
+    {
+     "label": "Run!",
+     "hint": "karma-",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-(10)"
+      },
+      {
+       "op": "chance",
+       "p": "0.4",
+       "then": [
+        {
+         "op": "money",
+         "amount": "-(250)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Caught on doorbell cam! Parents pay $250. Grounded."
+        }
+       ],
+       "else": [
+        {
+         "op": "outcome",
+         "tpl": "You escape. Guilt follows you for weeks."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "talent-show",
+   "minAge": 8,
+   "maxAge": 12,
+   "title": "Talent show",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Sign-ups for the school talent show. {{s.firstName}} could perform.",
+   "choices": [
+    {
+     "label": "Perform!",
+     "hint": "creativity check",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "p": "stats.creativity",
+        "gt": 40
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "14"
+        },
+        {
+         "op": "stat",
+         "key": "social",
+         "delta": "8"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Standing ovation! You're 'the talented kid' now."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "-(4)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Stage fright eats the second verse. Friends cheer anyway."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Cheer from audience",
+     "hint": "—",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Great show. Maybe next year."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lost-wallet-kid",
+   "minAge": 8,
+   "maxAge": 14,
+   "title": "Wallet on the sidewalk",
+   "tags": [
+    "teen",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A fat wallet on the sidewalk. $240 in cash, an ID, family photos.",
+   "choices": [
+    {
+     "label": "Return it",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "12"
+      },
+      {
+       "op": "money",
+       "amount": "20"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Owner cries, gives $20 reward. Karma soars."
+      }
+     ]
+    },
+    {
+     "label": "Keep the cash",
+     "hint": "money+, karma-",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "240"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-(14)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "New games! And a weird hollow feeling."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chess-club",
+   "minAge": 7,
+   "maxAge": 14,
+   "title": "Chess club invite",
+   "tags": [
+    "teen"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The chess captain saw you thinking three moves ahead at lunch.",
+   "choices": [
+    {
+     "label": "Join the club",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "9"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Openings, endgames, trophies. Brain gains."
+      }
+     ]
+    },
+    {
+     "label": "Nah, too nerdy",
+     "hint": "—",
+     "effects": [
+      {
+       "op": "outcome",
+       "tpl": "You pass. The captain never forgets."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "treehouse",
+   "minAge": 6,
+   "maxAge": 11,
+   "title": "Treehouse pact",
+   "tags": [
+    "kid"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Friends want to build a treehouse HQ all summer.",
+   "choices": [
+    {
+     "label": "Build it!",
+     "hint": "happiness+, fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "9"
+      },
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Crooked, glorious, yours. HQ rules written in crayon."
+      }
+     ]
+    },
+    {
+     "label": "Skip it",
+     "hint": "—",
+     "effects": [
+      {
+       "op": "outcome",
+       "tpl": "They build it without you. You hear legends."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "flu-school",
+   "minAge": 5,
+   "maxAge": 12,
+   "title": "School plague",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Half the class is out with flu. {{s.firstName}} feels scratchy.",
+   "choices": [
+    {
+     "label": "Rest & soup",
+     "hint": "health+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Three days of soup. Back stronger."
+      }
+     ]
+    },
+    {
+     "label": "Power through",
+     "hint": "risky",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.5",
+       "then": [
+        {
+         "op": "stat",
+         "key": "discipline",
+         "delta": "4"
+        },
+        {
+         "op": "outcome",
+         "tpl": "You tough it out. Perfect attendance!"
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "health",
+         "delta": "-(10)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Pneumonia. Two weeks in bed."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "art-contest",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Art contest",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "City art contest: 'My Future'. Winner gets $500 and a gallery wall.",
+   "choices": [
+    {
+     "label": "Enter!",
+     "hint": "creativity check",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "p": "stats.creativity",
+        "gt": 45
+       },
+       "then": [
+        {
+         "op": "money",
+         "amount": "500"
+        },
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "12"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Your rocket-city wins! $500 + gallery wall!"
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "creativity",
+         "delta": "5"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Honorable mention. The practice helps."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Skip",
+     "hint": "—",
+     "effects": [
+      {
+       "op": "outcome",
+       "tpl": "You admire the winners from the crowd."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "best-friend-move",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Best friend moving",
+   "tags": [
+    "kid"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Your best friend's family is moving across the country. Last weekend together.",
+   "choices": [
+    {
+     "label": "Epic farewell + promise letters",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(4)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Tears, bracelets, a promise to write. You keep it for years."
+      }
+     ]
+    },
+    {
+     "label": "Party hard, no tears",
+     "hint": "happiness",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Best weekend ever. The goodbye still stings."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "video-game",
+   "minAge": 8,
+   "maxAge": 14,
+   "title": "The game everyone plays",
+   "tags": [
+    "teen",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Everyone's obsessed with a new game. You beg for it for your birthday.",
+   "choices": [
+    {
+     "label": "Get it, grind ranked",
+     "hint": "happiness+, smarts-",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(60)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "8"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "-(3)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Diamond rank! Grades wobble slightly."
+      }
+     ]
+    },
+    {
+     "label": "Get it, casual only",
+     "hint": "balanced",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(60)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Weekend fun, homework still done. Balance!"
+      }
+     ]
+    },
+    {
+     "label": "No games, books instead",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You read three novels while friends grind. Teachers notice."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "eat-mud-2",
+   "minAge": 5,
+   "maxAge": 9,
+   "title": "Mud pies",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A neighborhood kid dares {{s.firstName}} to eat a mud pie. $5 on the line.",
+   "choices": [
+    {
+     "label": "Do it. $5 is $5.",
+     "hint": "money+, health-",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "5"
+      },
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(3)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Gritty profit. $5 richer, slightly queasy."
+      }
+     ]
+    },
+    {
+     "label": "Counter-dare: backflip",
+     "hint": "fitness",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You attempt a backflip. It is more of a backflop. Legend status anyway."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "alien",
+   "minAge": 10,
+   "maxAge": 70,
+   "title": "Lights in the sky",
+   "tags": [
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "3am. Humming. A beam. Classic abduction setup.",
+   "choices": [
+    {
+     "label": "Walk into the light",
+     "hint": "???",
+     "effects": [
+      {
+       "op": "let",
+       "name": "r",
+       "expr": "rnd()"
+      },
+      {
+       "op": "branch",
+       "cond": {
+        "v": "r",
+        "lt": 0.4
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "smarts",
+         "delta": "15"
+        },
+        {
+         "op": "outcome",
+         "tpl": "They probe your mind, upgrade it, return you by breakfast. Smarts +15!"
+        }
+       ],
+       "else": [
+        {
+         "op": "branch",
+         "cond": {
+          "v": "r",
+          "lt": 0.7
+         },
+         "then": [
+          {
+           "op": "stat",
+           "key": "happiness",
+           "delta": "8"
+          },
+          {
+           "op": "outcome",
+           "tpl": "Zoo trip: they show you Andromeda and drop you home."
+          }
+         ],
+         "else": [
+          {
+           "op": "stat",
+           "key": "health",
+           "delta": "-(8)"
+          },
+          {
+           "op": "outcome",
+           "tpl": "Weird dreams and a missing Tuesday. Health -."
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "RUN",
+     "hint": "safe",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Personal best sprint. The light fades."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "time-egg",
+   "minAge": 12,
+   "maxAge": 60,
+   "title": "Message from the future",
+   "tags": [
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "An email from YOURSELF, dated 20 years ahead: 'Buy land. Be kind. Call mom.'",
+   "choices": [
+    {
+     "label": "Follow it",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "10"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You call mom. She cries happy. The land tip… wait and see."
+      }
+     ]
+    },
+    {
+     "label": "Delete (spam)",
+     "hint": "—",
+     "effects": [
+      {
+       "op": "outcome",
+       "tpl": "Probably phishing. Probably."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "storm",
+   "minAge": 5,
+   "maxAge": 90,
+   "title": "Storm of the decade",
+   "tags": [
+    "family",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Sirens wail. The sky turns green. A monster storm is coming.",
+   "choices": [
+    {
+     "label": "Shelter & prep",
+     "hint": "safe",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(200)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Batteries, water, blankets. The roof holds. $200 supplies."
+      }
+     ]
+    },
+    {
+     "label": "Chase the sky (photos)",
+     "hint": "risky!",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.7",
+       "then": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "8"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Incredible photos! 50k likes!"
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "health",
+         "delta": "-(25)"
+        },
+        {
+         "op": "money",
+         "amount": "-(5000)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Debris strike. Hospital + $5,000 damage."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "beggar",
+   "minAge": 12,
+   "maxAge": 90,
+   "title": "Cold hands",
+   "tags": [
+    "family",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A shivering person asks for change outside the store.",
+   "choices": [
+    {
+     "label": "Give $20 + food",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(35)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "10"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Their smile warms you for days."
+      }
+     ]
+    },
+    {
+     "label": "Walk past",
+     "hint": "—",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-(4)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You avoid eye contact. It itches."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "plague-year",
+   "minAge": 10,
+   "maxAge": 90,
+   "title": "A bad flu season",
+   "tags": [
+    "family",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A nasty flu sweeps the city. Schools debate closures. Grandma coughs ominously.",
+   "choices": [
+    {
+     "label": "Care for family ($400)",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(400)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "10"
+      },
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Soup, thermometers, love. Everyone pulls through."
+      }
+     ]
+    },
+    {
+     "label": "Lockdown & vitamins",
+     "hint": "safe",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Boring. Healthy. Correct."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "imaginary-friend",
+   "minAge": 3,
+   "maxAge": 7,
+   "title": "Invisible friend",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "{{s.firstName}} solemnly introduces Zorp, a nine-foot invisible dragon who lives in the pantry and eats socks.",
+   "choices": [
+    {
+     "label": "Play along",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "10"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You set a plate for Zorp. The stories get wilder — and wonderful."
+      }
+     ]
+    },
+    {
+     "label": "Dragons are not real",
+     "hint": "smarts+, happiness-",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "3"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(5)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Zorp moves away. The house feels quieter. You feel awful."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "thunderstorm-fear",
+   "minAge": 3,
+   "maxAge": 9,
+   "title": "Midnight thunder",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A thunderstorm rattles the windows. {{s.firstName}} appears in the doorway, blanket in hand, eyes wide.",
+   "choices": [
+    {
+     "label": "Blanket fort together",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Pillow walls, flashlight shadows. The storm becomes an adventure."
+      }
+     ]
+    },
+    {
+     "label": "Teach thunder science",
+     "hint": "smarts+, discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Just clouds bumping! Brave nod. Still sleeps on your floor."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lost-park",
+   "minAge": 4,
+   "maxAge": 9,
+   "title": "Lost at the fair",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Chasing a butterfly, {{s.firstName}} wanders off at the fair — and suddenly the crowd is all strangers.",
+   "choices": [
+    {
+     "label": "Stay put and shout",
+     "hint": "best",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A vendor hears, holds your hand, pages the parents. Hugs for an hour."
+      }
+     ]
+    },
+    {
+     "label": "Keep searching alone",
+     "hint": "risky",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.6",
+       "then": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "4"
+        },
+        {
+         "op": "outcome",
+         "tpl": "You spot the balloon stand and retrace steps. Found!"
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "health",
+         "delta": "-(4)"
+        },
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "-(8)"
+        },
+        {
+         "op": "money",
+         "amount": "-(100)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "An hour of terror ends at the lost-kids tent. Ice cream helps. -$100."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "duckling-rescue",
+   "minAge": 4,
+   "maxAge": 10,
+   "title": "Storm-drain ducklings",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "{{s.firstName}} spots five ducklings peeping from a storm drain. Mama duck paces, frantic.",
+   "choices": [
+    {
+     "label": "Fish them out",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "10"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Soggy, saved, paraded home in a shoebox. Heroes."
+      }
+     ]
+    },
+    {
+     "label": "Call animal rescue",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Officers arrive with nets. You supervise like a general."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "dentist-cavity",
+   "minAge": 5,
+   "maxAge": 12,
+   "title": "First cavity",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The dentist taps the X-ray: {{s.firstName}} has a first cavity. The drill gleams.",
+   "choices": [
+    {
+     "label": "Be brave, no tears",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Twenty minutes of buzzing. Sticker, pride, numb cheek."
+      }
+     ]
+    },
+    {
+     "label": "Demand ice cream after",
+     "hint": "money-, happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(8)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(2)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The filling survives the sundae. Barely."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "snow-day",
+   "minAge": 5,
+   "maxAge": 12,
+   "title": "BLIZZARD!",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "School is cancelled! A foot of perfect snow waits outside for {{s.firstName}}.",
+   "choices": [
+    {
+     "label": "Epic sled day",
+     "hint": "fitness+, happiness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "10"
+      },
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Seven runs, one epic wipeout, frozen toes, perfect day."
+      }
+     ]
+    },
+    {
+     "label": "Cocoa and book marathon",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Three chapters and four marshmallows. Cozy genius."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "monkeybars",
+   "minAge": 5,
+   "maxAge": 11,
+   "title": "The dare",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "{{s.firstName}} attempts the monkey bars backwards — because a dare is a dare.",
+   "choices": [
+    {
+     "label": "Go for it",
+     "hint": "risky",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.7",
+       "then": [
+        {
+         "op": "stat",
+         "key": "fitness",
+         "delta": "5"
+        },
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "8"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Clean across! The playground erupts."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "health",
+         "delta": "-(12)"
+        },
+        {
+         "op": "money",
+         "amount": "-(500)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "A snap, a cast, a $500 ER bill. The dare wins."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Sit this one out",
+     "hint": "safe",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You spot instead. The dare passes to someone louder."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "lemonade-stand",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Lemonade empire",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "{{s.firstName}} builds a lemonade stand: 50 cents a cup, hand-painted sign.",
+   "choices": [
+    {
+     "label": "Hustle the sidewalk",
+     "hint": "money+, social+",
+     "effects": [
+      {
+       "op": "let",
+       "name": "w",
+       "expr": "20+floor(rnd()*45)"
+      },
+      {
+       "op": "money",
+       "amount": "w"
+      },
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Sold out by noon! ${{w}} profit and three regulars."
+      }
+     ]
+    },
+    {
+     "label": "Free cups for all",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(10)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "12"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The whole block smiles. Profit: zero. Rich anyway."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sleepover-scary",
+   "minAge": 6,
+   "maxAge": 11,
+   "title": "Scary movie night",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "At a sleepover, the older kids put on a horror movie. {{s.firstName}} wants to go home but fears looking babyish.",
+   "choices": [
+    {
+     "label": "Call for pickup",
+     "hint": "safe",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "-(3)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Home by ten. Teased Monday, slept great."
+      }
+     ]
+    },
+    {
+     "label": "Tough it out",
+     "hint": "social check",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "p": "stats.social",
+        "gt": 45
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "social",
+         "delta": "6"
+        },
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "5"
+        },
+        {
+         "op": "outcome",
+         "tpl": "You survive AND get the jokes. Respect."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "-(6)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Nightmares for a week. The closet stays shut."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "allowance-deal",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Allowance talks",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Allowance: $5 a week for chores. {{s.firstName}} declares this oppression.",
+   "choices": [
+    {
+     "label": "Negotiate $8",
+     "hint": "social check",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "p": "stats.social",
+        "gt": 50
+       },
+       "then": [
+        {
+         "op": "money",
+         "amount": "30"
+        },
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "6"
+        },
+        {
+         "op": "outcome",
+         "tpl": "A calm pitch wins! $8 a week plus $30 back pay."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "discipline",
+         "delta": "4"
+        },
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "-(3)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Denied — with extra chores. Negotiation is a skill. You are learning."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Accept and hustle",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "money",
+       "amount": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Dishes gleam. Entrepreneurship simmers."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "report-card",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Report card day",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Report card day. The teacher note reads: {{s.firstName}} has potential — the most dangerous sentence in school. Grades: {{s.education.grades}}.",
+   "choices": [
+    {
+     "label": "Study pact",
+     "hint": "grades+, discipline+",
+     "effects": [
+      {
+       "op": "set",
+       "path": "education.grades",
+       "value": "clamp(s.education.grades+8)"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Homework charts, gold stars. The line goes up."
+      }
+     ]
+    },
+    {
+     "label": "Blame the dog",
+     "hint": "karma-",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-(6)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Everyone laughs, including the teacher. The grades do not."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "library-card",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "First library card",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "{{s.firstName}} gets a first library card — and immediately loses a book ($12 fine).",
+   "choices": [
+    {
+     "label": "Pay up, lesson learned",
+     "hint": "money-, karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(12)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Fine paid. The librarian winks: it happens to everyone."
+      }
+     ]
+    },
+    {
+     "label": "10-book challenge",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "7"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Dragons, astronauts, detectives. Ten books, zero fines since."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "soccer-tryout",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Travel team tryouts",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Travel soccer tryouts. Twenty kids, eleven spots. {{s.firstName}} might make it — maybe.",
+   "choices": [
+    {
+     "label": "Train every evening",
+     "hint": "fitness check",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "p": "stats.fitness",
+        "gt": 45
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "10"
+        },
+        {
+         "op": "stat",
+         "key": "social",
+         "delta": "8"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Starting lineup! The jersey smells like victory."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "fitness",
+         "delta": "6"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Bench warmer with fire. Next season."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Team manager instead",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Clipboard, whistle, everybody's friend. Power behind the throne."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "science-fair",
+   "minAge": 8,
+   "maxAge": 12,
+   "title": "Science fair",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Science fair theme: The Future. {{s.firstName}} debates volcano (classic) vs robot arm (ambitious).",
+   "choices": [
+    {
+     "label": "Build the robot arm",
+     "hint": "smarts check",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "p": "stats.smarts",
+        "gt": 50
+       },
+       "then": [
+        {
+         "op": "money",
+         "amount": "300"
+        },
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "12"
+        },
+        {
+         "op": "outcome",
+         "tpl": "FIRST PLACE! $300 and a photo in the paper!"
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "smarts",
+         "delta": "5"
+        },
+        {
+         "op": "outcome",
+         "tpl": "It moves! Just not on command. Honorable mention."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Volcano classic",
+     "hint": "safe",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Baking soda erupts on cue. The crowd roars. Classics endure."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "pen-pal",
+   "minAge": 8,
+   "maxAge": 12,
+   "title": "Letter from afar",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "School pairs {{s.firstName}} with a pen pal across the ocean. The first letter arrives, covered in stamps.",
+   "choices": [
+    {
+     "label": "Write back faithfully",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "8"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Letters fly monthly. Two worlds, one friendship."
+      }
+     ]
+    },
+    {
+     "label": "Ghost them",
+     "hint": "karma-",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-(5)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The letters stop. You feel the silence."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-ant-farm",
+   "minAge": 5,
+   "maxAge": 10,
+   "title": "Ant metropolis",
+   "tags": [
+    "kid",
+    "smarts"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "An ant farm arrives. {{s.firstName}} names every tunnel.",
+   "choices": [
+    {
+     "label": "Map the tunnels",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Highway, nursery, queen's chamber. Urban planning observed."
+      }
+     ]
+    },
+    {
+     "label": "Release day",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Back to the garden with honors. Freedom tastes like crumbs."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-bake-sale",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Bake sale arms race",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The school bake sale rewards the top earner with a trophy.",
+   "choices": [
+    {
+     "label": "Brownies x10",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "90"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Ten trays gone by noon. You net 90 dollars and glory."
+      }
+     ]
+    },
+    {
+     "label": "Donate your share",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your winnings fund the library corner. Trophy anyway."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-bee-rescue",
+   "minAge": 5,
+   "maxAge": 12,
+   "title": "Bee relocation",
+   "tags": [
+    "kid",
+    "karma"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Bees swarm the mailbox. {{s.firstName}} refuses to let anyone spray.",
+   "choices": [
+    {
+     "label": "Call the keeper",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The beekeeper relocates the swarm. Mail saved, bees saved."
+      }
+     ]
+    },
+    {
+     "label": "Study from afar",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You learn waggle dances. The bees approve."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-bike-ramp",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Ramp summer",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Plywood, bricks, and a summer's worth of courage.",
+   "choices": [
+    {
+     "label": "Hit the ramp",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.stats.fitness>40"
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "fitness",
+         "delta": "8"
+        },
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "8"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Air. Actual air. You land it and scream."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "health",
+         "delta": "-(7)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "The ramp wins round one. Elbow vs gravel: gravel."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Film the crew",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your jump-cut video gets the whole block famous."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-book-fair",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Book fair week",
+   "tags": [
+    "kid",
+    "smarts"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The book fair arrives with that new-book smell and a wishlist.",
+   "choices": [
+    {
+     "label": "Spend wisely",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(25)"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Three books chosen after deep deliberation. No regrets."
+      }
+     ]
+    },
+    {
+     "label": "Donate one",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(35)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "One for you, one for the class shelf. Reading spreads."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-camp-letter",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Camp letters",
+   "tags": [
+    "kid",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "First week at sleepaway camp. Homesickness hits at lights-out.",
+   "choices": [
+    {
+     "label": "Write home daily",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Letters full of canoe tales. Homesickness loses."
+      }
+     ]
+    },
+    {
+     "label": "Befriend the bunk",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Bunk 6 becomes family. Capture the flag: won."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-camping-backyard",
+   "minAge": 5,
+   "maxAge": 11,
+   "title": "Backyard expedition",
+   "tags": [
+    "kid",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A tent, flashlights, and the wild backyard after dark.",
+   "choices": [
+    {
+     "label": "Night watch",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Owls, crickets, one suspicious raccoon. All logged."
+      }
+     ]
+    },
+    {
+     "label": "Ghost stories",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The Sock Ghost tale becomes family canon."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-cereal-prize",
+   "minAge": 5,
+   "maxAge": 10,
+   "title": "Box prize heist",
+   "tags": [
+    "kid",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Two boxes, one prize. Sibling negotiations begin.",
+   "choices": [
+    {
+     "label": "Split the prize",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You alternate days. Peace in our time."
+      }
+     ]
+    },
+    {
+     "label": "Win it fair",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.5",
+       "then": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "6"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Rock-paper-scissors champion. The whistle is yours."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "-(3)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Best of seven goes wrong. The whistle mocks you."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-chess-rival",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Rival rematch",
+   "tags": [
+    "kid",
+    "smarts"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The chess club rival wants a rematch. The trophy is a plastic knight.",
+   "choices": [
+    {
+     "label": "Study openings",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.stats.smarts>55"
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "smarts",
+         "delta": "7"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Scholar's mate declined, then crushed. The knight is yours."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "smarts",
+         "delta": "3"
+        },
+        {
+         "op": "outcome",
+         "tpl": "You lose in 20 moves but learn the Sicilian. Worth it."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Friendly blitz",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Five-minute games, all laughs. Rivalry becomes friendship."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-coin-collection",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Coin hunter",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Grandpa's coin book has gaps. Flea markets have coins.",
+   "choices": [
+    {
+     "label": "Hunt the missing",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(40)"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A 1943 penny! Grandpa frames your find."
+      }
+     ]
+    },
+    {
+     "label": "Start your own book",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(15)"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "State quarters, complete. The book smells like victory."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-coin-star",
+   "minAge": 6,
+   "maxAge": 11,
+   "title": "Wishing well audit",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The mall fountain holds a fortune in coins. You do the math.",
+   "choices": [
+    {
+     "label": "Count, not take",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Estimated 340 dollars. You take zero. Character: built."
+      }
+     ]
+    },
+    {
+     "label": "Toss your own",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(5)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "One coin, one wish: a bike. The fountain considers it."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-comic-strip",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Comic empire",
+   "tags": [
+    "kid",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Your hallway comic has ten readers and one very invested janitor.",
+   "choices": [
+    {
+     "label": "Daily strip",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "6"
+      },
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Thirty strips in. The janitor gets a character arc."
+      }
+     ]
+    },
+    {
+     "label": "Sell copies",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "45"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Fifty-cent copies. You earn 45 dollars and a fanbase."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-couch-cushion",
+   "minAge": 5,
+   "maxAge": 9,
+   "title": "Cushion canyon",
+   "tags": [
+    "kid",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Rain day: the couch becomes a canyon system.",
+   "choices": [
+    {
+     "label": "Bridge the gap",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Blanket bridges span the canyon. Toys cross safely."
+      }
+     ]
+    },
+    {
+     "label": "Clean up perfect",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Reassembled without a trace. The couch never knew."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-cubs-tryout",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Little league shot",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Tryouts Saturday. Your arm is decent, your nerves are not.",
+   "choices": [
+    {
+     "label": "Practice all week",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You make the team. The glove gets a name."
+      }
+     ]
+    },
+    {
+     "label": "Cheer squad route",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You miss the cut but lead every chant. Still family."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-detective-agency",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Mystery agency",
+   "tags": [
+    "kid",
+    "smarts"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Lost cats, missing balls, a legendary lunchbox thief. You open cases.",
+   "choices": [
+    {
+     "label": "Solve three cases",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Cat found, ball returned, lunchbox: the dog did it. Closed."
+      }
+     ]
+    },
+    {
+     "label": "Pro bono work",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You charge cookies only. The agency is beloved."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-dog-show-jr",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Junior dog show",
+   "tags": [
+    "kid",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The community dog show has a kid-handler class. Your dog is willing.",
+   "choices": [
+    {
+     "label": "Train for weeks",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Sit, stay, strut. Ribbon: blue. Dog: smug."
+      }
+     ]
+    },
+    {
+     "label": "Costume class",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Hot-dog costume on a hot dog dog. Crowd favorite."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-firefly-jar",
+   "minAge": 5,
+   "maxAge": 11,
+   "title": "Firefly census",
+   "tags": [
+    "kid",
+    "karma"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "June nights blink. {{s.firstName}} starts counting fireflies.",
+   "choices": [
+    {
+     "label": "Catch and release",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "One jar, ten minutes, then freedom. The lawn glitters on."
+      }
+     ]
+    },
+    {
+     "label": "Map the hotspots",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The oak corner wins. Data collected, wonder intact."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-fish-tank",
+   "minAge": 6,
+   "maxAge": 11,
+   "title": "Aquarium keeper",
+   "tags": [
+    "kid",
+    "karma"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The class fish need summer care. You raise a hand.",
+   "choices": [
+    {
+     "label": "Summer guardianship",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "All seven survive. The fish know your face."
+      }
+     ]
+    },
+    {
+     "label": "Learn water chemistry",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "pH, ammonia, algae. You test like a scientist."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-fishing-first",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "First catch",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Dawn at the lake. The bobber twitches. This is the moment.",
+   "choices": [
+    {
+     "label": "Set the hook",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A sunfish! Held high, photographed, released."
+      }
+     ]
+    },
+    {
+     "label": "Catch and release vow",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Every fish swims home. The lake remembers kindness."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-fortune-cookies",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Homemade fortunes",
+   "tags": [
+    "kid",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "You bake fortune cookies with custom fortunes for the fair.",
+   "choices": [
+    {
+     "label": "Write 100 fortunes",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "7"
+      },
+      {
+       "op": "money",
+       "amount": "70"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You sell out. Best fortune: YOU WILL BUY ANOTHER."
+      }
+     ]
+    },
+    {
+     "label": "Lucky batch gift",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Free cookies for the sad kids. Fortunes all come true."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-friendship-bracelets",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Bracelet economy",
+   "tags": [
+    "kid",
+    "social"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Friendship bracelets are currency. You run the mint.",
+   "choices": [
+    {
+     "label": "Weave 20",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "money",
+       "amount": "30"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Twenty bracelets, 30 dollars, infinite friendship."
+      }
+     ]
+    },
+    {
+     "label": "Teach the craft",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Everyone weaves. The market crashes; joy soars."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-frog-pond",
+   "minAge": 5,
+   "maxAge": 10,
+   "title": "Frog congress",
+   "tags": [
+    "kid",
+    "karma"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The pond is loud with frogs and {{s.firstName}} holds a census.",
+   "choices": [
+    {
+     "label": "Count them all",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Forty-one frogs. One toad. Science served."
+      }
+     ]
+    },
+    {
+     "label": "Build a log dock",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Frogs approve of the new real estate."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-garage-band-jr",
+   "minAge": 8,
+   "maxAge": 12,
+   "title": "Garage band junior",
+   "tags": [
+    "kid",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Three kazoos and a drum. The garage has opinions.",
+   "choices": [
+    {
+     "label": "Daily practice",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The Kazoo Kings play the block party. Encore demanded."
+      }
+     ]
+    },
+    {
+     "label": "Write a hit",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Lunch Lady Blues goes playground viral."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-hamster-vegas",
+   "minAge": 5,
+   "maxAge": 11,
+   "title": "Hamster city",
+   "tags": [
+    "kid",
+    "karma"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The class hamster spends the weekend with you and escapes by morning.",
+   "choices": [
+    {
+     "label": "Search party",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Found in the laundry, living lavishly on a sock."
+      }
+     ]
+    },
+    {
+     "label": "Upgrade the cage",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(35)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "New tunnels installed. The hamster forgives you."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-haunted-hayride",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Hayride heroics",
+   "tags": [
+    "kid",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The haunted hayride needs kid volunteers to be the monsters.",
+   "choices": [
+    {
+     "label": "Best monster",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your scarecrow gets its own fan club. Fear, but fun."
+      }
+     ]
+    },
+    {
+     "label": "Comfort the scared",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You walk the little ones through. Screams become giggles."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-hole-dig",
+   "minAge": 6,
+   "maxAge": 11,
+   "title": "Great hole project",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Three friends, four shovels, one hole to the center of the earth.",
+   "choices": [
+    {
+     "label": "Dig daily",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Four feet deep. China is notified."
+      }
+     ]
+    },
+    {
+     "label": "Museum of finds",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Bottle caps, a key, a mystery bone. Exhibits labeled."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-ice-skate-first",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "First skate",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Borrowed skates, wobbly ankles, the rink smells like cold joy.",
+   "choices": [
+    {
+     "label": "Lessons package",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(80)"
+      },
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Eight lessons later: crossovers. The ice is yours."
+      }
+     ]
+    },
+    {
+     "label": "Wall hugger",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You circle the rink holding the wall like family. Fun anyway."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-invention-convention",
+   "minAge": 8,
+   "maxAge": 12,
+   "title": "Young inventors",
+   "tags": [
+    "kid",
+    "smarts"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The inventor fair accepts your automatic plant waterer.",
+   "choices": [
+    {
+     "label": "Pitch the judges",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Second place! A real engineer wants your email."
+      }
+     ]
+    },
+    {
+     "label": "Gift the prototype",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The school greenhouse adopts it. Plants rejoice."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-jump-rope",
+   "minAge": 6,
+   "maxAge": 11,
+   "title": "Double dutch trials",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The double dutch crew needs a fourth jumper. The ropes blur.",
+   "choices": [
+    {
+     "label": "Jump in",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.stats.fitness>45"
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "fitness",
+         "delta": "7"
+        },
+        {
+         "op": "stat",
+         "key": "social",
+         "delta": "5"
+        },
+        {
+         "op": "outcome",
+         "tpl": "In, turning, rhyming. The crew adopts you."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "health",
+         "delta": "-(4)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Rope burn and laughter. Round two tomorrow."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Turn ropes",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Best turner on the block. Jumpers beg for your wrists."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-kite-festival",
+   "minAge": 5,
+   "maxAge": 12,
+   "title": "Kite festival",
+   "tags": [
+    "kid",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The lake kite festival: dragons, boxes, and one fighter kite.",
+   "choices": [
+    {
+     "label": "Fly the dragon",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Thirty feet of dragon over the lake. Applause from boats."
+      }
+     ]
+    },
+    {
+     "label": "Repair stand",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You fix six kites. The sky fills because of you."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-lemon-empire",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Lemonade empire",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Saturday lemonade stand faces a rival stand across the street.",
+   "choices": [
+    {
+     "label": "Undercut prices",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "120"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Fifty-cent cups flood the market. You count 120 dollars of profit."
+      }
+     ]
+    },
+    {
+     "label": "Premium recipe",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(30)"
+      },
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Mint and honey. Fancy cups. The rivals defect to you."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-lost-tooth-2",
+   "minAge": 5,
+   "maxAge": 9,
+   "title": "Tooth fairy audit",
+   "tags": [
+    "kid",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The tooth fairy leaves a note: INFLATION. {{s.firstName}} demands answers.",
+   "choices": [
+    {
+     "label": "Write back",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A tiny letter explains fairy economics. Accepted."
+      }
+     ]
+    },
+    {
+     "label": "Double the rate",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(20)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Twenty dollars under the pillow. The fairy pays up."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-magic-show",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Birthday magician",
+   "tags": [
+    "kid",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Your cousin's party needs entertainment. You own a cape.",
+   "choices": [
+    {
+     "label": "Learn three tricks",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Cards, coins, a vanished grape. The kids lose it."
+      }
+     ]
+    },
+    {
+     "label": "Assistant role",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Best volunteered-from-audience ever. Suspicion: zero."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-marbles-champ",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Marble season",
+   "tags": [
+    "kid",
+    "social"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Marble season: keepers rules, and your shooter is chipped.",
+   "choices": [
+    {
+     "label": "Play for keeps",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.55",
+       "then": [
+        {
+         "op": "stat",
+         "key": "social",
+         "delta": "6"
+        },
+        {
+         "op": "outcome",
+         "tpl": "You win the galaxy marble. Displayed, never played."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "-(4)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Lost the shooter. A hard lesson in a circle of dirt."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Practice trick shots",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Bank shots, spins, applause from the fence."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-movie-backyard",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Backyard cinema",
+   "tags": [
+    "kid",
+    "social"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A sheet, a projector, and the whole street invited.",
+   "choices": [
+    {
+     "label": "Host the night",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Forty kids, one classic, popcorn math perfected."
+      }
+     ]
+    },
+    {
+     "label": "Pick the film",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your pick lands. The street quotes it for weeks."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-mud-cupcakes",
+   "minAge": 5,
+   "maxAge": 8,
+   "title": "Mud bakery",
+   "tags": [
+    "kid",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The garden becomes a bakery. Mud cupcakes, grass frosting, rock sprinkles.",
+   "choices": [
+    {
+     "label": "Open for business",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Full menu served to very patient worms."
+      }
+     ]
+    },
+    {
+     "label": "Keep the garden alive",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You bake only in the dirt patch. Garden saved, fun kept."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-mystery-smell",
+   "minAge": 6,
+   "maxAge": 11,
+   "title": "Locker mystery",
+   "tags": [
+    "kid",
+    "school"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Something in the locker row smells. Science demands investigation.",
+   "choices": [
+    {
+     "label": "Lead the inquiry",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A September banana. Case closed. Noses saved."
+      }
+     ]
+    },
+    {
+     "label": "Air it out",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You organize the clean-out. The row breathes again."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-new-kid-welcome",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "New kid protocol",
+   "tags": [
+    "kid",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A new kid stands alone at lunch with a tray and nowhere to sit.",
+   "choices": [
+    {
+     "label": "Invite them over",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "addFriend",
+       "name": "randName()",
+       "rel": 65
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "One wave later, the table has a new regular."
+      }
+     ]
+    },
+    {
+     "label": "Tour guide duty",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You show them every shortcut. Friendship speedrun."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-night-flashlight",
+   "minAge": 5,
+   "maxAge": 10,
+   "title": "Flashlight tag",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Summer nights mean flashlight tag across three yards.",
+   "choices": [
+    {
+     "label": "Be the seeker",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You tag all seven. The flashlight never lies."
+      }
+     ]
+    },
+    {
+     "label": "Best hiding spot",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Inside the bush fort. Unfound for an hour. Legend."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-orchard-climb",
+   "minAge": 6,
+   "maxAge": 11,
+   "title": "Orchard ladder duty",
+   "tags": [
+    "kid",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Harvest day: someone light must climb for the top apples.",
+   "choices": [
+    {
+     "label": "Climb carefully",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Two bushels of high apples. Pie season secured."
+      }
+     ]
+    },
+    {
+     "label": "Sort and stack",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Perfect stacks, zero bruises. The market stand thrives."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-orchestra-pit",
+   "minAge": 8,
+   "maxAge": 12,
+   "title": "Pit orchestra",
+   "tags": [
+    "kid",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The school musical needs a kid for the pit. You own an instrument. Sort of.",
+   "choices": [
+    {
+     "label": "Audition hard",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "6"
+      },
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Second chair. The overture gives you chills."
+      }
+     ]
+    },
+    {
+     "label": "Stage crew instead",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Spotlight operator. You ARE the drama now."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-owl-pellets",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Owl pellet lab",
+   "tags": [
+    "kid",
+    "smarts"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Science class dissects owl pellets. Bones included.",
+   "choices": [
+    {
+     "label": "Reconstruct the mouse",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Full skeleton assembled. Nature is metal. A+ earned."
+      }
+     ]
+    },
+    {
+     "label": "Sketch everything",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your labeled drawings go on the classroom wall."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-paper-plane",
+   "minAge": 5,
+   "maxAge": 12,
+   "title": "Paper plane league",
+   "tags": [
+    "kid",
+    "school"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Lunch recess hosts the unauthorized paper plane championship.",
+   "choices": [
+    {
+     "label": "Engineer a dart",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your dart flies the full yard. Legend status."
+      }
+     ]
+    },
+    {
+     "label": "Stunt glider",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Loops! Applause! It lands in the soup. Worth it."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-paper-route",
+   "minAge": 9,
+   "maxAge": 12,
+   "title": "Paper route Jr.",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A morning route opens. 5am, bike, 40 houses.",
+   "choices": [
+    {
+     "label": "Take the route",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "140"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Six months of dawns. You save 140 dollars and gain grit."
+      }
+     ]
+    },
+    {
+     "label": "Split with a friend",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "70"
+      },
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Half route each. Papers fly, friendship holds."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-penpal-france",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Overseas pen pal",
+   "tags": [
+    "kid",
+    "social"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A pen pal from France writes about cheese and school strikes.",
+   "choices": [
+    {
+     "label": "Write weekly",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your letters cross oceans. French swear words learned."
+      }
+     ]
+    },
+    {
+     "label": "Send local snacks",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(25)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Peanut butter diplomacy. Alliance secured."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-perfect-attendance",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Attendance streak",
+   "tags": [
+    "kid",
+    "school"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "160 days, zero absences. Chickenpox season approaches.",
+   "choices": [
+    {
+     "label": "Guard the streak",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.7",
+       "then": [
+        {
+         "op": "stat",
+         "key": "discipline",
+         "delta": "8"
+        },
+        {
+         "op": "set",
+         "path": "education.grades",
+         "value": "clamp(s.education.grades+(4))"
+        },
+        {
+         "op": "outcome",
+         "tpl": "180 days! Certificate, assembly applause, iron immune system."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "health",
+         "delta": "-(6)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Day 171: the flu wins. The streak dies a hero."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Rest when sick",
+     "hint": "health+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You stay home, heal fast, and live to streak again."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-pizza-friday",
+   "minAge": 5,
+   "maxAge": 12,
+   "title": "Pizza Friday coup",
+   "tags": [
+    "kid",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "{{s.firstName}} campaigns to make pizza every Friday. Forever.",
+   "choices": [
+    {
+     "label": "Sign the treaty",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(15)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Pizza Fridays ratified. Democracy delicious."
+      }
+     ]
+    },
+    {
+     "label": "Cook together",
+     "hint": "health+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Homemade dough, veggie faces, pride edible."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-playground-mayor",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Playground mayor",
+   "tags": [
+    "kid",
+    "social"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Someone must organize the four-square ladder. It might as well be you.",
+   "choices": [
+    {
+     "label": "Run the ladder",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Rankings posted daily. Disputes: zero. Legacy: secured."
+      }
+     ]
+    },
+    {
+     "label": "Invent new rules",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Four-square with a bonus box. Chaos, then brilliance."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-pogo-record",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Pogo record",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Your pogo best is 200 jumps. The block record is 500.",
+   "choices": [
+    {
+     "label": "Train daily",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.stats.fitness>45"
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "fitness",
+         "delta": "8"
+        },
+        {
+         "op": "outcome",
+         "tpl": "512 jumps! Record smashed. Legs: legendary."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "fitness",
+         "delta": "4"
+        },
+        {
+         "op": "outcome",
+         "tpl": "340 jumps. The record survives. Next summer, it falls."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Teach the rookies",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Three new jumpers join. The pogo club is born."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-pond-skate",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Pond skate day",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The pond freezes thick enough. The whole street laces up.",
+   "choices": [
+    {
+     "label": "Race the loop",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Third place, first in style points. Cocoa after."
+      }
+     ]
+    },
+    {
+     "label": "Teach a newbie",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You teach stops and starts. The pond gains a skater."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-puddle-olympics",
+   "minAge": 5,
+   "maxAge": 11,
+   "title": "Puddle games",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Post-storm: biggest splash, longest jump, best cannonball.",
+   "choices": [
+    {
+     "label": "Enter everything",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Splash gold. Socks: sacrificed. Glory: eternal."
+      }
+     ]
+    },
+    {
+     "label": "Judge fairly",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your scoring is beyond reproach. Athletes weep with joy."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-pumpkin-giant",
+   "minAge": 5,
+   "maxAge": 12,
+   "title": "Great pumpkin bet",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Your pumpkin rivals Old Man Haro's. Weigh-in is Halloween.",
+   "choices": [
+    {
+     "label": "Feed it daily",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.5",
+       "then": [
+        {
+         "op": "money",
+         "amount": "150"
+        },
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "8"
+        },
+        {
+         "op": "outcome",
+         "tpl": "98 pounds! Prize pumpkin, 150 dollars, one wheelbarrow."
+        }
+       ],
+       "else": [
+        {
+         "op": "outcome",
+         "tpl": "61 pounds. Haro wins again. Next year, compost."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Carve early",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A three-face mega-lantern. The street stops to stare."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-puppet-library",
+   "minAge": 5,
+   "maxAge": 10,
+   "title": "Puppet hour",
+   "tags": [
+    "kid",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The library puppet show needs a kid dragon. You fit the costume.",
+   "choices": [
+    {
+     "label": "Roar on cue",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Toddlers scream with joy. The dragon takes a bow."
+      }
+     ]
+    },
+    {
+     "label": "Work the curtains",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Invisible, essential. The show runs on your ropes."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-quiet-reading-fort",
+   "minAge": 5,
+   "maxAge": 10,
+   "title": "Reading fort Friday",
+   "tags": [
+    "kid",
+    "school"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Rain cancels practice. The library runs a fort-building reading hour.",
+   "choices": [
+    {
+     "label": "Build and read",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Blanket fort, flashlight, three chapters. Best rainy day ever."
+      }
+     ]
+    },
+    {
+     "label": "Buddy read",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You read to a first-grader. They follow you like a hero."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-rain-barrel",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Rain barrel project",
+   "tags": [
+    "kid",
+    "karma"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The community garden needs rain barrels. You volunteer the crew.",
+   "choices": [
+    {
+     "label": "Install two",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Two barrels plumbed. The tomatoes thank you."
+      }
+     ]
+    },
+    {
+     "label": "Paint them murals",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Rain clouds and suns. The barrels are art now."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-rainy-museum",
+   "minAge": 5,
+   "maxAge": 12,
+   "title": "Rainy museum day",
+   "tags": [
+    "kid",
+    "smarts"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Rain cancels the game. The museum beckons, dinosaur wing first.",
+   "choices": [
+    {
+     "label": "Dino deep dive",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You can now name fourteen sauropods. Power."
+      }
+     ]
+    },
+    {
+     "label": "Gift shop restraint",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(12)"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "One crystal, chosen after an hour. Worth it."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-recycling-drive",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Bottle empire",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Cans are worth a nickel each and the block throws away fortunes.",
+   "choices": [
+    {
+     "label": "Weekly route",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "85"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You haul, sort, and cash 85 dollars. Green and rich."
+      }
+     ]
+    },
+    {
+     "label": "Fund the park",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "40"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Half the haul buys park flowers. The block glows."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-robot-kit",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Robot kit birthday",
+   "tags": [
+    "kid",
+    "smarts"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A robot kit arrives with 200 parts and instructions in three languages.",
+   "choices": [
+    {
+     "label": "Build it solo",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "It walks! It beeps! It fears stairs. Brilliant."
+      }
+     ]
+    },
+    {
+     "label": "Recruit the block",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Five kids, one robot, zero leftover screws. Teamwork."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-rock-tumbler",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Rock fortune",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A rock tumbler promises gems. The grit takes weeks.",
+   "choices": [
+    {
+     "label": "Wait it out",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "6"
+      },
+      {
+       "op": "money",
+       "amount": "60"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Shiny agates sold for 60 dollars. Patience pays."
+      }
+     ]
+    },
+    {
+     "label": "Gift them all",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Every friend gets a gem. You are rich in gratitude."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-secret-club",
+   "minAge": 5,
+   "maxAge": 11,
+   "title": "Backyard society",
+   "tags": [
+    "kid",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Four kids, one clubhouse, a password that changes hourly.",
+   "choices": [
+    {
+     "label": "Guard the password",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Membership triples. The password is now a state secret."
+      }
+     ]
+    },
+    {
+     "label": "Open membership",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Everyone joins. The clubhouse needs a bigger blanket."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-secret-recipe",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Family recipe heist",
+   "tags": [
+    "kid",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Grandma's cookie recipe is locked in memory. You want it written down.",
+   "choices": [
+    {
+     "label": "Apprentice weekends",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Three weekends of pinch-of-this. Recipe secured forever."
+      }
+     ]
+    },
+    {
+     "label": "Video the method",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Filmed, captioned, backed up. Grandma goes viral at church."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-sidewalk-chalk",
+   "minAge": 5,
+   "maxAge": 10,
+   "title": "Chalk gallery",
+   "tags": [
+    "kid",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The whole driveway is canvas. The neighbors slow down to look.",
+   "choices": [
+    {
+     "label": "Go huge",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A dragon spans the driveway. Cars detour respectfully."
+      }
+     ]
+    },
+    {
+     "label": "Hopscotch classic",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The perfect hopscotch. Jump-tested by twelve kids."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-sidewalk-stand",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Rock stand",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Painted rocks sell surprisingly well to neighbors.",
+   "choices": [
+    {
+     "label": "Paint 50 rocks",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "65"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Ladybugs, monters, galaxies. You bank 65 dollars."
+      }
+     ]
+    },
+    {
+     "label": "Hide them free",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Kindness rocks hidden in the park. Strangers smile."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-sled-olympics",
+   "minAge": 5,
+   "maxAge": 12,
+   "title": "Sled Olympics",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The hill hosts luge, slalom, and style events. Snow pants required.",
+   "choices": [
+    {
+     "label": "Enter all three",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Silver in slalom, gold in style. The hill remembers."
+      }
+     ]
+    },
+    {
+     "label": "Build the jump",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your jump adds two feet of glory. Medics on standby."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-sleepover-ghost",
+   "minAge": 6,
+   "maxAge": 11,
+   "title": "Midnight ghost tour",
+   "tags": [
+    "kid",
+    "social"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Sleepover dare: the basement at midnight, flashlights only.",
+   "choices": [
+    {
+     "label": "Lead the way",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.stats.social>40"
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "social",
+         "delta": "7"
+        },
+        {
+         "op": "outcome",
+         "tpl": "You narrate the furnace like a pro. Legends are born."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "-(5)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "A coat on a hook ends the tour early. Screams, then giggles."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Guard the snacks",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You hold base camp. Returning heroes need popcorn."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-snow-fort-war",
+   "minAge": 5,
+   "maxAge": 12,
+   "title": "Snow fort wars",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The big snow brings the annual fort war against Maple Street.",
+   "choices": [
+    {
+     "label": "Build the wall",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Walls hold. Snowballs fly. Victory is cold and sweet."
+      }
+     ]
+    },
+    {
+     "label": "Negotiate peace",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Treaty over cocoa. Both forts become one castle."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-snow-shovel-biz",
+   "minAge": 8,
+   "maxAge": 12,
+   "title": "Shovel crew",
+   "tags": [
+    "kid",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The blizzard buries driveways. Cash waits under the snow.",
+   "choices": [
+    {
+     "label": "Shovel six drives",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "110"
+      },
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Six driveways, 110 dollars, arms like iron."
+      }
+     ]
+    },
+    {
+     "label": "Free the hydrants",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Hydrants dug out free. Firefighters wave. Heroes."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-spelling-revenge",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Spelling redemption",
+   "tags": [
+    "kid",
+    "school"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Last year's on-stage freeze still burns. This year's bee is here.",
+   "choices": [
+    {
+     "label": "Drill nightly",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "7"
+      },
+      {
+       "op": "set",
+       "path": "education.grades",
+       "value": "clamp(s.education.grades+(4))"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You spell ANTEDILUVIAN without blinking. Redemption."
+      }
+     ]
+    },
+    {
+     "label": "Comedy first",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You go out round three but your definitions slay."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-spelling-safari",
+   "minAge": 5,
+   "maxAge": 9,
+   "title": "Word safari",
+   "tags": [
+    "kid",
+    "school"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The teacher hides vocabulary cards around the school like treasure.",
+   "choices": [
+    {
+     "label": "Find them all",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "set",
+       "path": "education.grades",
+       "value": "clamp(s.education.grades+(4))"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Every card found. Vocabulary: conquered."
+      }
+     ]
+    },
+    {
+     "label": "Team up",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You split the map. Both teams win the hunt."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-stargaze-roof",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Roof observatory",
+   "tags": [
+    "kid",
+    "smarts"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Blankets on the garage roof, meteor shower at midnight.",
+   "choices": [
+    {
+     "label": "Count them all",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Sixty-two meteors. Three wishes used wisely."
+      }
+     ]
+    },
+    {
+     "label": "Tell the myths",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Orion, Cassiopeia, and your own invented hero."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-subway-adventure",
+   "minAge": 8,
+   "maxAge": 12,
+   "title": "Transit expedition",
+   "tags": [
+    "kid",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Dad lets you navigate the whole transit map alone together.",
+   "choices": [
+    {
+     "label": "Navigate flawlessly",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Three transfers, zero panic. Navigator certified."
+      }
+     ]
+    },
+    {
+     "label": "Talk to strangers",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A saxophonist teaches you a scale. The ride sings."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-talent-flute",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Recorder recital",
+   "tags": [
+    "kid",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The school concert features your recorder solo. The bar is low, the stakes feel high.",
+   "choices": [
+    {
+     "label": "Practice daily",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "6"
+      },
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Hot Cross Buns, flawless. Grandma weeps."
+      }
+     ]
+    },
+    {
+     "label": "Add dance moves",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You miss a note but the spin saves the show."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-talent-yoyo",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Yo-yo trials",
+   "tags": [
+    "kid",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The talent show needs an act. Your sleeper lasts 40 seconds.",
+   "choices": [
+    {
+     "label": "Nail the routine",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Walk the dog, rock the baby, standing ovation."
+      }
+     ]
+    },
+    {
+     "label": "Duo act",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Synced yo-yos with your best friend. Twice the glory."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-tire-swing",
+   "minAge": 5,
+   "maxAge": 10,
+   "title": "Tire swing summit",
+   "tags": [
+    "kid",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The tire swing fits three. Four kids want it. Summit called.",
+   "choices": [
+    {
+     "label": "Take turns fairly",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Two-minute rotations. Peace spins on."
+      }
+     ]
+    },
+    {
+     "label": "Push everyone",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You push all afternoon. Arms of steel, heart of gold."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-tree-climb-ban",
+   "minAge": 6,
+   "maxAge": 11,
+   "title": "The big oak ban",
+   "tags": [
+    "kid",
+    "discipline"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The park bans climbing the old oak after the branch incident.",
+   "choices": [
+    {
+     "label": "Respect the ban",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You climb only approved trees. Ranger respect earned."
+      }
+     ]
+    },
+    {
+     "label": "Petition the council",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Forty signatures. Climbing hours: weekends. Democracy."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-tree-rescue",
+   "minAge": 5,
+   "maxAge": 10,
+   "title": "Kite retrieval op",
+   "tags": [
+    "kid",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Your best friend's kite is stuck in the old oak. A crowd gathers.",
+   "choices": [
+    {
+     "label": "Climb it",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.stats.fitness>45"
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "fitness",
+         "delta": "6"
+        },
+        {
+         "op": "stat",
+         "key": "social",
+         "delta": "6"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Up and down like a squirrel. Kite saved, hero made."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "health",
+         "delta": "-(5)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Branch one: fine. Branch two: gravity lesson."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Pole and patience",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Two rakes taped together. Engineering beats altitude."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-treehouse-tax",
+   "minAge": 6,
+   "maxAge": 12,
+   "title": "Treehouse toll",
+   "tags": [
+    "kid",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The treehouse crew demands a toll: one snack per entry.",
+   "choices": [
+    {
+     "label": "Pay in fruit",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Apple tolls accepted. The crew respects a giver."
+      }
+     ]
+    },
+    {
+     "label": "Start a rival fort",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The ground fort undercuts them. Merger talks begin."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-tutor-flip",
+   "minAge": 8,
+   "maxAge": 12,
+   "title": "Tutor flip",
+   "tags": [
+    "kid",
+    "social"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "You are great at math. A struggling star athlete needs help.",
+   "choices": [
+    {
+     "label": "Trade skills",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Fractions for free throws. Both grades and game improve."
+      }
+     ]
+    },
+    {
+     "label": "Study group",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Five kids, one table, pizza. Everyone passes."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-volcano-model",
+   "minAge": 7,
+   "maxAge": 12,
+   "title": "Eruption day",
+   "tags": [
+    "kid",
+    "school"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The science fair volcano must erupt on cue. Baking soda is loaded.",
+   "choices": [
+    {
+     "label": "Perfect reaction",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "7"
+      },
+      {
+       "op": "set",
+       "path": "education.grades",
+       "value": "clamp(s.education.grades+(5))"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Three-foot plume. Judges applaud. A+ with lava."
+      }
+     ]
+    },
+    {
+     "label": "Help a rival",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Their volcano fizzles; you share your mix. Both erupt."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "kd-worm-race",
+   "minAge": 5,
+   "maxAge": 9,
+   "title": "Worm Grand Prix",
+   "tags": [
+    "kid",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "After rain, the sidewalk hosts the Worm Grand Prix.",
+   "choices": [
+    {
+     "label": "Train a champion",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your worm, Lightning, places third. Sponsors pending."
+      }
+     ]
+    },
+    {
+     "label": "Save them all",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Every worm relocated to grass. Hero of the soil."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

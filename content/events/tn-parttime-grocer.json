@@ -1,0 +1,49 @@
+{
+ "id": "tn-parttime-grocer",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Grocery grind",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Bagging groceries after school. The rush hour is war.",
+ "choices": [
+  {
+   "label": "Master the rush",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "260"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fastest bagger on shift. You bank 260 dollars."
+    }
+   ]
+  },
+  {
+   "label": "Befriend regulars",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mrs. Alvarez tips in cookies. The job glows."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "kd-cubs-tryout",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "Little league shot",
+ "tags": [
+  "kid",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Tryouts Saturday. Your arm is decent, your nerves are not.",
+ "choices": [
+  {
+   "label": "Practice all week",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You make the team. The glove gets a name."
+    }
+   ]
+  },
+  {
+   "label": "Cheer squad route",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You miss the cut but lead every chant. Still family."
+    }
+   ]
+  }
+ ]
+}

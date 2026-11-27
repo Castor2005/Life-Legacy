@@ -1,0 +1,48 @@
+{
+ "id": "md-language-third",
+ "minAge": 46,
+ "maxAge": 59,
+ "title": "Third tongue",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Retirement dreams include another country. Its language first.",
+ "choices": [
+  {
+   "label": "Evening classes",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(450)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ordering, joking, dreaming: all in the new tongue."
+    }
+   ]
+  },
+  {
+   "label": "Immersion trip",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1800)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three weeks there. Fluency leaps; so does joy."
+    }
+   ]
+  }
+ ]
+}

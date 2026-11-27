@@ -1,0 +1,65 @@
+{
+ "id": "food-poisoning",
+ "minAge": 18,
+ "maxAge": 90,
+ "title": "The sushi",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The gas-station sushi seemed fine at the time to {{s.firstName}}. It was not fine.",
+ "choices": [
+  {
+   "label": "ER, fluids, bill ($700)",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(700)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Diagnosed: never again. You frame the discharge papers."
+    }
+   ]
+  },
+  {
+   "label": "Ride it out",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "outcome",
+       "tpl": "Twenty-four brutal hours. You survive on crackers."
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(700)"
+      },
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(15)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Dehydrated and humbled. The ER anyway: minus $700."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

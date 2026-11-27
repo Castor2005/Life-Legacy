@@ -1,0 +1,72 @@
+{
+ "id": "food-fight",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Cafeteria war",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A single airborne meatball arcs over {{s.firstName}}'s tray. The cafeteria holds its breath.",
+ "choices": [
+  {
+   "label": "Join the chaos",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "10"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Mashed-potato hero! Legends are born."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "-(8)"
+      },
+      {
+       "op": "set",
+       "path": "education.grades",
+       "value": "clamp(s.education.grades-5)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Detention and cleanup duty. Worth it? Yes."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Shield the tray",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You eat in peace amid flying gravy. Monk mode."
+    }
+   ]
+  }
+ ]
+}

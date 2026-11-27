@@ -1,0 +1,51 @@
+{
+ "id": "sr-foster-grandpup",
+ "minAge": 62,
+ "maxAge": 88,
+ "title": "Puppy raising",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Guide dog puppies need raisers for a year. Your home qualifies.",
+ "choices": [
+  {
+   "label": "Raise one",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "addPet",
+     "name": "\"Sunny\"",
+     "petType": "dog",
+     "rel": 75
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sunny learns 40 commands, then guides someone. Tears and pride."
+    }
+   ]
+  },
+  {
+   "label": "Puppy sit",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Weekend sitting for raisers. Joy without the goodbye."
+    }
+   ]
+  }
+ ]
+}

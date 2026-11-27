@@ -1,0 +1,55 @@
+{
+ "id": "tn-first-heartbreak",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "The breakup",
+ "tags": [
+  "teen",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "dating"
+ },
+ "text": "It ends over text. Three dots, then nothing.",
+ "choices": [
+  {
+   "label": "Grieve properly",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(5)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ice cream, sad songs, friends on the floor. You mend."
+    }
+   ]
+  },
+  {
+   "label": "Glow up",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "partnerClear"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New haircut, new records. The hallway notices."
+    }
+   ]
+  }
+ ]
+}

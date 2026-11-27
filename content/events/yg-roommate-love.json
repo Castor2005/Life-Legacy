@@ -1,0 +1,70 @@
+{
+ "id": "yg-roommate-love",
+ "minAge": 19,
+ "maxAge": 29,
+ "title": "Roommate plus one",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "Your roommate's friend keeps appearing at dinner. Sparks considered.",
+ "choices": [
+  {
+   "label": "Ask them out",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "partnerSet",
+       "name": "partnerName()",
+       "rel": "70",
+       "age": "s.age"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "11"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Dinner number four becomes date number one. The apartment approves."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Friendly no. Dinners continue, slightly awkward, then fine."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Keep it platonic",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Game nights forever. The friend group solidifies."
+    }
+   ]
+  }
+ ]
+}

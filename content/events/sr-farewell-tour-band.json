@@ -1,0 +1,49 @@
+{
+ "id": "sr-farewell-tour-band",
+ "minAge": 65,
+ "maxAge": 85,
+ "title": "Farewell tour",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The band's farewell tour: three towns, one bus.",
+ "choices": [
+  {
+   "label": "Play them all",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1200"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sold-out finales. You close with the first song you learned."
+    }
+   ]
+  },
+  {
+   "label": "One hometown night",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Single show, packed hall. Perfect ending, no bus."
+    }
+   ]
+  }
+ ]
+}

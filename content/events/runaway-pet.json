@@ -1,0 +1,76 @@
+{
+ "id": "runaway-pet",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Missing posters",
+ "tags": [
+  "teen"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your pet slipped the leash and vanished. Rain is coming.",
+ "choices": [
+  {
+   "label": "Search all night",
+   "hint": "love",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "relationships.pets.length",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "relationships.pets.0.rel",
+       "value": "clamp(s.relationships.pets[0].rel+15)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Found at 3am under a porch! The reunion hug heals everything."
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "You search anyway and rescue a lost kitten instead."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Wait till morning",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "outcome",
+       "tpl": "They trot home at dawn, muddy and proud."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Gone three days. You never fully forgive yourself."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

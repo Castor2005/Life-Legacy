@@ -1,0 +1,49 @@
+{
+ "id": "bb-duck-parade",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Duck parade",
+ "tags": [
+  "baby",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Ducks cross the path in single file and {{s.firstName}} falls in line behind them.",
+ "choices": [
+  {
+   "label": "Join the parade",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You march behind ducks. Strangers applaud."
+    }
+   ]
+  },
+  {
+   "label": "Bread for the troops",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(5)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Torn bread, happy ducks, a delighted toddler."
+    }
+   ]
+  }
+ ]
+}

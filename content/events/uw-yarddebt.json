@@ -1,0 +1,119 @@
+{
+ "id": "uw-yarddebt",
+ "minAge": 16,
+ "maxAge": 80,
+ "title": "Canteen debt",
+ "tags": [
+  "family",
+  "underworld",
+  "crime",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "flags",
+    "truthy": true
+   },
+   {
+    "p": "flags.inJail",
+    "gt": 0
+   }
+  ]
+ },
+ "text": "{{s.firstName}} owes Big Marv from the poker table. Marv collects on Fridays and smiles the rest of the week.",
+ "choices": [
+  {
+   "label": "Pay $300",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "money",
+      "lt": 300
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Can't pay. Friday hurts."
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(300)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Paid. Marv almost looks disappointed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Work it off",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(4)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(3)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Laundry mountains, kitchen grease. Debt cleared in sweat."
+    }
+   ]
+  },
+  {
+   "label": "Refuse",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "set",
+       "path": "underworld.prisonRep",
+       "value": "min(100,(s.underworld.prisonRep||0)+10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You stare Marv down. The yard decides you're crazy. Respect +."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(15)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Friday arrives with fists. You eat through a straw for a week."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

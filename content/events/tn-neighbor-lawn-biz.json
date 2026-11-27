@@ -1,0 +1,53 @@
+{
+ "id": "tn-neighbor-lawn-biz",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Mow money",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Five lawns, every Saturday, cash on the porch.",
+ "choices": [
+  {
+   "label": "Take all five",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "300"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Stripes so straight they photograph. 300 dollars earned."
+    }
+   ]
+  },
+  {
+   "label": "Three and quality",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "200"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three perfect lawns, referrals booked. Business grows."
+    }
+   ]
+  }
+ ]
+}

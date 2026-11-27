@@ -1,0 +1,48 @@
+{
+ "id": "tn-farmers-market-stall",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Market stall",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your jam and honey stall gets a Saturday slot.",
+ "choices": [
+  {
+   "label": "Sell out",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "210"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Gone by noon. You net 210 dollars and a waiting list."
+    }
+   ]
+  },
+  {
+   "label": "Sample strategy",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "140"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tastes convert. Regulars form by week three."
+    }
+   ]
+  }
+ ]
+}

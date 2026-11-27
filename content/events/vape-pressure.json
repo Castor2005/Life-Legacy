@@ -1,0 +1,54 @@
+{
+ "id": "vape-pressure",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Peer pressure",
+ "tags": [
+  "teen"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Cool kids offer you a vape behind the gym. 'Everyone does it.'",
+ "choices": [
+  {
+   "label": "Refuse",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "-(2)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You walk away. Real friends respect it later."
+    }
+   ]
+  },
+  {
+   "label": "Try once",
+   "hint": "health-, social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(6)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Coughing fit. They laugh. You never touch it again."
+    }
+   ]
+  }
+ ]
+}

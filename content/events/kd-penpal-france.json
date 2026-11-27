@@ -1,0 +1,49 @@
+{
+ "id": "kd-penpal-france",
+ "minAge": 7,
+ "maxAge": 12,
+ "title": "Overseas pen pal",
+ "tags": [
+  "kid",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A pen pal from France writes about cheese and school strikes.",
+ "choices": [
+  {
+   "label": "Write weekly",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your letters cross oceans. French swear words learned."
+    }
+   ]
+  },
+  {
+   "label": "Send local snacks",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(25)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Peanut butter diplomacy. Alliance secured."
+    }
+   ]
+  }
+ ]
+}

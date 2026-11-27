@@ -1,0 +1,45 @@
+{
+ "id": "tn-photo-yearbook",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Yearbook staff",
+ "tags": [
+  "teen",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Photo editor needed. You own a camera and opinions.",
+ "choices": [
+  {
+   "label": "Shoot everything",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your spread wins the state award. History, documented."
+    }
+   ]
+  },
+  {
+   "label": "Write captions",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Captions so good the principal quotes them."
+    }
+   ]
+  }
+ ]
+}

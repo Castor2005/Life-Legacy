@@ -1,0 +1,69 @@
+{
+ "id": "spelling-bee",
+ "minAge": 7,
+ "maxAge": 12,
+ "title": "Spelling bee finals",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} made the school spelling bee finals. Word: 'serendipity'.",
+ "choices": [
+  {
+   "label": "Go for glory",
+   "hint": "smarts check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "stats.smarts",
+      "gt": 45
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "12"
+      },
+      {
+       "op": "money",
+       "amount": "200"
+      },
+      {
+       "op": "outcome",
+       "tpl": "S-E-R-E-N-D-I-P-I-T-Y! Trophy + $200 prize!"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(5)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You spell 'surrendipity'. The crowd groans kindly."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Do your best, no pressure",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Third place. Proud anyway."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,48 @@
+{
+ "id": "tn-orchard-job",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Orchard season",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Apple season pays by the bushel. Ladders provided.",
+ "choices": [
+  {
+   "label": "Pick 40 bushels",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "380"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Forty bushels. Arms ache, wallet glows: 380 dollars."
+    }
+   ]
+  },
+  {
+   "label": "Cider press crew",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "200"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Press duty with the crew. Sticky, loud, wonderful."
+    }
+   ]
+  }
+ ]
+}

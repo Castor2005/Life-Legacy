@@ -1,0 +1,48 @@
+{
+ "id": "yg-first-flight-solo",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Solo boarding",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "First solo flight: window seat, new city, nobody waiting.",
+ "choices": [
+  {
+   "label": "Wander everything",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "11"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lost twice, found everything. Solo travel rewires the brain."
+    }
+   ]
+  },
+  {
+   "label": "One city deep",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(350)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You learn one neighborhood truly. The cafe knows your order."
+    }
+   ]
+  }
+ ]
+}

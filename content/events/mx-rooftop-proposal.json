@@ -1,0 +1,53 @@
+{
+ "id": "mx-rooftop-proposal",
+ "minAge": 20,
+ "maxAge": 60,
+ "title": "Rooftop question",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "dating"
+ },
+ "text": "City lights, a ring box burning a hole, the perfect sunset.",
+ "choices": [
+  {
+   "label": "Ask tonight",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "partnerMarry"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "13"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Yes among the skyline. The city applauds with horns."
+    }
+   ]
+  },
+  {
+   "label": "Wait for the trip",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "partnerRel",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You wait for the coast trip. Anticipation sweetens everything."
+    }
+   ]
+  }
+ ]
+}

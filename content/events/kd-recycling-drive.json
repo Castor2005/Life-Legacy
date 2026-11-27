@@ -1,0 +1,53 @@
+{
+ "id": "kd-recycling-drive",
+ "minAge": 7,
+ "maxAge": 12,
+ "title": "Bottle empire",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Cans are worth a nickel each and the block throws away fortunes.",
+ "choices": [
+  {
+   "label": "Weekly route",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "85"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You haul, sort, and cash 85 dollars. Green and rich."
+    }
+   ]
+  },
+  {
+   "label": "Fund the park",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "40"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Half the haul buys park flowers. The block glows."
+    }
+   ]
+  }
+ ]
+}

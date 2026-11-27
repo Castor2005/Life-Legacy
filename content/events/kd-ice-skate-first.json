@@ -1,0 +1,49 @@
+{
+ "id": "kd-ice-skate-first",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "First skate",
+ "tags": [
+  "kid",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Borrowed skates, wobbly ankles, the rink smells like cold joy.",
+ "choices": [
+  {
+   "label": "Lessons package",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(80)"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Eight lessons later: crossovers. The ice is yours."
+    }
+   ]
+  },
+  {
+   "label": "Wall hugger",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You circle the rink holding the wall like family. Fun anyway."
+    }
+   ]
+  }
+ ]
+}

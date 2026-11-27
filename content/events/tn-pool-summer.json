@@ -1,0 +1,49 @@
+{
+ "id": "tn-pool-summer",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Pool pass summer",
+ "tags": [
+  "teen",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The public pool sells summer passes. The deep end waits.",
+ "choices": [
+  {
+   "label": "Swim team",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Butterfly is pain and glory. You medal in August."
+    }
+   ]
+  },
+  {
+   "label": "Guard course",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Certified. Next summer pays."
+    }
+   ]
+  }
+ ]
+}

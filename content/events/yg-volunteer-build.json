@@ -1,0 +1,50 @@
+{
+ "id": "yg-volunteer-build",
+ "minAge": 20,
+ "maxAge": 29,
+ "title": "Hammer weekends",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Weekend builds raise walls for families. Lunch provided, meaning included.",
+ "choices": [
+  {
+   "label": "Frame houses",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "9"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Walls rise by Sunday. A family gets keys because of your crew."
+    }
+   ]
+  },
+  {
+   "label": "Skilled finish work",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You learn trim and tile. The punch list fears you."
+    }
+   ]
+  }
+ ]
+}

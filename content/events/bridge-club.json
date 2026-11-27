@@ -1,0 +1,50 @@
+{
+ "id": "bridge-club",
+ "minAge": 60,
+ "maxAge": 100,
+ "title": "Fourth needed",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The community bridge club needs {{s.firstName}} as a fourth. Average age: 74. Stakes: glory.",
+ "choices": [
+  {
+   "label": "Join",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "9"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bidding wars, tea, triumph. You are the exciting young one."
+    }
+   ]
+  },
+  {
+   "label": "Pass",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "1"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You watch quiz shows instead. Peaceful."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "tn-hiking-crew",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Trail crew",
+ "tags": [
+  "teen",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The hiking club attempts the ridge loop: 12 miles, big views.",
+ "choices": [
+  {
+   "label": "Finish strong",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Summit at noon. The valley spreads out like a promise."
+    }
+   ]
+  },
+  {
+   "label": "Sweep the group",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You walk last, nobody left behind. The slow ones thank you."
+    }
+   ]
+  }
+ ]
+}

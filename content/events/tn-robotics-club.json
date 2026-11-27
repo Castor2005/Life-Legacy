@@ -1,0 +1,45 @@
+{
+ "id": "tn-robotics-club",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Robot season",
+ "tags": [
+  "teen",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Build season: six weeks, one robot, infinite pizza.",
+ "choices": [
+  {
+   "label": "Drive team",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You drive at regionals. The alliance wins silver."
+    }
+   ]
+  },
+  {
+   "label": "Pit crew",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Repairs in 90 seconds flat. The pit fears no breakdown."
+    }
+   ]
+  }
+ ]
+}

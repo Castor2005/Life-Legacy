@@ -1,0 +1,50 @@
+{
+ "id": "tantrum-mall",
+ "minAge": 2,
+ "maxAge": 4,
+ "title": "Mall meltdown",
+ "tags": [
+  "baby",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Full floor tantrum in the mall. uestion: candy. Volume: air-raid.",
+ "choices": [
+  {
+   "label": "Stay calm, carry out",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You carry the screaming burrito out with dignity."
+    }
+   ]
+  },
+  {
+   "label": "Bribe with candy",
+   "hint": "happiness+, discipline-",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "-(5)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Silence, bought for $3. A dangerous precedent."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "id": "co-viral",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "Overnight sensation",
+ "tags": [
+  "adult-life",
+  "company",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "company",
+    "truthy": true
+   },
+   {
+    "p": "company.rep",
+    "gte": 30
+   }
+  ]
+ },
+ "text": "{{s.company.name}} wakes up famous: a viral post with two million views and a queue out the door.",
+ "choices": [
+  {
+   "label": "Ride the wave",
+   "hint": "value+, fame+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.value",
+     "value": "round(s.company.value*1.15)"
+    },
+    {
+     "op": "set",
+     "path": "fame",
+     "value": "clamp(s.fame+8)"
+    },
+    {
+     "op": "set",
+     "path": "followers",
+     "value": "s.followers+(20000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Interviews, orders, chaos. Value +15%, followers flood in."
+    }
+   ]
+  },
+  {
+   "label": "Stay humble",
+   "hint": "rep+, karma+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.rep",
+     "value": "clamp(s.company.rep+6)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Same prices, same smile. The internet approves of your approving."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "id": "viral-dance",
+ "minAge": 13,
+ "maxAge": 30,
+ "title": "Dance challenge!",
+ "tags": [
+  "family",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A 15-second dance is eating the internet. Your friends dare you to post.",
+ "choices": [
+  {
+   "label": "Post it!",
+   "hint": "fame gamble",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "money",
+       "amount": "6000"
+      },
+      {
+       "op": "set",
+       "path": "fame",
+       "value": "clamp((s.fame||0)+15)"
+      },
+      {
+       "op": "set",
+       "path": "followers",
+       "value": "(s.followers||0)+30000"
+      },
+      {
+       "op": "outcome",
+       "tpl": "10M VIEWS! Brand deals flood in. +fame!"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "400 views. 380 are family. Still fun."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Cringe, skip",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "outcome",
+     "tpl": "You keep your dignity and your anonymity."
+    }
+   ]
+  }
+ ]
+}

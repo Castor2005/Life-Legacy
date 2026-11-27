@@ -1,0 +1,48 @@
+{
+ "id": "ad-patio-dreams",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Patio season",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The backyard is mud. The dream is string lights and smoke.",
+ "choices": [
+  {
+   "label": "Build it out",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Deck, lights, grill. Summers move outside permanently."
+    }
+   ]
+  },
+  {
+   "label": "Fire pit first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One fire pit, infinite nights. Best 300 dollars spent."
+    }
+   ]
+  }
+ ]
+}

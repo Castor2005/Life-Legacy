@@ -1,0 +1,60 @@
+{
+ "id": "yg-crypto-cousin",
+ "minAge": 20,
+ "maxAge": 29,
+ "title": "Cousin coin",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your cousin swears his coin will 100x. Family discount entry.",
+ "choices": [
+  {
+   "label": "Small fun stake",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "money",
+       "amount": "1500"
+      },
+      {
+       "op": "outcome",
+       "tpl": "It pumps! You sell fast, up 1,500 dollars, out forever."
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(300)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "It rugs. 300 dollars tuition to the school of hype."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Decline kindly",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You keep Thanksgiving peaceful and your savings intact."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "id": "yg-friend-startup-join",
+ "minAge": 23,
+ "maxAge": 29,
+ "title": "Friend's rocket",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your friend's startup offers equity and instant noodles.",
+ "choices": [
+  {
+   "label": "Join the rocket",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "25000"
+      },
+      {
+       "op": "outcome",
+       "tpl": "It exits! Your slice: 25,000 dollars. Noodles to nice dinners."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "It folds in eighteen months. The lessons are worth equity."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Advise nights only",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1500"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Advisor shares, spare hours. Upside without the burn."
+    }
+   ]
+  }
+ ]
+}

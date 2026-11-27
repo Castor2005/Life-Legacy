@@ -1,0 +1,54 @@
+{
+ "id": "dentist-cavity",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "First cavity",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The dentist taps the X-ray: {{s.firstName}} has a first cavity. The drill gleams.",
+ "choices": [
+  {
+   "label": "Be brave, no tears",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Twenty minutes of buzzing. Sticker, pride, numb cheek."
+    }
+   ]
+  },
+  {
+   "label": "Demand ice cream after",
+   "hint": "money-, happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(8)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(2)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The filling survives the sundae. Barely."
+    }
+   ]
+  }
+ ]
+}

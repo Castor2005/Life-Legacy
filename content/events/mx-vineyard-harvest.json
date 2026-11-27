@@ -1,0 +1,43 @@
+{
+ "id": "mx-vineyard-harvest",
+ "minAge": 22,
+ "maxAge": 70,
+ "title": "Crush season",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The vineyard needs harvest hands. Pay plus wine.",
+ "choices": [
+  {
+   "label": "Pick two weeks",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1400"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Dawn rows, sticky hands, 1,400 dollars and a case."
+    }
+   ]
+  },
+  {
+   "label": "Tasting room",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "900"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pouring and stories. Tips flow like the wine."
+    }
+   ]
+  }
+ ]
+}

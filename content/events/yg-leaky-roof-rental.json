@@ -1,0 +1,49 @@
+{
+ "id": "yg-leaky-roof-rental",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Rental roulette",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The ceiling drips. The landlord says it adds character.",
+ "choices": [
+  {
+   "label": "Demand the fix",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Documented, dated, fixed. Renter power works."
+    }
+   ]
+  },
+  {
+   "label": "Bucket and patience",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(60)"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Buckets placed, rent reduced 60 dollars. Character: tolerated."
+    }
+   ]
+  }
+ ]
+}

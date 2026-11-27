@@ -1,0 +1,49 @@
+{
+ "id": "mx-foster-teen-mentor",
+ "minAge": 25,
+ "maxAge": 65,
+ "title": "Show up",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A teen in foster care needs a steady adult. One evening weekly.",
+ "choices": [
+  {
+   "label": "Mentor weekly",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two years of Thursdays. Graduation: you cry hardest."
+    }
+   ]
+  },
+  {
+   "label": "Fund the program",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1000)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You fund outings for ten pairs. Joy multiplies."
+    }
+   ]
+  }
+ ]
+}

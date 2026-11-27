@@ -1,0 +1,48 @@
+{
+ "id": "lost-tooth",
+ "minAge": 5,
+ "maxAge": 8,
+ "title": "Wobbly tooth",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A tooth hangs by a thread at dinner.",
+ "choices": [
+  {
+   "label": "Tie it to a door!",
+   "hint": "fun",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "SLAM. Tooth flies. Tooth fairy pays $5."
+    }
+   ]
+  },
+  {
+   "label": "Let it fall naturally",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "It falls into cereal. Fairy still pays $5."
+    }
+   ]
+  }
+ ]
+}

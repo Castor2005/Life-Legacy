@@ -1,0 +1,50 @@
+{
+ "id": "bb-library-rhyme",
+ "minAge": 0,
+ "maxAge": 4,
+ "title": "Rhyme time",
+ "tags": [
+  "baby",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Library rhyme time: twenty babies, one guitar, total chaos.",
+ "choices": [
+  {
+   "label": "Sing loud",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "{{s.firstName}} claps off-beat with total commitment."
+    }
+   ]
+  },
+  {
+   "label": "Borrow ten books",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ten board books home. Bedtime is now a festival."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "mx-coffee-shop-regular",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "Usual order",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The corner cafe learns your name. Then your order. Then your life.",
+ "choices": [
+  {
+   "label": "Become regular",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ten years of usuals. The barista speaks at your wedding."
+    }
+   ]
+  },
+  {
+   "label": "Tip like family",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Generous always. The staff saves you the good seat."
+    }
+   ]
+  }
+ ]
+}

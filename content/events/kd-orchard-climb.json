@@ -1,0 +1,45 @@
+{
+ "id": "kd-orchard-climb",
+ "minAge": 6,
+ "maxAge": 11,
+ "title": "Orchard ladder duty",
+ "tags": [
+  "kid",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Harvest day: someone light must climb for the top apples.",
+ "choices": [
+  {
+   "label": "Climb carefully",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two bushels of high apples. Pie season secured."
+    }
+   ]
+  },
+  {
+   "label": "Sort and stack",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Perfect stacks, zero bruises. The market stand thrives."
+    }
+   ]
+  }
+ ]
+}

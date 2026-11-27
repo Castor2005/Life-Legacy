@@ -1,0 +1,47 @@
+{
+ "id": "yg-mentor-coffee",
+ "minAge": 22,
+ "maxAge": 29,
+ "title": "Coffee with a legend",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "A retired executive offers thirty minutes. Bring questions.",
+ "choices": [
+  {
+   "label": "Ask everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One sentence changes your five-year plan. Mentorship begins."
+    }
+   ]
+  },
+  {
+   "label": "Follow up monthly",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Monthly coffees become a career compass. Priceless."
+    }
+   ]
+  }
+ ]
+}

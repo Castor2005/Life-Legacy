@@ -1,0 +1,44 @@
+{
+ "id": "sr-pension-letter",
+ "minAge": 60,
+ "maxAge": 75,
+ "title": "The letter",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The pension statement arrives. The number must stretch decades.",
+ "choices": [
+  {
+   "label": "Budget the decades",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A plan to 95. The number holds with room to spare."
+    }
+   ]
+  },
+  {
+   "label": "Work a little",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "3000"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Consulting Fridays. 3,000 dollars extra and purpose kept."
+    }
+   ]
+  }
+ ]
+}

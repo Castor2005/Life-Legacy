@@ -1,0 +1,47 @@
+{
+ "id": "ad-mentor-others",
+ "minAge": 32,
+ "maxAge": 44,
+ "title": "Give back",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Juniors ask for your time. Calendars are full; meaning calls.",
+ "choices": [
+  {
+   "label": "Mentor two",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two careers bend upward because of your hours."
+    }
+   ]
+  },
+  {
+   "label": "Write the guide",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your playbook helps hundreds. Leverage of kindness."
+    }
+   ]
+  }
+ ]
+}

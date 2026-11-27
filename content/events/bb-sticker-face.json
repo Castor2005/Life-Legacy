@@ -1,0 +1,45 @@
+{
+ "id": "bb-sticker-face",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Sticker artist",
+ "tags": [
+  "baby",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} covers faces — yours, theirs, the cat's — in star stickers.",
+ "choices": [
+  {
+   "label": "Wear them proudly",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You go to the store starred. Nobody mentions it. Kindness."
+    }
+   ]
+  },
+  {
+   "label": "Redirect to paper",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Paper galaxies bloom. The cat is spared."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "bb-paint-hands",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Handprint gallery",
+ "tags": [
+  "baby",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Finger paint day: hands, feet, and one mysterious elbow print.",
+ "choices": [
+  {
+   "label": "Wall of fame",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A hallway gallery grows. Grandma cries happy tears."
+    }
+   ]
+  },
+  {
+   "label": "Apron discipline",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Smocks on, mess contained, art still great."
+    }
+   ]
+  }
+ ]
+}

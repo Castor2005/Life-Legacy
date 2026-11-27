@@ -1,0 +1,43 @@
+{
+ "id": "ad-basement-flood",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Indoor pool",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The basement floods at 2am. The shop-vac is ready.",
+ "choices": [
+  {
+   "label": "French drains",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(3500)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Drains and pump installed. Never again, says the warranty."
+    }
+   ]
+  },
+  {
+   "label": "DIY dry-out",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fans for a week, bleach, vigilance. Saved for 400 dollars."
+    }
+   ]
+  }
+ ]
+}

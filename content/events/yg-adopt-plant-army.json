@@ -1,0 +1,53 @@
+{
+ "id": "yg-adopt-plant-army",
+ "minAge": 18,
+ "maxAge": 27,
+ "title": "Jungle studio",
+ "tags": [
+  "adult-life",
+  "happiness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "One pothos becomes forty plants. The studio is a greenhouse.",
+ "choices": [
+  {
+   "label": "Embrace the jungle",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Forty plants, zero regrets. Air: delicious."
+    }
+   ]
+  },
+  {
+   "label": "Propagate and gift",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "80"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cuttings for everyone. You earn 80 dollars and jungle goodwill."
+    }
+   ]
+  }
+ ]
+}

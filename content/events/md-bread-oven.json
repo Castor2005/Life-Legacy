@@ -1,0 +1,43 @@
+{
+ "id": "md-bread-oven",
+ "minAge": 46,
+ "maxAge": 59,
+ "title": "Brick oven",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A backyard brick oven: weekends of fire and flour.",
+ "choices": [
+  {
+   "label": "Build it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sixty-second pizzas. The neighborhood invents reasons to visit."
+    }
+   ]
+  },
+  {
+   "label": "Classes first",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You master dough before mortar. The oven earns its keep."
+    }
+   ]
+  }
+ ]
+}

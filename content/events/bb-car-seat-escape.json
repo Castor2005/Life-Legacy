@@ -1,0 +1,49 @@
+{
+ "id": "bb-car-seat-escape",
+ "minAge": 1,
+ "maxAge": 3,
+ "title": "Escape artist",
+ "tags": [
+  "baby",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} defeats the car-seat buckle. Again.",
+ "choices": [
+  {
+   "label": "Upgrade the fortress",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(60)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New seat, new buckles, temporary peace."
+    }
+   ]
+  },
+  {
+   "label": "Bribe with songs",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sing-alongs keep the escapee seated. Barely."
+    }
+   ]
+  }
+ ]
+}

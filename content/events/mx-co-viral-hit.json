@@ -1,0 +1,70 @@
+{
+ "id": "mx-co-viral-hit",
+ "minAge": 20,
+ "maxAge": 65,
+ "title": "Overnight brand",
+ "tags": [
+  "adult-life",
+  "company"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "company",
+  "truthy": true
+ },
+ "text": "Your product explodes online. Orders 40x overnight.",
+ "choices": [
+  {
+   "label": "Scale the chaos",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "set",
+       "path": "company.cash",
+       "value": "s.company.cash+(25000)"
+      },
+      {
+       "op": "set",
+       "path": "company.rep",
+       "value": "clamp(s.company.rep+(6))"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You fulfill the flood. 25,000 dollars and a brand is born."
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "company.rep",
+       "value": "clamp(s.company.rep+(-(8)))"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You drown in orders. Refunds sting, lessons stick."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Cap the orders",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.rep",
+     "value": "clamp(s.company.rep+(4))"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Limited run, flawless delivery. Scarcity becomes strategy."
+    }
+   ]
+  }
+ ]
+}

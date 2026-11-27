@@ -1,0 +1,49 @@
+{
+ "id": "bb-pillow-fort",
+ "minAge": 2,
+ "maxAge": 4,
+ "title": "Fort architect",
+ "tags": [
+  "baby",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Couch cushions become a fortress with one very small guard.",
+ "choices": [
+  {
+   "label": "Besiege the fort",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The fort falls. Rebuilding starts before the cushions land."
+    }
+   ]
+  },
+  {
+   "label": "Pay the toll",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(5)"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One grape toll paid. Entry granted to the blanket kingdom."
+    }
+   ]
+  }
+ ]
+}

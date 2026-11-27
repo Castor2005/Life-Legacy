@@ -1,0 +1,51 @@
+{
+ "id": "car-break",
+ "minAge": 18,
+ "maxAge": 60,
+ "title": "Car dies",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "assets.carId",
+  "ne": "none"
+ },
+ "text": "The car makes THE sound and dies on the highway. Repair: $1,100.",
+ "choices": [
+  {
+   "label": "Repair it",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1100)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fixed. It purrs like nothing happened."
+    }
+   ]
+  },
+  {
+   "label": "Sell & downgrade",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1500"
+    },
+    {
+     "op": "set",
+     "path": "assets.carId",
+     "value": "\"bike\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "You sell the corpse for $1,500 and bike everywhere. Legs of steel."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "tn-viral-baking",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Baking account",
+ "tags": [
+  "teen",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your cake videos get 50k views overnight. Brands email.",
+ "choices": [
+  {
+   "label": "Post consistently",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "220"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sponsored flour arrives. You earn 220 dollars of sweet money."
+    }
+   ]
+  },
+  {
+   "label": "Stay hobby pure",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "No ads, just cake. The comments adore you anyway."
+    }
+   ]
+  }
+ ]
+}

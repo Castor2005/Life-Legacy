@@ -1,0 +1,50 @@
+{
+ "id": "bb-bubble-chase",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Bubble hunter",
+ "tags": [
+  "baby",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A bubble wand turns the yard into a hunting ground.",
+ "choices": [
+  {
+   "label": "Chase together",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Popped bubbles, tired legs, perfect afternoon."
+    }
+   ]
+  },
+  {
+   "label": "Guard the wand",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You learn bubble physics. The baby learns joy."
+    }
+   ]
+  }
+ ]
+}

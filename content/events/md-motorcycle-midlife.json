@@ -1,0 +1,48 @@
+{
+ "id": "md-motorcycle-midlife",
+ "minAge": 45,
+ "maxAge": 55,
+ "title": "Two wheels",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The motorcycle itch arrives on schedule. The course is safe and fun.",
+ "choices": [
+  {
+   "label": "Course then cruise",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(4500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Licensed, geared, careful. Sunday rides heal everything."
+    }
+   ]
+  },
+  {
+   "label": "Rent twice yearly",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(600)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two rentals, all thrill, zero garage. Itch scratched."
+    }
+   ]
+  }
+ ]
+}

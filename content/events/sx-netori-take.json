@@ -1,0 +1,82 @@
+{
+ "id": "sx-netori-take",
+ "minAge": 20,
+ "maxAge": 50,
+ "title": "Take them from him",
+ "tags": [
+  "adult-life",
+  "sex",
+  "love",
+  "status"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "An adult who's taken — married, ring and all — grinds against you at a bar and whispers: 'My spouse doesn't fuck me like you could.'",
+ "choices": [
+  {
+   "label": "Steal them that night",
+   "hint": "netori, karma-",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "randName()"
+    },
+    {
+     "op": "lovPush",
+     "name": "n"
+    },
+    {
+     "op": "xp",
+     "n": "(2)"
+    },
+    {
+     "op": "skill",
+     "delta": "6"
+    },
+    {
+     "op": "corr",
+     "delta": "12"
+    },
+    {
+     "op": "kink",
+     "id": "cuckold"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(12)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "14"
+    },
+    {
+     "op": "set",
+     "path": "fame",
+     "value": "clamp((s.fame||0)+3)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hotel stairwell: you eat them out / get sucked raw, then fuck them with their spouse calling their phone. They cum biting your shoulder to stay quiet. Stolen."
+    }
+   ]
+  },
+  {
+   "label": "Walk away",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You remove their hand. 'Not with someone's spouse.' They stare after you."
+    }
+   ]
+  }
+ ]
+}

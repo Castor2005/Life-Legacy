@@ -1,0 +1,50 @@
+{
+ "id": "tn-history-fair",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "History fair",
+ "tags": [
+  "teen",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your project: the town's forgotten mill fire of 1911.",
+ "choices": [
+  {
+   "label": "Archive dive",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(4))"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Newspaper scans, interviews, a standing ovation. Ribbon: first."
+    }
+   ]
+  },
+  {
+   "label": "Drama version",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A ten-minute play. The mill burns nightly to applause."
+    }
+   ]
+  }
+ ]
+}

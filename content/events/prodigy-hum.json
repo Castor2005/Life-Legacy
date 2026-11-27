@@ -1,0 +1,40 @@
+{
+ "id": "prodigy-hum",
+ "minAge": 3,
+ "maxAge": 5,
+ "title": "Little melody",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} hums a perfect little melody nobody taught them.",
+ "choices": [
+  {
+   "label": "Nurture it",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A toy piano appears. The house fills with plinks."
+    }
+   ]
+  },
+  {
+   "label": "Cute, moving on",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "outcome",
+     "tpl": "The melody fades like a dream."
+    }
+   ]
+  }
+ ]
+}

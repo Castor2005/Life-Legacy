@@ -1,0 +1,50 @@
+{
+ "id": "kd-tutor-flip",
+ "minAge": 8,
+ "maxAge": 12,
+ "title": "Tutor flip",
+ "tags": [
+  "kid",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "You are great at math. A struggling star athlete needs help.",
+ "choices": [
+  {
+   "label": "Trade skills",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fractions for free throws. Both grades and game improve."
+    }
+   ]
+  },
+  {
+   "label": "Study group",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Five kids, one table, pizza. Everyone passes."
+    }
+   ]
+  }
+ ]
+}

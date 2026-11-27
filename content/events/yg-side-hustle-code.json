@@ -1,0 +1,49 @@
+{
+ "id": "yg-side-hustle-code",
+ "minAge": 20,
+ "maxAge": 29,
+ "title": "Freelance nights",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A client offers weekend work at real rates. Sleep is negotiable.",
+ "choices": [
+  {
+   "label": "Take the contract",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "2400"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(4)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Six weekends, 2,400 dollars, one exhausted triumph."
+    }
+   ]
+  },
+  {
+   "label": "Protect weekends",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rest chosen. Monday-you arrives sharp and grateful."
+    }
+   ]
+  }
+ ]
+}

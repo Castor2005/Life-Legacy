@@ -1,0 +1,45 @@
+{
+ "id": "kd-frog-pond",
+ "minAge": 5,
+ "maxAge": 10,
+ "title": "Frog congress",
+ "tags": [
+  "kid",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The pond is loud with frogs and {{s.firstName}} holds a census.",
+ "choices": [
+  {
+   "label": "Count them all",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Forty-one frogs. One toad. Science served."
+    }
+   ]
+  },
+  {
+   "label": "Build a log dock",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Frogs approve of the new real estate."
+    }
+   ]
+  }
+ ]
+}

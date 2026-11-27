@@ -1,0 +1,44 @@
+{
+ "id": "mx-midnight-museum-gala",
+ "minAge": 25,
+ "maxAge": 70,
+ "title": "Gala night",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A museum gala: gowns, auctions, open bars of culture.",
+ "choices": [
+  {
+   "label": "Bid on art",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(900)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A small print, won fairly. It hangs like a trophy."
+    }
+   ]
+  },
+  {
+   "label": "Dance the close",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Last dance, marble halls. Culture with a beat."
+    }
+   ]
+  }
+ ]
+}

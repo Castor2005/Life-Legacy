@@ -1,0 +1,45 @@
+{
+ "id": "kd-subway-adventure",
+ "minAge": 8,
+ "maxAge": 12,
+ "title": "Transit expedition",
+ "tags": [
+  "kid",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Dad lets you navigate the whole transit map alone together.",
+ "choices": [
+  {
+   "label": "Navigate flawlessly",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three transfers, zero panic. Navigator certified."
+    }
+   ]
+  },
+  {
+   "label": "Talk to strangers",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A saxophonist teaches you a scale. The ride sings."
+    }
+   ]
+  }
+ ]
+}

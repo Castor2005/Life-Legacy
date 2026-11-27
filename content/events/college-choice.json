@@ -1,0 +1,123 @@
+{
+ "id": "college-choice",
+ "minAge": 18,
+ "maxAge": 18,
+ "title": "After graduation…",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Diploma in hand (grades: {{s.education.grades}}). The future knocks.",
+ "choices": [
+  {
+   "label": "University ($28k/yr x4)",
+   "hint": "needs money/grades",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "all": [
+       {
+        "p": "education.grades",
+        "gte": 60
+       },
+       {
+        "any": [
+         {
+          "p": "money",
+          "gte": 5000
+         },
+         {
+          "p": "stats.smarts",
+          "gte": 55
+         }
+        ]
+       }
+      ]
+     },
+     "then": [
+      {
+       "op": "money",
+       "amount": "-(28000)"
+      },
+      {
+       "op": "set",
+       "path": "education.inCollege",
+       "value": "true"
+      },
+      {
+       "op": "set",
+       "path": "education.collegeYears",
+       "value": "0"
+      },
+      {
+       "op": "set",
+       "path": "flags.student",
+       "value": "true"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Accepted! Dorm, debt, dreams. College begins."
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "Rejected / can't afford it. Community college or work instead?"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Community college (cheap)",
+   "hint": "safe+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(3000)"
+    },
+    {
+     "op": "set",
+     "path": "education.inCollege",
+     "value": "true"
+    },
+    {
+     "op": "set",
+     "path": "education.collegeYears",
+     "value": "0"
+    },
+    {
+     "op": "set",
+     "path": "flags.student",
+     "value": "true"
+    },
+    {
+     "op": "set",
+     "path": "flags.community",
+     "value": "true"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Smart frugal move. Same credits, tiny debt."
+    }
+   ]
+  },
+  {
+   "label": "Skip school, work now",
+   "hint": "money now",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "4000"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Straight to work. The school of life charges different fees."
+    }
+   ]
+  }
+ ]
+}

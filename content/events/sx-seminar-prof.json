@@ -1,0 +1,77 @@
+{
+ "id": "sx-seminar-prof",
+ "minAge": 18,
+ "maxAge": 30,
+ "title": "Office hours",
+ "tags": [
+  "adult-life",
+  "sex"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "flags",
+    "truthy": true
+   },
+   {
+    "p": "flags.student",
+    "truthy": true
+   }
+  ]
+ },
+ "text": "Your adult night-school professor offers private tutoring: 'My place. 9pm. Bring nothing but hunger to learn.'",
+ "choices": [
+  {
+   "label": "Go learn everything",
+   "hint": "grades+sex",
+   "effects": [
+    {
+     "op": "xp",
+     "n": "(2)"
+    },
+    {
+     "op": "skill",
+     "delta": "8"
+    },
+    {
+     "op": "corr",
+     "delta": "8"
+    },
+    {
+     "op": "kink",
+     "id": "roleplay"
+    },
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+6)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Books slide off the table. You fuck on the essays — mouth, fingers, deep cumming — and your grades mysteriously rise. Tutoring works."
+    }
+   ]
+  },
+  {
+   "label": "Keep it academic",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+4)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You ace the exam cold. The professor grades a little sadly."
+    }
+   ]
+  }
+ ]
+}

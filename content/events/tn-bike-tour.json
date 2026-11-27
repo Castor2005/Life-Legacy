@@ -1,0 +1,64 @@
+{
+ "id": "tn-bike-tour",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Century ride",
+ "tags": [
+  "teen",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The cycling club plans 100 miles. Your longest is 30.",
+ "choices": [
+  {
+   "label": "Train up",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.fitness>50"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "9"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You finish all 100. The medal weighs a pound."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Sixty miles, then the sag wagon. Respect earned anyway."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Support driver",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Water, snacks, cheers. Finishers hug you first."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "kd-dog-show-jr",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "Junior dog show",
+ "tags": [
+  "kid",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The community dog show has a kid-handler class. Your dog is willing.",
+ "choices": [
+  {
+   "label": "Train for weeks",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sit, stay, strut. Ribbon: blue. Dog: smug."
+    }
+   ]
+  },
+  {
+   "label": "Costume class",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hot-dog costume on a hot dog dog. Crowd favorite."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "sr-hearing-aids",
+ "minAge": 68,
+ "maxAge": 95,
+ "title": "Turn it up",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Everyone mumbles. The test says otherwise.",
+ "choices": [
+  {
+   "label": "Get the aids",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Birds return. Conversations return. The world unmutes."
+    }
+   ]
+  },
+  {
+   "label": "Strategic seating",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Corners, quiet rooms, facing faces. Tactics work."
+    }
+   ]
+  }
+ ]
+}

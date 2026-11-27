@@ -1,0 +1,53 @@
+{
+ "id": "yg-proposal-plan",
+ "minAge": 24,
+ "maxAge": 29,
+ "title": "Ring math",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "dating"
+ },
+ "text": "Two years in. The question glows on the horizon.",
+ "choices": [
+  {
+   "label": "Plan it perfectly",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "partnerMarry"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "14"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sunset, shaking knees, yes. The photos make grandparents weep."
+    }
+   ]
+  },
+  {
+   "label": "Talk first",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "partnerRel",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Long talks first. Aligned, excited, ready when ready."
+    }
+   ]
+  }
+ ]
+}

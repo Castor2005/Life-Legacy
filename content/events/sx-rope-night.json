@@ -1,0 +1,69 @@
+{
+ "id": "sx-rope-night",
+ "minAge": 20,
+ "maxAge": 55,
+ "title": "Rope and begging",
+ "tags": [
+  "adult-life",
+  "sex"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Ropes, blindfold, safe-word agreed like adults. Your lover breathes: 'Tie me up and use me.'",
+ "choices": [
+  {
+   "label": "Tie and ruin them",
+   "hint": "bondage+",
+   "effects": [
+    {
+     "op": "xp",
+     "n": "(2)"
+    },
+    {
+     "op": "skill",
+     "delta": "8"
+    },
+    {
+     "op": "corr",
+     "delta": "8"
+    },
+    {
+     "op": "kink",
+     "id": "bondage"
+    },
+    {
+     "op": "kink",
+     "id": "edging"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "12"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bound, blind, edged for an hour — vibrator/cock denied until they sob — then you fuck them through the most violent cumming of their life. Rope marks for days, worn proudly."
+    }
+   ]
+  },
+  {
+   "label": "Gentle ties",
+   "hint": "sensual",
+   "effects": [
+    {
+     "op": "kink",
+     "id": "sensual"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Loose silk, slow fucking, constant check-ins. They cum crying happy."
+    }
+   ]
+  }
+ ]
+}

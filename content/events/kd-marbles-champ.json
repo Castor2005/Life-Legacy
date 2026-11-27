@@ -1,0 +1,62 @@
+{
+ "id": "kd-marbles-champ",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "Marble season",
+ "tags": [
+  "kid",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Marble season: keepers rules, and your shooter is chipped.",
+ "choices": [
+  {
+   "label": "Play for keeps",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You win the galaxy marble. Displayed, never played."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(4)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Lost the shooter. A hard lesson in a circle of dirt."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Practice trick shots",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bank shots, spins, applause from the fence."
+    }
+   ]
+  }
+ ]
+}

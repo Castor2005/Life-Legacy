@@ -1,0 +1,46 @@
+{
+ "id": "md-mentor-startup",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Gray hair capital",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Founders want your scar tissue. Advisory shares offered.",
+ "choices": [
+  {
+   "label": "Advise three",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "4000"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three startups, real equity. One pays like a lottery."
+    }
+   ]
+  },
+  {
+   "label": "Teach the course",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your operator course fills. Hundreds learn your hard lessons cheap."
+    }
+   ]
+  }
+ ]
+}

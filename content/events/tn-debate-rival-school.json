@@ -1,0 +1,45 @@
+{
+ "id": "tn-debate-rival-school",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Rival school match",
+ "tags": [
+  "teen",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The cross-town rivals talk trash. The motion: school uniforms.",
+ "choices": [
+  {
+   "label": "Crush with prep",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your rebuttal silences their captain. Trophy stays home."
+    }
+   ]
+  },
+  {
+   "label": "Befriend them after",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pizza with the enemy. Next year: rematch and friends."
+    }
+   ]
+  }
+ ]
+}

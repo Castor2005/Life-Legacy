@@ -1,0 +1,53 @@
+{
+ "id": "lost-wallet-kid",
+ "minAge": 8,
+ "maxAge": 14,
+ "title": "Wallet on the sidewalk",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A fat wallet on the sidewalk. $240 in cash, an ID, family photos.",
+ "choices": [
+  {
+   "label": "Return it",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "12"
+    },
+    {
+     "op": "money",
+     "amount": "20"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Owner cries, gives $20 reward. Karma soars."
+    }
+   ]
+  },
+  {
+   "label": "Keep the cash",
+   "hint": "money+, karma-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "240"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(14)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New games! And a weird hollow feeling."
+    }
+   ]
+  }
+ ]
+}

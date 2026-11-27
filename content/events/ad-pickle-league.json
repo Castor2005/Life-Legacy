@@ -1,0 +1,45 @@
+{
+ "id": "ad-pickle-league",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Dink league",
+ "tags": [
+  "adult-life",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The rec league needs a sub. The paddle is provided.",
+ "choices": [
+  {
+   "label": "Sub all season",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You start by playoffs. The kitchen is your kingdom."
+    }
+   ]
+  },
+  {
+   "label": "Drill weekly",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Third-shot drops mastered. Partners request you."
+    }
+   ]
+  }
+ ]
+}

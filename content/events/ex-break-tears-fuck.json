@@ -1,0 +1,148 @@
+{
+ "id": "ex-break-tears-fuck",
+ "minAge": 20,
+ "maxAge": 55,
+ "title": "Cry for me",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "sex",
+      "truthy": true
+     },
+     {
+      "p": "sex.claims",
+      "truthy": true
+     }
+    ]
+   },
+   {
+    "p": "sex.claims.length",
+    "truthy": true
+   }
+  ]
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "c",
+    "expr": "s.sex&&s.sex.claims&&s.sex.claims.length?s.sex.claims[s.sex.claims.length-1]:null"
+   },
+   {
+    "name": "n",
+    "expr": "c?c.name:\"your girl\""
+   }
+  ],
+  "template": "You push {{n}} past every limit at once — spanked red, hair pulled, called worthless — till she breaks down sobbing mid-fuck. 'Don't stop,' she gasps through tears. 'Don't you dare stop.'"
+ },
+ "choices": [
+  {
+   "label": "Fuck her through the tears",
+   "hint": "CRUEL break",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c",
+     "expr": "s.sex.claims[s.sex.claims.length-1]"
+    },
+    {
+     "op": "let",
+     "name": "nm",
+     "expr": "c.name"
+    },
+    {
+     "op": "histLog",
+     "name": "nm",
+     "acts": [
+      "\"rough\"",
+      "\"degradation\""
+     ]
+    },
+    {
+     "op": "kink",
+     "id": "degradation"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "broken",
+     "value": "clamp(c.broken+18)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "obedience",
+     "value": "clamp(c.obedience+12)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "obsession",
+     "value": "clamp(c.obsession+10)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "own",
+     "value": "clamp(c.own+10)"
+    },
+    {
+     "op": "corr",
+     "delta": "10"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(10)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tears on your chest, mascara ruined, fucked harder with every sob till the crying turns to screaming cums — three in a row, shaking, clinging. Will {{c.broken}}. She thanks you after. Means it. That's the scary part."
+    }
+   ]
+  },
+  {
+   "label": "Stop and hold her",
+   "hint": "aftercare+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c2",
+     "expr": "s.sex.claims[s.sex.claims.length-1]"
+    },
+    {
+     "op": "setv",
+     "target": "c2",
+     "path": "obsession",
+     "value": "clamp(c2.obsession+10)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You stop mid-thrust and wrap her. Crying slows. Vanilla slow_make love after. Trust deepens strangely."
+    }
+   ]
+  }
+ ]
+}

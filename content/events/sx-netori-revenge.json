@@ -1,0 +1,81 @@
+{
+ "id": "sx-netori-revenge",
+ "minAge": 21,
+ "maxAge": 60,
+ "title": "Revenge bed",
+ "tags": [
+  "adult-life",
+  "sex",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Still raw from being cheated on, you find their best friend — adult, willing, vengeful — who says: 'Fuck me. Make them feel it.'",
+ "choices": [
+  {
+   "label": "Revenge fuck",
+   "hint": "corruption+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "randName()"
+    },
+    {
+     "op": "lovPush",
+     "name": "n"
+    },
+    {
+     "op": "xp",
+     "n": "(2)"
+    },
+    {
+     "op": "skill",
+     "delta": "5"
+    },
+    {
+     "op": "corr",
+     "delta": "10"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(10)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "scandal",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You fuck {{n}} hard on your cheater's favorite sheets, cumming with spite and relief. Photos sent. War declared."
+    }
+   ]
+  },
+  {
+   "label": "Heal clean",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You go home and sleep alone. The high road is lonely but quiet."
+    }
+   ]
+  }
+ ]
+}

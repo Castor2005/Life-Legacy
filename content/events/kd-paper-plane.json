@@ -1,0 +1,45 @@
+{
+ "id": "kd-paper-plane",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Paper plane league",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Lunch recess hosts the unauthorized paper plane championship.",
+ "choices": [
+  {
+   "label": "Engineer a dart",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your dart flies the full yard. Legend status."
+    }
+   ]
+  },
+  {
+   "label": "Stunt glider",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Loops! Applause! It lands in the soup. Worth it."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "tn-snowboard-trip",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Powder day",
+ "tags": [
+  "teen",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The mountain gets two feet overnight. The bus leaves at six.",
+ "choices": [
+  {
+   "label": "Ride everything",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Face shots all day. Legs gone, soul full."
+    }
+   ]
+  },
+  {
+   "label": "Teach a friend",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Falling leaf to linked turns. Your student rides by lunch."
+    }
+   ]
+  }
+ ]
+}

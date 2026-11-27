@@ -1,0 +1,109 @@
+{
+ "id": "kid-heartbreak",
+ "minAge": 30,
+ "maxAge": 65,
+ "title": "First heartbreak",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "some": {
+   "arr": "relationships.children",
+   "where": {
+    "all": [
+     {
+      "p": "$it.age",
+      "gte": 14
+     },
+     {
+      "p": "$it.age",
+      "lte": 19
+     }
+    ]
+   }
+  }
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "k",
+    "expr": "where(whereAll(s.relationships.children||[],\"age\",\"gte\",14),\"age\",\"lte\",19)"
+   }
+  ],
+  "template": "{{k?k.name:\"Your teen\"}} comes home dry-eyed in the way that means crying happened elsewhere."
+ },
+ "choices": [
+  {
+   "label": "Just listen",
+   "hint": "rel+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "k",
+     "expr": "where(whereAll(s.relationships.children,\"age\",\"gte\",14),\"age\",\"lte\",19)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "k",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "k",
+       "path": "rel",
+       "value": "clamp(k.rel+8)"
+      }
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two hours, one tub of ice cream. They'll survive — and remember you were there."
+    }
+   ]
+  },
+  {
+   "label": "Tough love",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "let",
+     "name": "k",
+     "expr": "where(whereAll(s.relationships.children,\"age\",\"gte\",14),\"age\",\"lte\",19)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "k",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "k",
+       "path": "rel",
+       "value": "clamp(k.rel-4)"
+      }
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(2)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "'Plenty of fish' lands exactly as badly as expected."
+    }
+   ]
+  }
+ ]
+}

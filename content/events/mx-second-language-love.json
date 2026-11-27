@@ -1,0 +1,65 @@
+{
+ "id": "mx-second-language-love",
+ "minAge": 20,
+ "maxAge": 60,
+ "title": "Accent tutoring",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "Language exchange: your English for their everything-else.",
+ "choices": [
+  {
+   "label": "Meet weekly",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "partnerSet",
+       "name": "partnerName()",
+       "rel": "70",
+       "age": "s.age"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Verbs conjugate; so do you two. Love in two languages."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Fluent-ish and friends. The language stays; the spark stays friendly."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Group classes",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Steady progress, zero drama. The certificate arrives."
+    }
+   ]
+  }
+ ]
+}

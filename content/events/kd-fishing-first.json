@@ -1,0 +1,45 @@
+{
+ "id": "kd-fishing-first",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "First catch",
+ "tags": [
+  "kid",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Dawn at the lake. The bobber twitches. This is the moment.",
+ "choices": [
+  {
+   "label": "Set the hook",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A sunfish! Held high, photographed, released."
+    }
+   ]
+  },
+  {
+   "label": "Catch and release vow",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Every fish swims home. The lake remembers kindness."
+    }
+   ]
+  }
+ ]
+}

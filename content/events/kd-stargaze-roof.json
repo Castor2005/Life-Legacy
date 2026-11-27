@@ -1,0 +1,45 @@
+{
+ "id": "kd-stargaze-roof",
+ "minAge": 7,
+ "maxAge": 12,
+ "title": "Roof observatory",
+ "tags": [
+  "kid",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Blankets on the garage roof, meteor shower at midnight.",
+ "choices": [
+  {
+   "label": "Count them all",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sixty-two meteors. Three wishes used wisely."
+    }
+   ]
+  },
+  {
+   "label": "Tell the myths",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Orion, Cassiopeia, and your own invented hero."
+    }
+   ]
+  }
+ ]
+}

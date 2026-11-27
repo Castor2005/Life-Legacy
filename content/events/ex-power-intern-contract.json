@@ -1,0 +1,128 @@
+{
+ "id": "ex-power-intern-contract",
+ "minAge": 25,
+ "maxAge": 60,
+ "title": "Review contract",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "job": "employed"
+   },
+   {
+    "p": "jobId",
+    "ne": "unemployed"
+   }
+  ]
+ },
+ "text": "The adult intern slides a 'personal review form' across your desk — consent boxes, safe words, signature line: 'I want the real mentorship. The one with the collar underneath.'",
+ "choices": [
+  {
+   "label": "Sign as owner",
+   "hint": "contract OWN",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "randName()"
+    },
+    {
+     "op": "call",
+     "fn": "sex.ownClaim",
+     "as": "c",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "via": {
+       "expr": "\"legal\""
+      },
+      "ob": {
+       "expr": "20"
+      },
+      "os": {
+       "expr": "22"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "name": "n",
+     "delta": "12"
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "\"oral\"",
+      "\"bondage\"",
+      "\"rough\""
+     ]
+    },
+    {
+     "op": "kink",
+     "id": "submission"
+    },
+    {
+     "op": "levOn",
+     "target": "n",
+     "secret": "\"signed contract\""
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "levOn",
+     "value": "\"signed contract\""
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(8)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "14"
+    },
+    {
+     "op": "set",
+     "path": "performance",
+     "value": "clamp(s.performance+6)"
+    },
+    {
+     "op": "scandal",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Signed, witnessed by nobody, enforced by lust: under-desk training daily, weekend collar sessions, reviews written on her skin in marker. The best hire you ever broke in (own {{c.own}})."
+    }
+   ]
+  },
+  {
+   "label": "HR mentorship",
+   "hint": "safe+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "performance",
+     "value": "clamp(s.performance+5)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Twelve honest sessions. She thrives. The form gets shredded, unread."
+    }
+   ]
+  }
+ ]
+}

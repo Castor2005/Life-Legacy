@@ -1,0 +1,57 @@
+{
+ "id": "sx-cop-lights",
+ "minAge": 18,
+ "maxAge": 60,
+ "title": "Red and blue",
+ "tags": [
+  "adult-life",
+  "sex",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Flashing lights. The adult officer leans in: 'I can write this up — or you can make me forget it in my back seat.'",
+ "choices": [
+  {
+   "label": "Back-seat deal",
+   "hint": "no ticket, scandal",
+   "effects": [
+    {
+     "op": "xp",
+     "n": "(1)"
+    },
+    {
+     "op": "corr",
+     "delta": "9"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(6)"
+    },
+    {
+     "op": "scandal",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You climb in — frantic mouth and hands, uniforms half-off, cumming fast while the radio crackles. Ticket vanishes. Shame lingers."
+    }
+   ]
+  },
+  {
+   "label": "Take the ticket",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(320)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You take the $320 fine and keep your pants on. Boring. Clean."
+    }
+   ]
+  }
+ ]
+}

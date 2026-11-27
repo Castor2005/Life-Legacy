@@ -1,0 +1,44 @@
+{
+ "id": "mx-house-fire-scare",
+ "minAge": 18,
+ "maxAge": 75,
+ "title": "Grease fire",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The pan ignites. The alarm screams. Seconds matter.",
+ "choices": [
+  {
+   "label": "Lid it fast",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lid on, stove off, heart hammering. Disaster: declined."
+    }
+   ]
+  },
+  {
+   "label": "Extinguisher now",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Foam everywhere, kitchen saved. 200 dollars of reset."
+    }
+   ]
+  }
+ ]
+}

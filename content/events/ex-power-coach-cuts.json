@@ -1,0 +1,100 @@
+{
+ "id": "ex-power-coach-cuts",
+ "minAge": 22,
+ "maxAge": 55,
+ "title": "Starting lineup",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The adult athlete stays after practice, sports bra soaked: 'Coach, I'll do extra drills. Private ones. Whatever earns the start.'",
+ "choices": [
+  {
+   "label": "Private drills",
+   "hint": "power take",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "randName()"
+    },
+    {
+     "op": "call",
+     "fn": "sex.ownClaim",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "via": {
+       "expr": "\"claim\""
+      },
+      "ob": {
+       "expr": "22"
+      },
+      "os": {
+       "expr": "20"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "name": "n",
+     "delta": "10"
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "\"rough\"",
+      "\"vanilla\""
+     ]
+    },
+    {
+     "op": "kink",
+     "id": "power"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "12"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(8)"
+    },
+    {
+     "op": "scandal",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Locker room after hours: whistle out, cock out — drilled on the bench till her legs shake, then fucked standing against the lockers, cumming with her hand over her own mouth. Starter. Yours."
+    }
+   ]
+  },
+  {
+   "label": "Run laps",
+   "hint": "coach clean",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Suicides till she pukes. She earns it honest. Team respects you."
+    }
+   ]
+  }
+ ]
+}

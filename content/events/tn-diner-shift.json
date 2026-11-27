@@ -1,0 +1,49 @@
+{
+ "id": "tn-diner-shift",
+ "minAge": 15,
+ "maxAge": 17,
+ "title": "Diner nights",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The all-night diner hires weekend help. Coffee flows like a river.",
+ "choices": [
+  {
+   "label": "Work the rush",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "290"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Midnight crowds, big tips. You bank 290 dollars."
+    }
+   ]
+  },
+  {
+   "label": "Regular whisperer",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You learn forty orders by heart. The diner loves you."
+    }
+   ]
+  }
+ ]
+}

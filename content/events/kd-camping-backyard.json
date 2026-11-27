@@ -1,0 +1,45 @@
+{
+ "id": "kd-camping-backyard",
+ "minAge": 5,
+ "maxAge": 11,
+ "title": "Backyard expedition",
+ "tags": [
+  "kid",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A tent, flashlights, and the wild backyard after dark.",
+ "choices": [
+  {
+   "label": "Night watch",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Owls, crickets, one suspicious raccoon. All logged."
+    }
+   ]
+  },
+  {
+   "label": "Ghost stories",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The Sock Ghost tale becomes family canon."
+    }
+   ]
+  }
+ ]
+}

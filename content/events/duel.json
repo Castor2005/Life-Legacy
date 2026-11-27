@@ -1,0 +1,85 @@
+{
+ "id": "duel",
+ "minAge": 18,
+ "maxAge": 50,
+ "title": "Demanded satisfaction?!",
+ "tags": [
+  "adult-life",
+  "status"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A hothead demands a duel — paintball at dawn, honor at stake.",
+ "choices": [
+  {
+   "label": "Accept (brave!)",
+   "hint": "risky prestige",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "any": [
+       {
+        "all": [
+         {
+          "p": "traits",
+          "truthy": true
+         },
+         {
+          "expr": "s.traits.includes(\"brave\")"
+         }
+        ]
+       },
+       {
+        "p": "stats.fitness",
+        "gt": 60
+       }
+      ]
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "prestige",
+       "value": "(s.prestige||0)+25"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You win cleanly and shake hands. Songs will be sung. +25 prestige!"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(14)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Welts everywhere. Honor intact, skin not."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Laugh it off",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You buy them a coffee instead. Legends, diffused."
+    }
+   ]
+  }
+ ]
+}

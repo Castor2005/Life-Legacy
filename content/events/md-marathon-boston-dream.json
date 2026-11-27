@@ -1,0 +1,64 @@
+{
+ "id": "md-marathon-boston-dream",
+ "minAge": 45,
+ "maxAge": 55,
+ "title": "Qualifier chase",
+ "tags": [
+  "adult-life",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The qualifying time is four minutes away. One training cycle.",
+ "choices": [
+  {
+   "label": "Chase it",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.fitness>60"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "9"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Qualified! The jacket fits like destiny."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Missed by ninety seconds. Next cycle: yours."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Run for joy",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "No watch, all views. Running remembered as play."
+    }
+   ]
+  }
+ ]
+}

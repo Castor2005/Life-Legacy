@@ -1,0 +1,49 @@
+{
+ "id": "yg-band-tour-van",
+ "minAge": 20,
+ "maxAge": 29,
+ "title": "Van tour",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Six cities, one van, your band's first real tour.",
+ "choices": [
+  {
+   "label": "Drive the miles",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "800"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Floor-sleeping, gas-station glory. You sell merch and break even plus."
+    }
+   ]
+  },
+  {
+   "label": "Document it",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The tour film gets 100k views. Next tour: actual beds."
+    }
+   ]
+  }
+ ]
+}

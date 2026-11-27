@@ -1,0 +1,180 @@
+{
+ "id": "ow-preg-slip",
+ "minAge": 20,
+ "maxAge": 42,
+ "title": "The test (protected)",
+ "tags": [
+  "adult-life",
+  "sex",
+  "ownership",
+  "love",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "sex",
+      "truthy": true
+     },
+     {
+      "p": "sex.protection",
+      "truthy": true
+     }
+    ]
+   },
+   {
+    "p": "sex.partners",
+    "gte": 1
+   }
+  ]
+ },
+ "text": "Protection was ON — pills, condoms, care. And yet: two weeks late. The test sits on the sink like a bomb.",
+ "choices": [
+  {
+   "label": "Keep the accident",
+   "hint": "accidental birth?",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "s.relationships.partner?s.relationships.partner.name:s.sex.lovers[s.sex.lovers.length-1]||randName()"
+    },
+    {
+     "op": "call",
+     "fn": "sex.preg",
+     "as": "pr",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "mult": {
+       "expr": "1"
+      },
+      "ctrl": {
+       "expr": "\"accidental\""
+      }
+     }
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "pr.indexOf(\"born\")===0"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Positive — and kept. Nine months later {{pr.slice(5)}} arrives, conceived ACCIDENTAL despite the rubber. Love, anyway."
+      }
+     ],
+     "else": [
+      {
+       "op": "let",
+       "name": "c",
+       "expr": "null"
+      },
+      {
+       "op": "forClaims",
+       "idxAs": "i",
+       "body": [
+        {
+         "op": "branch",
+         "cond": {
+          "expr": "s.sex.claims[i].name===n"
+         },
+         "then": [
+          {
+           "op": "let",
+           "name": "c",
+           "expr": "s.sex.claims[i]"
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "op": "branch",
+       "cond": {
+        "v": "c",
+        "truthy": true
+       },
+       "then": [
+        {
+         "op": "setv",
+         "target": "c",
+         "path": "preg.state",
+         "value": "\"pregnant\""
+        },
+        {
+         "op": "setv",
+         "target": "c",
+         "path": "preg.ctrl",
+         "value": "\"accidental\""
+        }
+       ]
+      },
+      {
+       "op": "outcome",
+       "tpl": "Positive stick. {{n}} is PREGNANT (accidental) — the 4% found you. Nine months to decide everything."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Morning-after",
+   "hint": "prevented $",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(180)"
+    },
+    {
+     "op": "pregScares"
+    },
+    {
+     "op": "let",
+     "name": "n2",
+     "expr": "s.relationships.partner?s.relationships.partner.name:s.sex.lovers[s.sex.lovers.length-1]||randName()"
+    },
+    {
+     "op": "forClaims",
+     "idxAs": "j",
+     "body": [
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.sex.claims[j].name===n2"
+       },
+       "then": [
+        {
+         "op": "claimPath",
+         "ref": "$it",
+         "path": "preg.state",
+         "value": "\"prevented\""
+        },
+        {
+         "op": "claimPath",
+         "ref": "$it",
+         "path": "preg.ctrl",
+         "value": "\"prevented\""
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pharmacy sprint $180, bitter pill, held breath. Bleed comes. PREVENTED. You both swear: double protection from now on."
+    }
+   ]
+  }
+ ]
+}

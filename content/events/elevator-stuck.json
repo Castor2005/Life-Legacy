@@ -1,0 +1,50 @@
+{
+ "id": "elevator-stuck",
+ "minAge": 18,
+ "maxAge": 80,
+ "title": "Between floors",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The elevator jerks, sighs, and traps {{s.firstName}} between floors. Four strangers. Forty minutes.",
+ "choices": [
+  {
+   "label": "Lead the calm",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Stories, shared mints, new friends. The doors open to applause."
+    }
+   ]
+  },
+  {
+   "label": "Mash every button",
+   "hint": "panic",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(8)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nothing happens faster. Everyone pretends not to stare."
+    }
+   ]
+  }
+ ]
+}

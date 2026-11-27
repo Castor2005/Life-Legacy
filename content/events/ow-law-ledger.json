@@ -1,0 +1,126 @@
+{
+ "id": "ow-law-ledger",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "The ledger of this land",
+ "tags": [
+  "adult-life",
+  "sex",
+  "ownership",
+  "status"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": {
+  "lets": [
+   {
+    "name": "c",
+    "expr": "s.country||\"this land\""
+   }
+  ],
+  "template": "A fixer in {{c}} lays it out over tea: where collared households can be REGISTERED with papers — and where the state bans it outright, so ownership only exists if you break someone's will or they give it freely. You check where you stand."
+ },
+ "choices": [
+  {
+   "label": "Study the registry",
+   "hint": "law+",
+   "effects": [
+    {
+     "op": "call",
+     "fn": "law.check",
+     "as": "L"
+    },
+    {
+     "op": "lawNote",
+     "label": "L.label"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "L.allows",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "prestige",
+       "value": "(s.prestige||0)+6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You learn the registry path cold ({{L.label}}). Papers, witnesses, a seal. If you want someone legally, you know the door. +6 prestige."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-(3)"
+      },
+      {
+       "op": "corr",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Banned here ({{L.label}}). So be it — you study the other two roads instead: breaking, and being chosen. Corruption +4."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Ask about harems",
+   "hint": "harem law",
+   "effects": [
+    {
+     "op": "call",
+     "fn": "law.check",
+     "as": "L2"
+    },
+    {
+     "op": "lawNote",
+     "label": "L2.label"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "L2.harem",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "kink",
+       "id": "poly"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Harems can be registered here, one roof, ranked names ({{L2.label}}). Your pulse quickens at the thought of an alpha and a rotation."
+      }
+     ],
+     "else": [
+      {
+       "op": "sexset",
+       "path": "haremTension",
+       "value": "clamp(s.sex.haremTension+6)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Harems are underground here ({{L2.label}}). Keep two lovers and the town will call it a scandal; keep three and it calls the police. Tension +6."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

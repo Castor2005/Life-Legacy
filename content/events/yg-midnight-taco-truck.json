@@ -1,0 +1,48 @@
+{
+ "id": "yg-midnight-taco-truck",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Taco truck o'clock",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Midnight, downtown, the legendary truck with the endless line.",
+ "choices": [
+  {
+   "label": "Wait the line",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(14)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Al pastor at 1am. The line was the appetizer. Worth it."
+    }
+   ]
+  },
+  {
+   "label": "Bring the crew",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(40)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Four friends, one feast. The truck becomes tradition."
+    }
+   ]
+  }
+ ]
+}

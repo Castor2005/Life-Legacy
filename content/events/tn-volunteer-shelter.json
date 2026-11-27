@@ -1,0 +1,51 @@
+{
+ "id": "tn-volunteer-shelter",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Shelter weekends",
+ "tags": [
+  "teen",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The animal shelter needs weekend walkers.",
+ "choices": [
+  {
+   "label": "Walk the big dogs",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Forty walks logged. Three adoptions credit you."
+    }
+   ]
+  },
+  {
+   "label": "Foster a kitten",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "addPet",
+     "name": "\"Pepper\"",
+     "petType": "cat",
+     "rel": 75
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pepper stays. Obviously. The shelter saw it coming."
+    }
+   ]
+  }
+ ]
+}

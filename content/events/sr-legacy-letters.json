@@ -1,0 +1,48 @@
+{
+ "id": "sr-legacy-letters",
+ "minAge": 70,
+ "maxAge": 100,
+ "title": "Letters to tomorrow",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.children.length",
+  "gte": 1
+ },
+ "text": "Letters for milestones you may miss: graduations, weddings.",
+ "choices": [
+  {
+   "label": "Write them all",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sealed, dated, entrusted. Love, scheduled for the future."
+    }
+   ]
+  },
+  {
+   "label": "Record videos",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your face telling them proud. Played through tears and laughter."
+    }
+   ]
+  }
+ ]
+}

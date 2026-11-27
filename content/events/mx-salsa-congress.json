@@ -1,0 +1,65 @@
+{
+ "id": "mx-salsa-congress",
+ "minAge": 20,
+ "maxAge": 60,
+ "title": "Congress weekend",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "Three days of social dancing till 3am. Shoes: broken in.",
+ "choices": [
+  {
+   "label": "Dance everything",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "partnerSet",
+       "name": "partnerName()",
+       "rel": "70",
+       "age": "s.age"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The last dance never ends. It becomes breakfast, then more."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Forty dances, ten friends, zero regrets. Feet: destroyed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Workshops first",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Styling intensives daily. Your dance levels up visibly."
+    }
+   ]
+  }
+ ]
+}

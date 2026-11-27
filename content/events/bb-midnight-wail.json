@@ -1,0 +1,55 @@
+{
+ "id": "bb-midnight-wail",
+ "minAge": 0,
+ "maxAge": 1,
+ "title": "3am aria",
+ "tags": [
+  "baby",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} wakes screaming at 3am for the fourth night running.",
+ "choices": [
+  {
+   "label": "Rock all night",
+   "hint": "health-",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(4)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You rock, hum, and survive on love and coffee."
+    }
+   ]
+  },
+  {
+   "label": "Tag-team shifts",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(2)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You invent a shift schedule worthy of a hospital. It works."
+    }
+   ]
+  }
+ ]
+}

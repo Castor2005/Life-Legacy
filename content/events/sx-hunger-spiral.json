@@ -1,0 +1,108 @@
+{
+ "id": "sx-hunger-spiral",
+ "minAge": 18,
+ "maxAge": 60,
+ "title": "The hunger",
+ "tags": [
+  "adult-life",
+  "sex",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "sex",
+    "truthy": true
+   },
+   {
+    "any": [
+     {
+      "p": "sex.xp",
+      "gte": 10
+     },
+     {
+      "p": "sex.corruption",
+      "gte": 30
+     }
+    ]
+   }
+  ]
+ },
+ "text": "You have fucked a dozen adults this year and still wake up aching — scrolling, sexting at 3am, cock/pussy never satisfied.",
+ "choices": [
+  {
+   "label": "Feed it harder",
+   "hint": "addiction+",
+   "effects": [
+    {
+     "op": "addiction",
+     "delta": "18"
+    },
+    {
+     "op": "corr",
+     "delta": "8"
+    },
+    {
+     "op": "xp",
+     "n": "(3)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(6)"
+    },
+    {
+     "op": "set",
+     "path": "stress",
+     "value": "clamp((s.stress||20)+8)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "partner": "exists"
+     },
+     "then": [
+      {
+       "op": "partnerRel",
+       "delta": "-(12)"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Strangers, clubs, bathrooms — cumming and immediately hunting again. Work slips. Love thins. The hunger grows teeth."
+    }
+   ]
+  },
+  {
+   "label": "Detox 30 days",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "addiction",
+     "delta": "-(25)"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "No porn, no hookups, cold showers. By week three you sleep through the night. The leash loosens."
+    }
+   ]
+  }
+ ]
+}

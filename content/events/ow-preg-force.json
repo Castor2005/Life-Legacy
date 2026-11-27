@@ -1,0 +1,170 @@
+{
+ "id": "ow-preg-force",
+ "minAge": 20,
+ "maxAge": 42,
+ "title": "Breed the claimed",
+ "tags": [
+  "adult-life",
+  "sex",
+  "ownership",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "sex",
+      "truthy": true
+     },
+     {
+      "p": "sex.claims",
+      "truthy": true
+     }
+    ]
+   },
+   {
+    "p": "sex.claims.length",
+    "truthy": true
+   }
+  ]
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "cs",
+    "expr": "s.sex&&s.sex.claims||[]"
+   },
+   {
+    "name": "c",
+    "expr": "cs[cs.length-1]"
+   },
+   {
+    "name": "n",
+    "expr": "c?c.name:\"your owned lover\""
+   }
+  ],
+  "template": "Protection is OFF. {{n}} — owned, fertile, adult — looks up at you: 'Fill me. I want to carry what is yours.' Or do YOU want it regardless of what they want?"
+ },
+ "choices": [
+  {
+   "label": "Breed them (FORCED if resisted)",
+   "hint": "preg FORCED",
+   "effects": [
+    {
+     "op": "protection",
+     "bool": false
+    },
+    {
+     "op": "let",
+     "name": "c",
+     "expr": "s.sex.claims[s.sex.claims.length-1]"
+    },
+    {
+     "op": "let",
+     "name": "nm",
+     "expr": "c.name"
+    },
+    {
+     "op": "histLog",
+     "name": "nm",
+     "acts": [
+      "\"rough\"",
+      "\"vanilla\""
+     ]
+    },
+    {
+     "op": "call",
+     "fn": "sex.preg",
+     "as": "pr",
+     "args": {
+      "name": {
+       "expr": "nm"
+      },
+      "mult": {
+       "expr": "2.5"
+      },
+      "ctrl": {
+       "expr": "c.accepted||c.mode===\"legal\"?\"planned\":\"forced\""
+      }
+     }
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "pr.indexOf(\"born\")===0"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You breed {{nm}} raw and deep, cumming with ownership — nine months later {{pr.slice(5)}} screams into the world, conceived FORCED/planned. Dynasty grows darker."
+      }
+     ],
+     "else": [
+      {
+       "op": "setv",
+       "target": "c",
+       "path": "preg.state",
+       "value": "\"pregnant\""
+      },
+      {
+       "op": "setv",
+       "target": "c",
+       "path": "preg.ctrl",
+       "value": "c.accepted||c.mode===\"legal\"?\"planned\":\"forced\""
+      },
+      {
+       "op": "money",
+       "amount": "-(300)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Seeded. {{nm}} is PREGNANT ({{c.preg.ctrl}}) — belly swelling with your claim. The harem counts months."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Sheathe it — control",
+   "hint": "prevented",
+   "effects": [
+    {
+     "op": "protection",
+     "bool": true
+    },
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "let",
+     "name": "c2",
+     "expr": "s.sex.claims[s.sex.claims.length-1]"
+    },
+    {
+     "op": "setv",
+     "target": "c2",
+     "path": "preg.state",
+     "value": "\"prevented\""
+    },
+    {
+     "op": "setv",
+     "target": "c2",
+     "path": "preg.ctrl",
+     "value": "\"prevented\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pills, condoms, pull-out paranoia $150. No child this year. Control reclaimed ({{c2.name}} prevented)."
+    }
+   ]
+  }
+ ]
+}

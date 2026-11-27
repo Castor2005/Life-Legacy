@@ -1,0 +1,48 @@
+{
+ "id": "tn-babysit-empire",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Babysitting ring",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Three families want Friday nights. You could subcontract.",
+ "choices": [
+  {
+   "label": "Build the ring",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "350"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You coordinate sitters and take a cut. You net 350 dollars."
+    }
+   ]
+  },
+  {
+   "label": "Favorite family only",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "150"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One loyal family, premium pay, zero chaos."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "id": "mx-iceland-ring-road",
+ "minAge": 22,
+ "maxAge": 72,
+ "title": "Ring road",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Seven days around the island of fire and ice.",
+ "choices": [
+  {
+   "label": "Drive it all",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2800)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Waterfalls hourly, sheep traffic jams, hot springs nightly."
+    }
+   ]
+  },
+  {
+   "label": "South coast only",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1200)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Black beaches and glacier lagoons. Concentrated wonder."
+    }
+   ]
+  }
+ ]
+}

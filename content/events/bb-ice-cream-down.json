@@ -1,0 +1,49 @@
+{
+ "id": "bb-ice-cream-down",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Meltdown over melt",
+ "tags": [
+  "baby",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The ice cream melts faster than {{s.firstName}} can lick. Tragedy looms.",
+ "choices": [
+  {
+   "label": "Buy a replacement",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(8)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Second cone, eaten at lightning speed. Lesson unlearned."
+    }
+   ]
+  },
+  {
+   "label": "Teach fast licking",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A new life skill: competitive licking."
+    }
+   ]
+  }
+ ]
+}

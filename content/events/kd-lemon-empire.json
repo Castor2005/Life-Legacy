@@ -1,0 +1,53 @@
+{
+ "id": "kd-lemon-empire",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "Lemonade empire",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Saturday lemonade stand faces a rival stand across the street.",
+ "choices": [
+  {
+   "label": "Undercut prices",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "120"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fifty-cent cups flood the market. You count 120 dollars of profit."
+    }
+   ]
+  },
+  {
+   "label": "Premium recipe",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(30)"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mint and honey. Fancy cups. The rivals defect to you."
+    }
+   ]
+  }
+ ]
+}

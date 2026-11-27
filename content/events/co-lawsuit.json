@@ -1,0 +1,132 @@
+{
+ "id": "co-lawsuit",
+ "minAge": 18,
+ "maxAge": 75,
+ "title": "Sued by Goliath",
+ "tags": [
+  "adult-life",
+  "company",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "company",
+    "truthy": true
+   },
+   {
+    "p": "company.value",
+    "gte": 100000
+   }
+  ]
+ },
+ "text": "A competitor with eleven lawyers claims {{s.company.name}} stole 'the very concept of Wednesdays'. Papers served.",
+ "choices": [
+  {
+   "label": "Settle quietly ($20,000)",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c",
+     "expr": "min(20000,s.company.cash+s.money)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.company.cash>=c"
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "company.cash",
+       "value": "s.company.cash-(c)"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(c)"
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "path": "company.rep",
+     "value": "clamp(s.company.rep-3)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Expensive silence. Business as usual by Friday."
+    }
+   ]
+  },
+  {
+   "label": "Fight them in court",
+   "hint": "smarts check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "any": [
+       {
+        "p": "stats.smarts",
+        "gt": 60
+       },
+       {
+        "expr": "rnd()<0.4"
+       }
+      ]
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "company.rep",
+       "value": "clamp(s.company.rep+8)"
+      },
+      {
+       "op": "set",
+       "path": "company.value",
+       "value": "round(s.company.value*1.1)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You win AND the press loves it. Value +10%."
+      }
+     ],
+     "else": [
+      {
+       "op": "let",
+       "name": "f",
+       "expr": "min(50000,s.company.cash+s.money)"
+      },
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.company.cash>=f"
+       },
+       "then": [
+        {
+         "op": "set",
+         "path": "company.cash",
+         "value": "s.company.cash-(f)"
+        }
+       ],
+       "else": [
+        {
+         "op": "money",
+         "amount": "-(f)"
+        }
+       ]
+      },
+      {
+       "op": "outcome",
+       "tpl": "You lose loudly. -${{f}}. The lawyers send a fruit basket."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

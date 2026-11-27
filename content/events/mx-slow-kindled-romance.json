@@ -1,0 +1,71 @@
+{
+ "id": "mx-slow-kindled-romance",
+ "minAge": 24,
+ "maxAge": 66,
+ "title": "Slow burn",
+ "tags": [
+  "adult-life",
+  "sex",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "A coworker's glances linger. Adult chemistry, carefully banked.",
+ "choices": [
+  {
+   "label": "One honest dinner",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "partnerSet",
+       "name": "partnerName()",
+       "rel": "72",
+       "age": "s.age"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Dinner runs four hours. Dessert back at yours. Mornings: tangled and grinning."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Lovely dinner, friendly parting. The slow burn stays warm."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Keep it professional",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Boundaries held kindly. The work stays clean."
+    }
+   ]
+  }
+ ]
+}

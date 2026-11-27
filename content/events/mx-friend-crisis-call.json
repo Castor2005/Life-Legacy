@@ -1,0 +1,45 @@
+{
+ "id": "mx-friend-crisis-call",
+ "minAge": 18,
+ "maxAge": 75,
+ "title": "2am call",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A friend calls crying at 2am. Everything is broken.",
+ "choices": [
+  {
+   "label": "Drive over",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You sit with them till dawn. Friendship: proven in the dark."
+    }
+   ]
+  },
+  {
+   "label": "Morning rescue",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You arrive at seven with food and a plan. Still counts."
+    }
+   ]
+  }
+ ]
+}

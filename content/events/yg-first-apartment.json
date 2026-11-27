@@ -1,0 +1,53 @@
+{
+ "id": "yg-first-apartment",
+ "minAge": 18,
+ "maxAge": 25,
+ "title": "Keys at last",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "First apartment: one room, one window, total freedom.",
+ "choices": [
+  {
+   "label": "Furnish thrifty",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(600)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Curb finds and fresh paint. It feels like a palace."
+    }
+   ]
+  },
+  {
+   "label": "Roommate up",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(250)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Half the rent, double the stories. Choose wisely."
+    }
+   ]
+  }
+ ]
+}

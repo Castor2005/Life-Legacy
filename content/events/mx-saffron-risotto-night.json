@@ -1,0 +1,44 @@
+{
+ "id": "mx-saffron-risotto-night",
+ "minAge": 18,
+ "maxAge": 75,
+ "title": "Risotto night",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Friends, saffron, stirring in shifts. Wine mandatory.",
+ "choices": [
+  {
+   "label": "Host the stir",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Creamy perfection at minute 22. Applause with full mouths."
+    }
+   ]
+  },
+  {
+   "label": "Teach the technique",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Everyone stirs, everyone learns. Risotto spreads."
+    }
+   ]
+  }
+ ]
+}

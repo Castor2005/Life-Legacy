@@ -1,0 +1,45 @@
+{
+ "id": "bb-train-table",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Tiny conductor",
+ "tags": [
+  "baby",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} lines up toy trains with total seriousness.",
+ "choices": [
+  {
+   "label": "Run the railway",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "On time, every time. The stuffed bear commutes daily."
+    }
+   ]
+  },
+  {
+   "label": "Add a tunnel",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A shoebox tunnel doubles capacity. Genius."
+    }
+   ]
+  }
+ ]
+}

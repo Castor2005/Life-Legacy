@@ -1,0 +1,45 @@
+{
+ "id": "kd-detective-agency",
+ "minAge": 7,
+ "maxAge": 12,
+ "title": "Mystery agency",
+ "tags": [
+  "kid",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Lost cats, missing balls, a legendary lunchbox thief. You open cases.",
+ "choices": [
+  {
+   "label": "Solve three cases",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cat found, ball returned, lunchbox: the dog did it. Closed."
+    }
+   ]
+  },
+  {
+   "label": "Pro bono work",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You charge cookies only. The agency is beloved."
+    }
+   ]
+  }
+ ]
+}

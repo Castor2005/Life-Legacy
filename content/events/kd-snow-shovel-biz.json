@@ -1,0 +1,49 @@
+{
+ "id": "kd-snow-shovel-biz",
+ "minAge": 8,
+ "maxAge": 12,
+ "title": "Shovel crew",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The blizzard buries driveways. Cash waits under the snow.",
+ "choices": [
+  {
+   "label": "Shovel six drives",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "110"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Six driveways, 110 dollars, arms like iron."
+    }
+   ]
+  },
+  {
+   "label": "Free the hydrants",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hydrants dug out free. Firefighters wave. Heroes."
+    }
+   ]
+  }
+ ]
+}

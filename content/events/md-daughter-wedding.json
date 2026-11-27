@@ -1,0 +1,51 @@
+{
+ "id": "md-daughter-wedding",
+ "minAge": 47,
+ "maxAge": 59,
+ "title": "Giving away",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.children.length",
+  "gte": 1
+ },
+ "text": "Your child marries. You hold it together until the dance.",
+ "choices": [
+  {
+   "label": "Spare nothing",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(8000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "11"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Perfect day. The first dance breaks you beautifully."
+    }
+   ]
+  },
+  {
+   "label": "Simple and true",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Backyard vows, forty people, all heart. They prefer it."
+    }
+   ]
+  }
+ ]
+}

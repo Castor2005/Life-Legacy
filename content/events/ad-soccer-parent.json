@@ -1,0 +1,48 @@
+{
+ "id": "ad-soccer-parent",
+ "minAge": 30,
+ "maxAge": 42,
+ "title": "Sideline era",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.children.length",
+  "gte": 1
+ },
+ "text": "Saturday means four games across two towns.",
+ "choices": [
+  {
+   "label": "Coach one team",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You coach the U10s. Orange slices and glory."
+    }
+   ]
+  },
+  {
+   "label": "Assistant everything",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Goals set up, benches hauled. The league runs on parents like you."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,91 @@
+{
+ "id": "uw-snitch",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "A whisper about whispers",
+ "tags": [
+  "adult-life",
+  "underworld",
+  "crime",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "underworld",
+      "truthy": true
+     },
+     {
+      "p": "underworld.rank",
+      "gte": 1
+     }
+    ]
+   },
+   {
+    "p": "underworld.crew.length",
+    "gt": 0
+   }
+  ]
+ },
+ "text": "Word is someone close to {{s.firstName}} talks to detectives. The crew waits to see what the boss does.",
+ "choices": [
+  {
+   "label": "Smoke them out",
+   "hint": "smarts check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "stats.smarts",
+      "gt": 55
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "underworld.rep",
+       "value": "s.underworld.rep+(3)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Two days of watching. The talker outs themselves. Handled quietly."
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "heat",
+       "value": "min(100,(s.heat||0)+12)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You accuse the wrong soldier. Trust cracks. Heat climbs."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Ignore it",
+   "hint": "heat+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "heat",
+     "value": "min(100,(s.heat||0)+10)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You sleep with the windows locked for a month."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "kd-volcano-model",
+ "minAge": 7,
+ "maxAge": 12,
+ "title": "Eruption day",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The science fair volcano must erupt on cue. Baking soda is loaded.",
+ "choices": [
+  {
+   "label": "Perfect reaction",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three-foot plume. Judges applaud. A+ with lava."
+    }
+   ]
+  },
+  {
+   "label": "Help a rival",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Their volcano fizzles; you share your mix. Both erupt."
+    }
+   ]
+  }
+ ]
+}

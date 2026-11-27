@@ -1,0 +1,45 @@
+{
+ "id": "sr-volunteer-hospital",
+ "minAge": 62,
+ "maxAge": 85,
+ "title": "Candy striper",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The hospital needs visitors and wheel-pushers.",
+ "choices": [
+  {
+   "label": "Visit weekly",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lonely patients light up Thursdays. Purpose, dispensed."
+    }
+   ]
+  },
+  {
+   "label": "Drive patients",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rides to appointments. Gratitude rides back."
+    }
+   ]
+  }
+ ]
+}

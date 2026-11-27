@@ -1,0 +1,50 @@
+{
+ "id": "yg-gym-january",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "January resolution",
+ "tags": [
+  "adult-life",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "New year, new membership, new you. Allegedly.",
+ "choices": [
+  {
+   "label": "Go 4x weekly",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "9"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "By April: visible change. The habit sticks for real."
+    }
+   ]
+  },
+  {
+   "label": "Run outside free",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "No fees, fresh air. The park is your gym now."
+    }
+   ]
+  }
+ ]
+}

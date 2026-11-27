@@ -1,0 +1,88 @@
+{
+ "id": "sx-swingers-club",
+ "minAge": 22,
+ "maxAge": 60,
+ "title": "The club",
+ "tags": [
+  "adult-life",
+  "sex",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "partner": "exists"
+   },
+   {
+    "p": "relationships.partner.married",
+    "truthy": true
+   }
+  ]
+ },
+ "text": "A married couple invites you and your partner to an adults-only club: 'No pressure. Masks, pools, beds everywhere.'",
+ "choices": [
+  {
+   "label": "Swap and play",
+   "hint": "group+",
+   "effects": [
+    {
+     "op": "xp",
+     "n": "(3)"
+    },
+    {
+     "op": "skill",
+     "delta": "9"
+    },
+    {
+     "op": "corr",
+     "delta": "10"
+    },
+    {
+     "op": "kink",
+     "id": "group"
+    },
+    {
+     "op": "kink",
+     "id": "poly"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "16"
+    },
+    {
+     "op": "partnerRel",
+     "delta": "8"
+    },
+    {
+     "op": "scandal",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Chlorine, moans, four hands on you at once — you fuck and get fucked beside your spouse, cumming while they cum across the room. Marriage, expanded."
+    }
+   ]
+  },
+  {
+   "label": "Watch only",
+   "hint": "voyeur",
+   "effects": [
+    {
+     "op": "kink",
+     "id": "voyeur"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You sip champagne and watch. Going home, you fuck like animals."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "id": "ad-rainy-roof-deck",
+ "minAge": 32,
+ "maxAge": 44,
+ "title": "Covered porch",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Rain cancels porch season. A cover would fix everything.",
+ "choices": [
+  {
+   "label": "Roof the deck",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2800)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Covered porch, all seasons. Rain becomes ambiance."
+    }
+   ]
+  },
+  {
+   "label": "Sail shade",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shade sails angle the storms away. Good enough glows."
+    }
+   ]
+  }
+ ]
+}

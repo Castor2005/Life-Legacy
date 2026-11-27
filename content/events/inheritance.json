@@ -1,0 +1,83 @@
+{
+ "id": "inheritance",
+ "minAge": 25,
+ "maxAge": 70,
+ "title": "Letter from a lawyer",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A distant relative left you something in their will.",
+ "choices": [
+  {
+   "label": "Open it",
+   "hint": "???",
+   "effects": [
+    {
+     "op": "let",
+     "name": "r",
+     "expr": "rnd()"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "r",
+      "lt": 0.5
+     },
+     "then": [
+      {
+       "op": "let",
+       "name": "w",
+       "expr": "8000+floor(rnd()*30000)"
+      },
+      {
+       "op": "money",
+       "amount": "w"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A check for ${{w}}! You cry a little."
+      }
+     ],
+     "else": [
+      {
+       "op": "branch",
+       "cond": {
+        "v": "r",
+        "lt": 0.8
+       },
+       "then": [
+        {
+         "op": "stat",
+         "key": "karma",
+         "delta": "5"
+        },
+        {
+         "op": "outcome",
+         "tpl": "A box of letters and a pocket watch. Priceless, not spendable."
+        }
+       ],
+       "else": [
+        {
+         "op": "let",
+         "name": "w",
+         "expr": "60000+floor(rnd()*120000)"
+        },
+        {
+         "op": "money",
+         "amount": "w"
+        },
+        {
+         "op": "outcome",
+         "tpl": "JACKPOT: ${{w}}! A paid-off house sold for you."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "sr-church-choir-40yr",
+ "minAge": 65,
+ "maxAge": 95,
+ "title": "Forty years",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Forty years in the choir. The anniversary anthem features you.",
+ "choices": [
+  {
+   "label": "Sing the solo",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The solo soars. Forty years in one verse. Tears flow."
+    }
+   ]
+  },
+  {
+   "label": "Direct one song",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You conduct the finale. The choir sways as one."
+    }
+   ]
+  }
+ ]
+}

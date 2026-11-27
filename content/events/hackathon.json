@@ -1,0 +1,69 @@
+{
+ "id": "hackathon",
+ "minAge": 14,
+ "maxAge": 19,
+ "title": "Hackathon weekend",
+ "tags": [
+  "family",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "48-hour hackathon. Free pizza, no sleep, big prizes.",
+ "choices": [
+  {
+   "label": "Compete!",
+   "hint": "smarts check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "stats.smarts",
+      "gt": 50
+     },
+     "then": [
+      {
+       "op": "money",
+       "amount": "1500"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your app wins 2nd place! $1,500!"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "No prize, but you learn more in 48h than a semester."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Sleep instead",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You sleep 10 hours while friends hallucinate code."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "id": "yg-dating-app-era",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "App dating",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "Your profile is live. The first week brings chaos and hope.",
+ "choices": [
+  {
+   "label": "Date thoughtfully",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "partnerSet",
+       "name": "partnerName()",
+       "rel": "65",
+       "age": "s.age"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Third date clicks. Deleted apps, kept person."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Funny stories, no spark. The group chat feasts."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Delete the apps",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Real life, real people. The coffee shop delivers."
+    }
+   ]
+  }
+ ]
+}

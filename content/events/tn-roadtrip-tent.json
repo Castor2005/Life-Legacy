@@ -1,0 +1,45 @@
+{
+ "id": "tn-roadtrip-tent",
+ "minAge": 15,
+ "maxAge": 17,
+ "title": "Lake weekend",
+ "tags": [
+  "teen",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Five friends, two tents, one borrowed minivan of snacks.",
+ "choices": [
+  {
+   "label": "Go, responsibly",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Swims, stars, burnt hot dogs. The group chat gains lore."
+    }
+   ]
+  },
+  {
+   "label": "Plan, don't just go",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Checklists save the trip twice. Leader status: you."
+    }
+   ]
+  }
+ ]
+}

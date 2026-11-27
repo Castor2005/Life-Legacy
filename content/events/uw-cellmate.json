@@ -1,0 +1,72 @@
+{
+ "id": "uw-cellmate",
+ "minAge": 16,
+ "maxAge": 80,
+ "title": "The cellmate's plan",
+ "tags": [
+  "family",
+  "underworld",
+  "crime"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "flags",
+    "truthy": true
+   },
+   {
+    "p": "flags.inJail",
+    "gt": 0
+   }
+  ]
+ },
+ "text": "The new cellmate has been inside nine years and has a plan involving the laundry rota, a laundry cart, and Tuesday.",
+ "choices": [
+  {
+   "label": "Learn the ropes",
+   "hint": "rep+, smarts+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "underworld.prisonRep",
+     "value": "min(100,(s.underworld.prisonRep||0)+10)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nine years of knowledge in nine nights. The joint holds no more surprises."
+    }
+   ]
+  },
+  {
+   "label": "Snitch for time off",
+   "hint": "-1 year, karma-",
+   "effects": [
+    {
+     "op": "set",
+     "path": "flags.inJail",
+     "value": "max(0,s.flags.inJail-1)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(10)"
+    },
+    {
+     "op": "set",
+     "path": "underworld.prisonRep",
+     "value": "0"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A year shaved. The yard will remember the price."
+    }
+   ]
+  }
+ ]
+}

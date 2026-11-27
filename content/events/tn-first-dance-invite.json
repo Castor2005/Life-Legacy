@@ -1,0 +1,70 @@
+{
+ "id": "tn-first-dance-invite",
+ "minAge": 13,
+ "maxAge": 15,
+ "title": "Dance invitation",
+ "tags": [
+  "teen",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "The fall dance approaches and courage is on sale.",
+ "choices": [
+  {
+   "label": "Ask boldly",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "partnerSet",
+       "name": "partnerName()",
+       "rel": "65",
+       "age": "s.age"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Yes! The gym glows and your shoes survive."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(5)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A gentle no. The punch is still good."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Crew night",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Matching shirts, zero drama, all the slow songs air-conducted."
+    }
+   ]
+  }
+ ]
+}

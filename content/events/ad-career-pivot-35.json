@@ -1,0 +1,69 @@
+{
+ "id": "ad-career-pivot-35",
+ "minAge": 32,
+ "maxAge": 40,
+ "title": "Pivot at 35",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Your industry shifts. Retrain or double down?",
+ "choices": [
+  {
+   "label": "Retrain nights",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(3000)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>50"
+     },
+     "then": [
+      {
+       "op": "money",
+       "amount": "9000"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Certified in the new stack. 9,000 dollars raise follows."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Halfway skilled, fully employable. The pivot continues."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Double down",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Depth beats novelty. Your expertise premium grows."
+    }
+   ]
+  }
+ ]
+}

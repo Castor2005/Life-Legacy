@@ -1,0 +1,45 @@
+{
+ "id": "kd-puppet-library",
+ "minAge": 5,
+ "maxAge": 10,
+ "title": "Puppet hour",
+ "tags": [
+  "kid",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The library puppet show needs a kid dragon. You fit the costume.",
+ "choices": [
+  {
+   "label": "Roar on cue",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Toddlers scream with joy. The dragon takes a bow."
+    }
+   ]
+  },
+  {
+   "label": "Work the curtains",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Invisible, essential. The show runs on your ropes."
+    }
+   ]
+  }
+ ]
+}

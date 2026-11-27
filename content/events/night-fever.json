@@ -1,0 +1,66 @@
+{
+ "id": "night-fever",
+ "minAge": 0,
+ "maxAge": 5,
+ "title": "Midnight fever",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} wakes burning up at 2am, crying.",
+ "choices": [
+  {
+   "label": "ER visit",
+   "hint": "money-, health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Just a virus. Fluids, rest, relief. -$300."
+    }
+   ]
+  },
+  {
+   "label": "Cool cloth & wait",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.75",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "2"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Fever breaks by dawn. Phew."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "It got worse — a clinic visit anyway. Health suffers."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

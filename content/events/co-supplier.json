@@ -1,0 +1,89 @@
+{
+ "id": "co-supplier",
+ "minAge": 18,
+ "maxAge": 75,
+ "title": "The supplier's warehouse burns",
+ "tags": [
+  "adult-life",
+  "company",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "company",
+    "truthy": true
+   },
+   {
+    "any": [
+     {
+      "p": "company.sector",
+      "eq": "food"
+     },
+     {
+      "p": "company.sector",
+      "eq": "trade"
+     }
+    ]
+   }
+  ]
+ },
+ "text": "Overnight fire guts {{s.company.name}}'s main supplier. No stock for weeks — unless money talks fast.",
+ "choices": [
+  {
+   "label": "Pay the premium",
+   "hint": "cash-",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c",
+     "expr": "min(6000,s.company.cash+s.money)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.company.cash>=c"
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "company.cash",
+       "value": "s.company.cash-(c)"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(c)"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Alternate supplier, triple price, saved week. -${{c}}."
+    }
+   ]
+  },
+  {
+   "label": "Pivot the menu",
+   "hint": "rep-",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.rep",
+     "value": "clamp(s.company.rep-5)"
+    },
+    {
+     "op": "set",
+     "path": "company.morale",
+     "value": "clamp(s.company.morale-4)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "'Temporarily unavailable' becomes the season's theme. Customers forgive, slowly."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "id": "yg-rival-promotion",
+ "minAge": 24,
+ "maxAge": 29,
+ "title": "Same ladder",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "You and a work friend chase one promotion.",
+ "choices": [
+  {
+   "label": "Outwork cleanly",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "6000"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You get it. The raise is 6,000 dollars and the friendship survives."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "They get it. You congratulate them and plot your next move."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Cheer them on",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You celebrate them loudly. Your turn comes within the year."
+    }
+   ]
+  }
+ ]
+}

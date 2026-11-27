@@ -1,0 +1,45 @@
+{
+ "id": "ad-race-bucket-list",
+ "minAge": 35,
+ "maxAge": 44,
+ "title": "Bucket race",
+ "tags": [
+  "adult-life",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A sprint triathlon: swim, bike, run, glory.",
+ "choices": [
+  {
+   "label": "Train 16 weeks",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You finish mid-pack, grinning like a champion."
+    }
+   ]
+  },
+  {
+   "label": "Relay a leg",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You swim the leg. The team handles the rest. Shared glory."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "id": "sr-pickleball-nationals",
+ "minAge": 65,
+ "maxAge": 85,
+ "title": "Nationals dream",
+ "tags": [
+  "adult-life",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Regionals won. Nationals in Florida. The team is going.",
+ "choices": [
+  {
+   "label": "Go compete",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.fitness>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Quarterfinals at nationals! The team photo glows."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Pool play exit. The experience outshines the record."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Fund the trip",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You sponsor the van. The team carries your name."
+    }
+   ]
+  }
+ ]
+}

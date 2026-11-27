@@ -1,0 +1,53 @@
+{
+ "id": "kd-paper-route",
+ "minAge": 9,
+ "maxAge": 12,
+ "title": "Paper route Jr.",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A morning route opens. 5am, bike, 40 houses.",
+ "choices": [
+  {
+   "label": "Take the route",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "140"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Six months of dawns. You save 140 dollars and gain grit."
+    }
+   ]
+  },
+  {
+   "label": "Split with a friend",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "70"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Half route each. Papers fly, friendship holds."
+    }
+   ]
+  }
+ ]
+}

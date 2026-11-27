@@ -1,0 +1,48 @@
+{
+ "id": "house-fire",
+ "minAge": 25,
+ "maxAge": 70,
+ "title": "Kitchen fire!",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Grease fire! Flames lick the cabinets.",
+ "choices": [
+  {
+   "label": "Extinguisher + 911",
+   "hint": "best",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2500)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fast action saves the house. $2,500 damage."
+    }
+   ]
+  },
+  {
+   "label": "Water!!",
+   "hint": "bad!",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(12000)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(8)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Water spreads grease fire! $12,000 damage. Never again."
+    }
+   ]
+  }
+ ]
+}

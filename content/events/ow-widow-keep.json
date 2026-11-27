@@ -1,0 +1,117 @@
+{
+ "id": "ow-widow-keep",
+ "minAge": 20,
+ "maxAge": 50,
+ "title": "The widowed bed",
+ "tags": [
+  "adult-life",
+  "sex",
+  "ownership"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "any": [
+   {
+    "p": "relationships.momAge",
+    "gt": -100
+   },
+   {
+    "p": "relationships.dadAge",
+    "gt": -100
+   }
+  ]
+ },
+ "text": "Your widowed parent, lonely for years and very much an adult, stands in your doorway in nightclothes: 'Don't make me sleep alone again. Keep me — however you want me.'",
+ "choices": [
+  {
+   "label": "Keep them close",
+   "hint": "INCEST keep, corr+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "\"Widowed Parent\""
+    },
+    {
+     "op": "call",
+     "fn": "sex.ownClaim",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "via": {
+       "expr": "\"willing\""
+      },
+      "ob": {
+       "expr": "18"
+      },
+      "os": {
+       "expr": "20"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "name": "n",
+     "delta": "14"
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "\"tender\"",
+      "\"vanilla\""
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(14)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "scandal",
+     "delta": "16"
+    },
+    {
+     "op": "set",
+     "path": "relationships.parentRel",
+     "value": "clamp(s.relationships.parentRel+10)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One grieving kiss becomes naked comfort — slow, guilty, intensely adult fucking that ends with both of you shaking and weeping. Kept (own deep, corr high). The house is never the same."
+    }
+   ]
+  },
+  {
+   "label": "Tuck them in, nothing more",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "10"
+    },
+    {
+     "op": "set",
+     "path": "relationships.parentRel",
+     "value": "clamp(s.relationships.parentRel+8)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You hold them till they sleep, clothed and chaste. Morning is coffee and silent gratitude."
+    }
+   ]
+  }
+ ]
+}

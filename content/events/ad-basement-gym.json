@@ -1,0 +1,49 @@
+{
+ "id": "ad-basement-gym",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Iron basement",
+ "tags": [
+  "adult-life",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A rack, a bench, a bar. The commute is stairs.",
+ "choices": [
+  {
+   "label": "Buy used",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(700)"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Used iron, new habits. Training happens daily now."
+    }
+   ]
+  },
+  {
+   "label": "Bodyweight first",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pushups and pullups. Free, brutal, effective."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "yg-thesis-defense",
+ "minAge": 21,
+ "maxAge": 26,
+ "title": "Defense day",
+ "tags": [
+  "adult-life",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The thesis defense: one hour, three professors, your whole degree.",
+ "choices": [
+  {
+   "label": "Overprepare",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You answer everything. Handshakes, signatures, degree."
+    }
+   ]
+  },
+  {
+   "label": "Trust the work",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Calm, clear, done. The robe fits perfectly."
+    }
+   ]
+  }
+ ]
+}

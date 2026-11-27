@@ -1,0 +1,45 @@
+{
+ "id": "yg-salsa-nights",
+ "minAge": 20,
+ "maxAge": 29,
+ "title": "Salsa Tuesdays",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Free salsa lessons downtown. Two left feet welcome.",
+ "choices": [
+  {
+   "label": "Go weekly",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "By month three: spins, dips, numbers exchanged. Rhythm found."
+    }
+   ]
+  },
+  {
+   "label": "Bring the crew",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Five friends, ten left feet, one glorious video."
+    }
+   ]
+  }
+ ]
+}

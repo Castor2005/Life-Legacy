@@ -1,0 +1,45 @@
+{
+ "id": "kd-ant-farm",
+ "minAge": 5,
+ "maxAge": 10,
+ "title": "Ant metropolis",
+ "tags": [
+  "kid",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "An ant farm arrives. {{s.firstName}} names every tunnel.",
+ "choices": [
+  {
+   "label": "Map the tunnels",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Highway, nursery, queen's chamber. Urban planning observed."
+    }
+   ]
+  },
+  {
+   "label": "Release day",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Back to the garden with honors. Freedom tastes like crumbs."
+    }
+   ]
+  }
+ ]
+}

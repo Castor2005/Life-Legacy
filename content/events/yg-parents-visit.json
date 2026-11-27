@@ -1,0 +1,49 @@
+{
+ "id": "yg-parents-visit",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Inspection visit",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Parents visit Saturday. The apartment is a crime scene.",
+ "choices": [
+  {
+   "label": "Deep clean blitz",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "It sparkles. Mom checks behind the fridge anyway. Pass."
+    }
+   ]
+  },
+  {
+   "label": "Cook the dinner",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(70)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your lasagna silences all criticism. Dad asks for seconds."
+    }
+   ]
+  }
+ ]
+}

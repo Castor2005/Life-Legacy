@@ -1,0 +1,65 @@
+{
+ "id": "yg-move-city-big",
+ "minAge": 20,
+ "maxAge": 29,
+ "title": "Big city leap",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The big city offers a job, a closet apartment, and everything.",
+ "choices": [
+  {
+   "label": "Leap",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2500)"
+    },
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "money",
+       "amount": "8000"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "It works! Raises stack to 8,000 extra. The skyline is yours."
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "Tough year, great stories. You return seasoned, not defeated."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Grow where planted",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You bloom locally. Roots deepen, costs stay low."
+    }
+   ]
+  }
+ ]
+}

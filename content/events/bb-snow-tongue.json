@@ -1,0 +1,50 @@
+{
+ "id": "bb-snow-tongue",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Snow taster",
+ "tags": [
+  "baby",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "First snow: {{s.firstName}} catches flakes on the tongue like treasure.",
+ "choices": [
+  {
+   "label": "Catch them together",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(2)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cold tongues, warm mittens, white world."
+    }
+   ]
+  },
+  {
+   "label": "Snowman first",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A lopsided snowman guards the yard all week."
+    }
+   ]
+  }
+ ]
+}

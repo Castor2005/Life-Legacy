@@ -1,0 +1,94 @@
+{
+ "id": "uw-retire",
+ "minAge": 40,
+ "maxAge": 80,
+ "title": "One last job?",
+ "tags": [
+  "adult-life",
+  "underworld",
+  "crime",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "underworld",
+      "truthy": true
+     },
+     {
+      "p": "underworld.rank",
+      "gte": 3
+     }
+    ]
+   },
+   {
+    "not": {
+     "p": "underworld.retired",
+     "truthy": true
+    }
+   }
+  ]
+ },
+ "text": "{{s.firstName}} has buried friends, dodged decades, built something out of nothing. The life offers a door — narrow, closing.",
+ "choices": [
+  {
+   "label": "Walk away clean",
+   "hint": "go legit",
+   "effects": [
+    {
+     "op": "set",
+     "path": "underworld.retired",
+     "value": "true"
+    },
+    {
+     "op": "set",
+     "path": "underworld.rep",
+     "value": "0"
+    },
+    {
+     "op": "set",
+     "path": "underworld.territory",
+     "value": "0"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "10"
+    },
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(30)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You sell the contacts, keep the stash, and sleep at night. +30 prestige, legend intact."
+    }
+   ]
+  },
+  {
+   "label": "Never. This is who I am",
+   "hint": "rep+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "underworld.rep",
+     "value": "s.underworld.rep+(5)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The door closes. The crown fits too well to take off."
+    }
+   ]
+  }
+ ]
+}

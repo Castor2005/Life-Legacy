@@ -1,0 +1,50 @@
+{
+ "id": "kd-new-kid-welcome",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "New kid protocol",
+ "tags": [
+  "kid",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A new kid stands alone at lunch with a tray and nowhere to sit.",
+ "choices": [
+  {
+   "label": "Invite them over",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "addFriend",
+     "name": "randName()",
+     "rel": 65
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One wave later, the table has a new regular."
+    }
+   ]
+  },
+  {
+   "label": "Tour guide duty",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You show them every shortcut. Friendship speedrun."
+    }
+   ]
+  }
+ ]
+}

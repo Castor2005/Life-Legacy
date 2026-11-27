@@ -1,0 +1,104 @@
+{
+ "id": "sx-collared-pact",
+ "minAge": 18,
+ "maxAge": 50,
+ "title": "The collar talk",
+ "tags": [
+  "adult-life",
+  "sex",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "any": [
+   {
+    "partner": "exists"
+   },
+   {
+    "p": "sex.lovers.length",
+    "gt": 0
+   }
+  ]
+ },
+ "text": "Your lover kneels, adult eyes up: 'I want to be yours. Really yours. Collar me.'",
+ "choices": [
+  {
+   "label": "Collar them",
+   "hint": "ownership 2",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "s.relationships.partner?s.relationships.partner.name:s.sex.lovers[s.sex.lovers.length-1]||randName()"
+    },
+    {
+     "op": "call",
+     "fn": "sex.claim",
+     "as": "c",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "ob": {
+       "expr": "20"
+      },
+      "os": {
+       "expr": "15"
+      },
+      "stage": {
+       "expr": "2"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "delta": "7"
+    },
+    {
+     "op": "kink",
+     "id": "submission"
+    },
+    {
+     "op": "kink",
+     "id": "dominance"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "12"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "partner": "exists"
+     },
+     "then": [
+      {
+       "op": "partnerRel",
+       "delta": "12"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "You fasten the collar, tug the leash, fuck them with their forehead on the floor while they whimper your name. They wear it under their shirt to work. Collared."
+    }
+   ]
+  },
+  {
+   "label": "Keep it casual",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You kiss their forehead. 'Not yet.' Relief and a little ache."
+    }
+   ]
+  }
+ ]
+}

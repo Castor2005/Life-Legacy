@@ -1,0 +1,60 @@
+{
+ "id": "swallow-coin",
+ "minAge": 1,
+ "maxAge": 5,
+ "title": "Magic trick gone wrong",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} swallowed a coin. 'For magic,' they explain.",
+ "choices": [
+  {
+   "label": "Doctor, now",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "All clear. The coin passes. The magic fizzles."
+    }
+   ]
+  },
+  {
+   "label": "Wait & watch",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.8",
+     "then": [
+      {
+       "op": "outcome",
+       "tpl": "It passes naturally. Never speak of this."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(8)"
+      },
+      {
+       "op": "money",
+       "amount": "-(400)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Complications — a procedure. -$400, health -."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

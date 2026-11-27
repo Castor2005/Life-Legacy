@@ -1,0 +1,44 @@
+{
+ "id": "tn-phone-cracked",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Cracked screen",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your phone meets concrete. The spiderweb blooms.",
+ "choices": [
+  {
+   "label": "Repair shop",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(90)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ninety dollars later: flawless. A case is purchased immediately."
+    }
+   ]
+  },
+  {
+   "label": "Live with it",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(3)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three months of cracks. Character building, thumb-splintering."
+    }
+   ]
+  }
+ ]
+}

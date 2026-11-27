@@ -1,0 +1,44 @@
+{
+ "id": "sr-farmers-market-elder",
+ "minAge": 65,
+ "maxAge": 95,
+ "title": "Jam legend",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your jam stall has regulars who plan weeks around it.",
+ "choices": [
+  {
+   "label": "Expand the line",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1500"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pickles join the jams. 1,500 dollars of sweet profit."
+    }
+   ]
+  },
+  {
+   "label": "Teach canning",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Free classes monthly. The town preserves because of you."
+    }
+   ]
+  }
+ ]
+}

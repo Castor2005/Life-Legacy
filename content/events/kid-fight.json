@@ -1,0 +1,115 @@
+{
+ "id": "kid-fight",
+ "minAge": 22,
+ "maxAge": 60,
+ "title": "Bloody nose o'clock",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "some": {
+   "arr": "relationships.children",
+   "where": {
+    "all": [
+     {
+      "p": "$it.age",
+      "gte": 6
+     },
+     {
+      "p": "$it.age",
+      "lte": 14
+     }
+    ]
+   }
+  }
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "k",
+    "expr": "where(whereAll(s.relationships.children||[],\"age\",\"gte\",6),\"age\",\"lte\",14)"
+   }
+  ],
+  "template": "{{k?k.name:\"Your kid\"}} comes home with a split lip and a story that starts mid-sentence."
+ },
+ "choices": [
+  {
+   "label": "Teach mercy",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "k",
+     "expr": "where(whereAll(s.relationships.children,\"age\",\"gte\",6),\"age\",\"lte\",14)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "k",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "k",
+       "path": "rel",
+       "value": "clamp(k.rel+5)"
+      }
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "'Strong people forgive first.' It lands, eventually."
+    }
+   ]
+  },
+  {
+   "label": "Teach the left hook",
+   "hint": "rel+, trouble+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "k",
+     "expr": "where(whereAll(s.relationships.children,\"age\",\"gte\",6),\"age\",\"lte\",14)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "k",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "k",
+       "path": "rel",
+       "value": "clamp(k.rel+4)"
+      },
+      {
+       "op": "setv",
+       "target": "k",
+       "path": "trouble",
+       "value": "min(10,(k.trouble||0)+1)"
+      }
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(3)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pillow lessons all weekend. Nobody touches your kid again."
+    }
+   ]
+  }
+ ]
+}

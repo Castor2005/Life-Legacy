@@ -1,0 +1,156 @@
+{
+ "id": "ex-break-brand-skin",
+ "minAge": 22,
+ "maxAge": 60,
+ "title": "Marked property",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "sex",
+      "truthy": true
+     },
+     {
+      "p": "sex.claims",
+      "truthy": true
+     }
+    ]
+   },
+   {
+    "some": {
+     "arr": "sex.claims",
+     "where": {
+      "p": "$it.obedience",
+      "gte": 60
+     }
+    }
+   }
+  ]
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "c",
+    "expr": "s.sex&&s.sex.claims&&s.sex.claims.length?s.sex.claims[s.sex.claims.length-1]:null"
+   },
+   {
+    "name": "n",
+    "expr": "c?c.name:\"your devotee\""
+   },
+   {
+    "name": "ob",
+    "expr": "c?c.obedience:0"
+   }
+  ],
+  "template": "{{n}} (obedience {{ob}}) begs the final step: your name on her skin. Tattoo gun buzzes next Saturday. 'Mark me so every man after knows who ruined me first.'"
+ },
+ "choices": [
+  {
+   "label": "Brand her forever",
+   "hint": "permanent OWN",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c",
+     "expr": "topBy(s.sex.claims,\"obedience\")"
+    },
+    {
+     "op": "let",
+     "name": "nm",
+     "expr": "c.name"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "obedience",
+     "value": "100"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "own",
+     "value": "100"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "stage",
+     "value": "4"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "mode",
+     "value": "\"devoted\""
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "accepted",
+     "value": "true"
+    },
+    {
+     "op": "set",
+     "path": "sex.broken",
+     "value": "s.sex.broken+1"
+    },
+    {
+     "op": "corr",
+     "delta": "10"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(10)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "12"
+    },
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Buzz and blood: your name in script above her cunt, crown mark on her hip. You fuck her on the parlor table after, cumming on the fresh ink. PERMANENT (devoted, own 100). -$400. She shows it off like a ring."
+    }
+   ]
+  },
+  {
+   "label": "Henna for now",
+   "hint": "temporary",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c2",
+     "expr": "topBy(s.sex.claims,\"obedience\")"
+    },
+    {
+     "op": "setv",
+     "target": "c2",
+     "path": "obedience",
+     "value": "clamp(c2.obedience+8)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Henna, two weeks. She pouts but glows. Big steps need sober months."
+    }
+   ]
+  }
+ ]
+}

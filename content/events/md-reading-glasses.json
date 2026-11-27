@@ -1,0 +1,48 @@
+{
+ "id": "md-reading-glasses",
+ "minAge": 45,
+ "maxAge": 55,
+ "title": "Arm's length",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Menus blur. The pharmacist suggests the inevitable drawer of glasses.",
+ "choices": [
+  {
+   "label": "Get checked",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Proper prescription. The world returns to focus."
+    }
+   ]
+  },
+  {
+   "label": "Buy five pairs",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(60)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Glasses everywhere: kitchen, car, desk. Never squint again."
+    }
+   ]
+  }
+ ]
+}

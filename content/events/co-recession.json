@@ -1,0 +1,86 @@
+{
+ "id": "co-recession",
+ "minAge": 18,
+ "maxAge": 80,
+ "title": "Lean season",
+ "tags": [
+  "adult-life",
+  "company",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "company",
+  "truthy": true
+ },
+ "text": "The economy coughs and {{s.company.name}} catches it: orders thin, the cash cushion thins faster.",
+ "choices": [
+  {
+   "label": "Cut deep, cut once",
+   "hint": "-staff, survive",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.employees",
+     "value": "max(1,s.company.employees-1)"
+    },
+    {
+     "op": "set",
+     "path": "company.cash",
+     "value": "s.company.cash+(4000)"
+    },
+    {
+     "op": "set",
+     "path": "company.morale",
+     "value": "clamp(s.company.morale-6)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Painful, fast, survivable. +$4,000 saved wages."
+    }
+   ]
+  },
+  {
+   "label": "Bet big downhill",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.45",
+     "then": [
+      {
+       "op": "set",
+       "path": "company.value",
+       "value": "round(s.company.value*1.25)"
+      },
+      {
+       "op": "set",
+       "path": "company.rep",
+       "value": "clamp(s.company.rep+5)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Counter-cyclical genius! Value +25% while rivals nap."
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "company.value",
+       "value": "round(s.company.value*0.7)"
+      },
+      {
+       "op": "set",
+       "path": "company.morale",
+       "value": "clamp(s.company.morale-10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The bet sinks. Value -30%. Winter is here."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

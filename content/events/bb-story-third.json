@@ -1,0 +1,50 @@
+{
+ "id": "bb-story-third",
+ "minAge": 0,
+ "maxAge": 4,
+ "title": "One more story",
+ "tags": [
+  "baby",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Bedtime story ends. {{s.firstName}} whispers the ancient words: again.",
+ "choices": [
+  {
+   "label": "Read it again",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Third reading, with voices. Worth every minute."
+    }
+   ]
+  },
+  {
+   "label": "Abridged edition",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Speed-run story. Asleep by the last page anyway."
+    }
+   ]
+  }
+ ]
+}

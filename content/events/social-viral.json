@@ -1,0 +1,55 @@
+{
+ "id": "social-viral",
+ "minAge": 13,
+ "maxAge": 19,
+ "title": "Viral video",
+ "tags": [
+  "family",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your silly video hits 2M views overnight. Brands DM you.",
+ "choices": [
+  {
+   "label": "Ride the fame",
+   "hint": "money/social, risky",
+   "effects": [
+    {
+     "op": "let",
+     "name": "w",
+     "expr": "2000+floor(rnd()*8000)"
+    },
+    {
+     "op": "money",
+     "amount": "w"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "12"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Brand deals pay ${{w}}! Followers flood in. Fame is weird."
+    }
+   ]
+  },
+  {
+   "label": "Stay private, delete it",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You delete it. Peace > fame."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "sr-veteran-stories",
+ "minAge": 65,
+ "maxAge": 95,
+ "title": "Record the service",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The veterans project records stories before they fade.",
+ "choices": [
+  {
+   "label": "Tell yours",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your story joins the archive. Grandkids listen differently now."
+    }
+   ]
+  },
+  {
+   "label": "Interview others",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Twenty interviews recorded. History, saved by you."
+    }
+   ]
+  }
+ ]
+}

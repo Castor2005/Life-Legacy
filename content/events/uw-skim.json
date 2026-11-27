@@ -1,0 +1,92 @@
+{
+ "id": "uw-skim",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "Light envelope",
+ "tags": [
+  "adult-life",
+  "underworld",
+  "crime",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "underworld",
+    "truthy": true
+   },
+   {
+    "p": "underworld.crew.length",
+    "gt": 0
+   }
+  ]
+ },
+ "text": "The weekly count is short. Someone in {{s.firstName}}'s crew has sticky fingers, and everyone knows everyone knows.",
+ "choices": [
+  {
+   "label": "Forgive it once",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "4"
+    },
+    {
+     "op": "set",
+     "path": "underworld.rep",
+     "value": "max(0,s.underworld.rep-2)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mercy, loudly, once. Loyalty bought dear."
+    }
+   ]
+  },
+  {
+   "label": "Make an example",
+   "hint": "karma-, rep+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(8)"
+    },
+    {
+     "op": "set",
+     "path": "underworld.rep",
+     "value": "s.underworld.rep+(4)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(4)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nobody skims twice. The crew is quieter now — obedient, watchful."
+    }
+   ]
+  },
+  {
+   "label": "Cut them loose",
+   "hint": "-crew",
+   "effects": [
+    {
+     "op": "crewDrop",
+     "as": "m"
+    },
+    {
+     "op": "set",
+     "path": "underworld.rep",
+     "value": "max(0,s.underworld.rep-1)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "{{m?m.name+\" is out. \":\"\"}}Smaller crew, cleaner books."
+    }
+   ]
+  }
+ ]
+}

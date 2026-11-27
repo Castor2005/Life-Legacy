@@ -1,0 +1,69 @@
+{
+ "id": "tn-exam-all-nighter",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Finals week",
+ "tags": [
+  "teen",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Four finals, three days, one backpack full of highlighters.",
+ "choices": [
+  {
+   "label": "Study sprint",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>50"
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "education.grades",
+       "value": "clamp(s.education.grades+(6))"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You ace three of four. The GPA breathes again."
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "education.grades",
+       "value": "clamp(s.education.grades+(2))"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Two Bs, two Cs. Survival counts as victory."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Sleep smart",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(2))"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Eight hours nightly. Your brain thanks you with Bs."
+    }
+   ]
+  }
+ ]
+}

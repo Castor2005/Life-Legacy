@@ -1,0 +1,47 @@
+{
+ "id": "ad-college-fund-start",
+ "minAge": 30,
+ "maxAge": 42,
+ "title": "529 day",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.children.length",
+  "gte": 1
+ },
+ "text": "The college fund opens with a hundred dollars and big dreams.",
+ "choices": [
+  {
+   "label": "Automate monthly",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2400)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Monthly transfers hum. Compounding starts its long work."
+    }
+   ]
+  },
+  {
+   "label": "Grandparent match",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Grandparents match gifts. The fund doubles its pace."
+    }
+   ]
+  }
+ ]
+}

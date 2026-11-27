@@ -1,0 +1,65 @@
+{
+ "id": "mx-tango-immersion",
+ "minAge": 20,
+ "maxAge": 65,
+ "title": "Tango week",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "A week of tango in the city that invented longing.",
+ "choices": [
+  {
+   "label": "Dance nightly",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.45",
+     "then": [
+      {
+       "op": "partnerSet",
+       "name": "partnerName()",
+       "rel": "72",
+       "age": "s.age"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The milonga decides: you two, entwined. The dance continues off-floor."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Twenty partners, one blister, infinite ochos."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Master the walk",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The walk first, always. Elegance compounds."
+    }
+   ]
+  }
+ ]
+}

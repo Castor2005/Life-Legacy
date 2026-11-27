@@ -1,0 +1,47 @@
+{
+ "id": "ad-camp-chaperone",
+ "minAge": 30,
+ "maxAge": 42,
+ "title": "Camp week",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.children.length",
+  "gte": 1
+ },
+ "text": "School camp needs chaperones. Sleeping bags required.",
+ "choices": [
+  {
+   "label": "Chaperone",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Canoes, stars, homesickness cured. Your kid brags about you."
+    }
+   ]
+  },
+  {
+   "label": "Pack the snacks",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(80)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Legendary snack trunk. Every kid knows your name."
+    }
+   ]
+  }
+ ]
+}

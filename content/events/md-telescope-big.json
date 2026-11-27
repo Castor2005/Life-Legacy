@@ -1,0 +1,49 @@
+{
+ "id": "md-telescope-big",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Aperture fever",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A twelve-inch telescope lists used. Saturn awaits.",
+ "choices": [
+  {
+   "label": "Buy the light bucket",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(900)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rings, bands, distant galaxies. The driveway becomes an observatory."
+    }
+   ]
+  },
+  {
+   "label": "Club scope nights",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Monthly star parties. You run the big scope for crowds."
+    }
+   ]
+  }
+ ]
+}

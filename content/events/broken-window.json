@@ -1,0 +1,70 @@
+{
+ "id": "broken-window",
+ "minAge": 7,
+ "maxAge": 12,
+ "title": "CRASH!",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Baseball + neighbor's window = disaster. Mr. Henderson storms out.",
+ "choices": [
+  {
+   "label": "Confess & pay",
+   "hint": "money-, karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mowing lawns all summer to pay $120. Character built."
+    }
+   ]
+  },
+  {
+   "label": "Run!",
+   "hint": "karma-",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(10)"
+    },
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "money",
+       "amount": "-(250)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Caught on doorbell cam! Parents pay $250. Grounded."
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "You escape. Guilt follows you for weeks."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

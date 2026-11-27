@@ -1,0 +1,45 @@
+{
+ "id": "bb-splash-bath",
+ "minAge": 0,
+ "maxAge": 2,
+ "title": "Rubber duck regatta",
+ "tags": [
+  "baby",
+  "happiness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Five rubber ducks race across the bath. {{s.firstName}} referees.",
+ "choices": [
+  {
+   "label": "Bet on yellow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Yellow wins by a beak. The crowd goes wild."
+    }
+   ]
+  },
+  {
+   "label": "Bubble boost",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Extra bubbles. Everyone floats home happy."
+    }
+   ]
+  }
+ ]
+}

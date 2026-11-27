@@ -1,0 +1,100 @@
+{
+ "id": "divorce-risk",
+ "minAge": 30,
+ "maxAge": 60,
+ "title": "Cold silence",
+ "tags": [
+  "adult-life",
+  "love",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "exists"
+ },
+ "text": "You and your partner barely talk. A counselor suggests one session ($400).",
+ "choices": [
+  {
+   "label": "Therapy",
+   "hint": "money-, love+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "partnerRel",
+     "delta": "22"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tears, truths, reconnection. Worth every cent."
+    }
+   ]
+  },
+  {
+   "label": "Tough it out",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "outcome",
+       "tpl": "It passes like a storm."
+      }
+     ],
+     "else": [
+      {
+       "op": "partnerRel",
+       "delta": "-(30)"
+      },
+      {
+       "op": "branch",
+       "cond": {
+        "p": "relationships.partner.rel",
+        "lt": 15
+       },
+       "then": [
+        {
+         "op": "let",
+         "name": "p",
+         "expr": "s.relationships.partner.name"
+        },
+        {
+         "op": "partnerClear"
+        },
+        {
+         "op": "set",
+         "path": "money",
+         "value": "round(s.money*0.6)"
+        },
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "-(20)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "{{p}} leaves. Divorce costs 40% of savings. Devastating."
+        }
+       ],
+       "else": [
+        {
+         "op": "outcome",
+         "tpl": "The silence hardens into distance."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

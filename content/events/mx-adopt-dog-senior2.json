@@ -1,0 +1,55 @@
+{
+ "id": "mx-adopt-dog-senior2",
+ "minAge": 30,
+ "maxAge": 75,
+ "title": "Old soul",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The shelter's oldest dog watches you with ancient eyes.",
+ "choices": [
+  {
+   "label": "Take them home",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "addPet",
+     "name": "\"Mabel\"",
+     "petType": "dog",
+     "rel": 80
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mabel naps on your feet from day one. Old souls know."
+    }
+   ]
+  },
+  {
+   "label": "Sponsor the care",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You fund the vet bills. Mabel finds a farm to retire on."
+    }
+   ]
+  }
+ ]
+}

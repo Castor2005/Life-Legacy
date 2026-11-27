@@ -1,0 +1,64 @@
+{
+ "id": "kd-sleepover-ghost",
+ "minAge": 6,
+ "maxAge": 11,
+ "title": "Midnight ghost tour",
+ "tags": [
+  "kid",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Sleepover dare: the basement at midnight, flashlights only.",
+ "choices": [
+  {
+   "label": "Lead the way",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.social>40"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You narrate the furnace like a pro. Legends are born."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(5)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A coat on a hook ends the tour early. Screams, then giggles."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Guard the snacks",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You hold base camp. Returning heroes need popcorn."
+    }
+   ]
+  }
+ ]
+}

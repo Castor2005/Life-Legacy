@@ -1,0 +1,44 @@
+{
+ "id": "kd-sidewalk-stand",
+ "minAge": 7,
+ "maxAge": 12,
+ "title": "Rock stand",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Painted rocks sell surprisingly well to neighbors.",
+ "choices": [
+  {
+   "label": "Paint 50 rocks",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "65"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ladybugs, monters, galaxies. You bank 65 dollars."
+    }
+   ]
+  },
+  {
+   "label": "Hide them free",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Kindness rocks hidden in the park. Strangers smile."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "id": "ad-anniversary-10",
+ "minAge": 33,
+ "maxAge": 44,
+ "title": "Tin decade",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "married"
+ },
+ "text": "Ten years married. The gift is tin. The marriage is steel.",
+ "choices": [
+  {
+   "label": "Weekend away",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(800)"
+    },
+    {
+     "op": "partnerRel",
+     "delta": "12"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two days, no kids, old jokes. The spark files no paperwork."
+    }
+   ]
+  },
+  {
+   "label": "Vow renewal",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "partnerRel",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Backyard vows, same promises, deeper meanings."
+    }
+   ]
+  }
+ ]
+}

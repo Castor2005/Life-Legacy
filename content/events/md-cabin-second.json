@@ -1,0 +1,48 @@
+{
+ "id": "md-cabin-second",
+ "minAge": 47,
+ "maxAge": 59,
+ "title": "Second roof",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A small lake cabin lists low. The family votes yes unanimously.",
+ "choices": [
+  {
+   "label": "Buy the cabin",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(25000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Docks, loons, cousins every July. The family anchor drops."
+    }
+   ]
+  },
+  {
+   "label": "Rent the dream",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two weeks yearly, zero roofs to fix. Freedom kept."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2970 @@
+{
+ "pack": "adult",
+ "events": [
+  {
+   "id": "ad-10k-tradition",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Turkey trot prime",
+   "tags": [
+    "adult-life",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The Thanksgiving 10k. Your age group is winnable.",
+   "choices": [
+    {
+     "label": "Train twelve weeks",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You place second. The pie has never tasted better."
+      }
+     ]
+    },
+    {
+     "label": "Run for fun",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Costume division, high fives, zero regrets."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-anniversary-10",
+   "minAge": 33,
+   "maxAge": 44,
+   "title": "Tin decade",
+   "tags": [
+    "adult-life",
+    "love"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "partner": "married"
+   },
+   "text": "Ten years married. The gift is tin. The marriage is steel.",
+   "choices": [
+    {
+     "label": "Weekend away",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(800)"
+      },
+      {
+       "op": "partnerRel",
+       "delta": "12"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Two days, no kids, old jokes. The spark files no paperwork."
+      }
+     ]
+    },
+    {
+     "label": "Vow renewal",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(500)"
+      },
+      {
+       "op": "partnerRel",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Backyard vows, same promises, deeper meanings."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-attic-time-capsule",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Attic archaeology",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The attic yields your childhood box, sealed with stickers.",
+   "choices": [
+    {
+     "label": "Open with kids",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Trophies, notes, bad hair. The kids howl with joy."
+      }
+     ]
+    },
+    {
+     "label": "Start a new one",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A new capsule sealed for 2046. The future thanks you."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-babysitter-black-book",
+   "minAge": 30,
+   "maxAge": 40,
+   "title": "Sitter network",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "p": "relationships.children.length",
+    "gte": 1
+   },
+   "text": "Date nights die without sitters. A network must be built.",
+   "choices": [
+    {
+     "label": "Build the rotation",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Three trusted sitters. Date night: resurrected."
+      }
+     ]
+    },
+    {
+     "label": "Trade with neighbors",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You watch theirs, they watch yours. Free and trusted."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-backyard-fence",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Fence diplomacy",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The fence leans. The neighbor suggests splitting the bill.",
+   "choices": [
+    {
+     "label": "Split it fair",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(900)"
+      },
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "New cedar, shared cost, better neighbors."
+      }
+     ]
+    },
+    {
+     "label": "DIY weekend",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(450)"
+      },
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You build it straight. Pride in every post."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-basement-flood",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Indoor pool",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The basement floods at 2am. The shop-vac is ready.",
+   "choices": [
+    {
+     "label": "French drains",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(3500)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Drains and pump installed. Never again, says the warranty."
+      }
+     ]
+    },
+    {
+     "label": "DIY dry-out",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(400)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Fans for a week, bleach, vigilance. Saved for 400 dollars."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-basement-gym",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Iron basement",
+   "tags": [
+    "adult-life",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A rack, a bench, a bar. The commute is stairs.",
+   "choices": [
+    {
+     "label": "Buy used",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(700)"
+      },
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Used iron, new habits. Training happens daily now."
+      }
+     ]
+    },
+    {
+     "label": "Bodyweight first",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Pushups and pullups. Free, brutal, effective."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-block-party-king",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Block captain",
+   "tags": [
+    "adult-life",
+    "social"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The block party needs a captain. The grill is big enough.",
+   "choices": [
+    {
+     "label": "Run the party",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(200)"
+      },
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Bounce house, band, pie contest. Best party in years."
+      }
+     ]
+    },
+    {
+     "label": "Grill master only",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Two hundred burgers, zero leftovers. Your apron is famous."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-book-club-wine",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Chapter and verse",
+   "tags": [
+    "adult-life",
+    "social"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The neighborhood book club has opinions and excellent snacks.",
+   "choices": [
+    {
+     "label": "Read deeply",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You connect the themes. The group upgrades its picks."
+      }
+     ]
+    },
+    {
+     "label": "Host the night",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your spread becomes legend. Attendance triples."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-cabin-weekend",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Cabin math",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A cabin timeshare with friends: twelve weekends a year.",
+   "choices": [
+    {
+     "label": "Buy in",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(4000)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "9"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Lake mornings, pine air, kids who vanish into woods. Worth it."
+      }
+     ]
+    },
+    {
+     "label": "Rent as needed",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(800)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Two rented weeks, zero upkeep. Flexibility wins."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-camp-chaperone",
+   "minAge": 30,
+   "maxAge": 42,
+   "title": "Camp week",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "p": "relationships.children.length",
+    "gte": 1
+   },
+   "text": "School camp needs chaperones. Sleeping bags required.",
+   "choices": [
+    {
+     "label": "Chaperone",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Canoes, stars, homesickness cured. Your kid brags about you."
+      }
+     ]
+    },
+    {
+     "label": "Pack the snacks",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(80)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Legendary snack trunk. Every kid knows your name."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-car-second",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Second car math",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "p": "relationships.children.length",
+    "gte": 1
+   },
+   "text": "Activities scatter across town. One car cannot be two places.",
+   "choices": [
+    {
+     "label": "Buy the second",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(9000)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Used, reliable, scheduled like an airline. Chaos: managed."
+      }
+     ]
+    },
+    {
+     "label": "Carpool alliance",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Three families rotate. Costs split, friendships sealed."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-career-pivot-35",
+   "minAge": 32,
+   "maxAge": 40,
+   "title": "Pivot at 35",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "job": "employed"
+   },
+   "text": "Your industry shifts. Retrain or double down?",
+   "choices": [
+    {
+     "label": "Retrain nights",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(3000)"
+      },
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.stats.smarts>50"
+       },
+       "then": [
+        {
+         "op": "money",
+         "amount": "9000"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Certified in the new stack. 9,000 dollars raise follows."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "smarts",
+         "delta": "4"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Halfway skilled, fully employable. The pivot continues."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Double down",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Depth beats novelty. Your expertise premium grows."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-choir-join",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Choir risers",
+   "tags": [
+    "adult-life",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The community choir needs tenors. You hum in the car.",
+   "choices": [
+    {
+     "label": "Audition",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Second row, swaying gently. The holiday concert moves hundreds."
+      }
+     ]
+    },
+    {
+     "label": "Crew the concerts",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Risers built, robes steamed. The music stands on you."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-cholesterol-letter",
+   "minAge": 35,
+   "maxAge": 44,
+   "title": "Lab results",
+   "tags": [
+    "adult-life",
+    "health"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The labs flag cholesterol. The doctor suggests boring miracles.",
+   "choices": [
+    {
+     "label": "Walk daily",
+     "hint": "health+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Thirty minutes daily. Numbers fall within months."
+      }
+     ]
+    },
+    {
+     "label": "Cook the change",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Oats, beans, fish. The palate adapts; arteries applaud."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-cider-press",
+   "minAge": 32,
+   "maxAge": 44,
+   "title": "Press day",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A neighbor's press sits idle. Apples are falling everywhere.",
+   "choices": [
+    {
+     "label": "Press together",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Forty gallons pressed. The neighborhood drinks fall."
+      }
+     ]
+    },
+    {
+     "label": "Your batch solo",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Ten gallons of your own. Cider: endless."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-college-fund-start",
+   "minAge": 30,
+   "maxAge": 42,
+   "title": "529 day",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "p": "relationships.children.length",
+    "gte": 1
+   },
+   "text": "The college fund opens with a hundred dollars and big dreams.",
+   "choices": [
+    {
+     "label": "Automate monthly",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(2400)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Monthly transfers hum. Compounding starts its long work."
+      }
+     ]
+    },
+    {
+     "label": "Grandparent match",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Grandparents match gifts. The fund doubles its pace."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-dog-aging",
+   "minAge": 32,
+   "maxAge": 44,
+   "title": "Gray muzzle",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The dog slows on stairs. The vet talks about comfort.",
+   "choices": [
+    {
+     "label": "Spoil gently",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(600)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Ramps, soft beds, slow walks. Every day counts double."
+      }
+     ]
+    },
+    {
+     "label": "Puppy pipeline",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "addPet",
+       "name": "\"Pip\"",
+       "petType": "dog",
+       "rel": 70
+      },
+      {
+       "op": "outcome",
+       "tpl": "Pip arrives. The old dog teaches, the young one learns."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-dog-training-pro",
+   "minAge": 30,
+   "maxAge": 42,
+   "title": "Pro training",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The dog pulls like a sled team. A trainer offers six weeks.",
+   "choices": [
+    {
+     "label": "Enroll",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(450)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Loose-leash walking achieved. Walks become joy again."
+      }
+     ]
+    },
+    {
+     "label": "YouTube academy",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Treat timing mastered free. The dog graduates anyway."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-elo-night",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Board game pact",
+   "tags": [
+    "adult-life",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Monthly game night needs a host with a big table.",
+   "choices": [
+    {
+     "label": "Host monthly",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(150)"
+      },
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Five years running. The trophy is a golden meeple."
+      }
+     ]
+    },
+    {
+     "label": "Tournament arc",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Season brackets, playoffs, a champion crowned in April."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-escape-weekend",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Cabin unplugged",
+   "tags": [
+    "adult-life",
+    "love"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "partner": "married"
+   },
+   "text": "No kids, no signal, one cabin. The marriage needs a weekend.",
+   "choices": [
+    {
+     "label": "Disappear together",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(600)"
+      },
+      {
+       "op": "partnerRel",
+       "delta": "12"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Books, baths, long talks. You return fluent in each other."
+      }
+     ]
+    },
+    {
+     "label": "Adventure version",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(700)"
+      },
+      {
+       "op": "partnerRel",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Kayaks and ridges. Tired, sunburnt, reconnected."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-fantasy-camp",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Grown-up camp",
+   "tags": [
+    "adult-life",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Adult summer camp: archery, crafts, no kids allowed.",
+   "choices": [
+    {
+     "label": "Go full camper",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(700)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Capture the flag at 38 hits different. Gloriously."
+      }
+     ]
+    },
+    {
+     "label": "Teach a skill",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your whittling class fills twice. Camp legend."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-fence-art",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Fence gallery",
+   "tags": [
+    "adult-life",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The back fence begs for color. The HOA allows murals.",
+   "choices": [
+    {
+     "label": "Paint the seasons",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(200)"
+      },
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Four seasons, forty feet. Walkers stop daily."
+      }
+     ]
+    },
+    {
+     "label": "Kids paint too",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Handprints border the masterpiece. Imperfect, perfect."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-friend-divorce",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Friend's split",
+   "tags": [
+    "adult-life",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Your best friend's marriage ends. They need a couch and ears.",
+   "choices": [
+    {
+     "label": "Show up fully",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You listen for months. The friendship deepens through the wreck."
+      }
+     ]
+    },
+    {
+     "label": "Include them always",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Every invite extended. Loneliness never gets a foothold."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-garage-band-30s",
+   "minAge": 30,
+   "maxAge": 40,
+   "title": "Dad band",
+   "tags": [
+    "adult-life",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Three parents, one garage, Wednesday nights.",
+   "choices": [
+    {
+     "label": "Play the fair",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The town fair stage. Kids mortified, crowd delighted."
+      }
+     ]
+    },
+    {
+     "label": "Record one song",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "One song, properly recorded. Played at every barbecue forever."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-garage-evictee",
+   "minAge": 30,
+   "maxAge": 40,
+   "title": "Project car",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A 1989 convertible needs everything. The price is almost free.",
+   "choices": [
+    {
+     "label": "Restore slowly",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(3000)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Three years of weekends. First drive: top down, tears up."
+      }
+     ]
+    },
+    {
+     "label": "Flip as-is",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "400"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Cleaned, listed, sold. 400 dollars for the effort."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-garden-serious",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Real garden",
+   "tags": [
+    "adult-life",
+    "health"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The yard becomes a quarter-acre of intent.",
+   "choices": [
+    {
+     "label": "Grow dinner",
+     "hint": "health+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Salads from steps away. The grocery bill shrinks."
+      }
+     ]
+    },
+    {
+     "label": "Orchard corner",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(400)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Three fruit trees planted. Future pies secured."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-hernia-hint",
+   "minAge": 33,
+   "maxAge": 44,
+   "title": "Mystery ache",
+   "tags": [
+    "adult-life",
+    "health"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Something twinges when you lift. Google suggests seven disasters.",
+   "choices": [
+    {
+     "label": "See the doctor",
+     "hint": "health+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(200)"
+      },
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Minor strain, real plan. Caught early, fixed fast."
+      }
+     ]
+    },
+    {
+     "label": "Deload month",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Lighter weights, walks, sleep. The body thanks you."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-hike-club-30s",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Summit Sundays",
+   "tags": [
+    "adult-life",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A hiking group meets Sundays. The peaks are calling.",
+   "choices": [
+    {
+     "label": "Join the ridge",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Twelve summits this year. Legs: forged. Views: banked."
+      }
+     ]
+    },
+    {
+     "label": "Lead beginners",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You sweep the slow group. Three finish their first peak."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-invest-bump",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Raise routing",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "job": "employed"
+   },
+   "text": "The raise lands. Lifestyle or portfolio?",
+   "choices": [
+    {
+     "label": "Invest the delta",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(4000)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The whole raise vanishes into investments. Future-you cheers."
+      }
+     ]
+    },
+    {
+     "label": "Split it",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(1500)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Half invested, half enjoyed. Balance compounds too."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-kitchen-reno",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Kitchen era",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The kitchen is 1994. The quotes are 2026.",
+   "choices": [
+    {
+     "label": "Renovate smart",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(12000)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Cabinets refaced, island added. Home value jumps."
+      }
+     ]
+    },
+    {
+     "label": "Paint and hardware",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(800)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Paint, handles, light. It looks new for 800 dollars."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-language-second-wind",
+   "minAge": 32,
+   "maxAge": 44,
+   "title": "Second language",
+   "tags": [
+    "adult-life",
+    "smarts"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The job rewards bilingual pay. Your high school Spanish stirs.",
+   "choices": [
+    {
+     "label": "Night classes",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(500)"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Conversational by spring. The pay bump follows."
+      }
+     ]
+    },
+    {
+     "label": "App streak",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "400-day streak. Ordering food becomes a party trick."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-lunchbox-letters",
+   "minAge": 30,
+   "maxAge": 40,
+   "title": "Lunchbox notes",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "p": "relationships.children.length",
+    "gte": 1
+   },
+   "text": "Your kid trades lunches daily. Notes might fix the menu.",
+   "choices": [
+    {
+     "label": "Notes every day",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Jokes and hearts in every box. Trades drop 90 percent."
+      }
+     ]
+    },
+    {
+     "label": "Upgrade the menu",
+     "hint": "health+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(40)"
+      },
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Bento era begins. Other kids offer trades again."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-marathon-relay",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Relay team",
+   "tags": [
+    "adult-life",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Work forms a marathon relay. Your leg is 10k.",
+   "choices": [
+    {
+     "label": "Train the leg",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You run it in 48 minutes. The team places third."
+      }
+     ]
+    },
+    {
+     "label": "Cheer captain",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Signs, cowbell, splits called. The team runs on you."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-mentor-others",
+   "minAge": 32,
+   "maxAge": 44,
+   "title": "Give back",
+   "tags": [
+    "adult-life",
+    "karma"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "job": "employed"
+   },
+   "text": "Juniors ask for your time. Calendars are full; meaning calls.",
+   "choices": [
+    {
+     "label": "Mentor two",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Two careers bend upward because of your hours."
+      }
+     ]
+    },
+    {
+     "label": "Write the guide",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your playbook helps hundreds. Leverage of kindness."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-minivan-math",
+   "minAge": 30,
+   "maxAge": 40,
+   "title": "The third row",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "p": "relationships.children.length",
+    "gte": 1
+   },
+   "text": "Two kids, one sedan, zero space. The minivan looms.",
+   "choices": [
+    {
+     "label": "Embrace the van",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(8000)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Sliding doors change everything. Resistance was futile."
+      }
+     ]
+    },
+    {
+     "label": "Roof box instead",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(500)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Roof box buys two years. The van waits patiently."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-neighbor-fence-2",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Shared driveway",
+   "tags": [
+    "adult-life",
+    "social"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The shared driveway cracks. Both houses, one bill.",
+   "choices": [
+    {
+     "label": "Split and schedule",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(1500)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Split cost, one contractor, done in three days."
+      }
+     ]
+    },
+    {
+     "label": "Patch your half",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(400)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your half smooths out. Their half can wait its turn."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-orchard-share",
+   "minAge": 32,
+   "maxAge": 44,
+   "title": "Fruit share",
+   "tags": [
+    "adult-life",
+    "health"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A farm share delivers weekly boxes of the season.",
+   "choices": [
+    {
+     "label": "Split a share",
+     "hint": "health+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(300)"
+      },
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Berries, corn, tomatoes. Cooking follows the harvest."
+      }
+     ]
+    },
+    {
+     "label": "Full share",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(600)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Abundance weekly. Neighbors get the overflow."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-parent-teacher",
+   "minAge": 30,
+   "maxAge": 42,
+   "title": "Conference season",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "p": "relationships.children.length",
+    "gte": 1
+   },
+   "text": "The teacher says your kid is bright but distractible. Familiar.",
+   "choices": [
+    {
+     "label": "Routines together",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Homework hour, same time daily. Grades climb within weeks."
+      }
+     ]
+    },
+    {
+     "label": "Celebrate strengths",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The art is incredible. You frame the focus issue as fuel."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-patio-dreams",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Patio season",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The backyard is mud. The dream is string lights and smoke.",
+   "choices": [
+    {
+     "label": "Build it out",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(2500)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "9"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Deck, lights, grill. Summers move outside permanently."
+      }
+     ]
+    },
+    {
+     "label": "Fire pit first",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(300)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "One fire pit, infinite nights. Best 300 dollars spent."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-pension-check",
+   "minAge": 38,
+   "maxAge": 44,
+   "title": "Statement season",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "job": "employed"
+   },
+   "text": "The retirement statement arrives. The number is real now.",
+   "choices": [
+    {
+     "label": "Bump 2 percent",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(2000)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Two percent more vanishes monthly. Compounding nods."
+      }
+     ]
+    },
+    {
+     "label": "Brokerage sidecar",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(1500)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A side account opens. Options multiply quietly."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-piano-return",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Keys again",
+   "tags": [
+    "adult-life",
+    "creativity"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The childhood piano follows you as inheritance. It waits.",
+   "choices": [
+    {
+     "label": "Lessons restart",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(600)"
+      },
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Scales return like old friends. Recital by spring."
+      }
+     ]
+    },
+    {
+     "label": "Kids learn first",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(800)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The kids take lessons on it. The house fills with practice."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-pickle-league",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Dink league",
+   "tags": [
+    "adult-life",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The rec league needs a sub. The paddle is provided.",
+   "choices": [
+    {
+     "label": "Sub all season",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You start by playoffs. The kitchen is your kingdom."
+      }
+     ]
+    },
+    {
+     "label": "Drill weekly",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Third-shot drops mastered. Partners request you."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-poker-charity",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Charity cards",
+   "tags": [
+    "adult-life",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A charity poker night: 50 dollars in, glory out.",
+   "choices": [
+    {
+     "label": "Play tight",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.45",
+       "then": [
+        {
+         "op": "money",
+         "amount": "400"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Final table! 400 dollars and a trophy that shines."
+        }
+       ],
+       "else": [
+        {
+         "op": "money",
+         "amount": "-(50)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Out by nine. The cause still wins. You deal the final."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Deal the night",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Best dealer in town. The night runs clean and rich."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-promotion-track",
+   "minAge": 30,
+   "maxAge": 40,
+   "title": "Director track",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "job": "employed"
+   },
+   "text": "The director role opens. Two years of work distill to one interview.",
+   "choices": [
+    {
+     "label": "Campaign for it",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.55",
+       "then": [
+        {
+         "op": "money",
+         "amount": "12000"
+        },
+        {
+         "op": "outcome",
+         "tpl": "The role is yours. 12,000 dollars more and a bigger blast radius."
+        }
+       ],
+       "else": [
+        {
+         "op": "stat",
+         "key": "discipline",
+         "delta": "4"
+        },
+        {
+         "op": "outcome",
+         "tpl": "An outsider gets it. Your packet was strong; next cycle is yours."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Lateral mastery",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You deepen instead of climbing. The craft pays quietly."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-race-bucket-list",
+   "minAge": 35,
+   "maxAge": 44,
+   "title": "Bucket race",
+   "tags": [
+    "adult-life",
+    "fitness"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A sprint triathlon: swim, bike, run, glory.",
+   "choices": [
+    {
+     "label": "Train 16 weeks",
+     "hint": "fitness+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "9"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You finish mid-pack, grinning like a champion."
+      }
+     ]
+    },
+    {
+     "label": "Relay a leg",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You swim the leg. The team handles the rest. Shared glory."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-rainy-roof-deck",
+   "minAge": 32,
+   "maxAge": 44,
+   "title": "Covered porch",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Rain cancels porch season. A cover would fix everything.",
+   "choices": [
+    {
+     "label": "Roof the deck",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(2800)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Covered porch, all seasons. Rain becomes ambiance."
+      }
+     ]
+    },
+    {
+     "label": "Sail shade",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(400)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Shade sails angle the storms away. Good enough glows."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-reunion-tour-band",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "One more show",
+   "tags": [
+    "adult-life",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The old band reunites for one show. Practice starts Tuesday.",
+   "choices": [
+    {
+     "label": "Sell it out",
+     "hint": "creativity+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "900"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "9"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Sold out local hall. You play like it is 2009."
+      }
+     ]
+    },
+    {
+     "label": "Record the night",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Filmed forever. The group chat replays it monthly."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-roof-reality",
+   "minAge": 32,
+   "maxAge": 44,
+   "title": "Roof o'clock",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The roof has five years, says the inspector. Or one storm.",
+   "choices": [
+    {
+     "label": "Replace now",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(9000)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "New roof, warranty, peace through every storm."
+      }
+     ]
+    },
+    {
+     "label": "Patch and save",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(1200)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Patches hold. The fund grows for the full job."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-sabbatical-dream",
+   "minAge": 35,
+   "maxAge": 44,
+   "title": "Month off?",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "job": "employed"
+   },
+   "text": "Six years in. A month unpaid could reset everything.",
+   "choices": [
+    {
+     "label": "Take the month",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(4500)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "11"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Trails, books, naps. You return a new person to the same desk."
+      }
+     ]
+    },
+    {
+     "label": "Mini Fridays",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Summer Fridays off instead. Small resets, steady gains."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-school-auction",
+   "minAge": 30,
+   "maxAge": 42,
+   "title": "Auction night",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "p": "relationships.children.length",
+    "gte": 1
+   },
+   "text": "The school auction needs items. Your closet holds donations.",
+   "choices": [
+    {
+     "label": "Donate big",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(200)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your grill pan package funds three field trips."
+      }
+     ]
+    },
+    {
+     "label": "Volunteer checkout",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You close the books at midnight. The PTA loves you."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-side-business-grow",
+   "minAge": 32,
+   "maxAge": 44,
+   "title": "Nights to days?",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The side business covers half your salary. Leap or steady?",
+   "choices": [
+    {
+     "label": "Leap carefully",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.5",
+       "then": [
+        {
+         "op": "money",
+         "amount": "20000"
+        },
+        {
+         "op": "outcome",
+         "tpl": "It works! Full-time freedom and 20,000 dollars ahead."
+        }
+       ],
+       "else": [
+        {
+         "op": "money",
+         "amount": "-(6000)"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Lean year, lessons learned. The job takes you back kindly."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Keep both",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "8000"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Both engines run. 8,000 dollars extra, zero risk."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-sleep-study",
+   "minAge": 33,
+   "maxAge": 44,
+   "title": "Snore report",
+   "tags": [
+    "adult-life",
+    "health"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Your partner reports freight-train snoring. A study is suggested.",
+   "choices": [
+    {
+     "label": "Do the study",
+     "hint": "health+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(300)"
+      },
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Mild apnea, simple fix. Energy returns like youth."
+      }
+     ]
+    },
+    {
+     "label": "Side-sleep era",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Pillows arranged like architecture. Snoring halves."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-soccer-parent",
+   "minAge": 30,
+   "maxAge": 42,
+   "title": "Sideline era",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "p": "relationships.children.length",
+    "gte": 1
+   },
+   "text": "Saturday means four games across two towns.",
+   "choices": [
+    {
+     "label": "Coach one team",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You coach the U10s. Orange slices and glory."
+      }
+     ]
+    },
+    {
+     "label": "Assistant everything",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Goals set up, benches hauled. The league runs on parents like you."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-sourdough-era",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Starter culture",
+   "tags": [
+    "adult-life",
+    "health"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "Everyone has a starter named Doughbi-Wan. Yours arrives.",
+   "choices": [
+    {
+     "label": "Bake weekly",
+     "hint": "health+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Crusts crackle. The house smells like a bakery."
+      }
+     ]
+    },
+    {
+     "label": "Gift the starter",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Splits for five friends. The culture spreads literally."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-tool-library",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Borrow, don't buy",
+   "tags": [
+    "adult-life",
+    "money"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The tool library opens: 500 tools, one card.",
+   "choices": [
+    {
+     "label": "Build the deck",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(900)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Borrowed saws, owned results. Deck done for 900 dollars."
+      }
+     ]
+    },
+    {
+     "label": "Volunteer repair",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Fix-it nights monthly. Toasters live because of you."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-travel-kids-real",
+   "minAge": 30,
+   "maxAge": 42,
+   "title": "Real trip",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "p": "relationships.children.length",
+    "gte": 1
+   },
+   "text": "The kids are old enough to remember. One big trip.",
+   "choices": [
+    {
+     "label": "National parks loop",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(3500)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "11"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Geysers, canyons, junior ranger badges. They will remember."
+      }
+     ]
+    },
+    {
+     "label": "Beach week simple",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(1500)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "One beach, one week, infinite sand. Simple wins."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-treehouse-deluxe",
+   "minAge": 30,
+   "maxAge": 42,
+   "title": "Treehouse 2.0",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "p": "relationships.children.length",
+    "gte": 1
+   },
+   "text": "The kids want a treehouse with windows. Real windows.",
+   "choices": [
+    {
+     "label": "Build it big",
+     "hint": "happiness+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(1500)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "9"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Insulated, wired, legendary. The kids move in emotionally."
+      }
+     ]
+    },
+    {
+     "label": "Kit build",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(600)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Weekend kit, striped curtains. Joy: identical."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-trivia-champs",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Tuesday trivia",
+   "tags": [
+    "adult-life",
+    "friends"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "The pub quiz has a dynasty team to dethrone.",
+   "choices": [
+    {
+     "label": "Form the team",
+     "hint": "smarts+",
+     "effects": [
+      {
+       "op": "chance",
+       "p": "0.5",
+       "then": [
+        {
+         "op": "money",
+         "amount": "250"
+        },
+        {
+         "op": "stat",
+         "key": "happiness",
+         "delta": "7"
+        },
+        {
+         "op": "outcome",
+         "tpl": "Champions! 250 dollars bar credit and a plaque."
+        }
+       ],
+       "else": [
+        {
+         "op": "outcome",
+         "tpl": "Second by one point. The rematch simmers all year."
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "label": "Host a round",
+     "hint": "social+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Your music round goes legendary. The pub begs for encores."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-tutor-pay-forward",
+   "minAge": 32,
+   "maxAge": 44,
+   "title": "Coach the strugglers",
+   "tags": [
+    "adult-life",
+    "karma"
+   ],
+   "weight": 1,
+   "preconditions": null,
+   "text": "A kid on the team fails math. You were that kid.",
+   "choices": [
+    {
+     "label": "Tutor twice weekly",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "C to B+ by spring. The kid's mom cries at you."
+      }
+     ]
+    },
+    {
+     "label": "Fund a tutor",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(600)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You fund a pro tutor. The kid passes; the team keeps its star."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "ad-will-finally",
+   "minAge": 30,
+   "maxAge": 44,
+   "title": "Paperwork of love",
+   "tags": [
+    "adult-life",
+    "family"
+   ],
+   "weight": 1,
+   "preconditions": {
+    "p": "relationships.children.length",
+    "gte": 1
+   },
+   "text": "No will, two kids, one dog. The lawyer waits.",
+   "choices": [
+    {
+     "label": "Sign everything",
+     "hint": "karma+",
+     "effects": [
+      {
+       "op": "money",
+       "amount": "-(500)"
+      },
+      {
+       "op": "flag",
+       "key": "hasWill",
+       "value": "true"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Wills, guardians, trusts. The family is protected. Sleep improves."
+      }
+     ]
+    },
+    {
+     "label": "DIY basics",
+     "hint": "discipline+",
+     "effects": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Basic documents filed. Better than nothing, upgrade later."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

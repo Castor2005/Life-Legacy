@@ -1,0 +1,162 @@
+{
+ "id": "ow-jealous-knives",
+ "minAge": 20,
+ "maxAge": 60,
+ "title": "Claws at midnight",
+ "tags": [
+  "adult-life",
+  "sex",
+  "ownership",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "sex",
+      "truthy": true
+     },
+     {
+      "p": "sex.claims",
+      "truthy": true
+     }
+    ]
+   },
+   {
+    "p": "sex.claims.length",
+    "gte": 2
+   }
+  ]
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "cs",
+    "expr": "s.sex&&s.sex.claims||[]"
+   },
+   {
+    "name": "a",
+    "expr": "where(cs,\"rank\",\"eq\",0)"
+   },
+   {
+    "name": "j",
+    "expr": "where(cs,\"jealousy\",\"gte\",60)"
+   },
+   {
+    "name": "t",
+    "expr": "s.sex&&s.sex.haremTension||0"
+   }
+  ],
+  "template": "2am: raised voices. {{a?a.name+\" (your alpha)\":\"Your alpha\"}} found {{j?j.name+\" crying over your texts\":\"bite marks that were not for her\"}}. Tension {{t}}. Someone demands: 'HER or ME.'"
+ },
+ "choices": [
+  {
+   "label": "Stoke it hotter",
+   "hint": "corr+, jealousy+",
+   "effects": [
+    {
+     "op": "forClaims",
+     "idxAs": "i",
+     "body": [
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.sex.claims[i].rank!==0"
+       },
+       "then": [
+        {
+         "op": "claimPath",
+         "ref": "$it",
+         "path": "jealousy",
+         "value": "clamp(s.sex.claims[i].jealousy+14)"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "op": "sexset",
+     "path": "haremTension",
+     "value": "clamp(s.sex.haremTension+14)"
+    },
+    {
+     "op": "corr",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(6)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "histLog",
+     "name": "s.sex.claims[0].name",
+     "acts": [
+      "\"rough\"",
+      "\"public\""
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "You fuck the alpha hard against the wall while the others watch, dripping — then pull a watcher in by the hair. Jealousy is fuel; cumming is the exhaust. Everyone hates it. Everyone begs for more."
+    }
+   ]
+  },
+  {
+   "label": "Soothe them both",
+   "hint": "tension-, love+",
+   "effects": [
+    {
+     "op": "forClaims",
+     "idxAs": "k",
+     "body": [
+      {
+       "op": "claimPath",
+       "ref": "$it",
+       "path": "jealousy",
+       "value": "max(0,s.sex.claims[k].jealousy-18)"
+      }
+     ]
+    },
+    {
+     "op": "sexset",
+     "path": "haremTension",
+     "value": "clamp(s.sex.haremTension-20)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "set",
+     "path": "stress",
+     "value": "clamp((s.stress||20)-6)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "partner": "exists"
+     },
+     "then": [
+      {
+       "op": "partnerRel",
+       "delta": "8"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Separate baths, separate praise, then one shared bed where you fuck each of them slow, eye to eye, cumming with apologies and worship. Tension {{s.sex.haremTension}}. The house breathes."
+    }
+   ]
+  }
+ ]
+}
