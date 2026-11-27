@@ -1,0 +1,169 @@
+{
+ "id": "ow-rotation-night",
+ "minAge": 20,
+ "maxAge": 65,
+ "title": "The schedule",
+ "tags": [
+  "adult-life",
+  "sex",
+  "ownership"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "sex",
+      "truthy": true
+     },
+     {
+      "p": "sex.claims",
+      "truthy": true
+     }
+    ]
+   },
+   {
+    "p": "sex.claims.length",
+    "gte": 2
+   }
+  ]
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "cs",
+    "expr": "s.sex&&s.sex.claims||[]"
+   }
+  ],
+  "template": "Three owned adults, one of you, seven nights. They slide a handwritten ROTATION across the table — who gets Monday, who gets the weekend, who gets watched. Your stamina ({{s.sex&&s.sex.stamina||55}}) is the bottleneck."
+ },
+ "choices": [
+  {
+   "label": "Strict rotation",
+   "hint": "tension-, stamina--",
+   "effects": [
+    {
+     "op": "sexset",
+     "path": "haremTension",
+     "value": "clamp(s.sex.haremTension-16)"
+    },
+    {
+     "op": "forClaims",
+     "idxAs": "i",
+     "body": [
+      {
+       "op": "claimPath",
+       "ref": "$it",
+       "path": "obedience",
+       "value": "clamp(s.sex.claims[i].obedience+6)"
+      },
+      {
+       "op": "claimPath",
+       "ref": "$it",
+       "path": "jealousy",
+       "value": "max(0,s.sex.claims[i].jealousy-10)"
+      },
+      {
+       "op": "histLog",
+       "name": "s.sex.claims[i].name",
+       "acts": [
+        "\"vanilla\"",
+        "\"tender\""
+       ]
+      }
+     ]
+    },
+    {
+     "op": "stamina",
+     "delta": "-(24)"
+    },
+    {
+     "op": "skill",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "14"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(3)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Night after night — fucked, eaten, ridden, cumming on schedule till your legs give out. Everyone gets fed; no one gets special. Stamina {{s.sex.stamina}}. The harem purrs."
+    }
+   ]
+  },
+  {
+   "label": "Favourite only tonight",
+   "hint": "alpha+, others jealous",
+   "effects": [
+    {
+     "op": "let",
+     "name": "al",
+     "expr": "s.sex.alpha||s.sex.claims[0].name"
+    },
+    {
+     "op": "forClaims",
+     "idxAs": "j",
+     "body": [
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.sex.claims[j].name===al"
+       },
+       "then": [
+        {
+         "op": "claimPath",
+         "ref": "$it",
+         "path": "obsession",
+         "value": "clamp(s.sex.claims[j].obsession+12)"
+        },
+        {
+         "op": "claimPath",
+         "ref": "$it",
+         "path": "jealousy",
+         "value": "max(0,s.sex.claims[j].jealousy-10)"
+        }
+       ],
+       "else": [
+        {
+         "op": "claimPath",
+         "ref": "$it",
+         "path": "jealousy",
+         "value": "clamp(s.sex.claims[j].jealousy+14)"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "op": "sexset",
+     "path": "haremTension",
+     "value": "clamp(s.sex.haremTension+10)"
+    },
+    {
+     "op": "histLog",
+     "name": "al",
+     "acts": [
+      "\"worship\"",
+      "\"oral\""
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You take only {{al}} — long worship, slow deep fucking, cumming with their name in your teeth — while the others listen through the wall. Alpha glows. The rest sharpen claws. Tension {{s.sex.haremTension}}."
+    }
+   ]
+  }
+ ]
+}

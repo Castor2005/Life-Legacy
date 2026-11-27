@@ -1,0 +1,45 @@
+{
+ "id": "tn-sibling-grad",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Sibling launch",
+ "tags": [
+  "teen",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your older sibling leaves for college. The room is suddenly huge.",
+ "choices": [
+  {
+   "label": "Claim the room",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The room is yours. The quiet is weird for a week."
+    }
+   ]
+  },
+  {
+   "label": "Visit monthly",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Care packages go both ways. Distance makes it fonder."
+    }
+   ]
+  }
+ ]
+}

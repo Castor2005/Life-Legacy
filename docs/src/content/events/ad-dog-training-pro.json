@@ -1,0 +1,44 @@
+{
+ "id": "ad-dog-training-pro",
+ "minAge": 30,
+ "maxAge": 42,
+ "title": "Pro training",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The dog pulls like a sled team. A trainer offers six weeks.",
+ "choices": [
+  {
+   "label": "Enroll",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(450)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Loose-leash walking achieved. Walks become joy again."
+    }
+   ]
+  },
+  {
+   "label": "YouTube academy",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Treat timing mastered free. The dog graduates anyway."
+    }
+   ]
+  }
+ ]
+}

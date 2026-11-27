@@ -1,0 +1,122 @@
+{
+ "id": "kid-cops",
+ "minAge": 25,
+ "maxAge": 60,
+ "title": "Caught lifting candy",
+ "tags": [
+  "adult-life",
+  "family",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "some": {
+   "arr": "relationships.children",
+   "where": {
+    "all": [
+     {
+      "p": "$it.age",
+      "gte": 10
+     },
+     {
+      "p": "$it.age",
+      "lte": 17
+     }
+    ]
+   }
+  }
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "k",
+    "expr": "where(whereAll(s.relationships.children||[],\"age\",\"gte\",10),\"age\",\"lte\",17)"
+   }
+  ],
+  "template": "The corner shop calls: {{k?k.name:\"your kid\"}} was caught pocketing sweets. The owner wants 'to make it a lesson.'"
+ },
+ "choices": [
+  {
+   "label": "Pay double, apologize together",
+   "hint": "money-, rel+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(60)",
+     "floor": 0
+    },
+    {
+     "op": "let",
+     "name": "k",
+     "expr": "where(whereAll(s.relationships.children,\"age\",\"gte\",10),\"age\",\"lte\",17)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "k",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "k",
+       "path": "rel",
+       "value": "clamp(k.rel+4)"
+      },
+      {
+       "op": "setv",
+       "target": "k",
+       "path": "trouble",
+       "value": "max(0,(k.trouble||0)-1)"
+      }
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Humiliation shared is humiliation halved. Lesson landed."
+    }
+   ]
+  },
+  {
+   "label": "Let the lecture happen",
+   "hint": "trouble-, rel-",
+   "effects": [
+    {
+     "op": "let",
+     "name": "k",
+     "expr": "where(whereAll(s.relationships.children,\"age\",\"gte\",10),\"age\",\"lte\",17)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "k",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "k",
+       "path": "trouble",
+       "value": "max(0,(k.trouble||0)-2)"
+      },
+      {
+       "op": "setv",
+       "target": "k",
+       "path": "rel",
+       "value": "clamp(k.rel-3)"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Forty minutes of shopkeeper thunder. Never again, apparently."
+    }
+   ]
+  }
+ ]
+}

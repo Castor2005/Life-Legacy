@@ -1,0 +1,45 @@
+{
+ "id": "sr-sunrise-club",
+ "minAge": 60,
+ "maxAge": 90,
+ "title": "Sunrise club",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A club that watches sunrises. That is the whole club.",
+ "choices": [
+  {
+   "label": "Never miss",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Four hundred sunrises. Never the same twice."
+    }
+   ]
+  },
+  {
+   "label": "Host the thermos",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your cocoa fuels the dawn crowd. Attendance triples."
+    }
+   ]
+  }
+ ]
+}

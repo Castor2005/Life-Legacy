@@ -1,0 +1,122 @@
+{
+ "id": "sx-warehouse-orgy",
+ "minAge": 20,
+ "maxAge": 50,
+ "title": "Warehouse invite",
+ "tags": [
+  "adult-life",
+  "sex"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Text from a stranger: 'Warehouse. Midnight. 20 adults. No phones. Cum as you are.'",
+ "choices": [
+  {
+   "label": "Go all night",
+   "hint": "group extreme",
+   "effects": [
+    {
+     "op": "xp",
+     "n": "(4)"
+    },
+    {
+     "op": "skill",
+     "delta": "12"
+    },
+    {
+     "op": "corr",
+     "delta": "14"
+    },
+    {
+     "op": "kink",
+     "id": "group"
+    },
+    {
+     "op": "kink",
+     "id": "public"
+    },
+    {
+     "op": "kink",
+     "id": "exhibition"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "16"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(4)"
+    },
+    {
+     "op": "scandal",
+     "delta": "12"
+    },
+    {
+     "op": "addiction",
+     "delta": "10"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "not": {
+       "p": "sex.protection",
+       "truthy": true
+      }
+     },
+     "then": [
+      {
+       "op": "call",
+       "fn": "sex.preg",
+       "as": "pr",
+       "args": {
+        "name": {
+         "expr": "randName()"
+        },
+        "mult": {
+         "expr": "1.4"
+        },
+        "ctrl": {
+         "expr": "null"
+        }
+       }
+      },
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "pr.indexOf(\"born\")===0"
+       },
+       "then": [
+        {
+         "op": "outcome",
+         "tpl": "Sweat, cum, mouths everywhere — you fuck three people, get eaten twice, cum until empty. And {{pr.slice(5)}} is conceived in the pile."
+        }
+       ],
+       "else": []
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sweat, cum, mouths everywhere — you fuck three adults, get eaten twice, cum until empty. You walk home bowlegged and glowing."
+    }
+   ]
+  },
+  {
+   "label": "Stay home",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You delete the text. The night stays quiet."
+    }
+   ]
+  }
+ ]
+}

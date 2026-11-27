@@ -1,0 +1,61 @@
+{
+ "id": "ad-trivia-champs",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Tuesday trivia",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The pub quiz has a dynasty team to dethrone.",
+ "choices": [
+  {
+   "label": "Form the team",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "250"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Champions! 250 dollars bar credit and a plaque."
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "Second by one point. The rematch simmers all year."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Host a round",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your music round goes legendary. The pub begs for encores."
+    }
+   ]
+  }
+ ]
+}

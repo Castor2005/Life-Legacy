@@ -1,0 +1,247 @@
+{
+ "id": "ex-keep-discard-broken",
+ "minAge": 22,
+ "maxAge": 65,
+ "title": "Used up",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "sex",
+      "truthy": true
+     },
+     {
+      "p": "sex.claims",
+      "truthy": true
+     }
+    ]
+   },
+   {
+    "some": {
+     "arr": "sex.claims",
+     "where": {
+      "any": [
+       {
+        "p": "$it.broken",
+        "gte": 40
+       },
+       {
+        "p": "$it.stage",
+        "gte": 3
+       }
+      ]
+     }
+    }
+   }
+  ]
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "cs",
+    "expr": "s.sex&&s.sex.claims||[]"
+   },
+   {
+    "name": "b",
+    "expr": "whereLast(cs,\"broken\",\"gte\",50,\"stage\",\"gte\",3)"
+   },
+   {
+    "name": "n",
+    "expr": "b?b.name:\"your most broken one\""
+   },
+   {
+    "name": "w",
+    "expr": "b?b.broken:0"
+   }
+  ],
+  "template": "{{n}} (will {{w}} ground) can't function without orders anymore — no friends, no appetite, just waiting. Keeping her is cruelty. Dumping her is cruelty. Choose."
+ },
+ "choices": [
+  {
+   "label": "Discard her cold",
+   "hint": "CRUEL discard",
+   "effects": [
+    {
+     "op": "let",
+     "name": "idx",
+     "expr": "-1"
+    },
+    {
+     "op": "forClaims",
+     "idxAs": "i",
+     "body": [
+      {
+       "op": "branch",
+       "cond": {
+        "any": [
+         {
+          "expr": "(s.sex.claims[i].broken||0)>=40"
+         },
+         {
+          "expr": "s.sex.claims[i].stage>=3"
+         }
+        ]
+       },
+       "then": [
+        {
+         "op": "let",
+         "name": "idx",
+         "expr": "i"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "op": "let",
+     "name": "nm",
+     "expr": "idx>=0?s.sex.claims[idx].name:\"her\""
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "idx",
+      "gte": 0
+     },
+     "then": [
+      {
+       "op": "claimSplice",
+       "index": "idx"
+      }
+     ]
+    },
+    {
+     "op": "netori",
+     "field": "lost",
+     "delta": 1
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(16)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(8)"
+    },
+    {
+     "op": "money",
+     "amount": "1000"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Suitcase on the curb, collar in the trash, number blocked. '{{nm}} — you were perfect. That's why you can't stay.' She screams up the whole street. You count the $1,000 she 'owed' and feel nothing. Monster. Free."
+    }
+   ]
+  },
+  {
+   "label": "Deprogram her gently",
+   "hint": "merciful, costly",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c2",
+     "expr": "null"
+    },
+    {
+     "op": "forClaims",
+     "idxAs": "k",
+     "body": [
+      {
+       "op": "branch",
+       "cond": {
+        "any": [
+         {
+          "expr": "(s.sex.claims[k].broken||0)>=40"
+         },
+         {
+          "expr": "s.sex.claims[k].stage>=3"
+         }
+        ]
+       },
+       "then": [
+        {
+         "op": "let",
+         "name": "c2",
+         "expr": "s.sex.claims[k]"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "c2",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "c2",
+       "path": "broken",
+       "value": "max(0,c2.broken-40)"
+      },
+      {
+       "op": "setv",
+       "target": "c2",
+       "path": "obedience",
+       "value": "clamp(c2.obedience-30)"
+      },
+      {
+       "op": "setv",
+       "target": "c2",
+       "path": "obsession",
+       "value": "clamp(c2.obsession-30)"
+      },
+      {
+       "op": "setv",
+       "target": "c2",
+       "path": "own",
+       "value": "clamp(c2.own-25)"
+      },
+      {
+       "op": "setv",
+       "target": "c2",
+       "path": "mode",
+       "value": "\"willing\""
+      },
+      {
+       "op": "setv",
+       "target": "c2",
+       "path": "stage",
+       "value": "1"
+      }
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "14"
+    },
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(4)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Therapy $2,000, friends reintroduced, vanilla months. She smiles with her own teeth again — and flinches at your voice. Kindness costs everything."
+    }
+   ]
+  }
+ ]
+}

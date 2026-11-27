@@ -1,0 +1,194 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Private player profile and synced UI preferences for a signed-in Life & Legacy player.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Firebase Auth UID of the user."
+        },
+        "displayName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100,
+          "description": "Google display name shown in the topbar player chip."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "maxLength": 254,
+          "description": "Private Google account email (owner-only read)."
+        },
+        "photoURL": {
+          "type": "string",
+          "maxLength": 500,
+          "description": "Optional Google profile photo URL."
+        },
+        "theme": {
+          "type": "string",
+          "enum": ["dark", "light", "parchment", "crimson", "abyss"],
+          "description": "Selected visual chronicle theme."
+        },
+        "lang": {
+          "type": "string",
+          "enum": ["en", "es", "fr", "pt", "ru", "hi", "zh"],
+          "description": "Selected UI language code."
+        },
+        "uiTab": {
+          "type": "string",
+          "enum": ["activities", "social", "family", "education", "money", "health", "crown", "world"],
+          "description": "Last active in-sim tab."
+        },
+        "uiMusic": {
+          "type": "boolean",
+          "description": "Whether ambient music is enabled."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the profile was first created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest profile or settings update."
+        }
+      },
+      "required": [
+        "uid",
+        "displayName",
+        "email",
+        "theme",
+        "lang",
+        "uiTab",
+        "uiMusic",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "SaveSlot": {
+      "title": "SaveSlot",
+      "description": "An autosave or manual save slot storing a sanitized Life & Legacy game state as a native map.",
+      "type": "object",
+      "properties": {
+        "ownerUid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Firebase Auth UID of the owning player."
+        },
+        "slotId": {
+          "type": "string",
+          "minLength": 4,
+          "maxLength": 16,
+          "pattern": "^(auto|slot[0-6])$",
+          "description": "Slot identifier: auto or slot0 through slot6."
+        },
+        "savedAt": {
+          "type": "integer",
+          "description": "Client epoch timestamp in milliseconds used for newer-wins sync merging."
+        },
+        "summaryName": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "Character full name for slot summary display."
+        },
+        "summaryAge": {
+          "type": "integer",
+          "description": "Character age at save time."
+        },
+        "summaryMoney": {
+          "type": "number",
+          "description": "Character cash balance at save time."
+        },
+        "summaryStatus": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "description": "Alive status or cause of death summary."
+        },
+        "state": {
+          "type": "object",
+          "description": "Native Firestore map of the sanitized character and world state."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the save slot document was created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest save write."
+        }
+      },
+      "required": [
+        "ownerUid",
+        "slotId",
+        "savedAt",
+        "summaryName",
+        "summaryAge",
+        "summaryMoney",
+        "summaryStatus",
+        "state",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "AchievementsRecord": {
+      "title": "AchievementsRecord",
+      "description": "Cross-life unlocked achievements synced for a signed-in player.",
+      "type": "object",
+      "properties": {
+        "ownerUid": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$",
+          "description": "Firebase Auth UID of the owning player."
+        },
+        "unlocked": {
+          "type": "object",
+          "description": "Native map keyed by achievement ID containing unlock timestamp and life label."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the achievements document was created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of the latest achievements merge."
+        }
+      },
+      "required": [
+        "ownerUid",
+        "unlocked",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private player profile and preferences document owned strictly by userId."
+    },
+    "/users/{userId}/saves/{slotId}": {
+      "schema": { "$ref": "#/entities/SaveSlot" },
+      "description": "Player autosave (auto) and 7 manual save slots (slot0..slot6)."
+    },
+    "/users/{userId}/meta/{metaId}": {
+      "schema": { "$ref": "#/entities/AchievementsRecord" },
+      "description": "Player cross-life metadata document (achievements)."
+    }
+  }
+}

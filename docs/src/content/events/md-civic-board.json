@@ -1,0 +1,45 @@
+{
+ "id": "md-civic-board",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Town board",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The planning board needs a sane voice. Meetings are Tuesdays.",
+ "choices": [
+  {
+   "label": "Serve the term",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three years of zoning. The town improves because you showed up."
+    }
+   ]
+  },
+  {
+   "label": "One project only",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You champion the park bond. It passes by 40 votes."
+    }
+   ]
+  }
+ ]
+}

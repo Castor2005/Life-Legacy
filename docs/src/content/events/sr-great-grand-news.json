@@ -1,0 +1,52 @@
+{
+ "id": "sr-great-grand-news",
+ "minAge": 70,
+ "maxAge": 100,
+ "title": "Great news",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.grandkids.length",
+  "gte": 1
+ },
+ "text": "The word arrives: great-grandparent. Say it slowly.",
+ "choices": [
+  {
+   "label": "Celebrate big",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "12"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Four generations in one photo. The frame cannot hold it."
+    }
+   ]
+  },
+  {
+   "label": "Write the letter",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A letter for the future. Sealed, saved, priceless."
+    }
+   ]
+  }
+ ]
+}

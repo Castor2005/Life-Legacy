@@ -1,0 +1,45 @@
+{
+ "id": "sr-quilt-finish",
+ "minAge": 62,
+ "maxAge": 95,
+ "title": "Final stitch",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The quilt begun at forty ends at seventy. One border left.",
+ "choices": [
+  {
+   "label": "Bind it yourself",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hand-bound, labeled, gifted. Thirty years in every stitch."
+    }
+   ]
+  },
+  {
+   "label": "Quilting bee",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Friends gather, stories flow, the binding flies."
+    }
+   ]
+  }
+ ]
+}

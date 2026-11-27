@@ -1,0 +1,173 @@
+{
+ "id": "ex-break-collar-week",
+ "minAge": 20,
+ "maxAge": 55,
+ "title": "Seven-day collar",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "sex",
+      "truthy": true
+     },
+     {
+      "p": "sex.claims",
+      "truthy": true
+     }
+    ]
+   },
+   {
+    "p": "sex.claims.length",
+    "truthy": true
+   }
+  ]
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "c",
+    "expr": "s.sex&&s.sex.claims&&s.sex.claims.length?s.sex.claims[s.sex.claims.length-1]:null"
+   },
+   {
+    "name": "n",
+    "expr": "c?c.name:\"your lover\""
+   }
+  ],
+  "template": "You lay the protocol on the table for {{n}}: seven days collared — ask to eat, ask to cum, sleep at your feet. 'Sign with your mouth,' you say."
+ },
+ "choices": [
+  {
+   "label": "Enforce all seven days",
+   "hint": "BREAK + own hard",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c",
+     "expr": "s.sex.claims[s.sex.claims.length-1]"
+    },
+    {
+     "op": "let",
+     "name": "nm",
+     "expr": "c.name"
+    },
+    {
+     "op": "histLog",
+     "name": "nm",
+     "acts": [
+      "\"bondage\"",
+      "\"tease\"",
+      "\"rough\""
+     ]
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "broken",
+     "value": "clamp(c.broken+22)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "obedience",
+     "value": "clamp(c.obedience+16)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "obsession",
+     "value": "clamp(c.obsession+10)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "own",
+     "value": "clamp(c.own+14)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "mode",
+     "value": "\"broken\""
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "any": [
+       {
+        "v": "c.broken",
+        "gte": 70
+       },
+       {
+        "v": "c.obedience",
+        "gte": 85
+       }
+      ]
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "c",
+       "path": "stage",
+       "value": "max(c.stage,3)"
+      }
+     ]
+    },
+    {
+     "op": "corr",
+     "delta": "10"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(10)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "12"
+    },
+    {
+     "op": "stamina",
+     "delta": "-(14)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Day seven: she eats from your hand, cums on order, sleeps leashed to your bedpost glowing. Will {{c.broken}}, obedience {{c.obedience}}, own {{c.own}}. PROTOCOL COMPLETE. She begs to stay collared."
+    }
+   ]
+  },
+  {
+   "label": "Day one mercy out",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c2",
+     "expr": "s.sex.claims[s.sex.claims.length-1]"
+    },
+    {
+     "op": "setv",
+     "target": "c2",
+     "path": "broken",
+     "value": "max(0,c2.broken-10)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You rip the contract up. '{{c2.name}} — free.' She cries with relief and loves you worse."
+    }
+   ]
+  }
+ ]
+}

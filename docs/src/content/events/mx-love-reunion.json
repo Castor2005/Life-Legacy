@@ -1,0 +1,70 @@
+{
+ "id": "mx-love-reunion",
+ "minAge": 25,
+ "maxAge": 70,
+ "title": "The one who left",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "A message from years ago: thinking of you, coffee?",
+ "choices": [
+  {
+   "label": "Meet them",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "partnerSet",
+       "name": "partnerName()",
+       "rel": "75",
+       "age": "s.age"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "11"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The spark survived the years. Second chances: real."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(4)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Lovely coffee, closed chapter. Peace tastes good."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Leave it fond",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Some doors stay beautifully closed."
+    }
+   ]
+  }
+ ]
+}

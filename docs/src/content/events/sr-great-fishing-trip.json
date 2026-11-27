@@ -1,0 +1,48 @@
+{
+ "id": "sr-great-fishing-trip",
+ "minAge": 65,
+ "maxAge": 88,
+ "title": "Last best trip",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The old crew plans one more wilderness trip.",
+ "choices": [
+  {
+   "label": "Go while able",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(900)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "11"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Loons, pike, fireside lies. The best one yet."
+    }
+   ]
+  },
+  {
+   "label": "Cabin version",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cabin base, day trips out. Comfort plus wilderness."
+    }
+   ]
+  }
+ ]
+}

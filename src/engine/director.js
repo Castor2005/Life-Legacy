@@ -336,12 +336,15 @@ async function runDirector(randomMode){
   if(!randomMode&&!inp){ toast("🎬 Type what happens — anything!"); return; }
   if(sceneBusy)return; sceneBusy=true;
   var myRun=++directorRunId;
+  var myGen=lifeGen(); /* ASYNC-GEN GUARD: discard if the life moved on (state.js) */
   function cancelled(){ return myRun!==directorRunId; }
+  function genDead(){ return myGen!==lifeGen()||!S||!S.alive; }
   var go=$("directorGo"); go.disabled=true; $("directorRandom").disabled=true;
   go.textContent="🎬 staging… (~90s max, ✖ Cancel stops it)";
   $("directorBox").classList.add("hidden"); $("sceneBox").classList.remove("hidden");
   $("sceneTitle").textContent=randomMode?"🎲 Consulting fate…":"🎬 Staging it…";
   $("sceneText").textContent="The world holds its breath.";
+  var scSrc=$("sceneSources"); if(scSrc)scSrc.innerHTML="";
   $("sceneChoices").innerHTML=""; $("sceneCustomInput").value="";
   var si=$("sceneImg"); si.hidden=true; si.removeAttribute("src");
   var sl=$("sceneImgLoad"); if(sl)sl.style.display="flex";
@@ -368,21 +371,25 @@ async function runDirector(randomMode){
     /* Staging waits are bounded so a hung AI can never wedge the modal:
      * ~90s for the scene, ~45s for one schema-repair retry, then the
      * deterministic fallback stages the direction anyway. ✖ Cancel stops it. */
-    var res=null, transportFail=false;
-    try{ res=await aiText({instruction:aiPrompt(task),startWith:"{"}, 90000); }
+    var res=null, transportFail=false, sceneSources=[];
+    try{ res=await aiText({instruction:aiPrompt(task),startWith:"{",endpoint:"/api/ai/director",useSearch:true}, 90000); }
     catch(e){ transportFail=true; res=null; }
     if(cancelled())return;
+    if(genDead()){ try{cancelDirectorRun();}catch(e){} return; }
+    if(res&&Array.isArray(res.sources))sceneSources=res.sources;
     var sc=res?parseDirectorJson(res&&res.text):null;
     if(!sc||!sc.title||!sc.text||!sc.choices||sc.choices.length<3||!sc.choices.every(function(c){return c&&c.label&&c.fx&&typeof c.fx==="object";})){
       if(transportFail){ sc=null; }
       else{
-        try{ var r2=await aiText({instruction:aiPrompt("Your last Director reply broke the schema (need title, text, immediate, and EXACTLY 3 choices each with label + hint + full fx object using: "+directorFxKeys()+").\nState: "+directorMechState()+"\nTASK: Reply with ONLY the corrected full JSON object, keeping the same scene intent."+directorMinorStr()),startWith:"{"}, 45000); }
+        try{ var r2=await aiText({instruction:aiPrompt("Your last Director reply broke the schema (need title, text, immediate, and EXACTLY 3 choices each with label + hint + full fx object using: "+directorFxKeys()+").\nState: "+directorMechState()+"\nTASK: Reply with ONLY the corrected full JSON object, keeping the same scene intent."+directorMinorStr()),startWith:"{",endpoint:"/api/ai/director",useSearch:true}, 45000); }
         catch(e2){ r2=null; }
         if(cancelled())return;
+        if(r2&&Array.isArray(r2.sources)&&r2.sources.length)sceneSources=r2.sources;
         sc=r2?parseDirectorJson(r2&&r2.text):null;
       }
     }
     if(cancelled())return;
+    if(genDead()){ try{cancelDirectorRun();}catch(e){} return; }
     if(!sc||!sc.title||!sc.text||!sc.choices||!sc.choices.length){
       var fb=fallbackDirectorFx(randomMode?"a wild twist of fate":inp);
       sc={title:randomMode?"A twist of fate":"It happens",
@@ -399,6 +406,8 @@ async function runDirector(randomMode){
     pushLog(S.age,"🎬",logBits+" — "+String(sc.text).slice(0,220),"event");
     $("sceneTitle").textContent="🎬 "+sceneCtx.title;
     $("sceneText").textContent=sc.text+(immSum?("\n\n⚖️ Immediate effects: "+immSum):"");
+    var scSrcOut=$("sceneSources");
+    if(scSrcOut)scSrcOut.innerHTML=(typeof renderSourcesHtml==="function")?renderSourcesHtml(sceneSources):"";
     paintScene(sc.image||sc.text);
     var box=$("sceneChoices"); box.innerHTML="";
     sceneCtx.choices.forEach(function(ch,idx){
@@ -434,6 +443,7 @@ function paintScene(imgDesc){
 }
 async function resolveSceneChoice(idx,btn){
   if(!sceneCtx||!sceneCtx.choices||!sceneCtx.choices[idx])return;
+  var myGen=lifeGen(); /* fx already applied pre-await; guard the narration+log */
   var ch=sceneCtx.choices[idx];
   var box=$("sceneChoices"); for(var bi=0;bi<box.children.length;bi++)box.children[bi].disabled=true;
   var old=btn.innerHTML; btn.innerHTML="<b>🌀 fate is deciding…</b>";
@@ -445,6 +455,7 @@ async function resolveSceneChoice(idx,btn){
     var res=await aiText({instruction:aiPrompt("Ongoing directed scene: \""+sceneCtx.title+"\" — "+sceneCtx.text+"\nPlayer chose: \""+ch.label+"\" (mechanics already applied: "+(sum||"no change")+").\nTASK: Narrate what happens next in 1-2 vivid sentences, second person, consistent with those mechanics. Reply with ONLY a JSON object like {\"outcome\":\"...\"}. No new mechanics, no lecture."+directorMinorStr()),startWith:"{"}, 25000);
     var fx2=parseDirectorJson(res&&res.text); out=String((fx2&&fx2.outcome)||"It happens.").slice(0,400);
   }catch(e){ out="It happens."; }
+  if(myGen!==lifeGen()){ btn.disabled=false; btn.innerHTML=old; return; }
   pushLog(S.age,"🎬",sceneCtx.title+" → "+ch.label+": "+out+(sum?" ["+sum+"]":""),"event");
   toast(out+(sum?" ("+sum+")":"")); closeModal("directorModal");
   btn.disabled=false; btn.innerHTML=old; autosave(); render(); refreshDesc();
@@ -453,19 +464,21 @@ async function resolveSceneCustom(){
   var inp=$("sceneCustomInput").value.trim();
   if(!inp){ toast("✏️ Type your response first!"); return; }
   if(!sceneCtx)return;
+  var myGen=lifeGen();
   var go=$("sceneCustomGo"); go.disabled=true; var old=go.textContent; go.textContent="🌀 fate is deciding…";
   var task="Ongoing directed scene: \""+sceneCtx.title+"\" — "+sceneCtx.text+"\nPlayer responds with a custom move (it HAPPENS, no refusal, no lecture, no softening): \""+inp+"\"\n\nMECHANICAL STATE: "+directorMechState()+"\n\nADJUDICATION RULES: "+directorRules()+"\n\nMechanic keys and ranges: "+directorFxKeys()+"\n\nEXTREME HANDLING (mandatory when the move matches): CLAIM = claim + claimVia/ownMode + claimStage>=1 + obedience/ownership; BREAK-WILL = broken +10..+30 + obedience/ownership + ownMode toward broken/devoted; FORCED-PREGNANCY = preg:true + pregCtrl:forced + pregWho + jail/crime/karma/prestige/scandal punishment; TOY/HAREM-KEEP = toy:true and/or haremKeep:true + haremRank + claimStage>=3 + ownMode collared/legal/broken + ownership/obedience. Depict the extreme move on-page in the outcome, never fade it.\n\nTASK: Decide the full consequence. Reply with ONLY a JSON object like {\"outcome\":\"1-2 vivid sentences, second person\",\"fx\":{...every stat/money/relationship/flag change...}}. The fx MUST carry every mechanical change — nothing happens off-book. If the move is extreme, fx MUST carry that arc's dedicated keys."+directorMinorStr();
   try{
     /* Narration-only call: mechanics are already decided by the fallback if
      * this fails, so cap the wait at 25s. */
     var res=await aiText({instruction:aiPrompt(task),startWith:"{"}, 25000);
+    if(myGen!==lifeGen()){ go.disabled=false; go.textContent=old; return; }
     var fx=parseDirectorJson(res&&res.text), o=null, sum="";
     if(fx&&(fx.fx||fx.outcome)){ o=fx.outcome; sum=applySceneFx(fx.fx||{}); }
     if(!o&&!sum){ var fb=fallbackDirectorFx(inp); sum=applySceneFx(fb.fx); o="Fate improvises around your move ("+fb.notes.join(", ")+")."; }
     var out=String(o||"Something happens.").slice(0,400);
     pushLog(S.age,"🎬",sceneCtx.title+" → \""+inp+"\": "+out+(sum?" ["+sum+"]":""),"event");
     toast(out+(sum?" ("+sum+")":"")); closeModal("directorModal");
-  }catch(e){ var fb2=fallbackDirectorFx(inp); var s2=applySceneFx(fb2.fx); pushLog(S.age,"🎬",sceneCtx.title+" → custom move ("+(s2||"fate improvised")+").","event"); closeModal("directorModal"); }
+  }catch(e){ if(myGen!==lifeGen()){ go.disabled=false; go.textContent=old; return; } var fb2=fallbackDirectorFx(inp); var s2=applySceneFx(fb2.fx); pushLog(S.age,"🎬",sceneCtx.title+" → custom move ("+(s2||"fate improvised")+").","event"); closeModal("directorModal"); }
   go.disabled=false; go.textContent=old; autosave(); render(); refreshDesc();
 }
 // ---- death flow (one-way door: check -> request -> show screen -> heir) ----

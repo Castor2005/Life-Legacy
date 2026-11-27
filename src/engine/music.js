@@ -84,6 +84,7 @@ function applyMusic(){
 function toggleMusic(){
   try{ if(typeof LLUI!=="undefined"&&LLUI)LLUI.music=!musicOn(); }catch(e){}
   applyMusic();
+  try{ if(typeof cloudMirrorSettings==="function")cloudMirrorSettings(); }catch(e){}
   try{ toast(musicOn()?"🎵 Ambient music on — an original loop, made for this game.":"🔇 Music muted."); }catch(e){}
 }
 /* ---- loading motif: distinct glass-chime loop, heard once per session ----

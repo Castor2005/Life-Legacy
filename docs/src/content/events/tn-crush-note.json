@@ -1,0 +1,68 @@
+{
+ "id": "tn-crush-note",
+ "minAge": 13,
+ "maxAge": 16,
+ "title": "The note",
+ "tags": [
+  "teen",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A folded note lands on your desk: CHECK YES OR NO.",
+ "choices": [
+  {
+   "label": "Check yes",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "partnerSet",
+       "name": "partnerName()",
+       "rel": "70",
+       "age": "s.age"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "12"
+      },
+      {
+       "op": "outcome",
+       "tpl": "YES wins. Hallway hand-holding begins Monday."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(6)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The no stings. Your friends stage a three-day comfort operation."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Laugh it off",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You stay mysterious. The note becomes legend."
+    }
+   ]
+  }
+ ]
+}

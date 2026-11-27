@@ -18,8 +18,8 @@ window.__LL_BOOT_OK = (function bootHealthCheck(){
     for (i = 0; i < LL.files.length; i++) HAVE[LL.files[i]] = 1;
   var EXPECT_FILES = ["core","utils","state","migrate","ecs","bus","effects-parse","effects-run",
     "effects-validate","sex-events","appearance","genetics","ai-core","ai-providers","research","life","yearly",
-    "events-runtime","mods","portrait","ai-actions","director","dynasty","ownership",
-    "death","actions","world","render","saves","ui","music","creator","community","graphs","vfx","anya","wasm","compute","pcg","mcp","prelude","auth","boot"];
+    "events-runtime","mods","portrait","ai-actions","director","dynasty","houses","ownership",
+    "death","actions","romance","world","render","saves","ui","music","creator","community","graphs","vfx","anya","wasm","compute","pcg","mcp","prelude","auth","boot"];
   for (i = 0; i < EXPECT_FILES.length; i++)
     if (!HAVE[EXPECT_FILES[i]]) missing.push("module:" + EXPECT_FILES[i]);
   /* ORDER check: presence isn't enough. Several files assume index.html order
@@ -147,6 +147,7 @@ function init(){
     on(sel,"change",function(e){ settings.lang=e.target.value; window.__lang=settings.lang;
       if(other)other.value=settings.lang;
       try{ localStorage.setItem("sdls_settings",JSON.stringify(settings)); }catch(err){}
+      try{ if(typeof cloudMirrorSettings==="function")cloudMirrorSettings(); }catch(err){}
       applyTexts(); renderSaves(); });
   }
   wireLang($("langSel2"),null);
@@ -237,17 +238,24 @@ function init(){
   start("helpBugBtn",function(){ closeModal("helpModal"); openBugModal(); });
   start("bugClear",function(){ clearBugLog(); });
   start("communityLoadBtn",function(){ loadCommunityBox(); });
+  start("aiProvTest",function(){ aiProviderTest(); });
   start("aiProvSave",function(){
     var cfg=aiCfg();
-    cfg.active=($("aiProvSel")&&$("aiProvSel").value==="openai")?"openai":"perchance";
+    var sel=$("aiProvSel");
+    cfg.active=(sel&&(sel.value==="perchance"||sel.value==="openai"||sel.value==="gemini"))?sel.value:"gemini";
     if($("aiProvBase")&&$("aiProvBase").value.trim())cfg.openai.base=$("aiProvBase").value.trim();
     if($("aiProvModel")&&$("aiProvModel").value.trim())cfg.openai.model=$("aiProvModel").value.trim();
     if($("aiProvKey")&&$("aiProvKey").value){ cfg.openai.key=$("aiProvKey").value; $("aiProvKey").value=""; }
     aiCfgSave(cfg); renderAiProvider();
-    toast(cfg.active==="openai"?"🤖 Custom engine active (falls back to built-in if it fails).":"🤖 Built-in engine active.");
   });
-  start("aiProvTest",function(){ aiProviderTest(); });
   on($("aiProvSel"),"change",function(){ try{ renderAiProvider(); }catch(e){} });
+  start("groundRefreshBtn",function(){
+    var b=$("groundRefreshBtn");
+    if(b){ b.disabled=true; b.textContent="⏳ Searching…"; }
+    Promise.resolve(refreshGrounding()).finally(function(){
+      if(b){ b.disabled=false; b.textContent="🔍 Refresh Search Grounding"; }
+    });
+  });
 /* Offline posture: offline is a valid state, not an error. The whole sim
  * (events, years, saves, shipped art/music) is local; only fresh AI calls
  * need network, and every one of them has a deterministic fallback (the
@@ -317,7 +325,7 @@ try{ renderOffline(); }catch(e){}
     })(cSecs[ci]);
   }catch(e){}
   var tabs=document.querySelectorAll(".tab");
-  for(var i=0;i<tabs.length;i++)tabs[i].onclick=function(){ curTab=this.dataset.tab; try{ LLUI.tab=curTab; }catch(e){} render(); };
+  for(var i=0;i<tabs.length;i++)tabs[i].onclick=function(){ curTab=this.dataset.tab; try{ LLUI.tab=curTab; }catch(e){} try{ if(typeof cloudMirrorSettings==="function")cloudMirrorSettings(); }catch(e){} render(); };
   start("saveBtn",function(){ renderSaves(); openModal("saveModal"); });
   start("treeBtn",openDynasty);
   start("tlGo",function(){ tlSearch(); });

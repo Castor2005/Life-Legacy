@@ -1,0 +1,45 @@
+{
+ "id": "ad-choir-join",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Choir risers",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The community choir needs tenors. You hum in the car.",
+ "choices": [
+  {
+   "label": "Audition",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Second row, swaying gently. The holiday concert moves hundreds."
+    }
+   ]
+  },
+  {
+   "label": "Crew the concerts",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Risers built, robes steamed. The music stands on you."
+    }
+   ]
+  }
+ ]
+}

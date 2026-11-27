@@ -1,0 +1,100 @@
+{
+ "id": "ex-take-sleeper-train",
+ "minAge": 20,
+ "maxAge": 55,
+ "title": "Sleeper cabin",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Overnight train. The adult stranger in your sleeper compartment locks the door, draws the blind: 'Twelve hours. No names. Do whatever you want with me.'",
+ "choices": [
+  {
+   "label": "Use all twelve hours",
+   "hint": "DOMINANT marathon",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "randName()"
+    },
+    {
+     "op": "call",
+     "fn": "sex.ownClaim",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "via": {
+       "expr": "\"claim\""
+      },
+      "ob": {
+       "expr": "20"
+      },
+      "os": {
+       "expr": "22"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "name": "n",
+     "delta": "7"
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "\"oral\"",
+      "\"rough\"",
+      "\"vanilla\""
+     ]
+    },
+    {
+     "op": "skill",
+     "delta": "7"
+    },
+    {
+     "op": "stamina",
+     "delta": "-(18)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "16"
+    },
+    {
+     "op": "scandal",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rocking carriage, locked door: mouth, cunt, throat, ass cheeks spread — fucked in every position the bunk allows, cumming three times before dawn. You part at the platform as strangers. Perfect."
+    }
+   ]
+  },
+  {
+   "label": "Sleep top bunk",
+   "hint": "rest+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You snore. She reads. Dawn comes innocent. Rare self-control."
+    }
+   ]
+  }
+ ]
+}

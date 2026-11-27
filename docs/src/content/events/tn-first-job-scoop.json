@@ -1,0 +1,49 @@
+{
+ "id": "tn-first-job-scoop",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Scoop shop hire",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The ice cream shop hires at 15. The hat is ridiculous.",
+ "choices": [
+  {
+   "label": "Take the job",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "320"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One summer of scoops. You save 320 dollars and gain wrists of steel."
+    }
+   ]
+  },
+  {
+   "label": "Hold out for lifeguard",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Next summer, the chair is yours. Patience pays."
+    }
+   ]
+  }
+ ]
+}

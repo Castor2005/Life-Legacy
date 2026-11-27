@@ -1,0 +1,48 @@
+{
+ "id": "yg-hostel-europe",
+ "minAge": 20,
+ "maxAge": 29,
+ "title": "Hostel summer",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A rail pass, a backpack, and thirty days of Europe.",
+ "choices": [
+  {
+   "label": "Go lean",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2200)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "13"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Twelve cities, nine hostels, one sunrise that rewires you."
+    }
+   ]
+  },
+  {
+   "label": "Work exchange",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(800)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Farm stays cover beds. You return broke-ish and fluent-ish."
+    }
+   ]
+  }
+ ]
+}

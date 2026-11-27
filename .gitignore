@@ -1,0 +1,21 @@
+# OS / editors
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+.vscode/
+.idea/
+
+# scratch + private workspace state (never commit)
+scratch/
+*.log
+
+# dependencies (build the server with npm/bun; game itself is zero-build)
+node_modules/
+
+# local test artifacts
+*.local
+
+# secrets (never commit real keys)
+.env

@@ -1,0 +1,45 @@
+{
+ "id": "kd-mystery-smell",
+ "minAge": 6,
+ "maxAge": 11,
+ "title": "Locker mystery",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Something in the locker row smells. Science demands investigation.",
+ "choices": [
+  {
+   "label": "Lead the inquiry",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A September banana. Case closed. Noses saved."
+    }
+   ]
+  },
+  {
+   "label": "Air it out",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You organize the clean-out. The row breathes again."
+    }
+   ]
+  }
+ ]
+}

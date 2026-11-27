@@ -1,0 +1,50 @@
+{
+ "id": "tn-piano-recital",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Winter recital",
+ "tags": [
+  "teen",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Three minutes, one piano, two hundred eyes.",
+ "choices": [
+  {
+   "label": "Practice through fear",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Clean run, one shaky trill. Applause like rain."
+    }
+   ]
+  },
+  {
+   "label": "Duet instead",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Four hands, half the fear, double the fun."
+    }
+   ]
+  }
+ ]
+}

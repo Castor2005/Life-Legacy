@@ -1,0 +1,49 @@
+{
+ "id": "md-pizza-oven-2",
+ "minAge": 46,
+ "maxAge": 59,
+ "title": "Second oven",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The first oven was practice. The second feeds the street.",
+ "choices": [
+  {
+   "label": "Friday pizza night",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Open invites, endless dough. The street runs on Fridays."
+    }
+   ]
+  },
+  {
+   "label": "Teach the kids",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Every kid stretches their own. Flour wars declared weekly."
+    }
+   ]
+  }
+ ]
+}

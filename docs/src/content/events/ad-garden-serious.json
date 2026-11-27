@@ -1,0 +1,44 @@
+{
+ "id": "ad-garden-serious",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Real garden",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The yard becomes a quarter-acre of intent.",
+ "choices": [
+  {
+   "label": "Grow dinner",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Salads from steps away. The grocery bill shrinks."
+    }
+   ]
+  },
+  {
+   "label": "Orchard corner",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three fruit trees planted. Future pies secured."
+    }
+   ]
+  }
+ ]
+}

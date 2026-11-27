@@ -1,0 +1,49 @@
+{
+ "id": "sr-dance-anniversary-50",
+ "minAge": 70,
+ "maxAge": 95,
+ "title": "Golden fifty",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "married"
+ },
+ "text": "Fifty years. The hall is booked, the band is the original.",
+ "choices": [
+  {
+   "label": "Celebrate huge",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "partnerRel",
+     "delta": "14"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Same dance, slower tempo, deeper meaning. Fifty years."
+    }
+   ]
+  },
+  {
+   "label": "Quiet gold",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "partnerRel",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Dinner for twelve. Every toast lands. Gold glows softly."
+    }
+   ]
+  }
+ ]
+}

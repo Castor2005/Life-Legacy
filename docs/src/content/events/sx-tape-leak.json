@@ -1,0 +1,91 @@
+{
+ "id": "sx-tape-leak",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "The tape is out",
+ "tags": [
+  "adult-life",
+  "sex",
+  "love",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "sex",
+    "truthy": true
+   },
+   {
+    "p": "sex.partners",
+    "gte": 1
+   }
+  ]
+ },
+ "text": "You wake to 40 messages: an explicit video of you — naked, moaning, cumming — is everywhere. An adult ex leaked it.",
+ "choices": [
+  {
+   "label": "Own it shamelessly",
+   "hint": "fame+, prestige-",
+   "effects": [
+    {
+     "op": "set",
+     "path": "fame",
+     "value": "clamp((s.fame||0)+16)"
+    },
+    {
+     "op": "set",
+     "path": "followers",
+     "value": "(s.followers||0)+30000"
+    },
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "max(0,(s.prestige||0)-20)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(4)"
+    },
+    {
+     "op": "scandal",
+     "delta": "20"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(6)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You post: 'Yeah that's me, and I was great.' Followers explode. Job interviews get weird. Grandma doesn't call."
+    }
+   ]
+  },
+  {
+   "label": "Lawyer blitz ($5k)",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(5000)"
+    },
+    {
+     "op": "scandal",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(4)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Takedowns, threats, $5,000. The internet forgets in a month. You don't."
+    }
+   ]
+  }
+ ]
+}

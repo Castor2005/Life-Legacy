@@ -1,0 +1,90 @@
+{
+ "id": "co-audit",
+ "minAge": 18,
+ "maxAge": 75,
+ "title": "The auditor cometh",
+ "tags": [
+  "adult-life",
+  "company",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "company",
+    "truthy": true
+   },
+   {
+    "p": "company.value",
+    "gte": 50000
+   }
+  ]
+ },
+ "text": "A tax auditor with kind eyes and a sharp pencil opens {{s.company.name}}'s books for a long look.",
+ "choices": [
+  {
+   "label": "Clean books, clean conscience",
+   "hint": "safe+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(3)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Every receipt in place. 'A pleasure,' the auditor almost smiles."
+    }
+   ]
+  },
+  {
+   "label": "Creative accounting",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "let",
+       "name": "g",
+       "expr": "6000+floor(rnd()*9000)"
+      },
+      {
+       "op": "set",
+       "path": "company.cash",
+       "value": "s.company.cash+(g)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Loopholes bloom. +${{g}} found money."
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "company.cash",
+       "value": "max(0,s.company.cash-15000)"
+      },
+      {
+       "op": "set",
+       "path": "record",
+       "value": "min(100,(s.record||0)+10)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-(8)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Caught. Fine, record +10, and a lecture about honesty."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

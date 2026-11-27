@@ -1,0 +1,51 @@
+{
+ "id": "summer-love",
+ "minAge": 15,
+ "maxAge": 18,
+ "title": "Summer romance",
+ "tags": [
+  "family",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A summer-camp / beach romance: intense, doomed by August.",
+ "choices": [
+  {
+   "label": "Fall fully",
+   "hint": "happiness+-, heartbreak",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "12"
+    },
+    {
+     "op": "partnerSet",
+     "name": "partnerName()",
+     "rel": "60",
+     "age": "s.age"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The best six weeks of your teens. The goodbye hurts beautifully."
+    }
+   ]
+  },
+  {
+   "label": "Keep it light",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fun fling, easy parting, good stories."
+    }
+   ]
+  }
+ ]
+}

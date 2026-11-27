@@ -1,0 +1,54 @@
+{
+ "id": "midlife-car",
+ "minAge": 35,
+ "maxAge": 55,
+ "title": "Red convertible syndrome",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "You catch yourself staring at a red convertible. The dealer waves.",
+ "choices": [
+  {
+   "label": "BUY IT ($45k)",
+   "hint": "money--, joy++",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(45000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "16"
+    },
+    {
+     "op": "set",
+     "path": "assets.carId",
+     "value": "\"sports\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "V8 therapy. You feel 22 at red lights."
+    }
+   ]
+  },
+  {
+   "label": "Test-drive only",
+   "hint": "free joy",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ten glorious minutes. Wallet intact."
+    }
+   ]
+  }
+ ]
+}

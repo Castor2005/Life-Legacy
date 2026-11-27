@@ -1,0 +1,49 @@
+{
+ "id": "eat-mud-2",
+ "minAge": 5,
+ "maxAge": 9,
+ "title": "Mud pies",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A neighborhood kid dares {{s.firstName}} to eat a mud pie. $5 on the line.",
+ "choices": [
+  {
+   "label": "Do it. $5 is $5.",
+   "hint": "money+, health-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "5"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(3)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Gritty profit. $5 richer, slightly queasy."
+    }
+   ]
+  },
+  {
+   "label": "Counter-dare: backflip",
+   "hint": "fitness",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You attempt a backflip. It is more of a backflop. Legend status anyway."
+    }
+   ]
+  }
+ ]
+}

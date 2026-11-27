@@ -532,3 +532,14 @@ canvas.spark{width:100%;height:56px;display:block}
 #createModal .secttl .chev{font-size:11px;color:var(--muted)}
 #createModal .csec-hidden{display:none}
 .ach-collapsed .stage:nth-child(n+5){display:none}
+
+/* ——— Google Search grounding citations & cloud sync badges ——— */
+.src-strip{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:8px;padding-top:6px;border-top:1px dashed var(--line)}
+.src-lbl{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.src-chip{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;color:var(--gold2);background:rgba(201,164,92,.1);border:1px solid var(--line);border-radius:999px;padding:2px 9px;text-decoration:none;transition:border-color .2s,background .2s,transform .15s}
+.src-chip:hover{border-color:var(--gold);background:rgba(201,164,92,.2);transform:translateY(-1px)}
+.cloud-badge{display:inline-block;margin-left:6px;font-size:10px;font-weight:700;letter-spacing:.04em;color:var(--gold2);background:rgba(201,164,92,.14);border:1px solid var(--line);border-radius:999px;padding:1px 7px;vertical-align:middle}
+.auth-or{display:flex;align-items:center;gap:10px;margin:14px 0 10px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a93b2}
+.auth-or::before,.auth-or::after{content:"";flex:1;height:1px;background:rgba(201,164,92,.25)}
+.google-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-color:rgba(201,164,92,.45)}
+

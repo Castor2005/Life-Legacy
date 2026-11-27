@@ -1,0 +1,53 @@
+{
+ "id": "tn-parttime-barista",
+ "minAge": 15,
+ "maxAge": 17,
+ "title": "Espresso apprentice",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The cafe trains you on the machine. Milk physics awaits.",
+ "choices": [
+  {
+   "label": "Master latte art",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "280"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rosettas for days. Regulars request you. 280 dollars banked."
+    }
+   ]
+  },
+  {
+   "label": "Morning shift grind",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "320"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "5am shifts build character and 320 dollars."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "id": "mx-race-track-day",
+ "minAge": 22,
+ "maxAge": 65,
+ "title": "Track day",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your car, a real circuit, an instructor with strong opinions.",
+ "choices": [
+  {
+   "label": "Drive the line",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Apexes hit, limits found safely. Grin lasts weeks."
+    }
+   ]
+  },
+  {
+   "label": "Ride along first",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pro-driven laps recalibrate your courage. Then you drive."
+    }
+   ]
+  }
+ ]
+}

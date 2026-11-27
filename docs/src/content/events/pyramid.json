@@ -1,0 +1,49 @@
+{
+ "id": "pyramid",
+ "minAge": 18,
+ "maxAge": 60,
+ "title": "Friend's 'business'",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Old friend pitches 'nutritional crypto juice': $500 to join, recruit 5 friends.",
+ "choices": [
+  {
+   "label": "Join",
+   "hint": "trap",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "-(6)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You lose $500 and two friendships. Classic."
+    }
+   ]
+  },
+  {
+   "label": "Decline + warn others",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You save three cousins. Hero."
+    }
+   ]
+  }
+ ]
+}

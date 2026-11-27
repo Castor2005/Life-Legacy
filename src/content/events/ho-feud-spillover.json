@@ -1,0 +1,48 @@
+{
+ "id": "ho-feud-spillover",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "Borrowed knives",
+ "tags": ["houses", "status", "danger"],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {"p": "houses", "truthy": true},
+   {"p": "prestige", "gte": 30}
+  ]
+ },
+ "text": "Two houses feud over harbor dues and both want YOUR name on their side of the petition. Refusing both is also a statement.",
+ "choices": [
+  {
+   "label": "Back the stronger house",
+   "hint": "prestige+, karma−",
+   "effects": [
+    {"op": "set", "path": "prestige", "value": "s.prestige+15"},
+    {"op": "stat", "key": "karma", "delta": "-(6)"},
+    {"op": "outcome", "tpl": "You pick the winner early and the winner remembers. The loser does too. +15 prestige, −6 karma."}
+   ]
+  },
+  {
+   "label": "Mediate a truce",
+   "hint": "smarts 55+",
+   "effects": [
+    {"op": "chance", "p": "0.55", "then": [
+     {"op": "set", "path": "prestige", "value": "s.prestige+25"},
+     {"op": "stat", "key": "karma", "delta": "8"},
+     {"op": "outcome", "tpl": "You talk both houses down from the ledge. The city calls you the peacemaker. +25 prestige, +8 karma."}
+    ], "else": [
+     {"op": "set", "path": "prestige", "value": "max(0,s.prestige-10)"},
+     {"op": "outcome", "tpl": "The talks collapse and both sides blame the mediator. −10 prestige."}
+    ]}
+   ]
+  },
+  {
+   "label": "Want no part of it",
+   "hint": "safe",
+   "effects": [
+    {"op": "stat", "key": "happiness", "delta": "3"},
+    {"op": "outcome", "tpl": "You plead harvest, headache, anything. The feud burns on without you."}
+   ]
+  }
+ ]
+}

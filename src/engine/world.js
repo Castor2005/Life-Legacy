@@ -586,6 +586,11 @@ function wSyncNPCs(){
     else { pn.rel=R.partner.rel; pn.role="partner"; }
     if(pn&&(pn.jobId==="unemployed")&&S.age>=20&&rnd()<0.3)pn.jobId=wJobFor(S.age);
   }
+  /* ROMANCE PATCH: casual lovers sync so they show in the roster + chat */
+  try{
+    var _lv=(S.sex&&S.sex.lovers)||[], _li;
+    for(_li=0;_li<_lv.length;_li++){ if(!wFindNPC(_lv[_li]))wAddNPC({name:_lv[_li],age:S.age,role:"lover",rel:60}); }
+  }catch(e){}
   for(i=0;i<R.children.length;i++){ var c=R.children[i], cn=wFindNPC(c.name);
     if(!cn){ cn=wAddNPC({name:c.name,age:c.age,role:"child",rel:c.rel||80,sex:c.sex||pick(["male","female"]),genes:c.genes,appearance:c.appearance||null}); }
     else { cn.age=c.age; cn.rel=c.rel; if(c.sex)cn.sex=c.sex; if(c.genes)cn.genes=c.genes; if(c.appearance)cn.appearance=c.appearance; } }

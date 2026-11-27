@@ -1,0 +1,48 @@
+{
+ "id": "mx-rome-slow",
+ "minAge": 22,
+ "maxAge": 75,
+ "title": "One city month",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A month in Rome: one apartment, one language app, endless espresso.",
+ "choices": [
+  {
+   "label": "Go slow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(3500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "12"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You learn the butcher's name. The city adopts you."
+    }
+   ]
+  },
+  {
+   "label": "Two weeks taste",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two weeks, all highlights. Enough to plan the return."
+    }
+   ]
+  }
+ ]
+}

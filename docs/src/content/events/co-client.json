@@ -1,0 +1,94 @@
+{
+ "id": "co-client",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "The big fish",
+ "tags": [
+  "adult-life",
+  "company",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "company",
+    "truthy": true
+   },
+   {
+    "p": "company.employees",
+    "lte": 6
+   }
+  ]
+ },
+ "text": "A major client tours {{s.company.name}} — all six employees standing very straight — and asks who exactly they're trusting.",
+ "choices": [
+  {
+   "label": "All-hands pitch",
+   "hint": "morale+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.morale",
+     "value": "clamp(s.company.morale+8)"
+    },
+    {
+     "op": "set",
+     "path": "company.cash",
+     "value": "s.company.cash+(3000)"
+    },
+    {
+     "op": "set",
+     "path": "company.rep",
+     "value": "clamp(s.company.rep+3)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Everyone shines. Signed! +$3,000 to the war chest."
+    }
+   ]
+  },
+  {
+   "label": "Overpromise shamelessly",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "set",
+       "path": "company.cash",
+       "value": "s.company.cash+(8000)"
+      },
+      {
+       "op": "set",
+       "path": "company.rep",
+       "value": "clamp(s.company.rep+2)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "They buy the moon. Now: deliver the moon. +$8,000."
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "company.rep",
+       "value": "clamp(s.company.rep-8)"
+      },
+      {
+       "op": "set",
+       "path": "company.morale",
+       "value": "clamp(s.company.morale-6)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The demo eats itself live. They walk. Morale craters."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

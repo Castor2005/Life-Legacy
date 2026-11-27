@@ -319,15 +319,16 @@ function applyBgMods(m,why){
 }
 async function aiAdjudicateBg(){
   if(!S||!S.alive||!S.customBg)return;
+  var myS=S; /* same-life check (runs pre-afterLoad inside newLife; gen can't help here) */
   var me=S.firstName+" "+S.lastName+", born "+(S.dob||S.birthYear)+" in "+(S.city?S.city+", ":"")+S.country+(S.region?" ("+S.region+")":"");
   var task="A player begins a life sim as "+me+" with this self-written past: \""+S.customBg.slice(0,300)+"\"\nTASK: Weigh it like a seasoned game master. Reply with ONLY a JSON object like {\"money\":500,\"prestige\":20,\"stats\":{\"smarts\":3},\"summary\":\"one vivid sentence on how this past shaped them\"}. money -2000..5000, prestige 0..80, stats any of "+STAT_KEYS.join(", ")+" -8..8 (omit zeros). Fit the era and the text; tragedy/discipline, privilege/prestige, scholarship/smarts, crime/karma-loss.";
   try{
     var res=await aiText({instruction:aiPrompt(task),startWith:"{"});
-    if(!S||!S.alive||!S.customBg||S.customBgDone)return;
+    if(S!==myS||!S||!S.alive||!S.customBg||S.customBgDone)return;
     var txt=String(res.text||""), o=JSON.parse(txt.slice(txt.indexOf("{"),txt.lastIndexOf("}")+1));
     S.customBgDone=true;
     applyBgMods({money:clamp(typeof o.money==="number"?o.money:0,-2000,5000),prestige:clamp(typeof o.prestige==="number"?o.prestige:0,0,80),stats:o.stats||{}},"your past");
-  }catch(e){ if(S&&S.alive&&S.customBg&&!S.customBgDone){ S.customBgDone=true; applyCustomBgFallback(); } }
+  }catch(e){ if(S!==myS||!S||!S.alive||!S.customBg||S.customBgDone)return; if(S&&S.alive&&S.customBg&&!S.customBgDone){ S.customBgDone=true; applyCustomBgFallback(); } }
 }
 
 /* ================= beginnings: simulate the start from the rest ================= */

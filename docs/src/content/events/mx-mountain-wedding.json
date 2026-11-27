@@ -1,0 +1,48 @@
+{
+ "id": "mx-mountain-wedding",
+ "minAge": 24,
+ "maxAge": 65,
+ "title": "Alpine vows",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "dating"
+ },
+ "text": "A mountaintop wedding: forty guests, one helicopter.",
+ "choices": [
+  {
+   "label": "Say yes there",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(6000)"
+    },
+    {
+     "op": "partnerMarry"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Vows in thin air. The photos defy belief. Married at altitude."
+    }
+   ]
+  },
+  {
+   "label": "Valley party",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2500)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Valley venue, mountain views. All grandparents attend."
+    }
+   ]
+  }
+ ]
+}

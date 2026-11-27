@@ -1,0 +1,49 @@
+{
+ "id": "eat-sand",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Sand snack",
+ "tags": [
+  "baby",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "At the park, {{s.firstName}} eats a triumphant fistful of sand.",
+ "choices": [
+  {
+   "label": "Laugh it off",
+   "hint": "health-",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(4)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Gritty. Gross. Hilarious. No harm done."
+    }
+   ]
+  },
+  {
+   "label": "Rush to doctor",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(80)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Doctor: 'Just sand.' Bill: $80. Parenthood!"
+    }
+   ]
+  }
+ ]
+}

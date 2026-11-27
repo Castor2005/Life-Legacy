@@ -1,0 +1,44 @@
+{
+ "id": "yg-first-invest",
+ "minAge": 22,
+ "maxAge": 29,
+ "title": "Index awakening",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A coworker explains index funds over lunch. The math lands.",
+ "choices": [
+  {
+   "label": "Automate monthly",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1200)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Monthly transfers start. Compounding begins its quiet magic."
+    }
+   ]
+  },
+  {
+   "label": "Learn then leap",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three books later, you invest with calm conviction."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "id": "grandkids",
+ "minAge": 50,
+ "maxAge": 90,
+ "title": "Grandchild!",
+ "tags": [
+  "adult-life",
+  "family",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.children.length",
+  "gt": 0
+ },
+ "text": "Your child calls, voice shaking with joy: you're going to be a grandparent!",
+ "choices": [
+  {
+   "label": "Spoil them rotten",
+   "hint": "joy",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "16"
+    },
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tiny hands, huge love. Grandparent mode: activated."
+    }
+   ]
+  },
+  {
+   "label": "Wise distant love",
+   "hint": "calm",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Books, calls, birthday magic from afar."
+    }
+   ]
+  }
+ ]
+}

@@ -246,6 +246,7 @@ function newLife(opts){
   sexEnsure();
   if(!S.assets.shares)S.assets.shares={};
   wInit();
+  try{ if(typeof housesEnsure==="function")housesEnsure(); }catch(e){}
   if(opts.attr) for(var ak in opts.attr) if(STAT_KEYS.indexOf(ak)>=0&&opts.attr[ak]>0) S.stats[ak]=clamp100(S.stats[ak]+clamp(opts.attr[ak],0,10));
   var idLine=S.genderIdentity+" · "+S.sexuality+" · "+raceLabel()+(S.city?" · "+S.city:"");
   pushLog(0,"👶","Born as "+first+" "+last+" in "+(S.city?S.city+", ":"")+S.country+" to a "+wealth+" family. ("+idLine+")","milestone");

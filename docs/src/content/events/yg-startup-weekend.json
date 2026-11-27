@@ -1,0 +1,61 @@
+{
+ "id": "yg-startup-weekend",
+ "minAge": 20,
+ "maxAge": 29,
+ "title": "48-hour build",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A startup weekend: pitch Friday, demo Sunday.",
+ "choices": [
+  {
+   "label": "Pitch your idea",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "money",
+       "amount": "5000"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Second place! 5,000 dollars seed and a team that believes."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "No prize, but an investor wants coffee. That is the real win."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Join a team",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You ship in 48 hours. Demo day applause tastes like future."
+    }
+   ]
+  }
+ ]
+}

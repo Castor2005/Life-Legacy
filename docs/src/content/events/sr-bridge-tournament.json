@@ -1,0 +1,45 @@
+{
+ "id": "sr-bridge-tournament",
+ "minAge": 62,
+ "maxAge": 90,
+ "title": "Tournament day",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The regional bridge tournament. Your partnership is favored.",
+ "choices": [
+  {
+   "label": "Play to win",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You bid the slam and make it. The room applauds."
+    }
+   ]
+  },
+  {
+   "label": "Teach the youth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two teens mentored. The game gains a generation."
+    }
+   ]
+  }
+ ]
+}

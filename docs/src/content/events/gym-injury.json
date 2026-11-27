@@ -1,0 +1,66 @@
+{
+ "id": "gym-injury",
+ "minAge": 18,
+ "maxAge": 55,
+ "title": "Sharp pain!",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Something pops during a heavy lift.",
+ "choices": [
+  {
+   "label": "Doctor + rest",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(600)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(5)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Strain, not tear. $600 and six boring weeks."
+    }
+   ]
+  },
+  {
+   "label": "Walk it off",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "outcome",
+       "tpl": "It fades. You feel invincible (wrongly)."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(15)"
+      },
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "-(10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Torn ligament. Months of regret."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

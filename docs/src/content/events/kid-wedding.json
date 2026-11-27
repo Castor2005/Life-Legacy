@@ -1,0 +1,142 @@
+{
+ "id": "kid-wedding",
+ "minAge": 40,
+ "maxAge": 80,
+ "title": "They're getting married",
+ "tags": [
+  "adult-life",
+  "family",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "some": {
+   "arr": "relationships.children",
+   "where": {
+    "p": "$it.age",
+    "gte": 20
+   }
+  }
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "k",
+    "expr": "where(s.relationships.children||[],\"age\",\"gte\",20)"
+   }
+  ],
+  "template": "{{k?k.name:\"Your child\"}} announces the wedding. Date set. Your duties: show up, don't cry (cry), pay for something."
+ },
+ "choices": [
+  {
+   "label": "Fund the dream day ($3,000)",
+   "hint": "money-, rel+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "money",
+      "gte": 3000
+     },
+     "then": [
+      {
+       "op": "money",
+       "amount": "-(3000)"
+      },
+      {
+       "op": "let",
+       "name": "k",
+       "expr": "where(s.relationships.children,\"age\",\"gte\",20)"
+      },
+      {
+       "op": "branch",
+       "cond": {
+        "v": "k",
+        "truthy": true
+       },
+       "then": [
+        {
+         "op": "setv",
+         "target": "k",
+         "path": "rel",
+         "value": "clamp(k.rel+8)"
+        }
+       ]
+      },
+      {
+       "op": "set",
+       "path": "prestige",
+       "value": "s.prestige+(10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Flowers, tears, dancing. +10 prestige for House {{s.lastName}}."
+      }
+     ],
+     "else": [
+      {
+       "op": "let",
+       "name": "k2",
+       "expr": "where(s.relationships.children,\"age\",\"gte\",20)"
+      },
+      {
+       "op": "branch",
+       "cond": {
+        "v": "k2",
+        "truthy": true
+       },
+       "then": [
+        {
+         "op": "setv",
+         "target": "k2",
+         "path": "rel",
+         "value": "clamp(k2.rel-3)"
+        }
+       ]
+      },
+      {
+       "op": "outcome",
+       "tpl": "The wallet says no. The day is smaller, the love isn't."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Potluck and joy",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "let",
+     "name": "k",
+     "expr": "where(s.relationships.children,\"age\",\"gte\",20)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "k",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "k",
+       "path": "rel",
+       "value": "clamp(k.rel+3)"
+      }
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Backyard vows, borrowed chairs, perfect."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "id": "ex-power-nurse-rounds",
+ "minAge": 20,
+ "maxAge": 60,
+ "title": "Night rounds",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Hospital night shift. The adult nurse finds you staring: 'Post-op tension? I do... off-chart therapy for special patients. Lock the curtain?'",
+ "choices": [
+  {
+   "label": "Take the therapy",
+   "hint": "DOMINANT take",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "randName()"
+    },
+    {
+     "op": "call",
+     "fn": "sex.ownClaim",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "via": {
+       "expr": "\"claim\""
+      },
+      "ob": {
+       "expr": "20"
+      },
+      "os": {
+       "expr": "20"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "name": "n",
+     "delta": "7"
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "\"oral\"",
+      "\"vanilla\""
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "12"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(4)"
+    },
+    {
+     "op": "scandal",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Curtain yanked: expert nurse mouth, deep and slow, then ridden hard on the gurney till the rails rattle — cumming together under the vitals monitor. Blood pressure: excellent."
+    }
+   ]
+  },
+  {
+   "label": "Sleep it off",
+   "hint": "rest",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You sleep. Vitals fine. Fantasy filed."
+    }
+   ]
+  }
+ ]
+}

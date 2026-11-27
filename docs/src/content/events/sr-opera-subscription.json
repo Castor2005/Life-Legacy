@@ -1,0 +1,44 @@
+{
+ "id": "sr-opera-subscription",
+ "minAge": 62,
+ "maxAge": 90,
+ "title": "Season seats",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Season seats, row K, four operas. Culture scheduled.",
+ "choices": [
+  {
+   "label": "Keep the seats",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(600)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tragedy, comedy, high C. The season nourishes."
+    }
+   ]
+  },
+  {
+   "label": "Bring newbies",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Each opera gains a guest. Converts made monthly."
+    }
+   ]
+  }
+ ]
+}

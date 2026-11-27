@@ -1,0 +1,45 @@
+{
+ "id": "md-maker-space",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Maker nights",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The maker space has lasers, looms, and patient teachers.",
+ "choices": [
+  {
+   "label": "Learn the laser",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cut, etched, inlaid. Gifts become legendary."
+    }
+   ]
+  },
+  {
+   "label": "Teach wood basics",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your safety class fills. Zero injuries, many stools."
+    }
+   ]
+  }
+ ]
+}

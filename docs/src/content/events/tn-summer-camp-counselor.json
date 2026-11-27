@@ -1,0 +1,49 @@
+{
+ "id": "tn-summer-camp-counselor",
+ "minAge": 15,
+ "maxAge": 17,
+ "title": "Counselor summer",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Junior counselor: eight kids, one cabin, endless energy.",
+ "choices": [
+  {
+   "label": "Lead the cabin",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "400"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Best cabin award. You earn 400 dollars and twelve admirers."
+    }
+   ]
+  },
+  {
+   "label": "Lifeguard track",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Certified by August. The whistle is power."
+    }
+   ]
+  }
+ ]
+}

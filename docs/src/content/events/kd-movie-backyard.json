@@ -1,0 +1,45 @@
+{
+ "id": "kd-movie-backyard",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "Backyard cinema",
+ "tags": [
+  "kid",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A sheet, a projector, and the whole street invited.",
+ "choices": [
+  {
+   "label": "Host the night",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Forty kids, one classic, popcorn math perfected."
+    }
+   ]
+  },
+  {
+   "label": "Pick the film",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your pick lands. The street quotes it for weeks."
+    }
+   ]
+  }
+ ]
+}

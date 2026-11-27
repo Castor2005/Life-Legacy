@@ -1,0 +1,49 @@
+{
+ "id": "bb-apple-pick",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Orchard day",
+ "tags": [
+  "baby",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Apple picking: {{s.firstName}} eats two for every one in the bag.",
+ "choices": [
+  {
+   "label": "Eat freely",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(20)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sticky, happy, and the bag is somehow still full."
+    }
+   ]
+  },
+  {
+   "label": "Count the harvest",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Twelve apples counted. Three times. Math tastes good."
+    }
+   ]
+  }
+ ]
+}

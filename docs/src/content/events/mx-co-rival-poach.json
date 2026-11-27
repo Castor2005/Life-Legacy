@@ -1,0 +1,53 @@
+{
+ "id": "mx-co-rival-poach",
+ "minAge": 22,
+ "maxAge": 65,
+ "title": "Talent raid",
+ "tags": [
+  "adult-life",
+  "company"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "company",
+  "truthy": true
+ },
+ "text": "A rival courts your best three people with absurd offers.",
+ "choices": [
+  {
+   "label": "Counter all three",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.morale",
+     "value": "clamp(s.company.morale+(8))"
+    },
+    {
+     "op": "set",
+     "path": "company.cash",
+     "value": "s.company.cash+(-(12000))"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Raises and promises. All three stay. Loyalty: purchased fairly."
+    }
+   ]
+  },
+  {
+   "label": "Let one go",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.cash",
+     "value": "s.company.cash+(4000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One leaves gracefully. The team reshapes stronger."
+    }
+   ]
+  }
+ ]
+}

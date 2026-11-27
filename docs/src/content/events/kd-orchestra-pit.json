@@ -1,0 +1,50 @@
+{
+ "id": "kd-orchestra-pit",
+ "minAge": 8,
+ "maxAge": 12,
+ "title": "Pit orchestra",
+ "tags": [
+  "kid",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The school musical needs a kid for the pit. You own an instrument. Sort of.",
+ "choices": [
+  {
+   "label": "Audition hard",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Second chair. The overture gives you chills."
+    }
+   ]
+  },
+  {
+   "label": "Stage crew instead",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Spotlight operator. You ARE the drama now."
+    }
+   ]
+  }
+ ]
+}

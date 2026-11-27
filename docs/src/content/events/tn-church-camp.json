@@ -1,0 +1,45 @@
+{
+ "id": "tn-church-camp",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Summer retreat",
+ "tags": [
+  "teen",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A weekend retreat: canoes, songs, no phones.",
+ "choices": [
+  {
+   "label": "Unplug fully",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three days offline. The stars file a comeback."
+    }
+   ]
+  },
+  {
+   "label": "Lead a song",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your campfire set gets requested nightly."
+    }
+   ]
+  }
+ ]
+}

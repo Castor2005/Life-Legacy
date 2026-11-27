@@ -1,0 +1,45 @@
+{
+ "id": "kd-sidewalk-chalk",
+ "minAge": 5,
+ "maxAge": 10,
+ "title": "Chalk gallery",
+ "tags": [
+  "kid",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The whole driveway is canvas. The neighbors slow down to look.",
+ "choices": [
+  {
+   "label": "Go huge",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A dragon spans the driveway. Cars detour respectfully."
+    }
+   ]
+  },
+  {
+   "label": "Hopscotch classic",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The perfect hopscotch. Jump-tested by twelve kids."
+    }
+   ]
+  }
+ ]
+}

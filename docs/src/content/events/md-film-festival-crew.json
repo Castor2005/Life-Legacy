@@ -1,0 +1,45 @@
+{
+ "id": "md-film-festival-crew",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Festival crew",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The film festival needs venue captains. Films included.",
+ "choices": [
+  {
+   "label": "Captain a venue",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sold-out shows run on your headset. Directors thank you."
+    }
+   ]
+  },
+  {
+   "label": "Judge shorts",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your ballot backs the winner. Taste: validated."
+    }
+   ]
+  }
+ ]
+}

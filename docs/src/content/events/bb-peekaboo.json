@@ -1,0 +1,45 @@
+{
+ "id": "bb-peekaboo",
+ "minAge": 0,
+ "maxAge": 3,
+ "title": "Peekaboo champion",
+ "tags": [
+  "baby",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} has discovered peekaboo and demands it at every meal.",
+ "choices": [
+  {
+   "label": "Play along",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two hundred rounds of peekaboo. Your face hurts from smiling."
+    }
+   ]
+  },
+  {
+   "label": "Teach waving instead",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Now it is waving. At everyone. Including the dog."
+    }
+   ]
+  }
+ ]
+}

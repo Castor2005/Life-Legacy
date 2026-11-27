@@ -1,0 +1,48 @@
+{
+ "id": "yg-freelance-feast",
+ "minAge": 22,
+ "maxAge": 29,
+ "title": "Feast months",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Three clients at once. Money pours; weekends vanish.",
+ "choices": [
+  {
+   "label": "Stack it",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "7000"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(5)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You bank 7,000 dollars and sleep for a week after."
+    }
+   ]
+  },
+  {
+   "label": "Cap at two",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "4000"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two clients, sane hours, 4,000 dollars. Balance kept."
+    }
+   ]
+  }
+ ]
+}

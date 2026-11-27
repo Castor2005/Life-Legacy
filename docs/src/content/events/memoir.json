@@ -1,0 +1,66 @@
+{
+ "id": "memoir",
+ "minAge": 55,
+ "maxAge": 95,
+ "title": "Write it down?",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Grandkids beg: 'Write your stories before they're gone.'",
+ "choices": [
+  {
+   "label": "Write the memoir",
+   "hint": "legacy",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "set",
+     "path": "flags.memoir",
+     "value": "true"
+    },
+    {
+     "op": "chance",
+     "p": "0.2",
+     "then": [
+      {
+       "op": "money",
+       "amount": "15000"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Self-published. It sells 3,000 copies! $15k!"
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "312 pages of gold. Family treasure forever."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Tell, don't write",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Porch stories it is."
+    }
+   ]
+  }
+ ]
+}

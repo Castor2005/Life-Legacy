@@ -1,0 +1,49 @@
+{
+ "id": "bb-bird-breakfast",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Bird breakfast",
+ "tags": [
+  "baby",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Birds gather at dawn and {{s.firstName}} wants to feed them all.",
+ "choices": [
+  {
+   "label": "Scatter seeds",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(6)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A feathered festival on the lawn."
+    }
+   ]
+  },
+  {
+   "label": "Learn the calls",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three bird calls identified. One crow befriended."
+    }
+   ]
+  }
+ ]
+}

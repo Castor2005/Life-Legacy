@@ -1,0 +1,43 @@
+{
+ "id": "sr-wine-club-retired",
+ "minAge": 62,
+ "maxAge": 88,
+ "title": "Tasting crew",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The tasting group meets monthly. Your cellar contributes.",
+ "choices": [
+  {
+   "label": "Host the vertical",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ten vintages, one grape. The night educates deliciously."
+    }
+   ]
+  },
+  {
+   "label": "Tour the valley",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(600)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Barrel rooms and blending trials. Cases shipped home."
+    }
+   ]
+  }
+ ]
+}

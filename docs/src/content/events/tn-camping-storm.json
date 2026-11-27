@@ -1,0 +1,45 @@
+{
+ "id": "tn-camping-storm",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Storm night",
+ "tags": [
+  "teen",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The camping trip meets a real thunderstorm at 2am.",
+ "choices": [
+  {
+   "label": "Hold the fort",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Guy-lines tightened in lightning. Tent holds. Legend made."
+    }
+   ]
+  },
+  {
+   "label": "Car pile-in",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Everyone crams in the car, laughing. The storm becomes lore."
+    }
+   ]
+  }
+ ]
+}

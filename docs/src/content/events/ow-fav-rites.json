@@ -1,0 +1,171 @@
+{
+ "id": "ow-fav-rites",
+ "minAge": 18,
+ "maxAge": 55,
+ "title": "What you crave",
+ "tags": [
+  "adult-life",
+  "sex",
+  "ownership",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "sex",
+    "truthy": true
+   },
+   {
+    "p": "sex.xp",
+    "gte": 8
+   }
+  ]
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "ks",
+    "expr": "s.sex&&s.sex.acts?topKeys(s.sex.acts,2):[]"
+   }
+  ],
+  "template": "After dozens of nights a pattern is undeniable — your body keeps dragging lovers toward {{ks.length?ks.join(\" and \"):\"something new\"}}. Tonight your owned lover says: 'Show me exactly what you love. All of it.'"
+ },
+ "choices": [
+  {
+   "label": "Indulge your favourite",
+   "hint": "acts+, corr+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "s.relationships.partner?s.relationships.partner.name:s.sex.lovers[s.sex.lovers.length-1]||randName()"
+    },
+    {
+     "op": "let",
+     "name": "fav",
+     "expr": "topKey(s.sex.acts)||\"rough\""
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "fav",
+      "fav===\"bondage\"?\"tease\":\"bondage\""
+     ]
+    },
+    {
+     "op": "skill",
+     "delta": "7"
+    },
+    {
+     "op": "stamina",
+     "delta": "-(12)"
+    },
+    {
+     "op": "corr",
+     "delta": "6"
+    },
+    {
+     "op": "let",
+     "name": "c",
+     "expr": "null"
+    },
+    {
+     "op": "forClaims",
+     "idxAs": "i",
+     "body": [
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.sex.claims[i].name===n"
+       },
+       "then": [
+        {
+         "op": "let",
+         "name": "c",
+         "expr": "s.sex.claims[i]"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "c",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "c",
+       "path": "corr",
+       "value": "clamp(c.corr+8)"
+      },
+      {
+       "op": "setv",
+       "target": "c",
+       "path": "obedience",
+       "value": "clamp(c.obedience+8)"
+      }
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "14"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You teach {{n}} your rite — {{fav}}, again, harder, exactly how you cum best — until you are both shaking and soaked. They learn the choreography of your hunger. Favourite fed."
+    }
+   ]
+  },
+  {
+   "label": "Rotate something new",
+   "hint": "skill+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n2",
+     "expr": "s.relationships.partner?s.relationships.partner.name:s.sex.lovers[s.sex.lovers.length-1]||randName()"
+    },
+    {
+     "op": "let",
+     "name": "all",
+     "expr": "[\"vanilla\",\"oral\",\"rough\",\"tender\",\"anal\",\"bondage\",\"group\",\"public\",\"tease\",\"worship\"]"
+    },
+    {
+     "op": "let",
+     "name": "nw",
+     "expr": "firstWhereMap(all,s.sex.acts,\"gt\",2,1)||\"tease\""
+    },
+    {
+     "op": "histLog",
+     "name": "n2",
+     "acts": [
+      "nw"
+     ]
+    },
+    {
+     "op": "skill",
+     "delta": "9"
+    },
+    {
+     "op": "stamina",
+     "delta": "-(10)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tonight: {{nw}}. Clumsy, laughing, then suddenly NOT clumsy — a new door kicks open and you cum surprised. Repertoire grows."
+    }
+   ]
+  }
+ ]
+}

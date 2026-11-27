@@ -1,0 +1,49 @@
+{
+ "id": "md-grand-tour-kids",
+ "minAge": 50,
+ "maxAge": 59,
+ "title": "Kids grown tour",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "married"
+ },
+ "text": "The nest empties. The map opens. Where first?",
+ "choices": [
+  {
+   "label": "Japan rail",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(7000)"
+    },
+    {
+     "op": "partnerRel",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bullet trains, old temples, new flavors. You hold hands like teens."
+    }
+   ]
+  },
+  {
+   "label": "Road the parks",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2500)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Every park you missed. Hiked at last, together."
+    }
+   ]
+  }
+ ]
+}

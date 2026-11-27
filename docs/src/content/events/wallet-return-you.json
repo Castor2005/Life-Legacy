@@ -1,0 +1,51 @@
+{
+ "id": "wallet-return-you",
+ "minAge": 16,
+ "maxAge": 90,
+ "title": "Lost & found karma",
+ "tags": [
+  "family",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "You lose your wallet with $200. Hours later a teen messages: 'Found it?'",
+ "choices": [
+  {
+   "label": "Meet up gratefully",
+   "hint": "faith+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "any": [
+       {
+        "p": "stats.karma",
+        "gt": 50
+       },
+       {
+        "expr": "rnd()<0.6"
+       }
+      ]
+     },
+     "then": [
+      {
+       "op": "outcome",
+       "tpl": "Everything intact! You give $20 reward. Faith in humanity +."
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(200)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Wallet gone, lesson kept. Ouch."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

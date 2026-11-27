@@ -1,0 +1,58 @@
+{
+ "id": "lemonade-stand",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "Lemonade empire",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} builds a lemonade stand: 50 cents a cup, hand-painted sign.",
+ "choices": [
+  {
+   "label": "Hustle the sidewalk",
+   "hint": "money+, social+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "w",
+     "expr": "20+floor(rnd()*45)"
+    },
+    {
+     "op": "money",
+     "amount": "w"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sold out by noon! ${{w}} profit and three regulars."
+    }
+   ]
+  },
+  {
+   "label": "Free cups for all",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(10)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "12"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The whole block smiles. Profit: zero. Rich anyway."
+    }
+   ]
+  }
+ ]
+}

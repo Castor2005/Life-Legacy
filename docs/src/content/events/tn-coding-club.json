@@ -1,0 +1,45 @@
+{
+ "id": "tn-coding-club",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Hack night",
+ "tags": [
+  "teen",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The coding club ships a game in one weekend.",
+ "choices": [
+  {
+   "label": "Build the engine",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your physics code works first try. The game slaps."
+    }
+   ]
+  },
+  {
+   "label": "Design the art",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pixel sprites with actual charm. Players screenshot them."
+    }
+   ]
+  }
+ ]
+}

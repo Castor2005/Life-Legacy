@@ -1,0 +1,46 @@
+{
+ "id": "mx-cabin-blizzard",
+ "minAge": 22,
+ "maxAge": 72,
+ "title": "Whiteout weekend",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "married"
+ },
+ "text": "Snow seals the cabin. Firewood, wine, no road out.",
+ "choices": [
+  {
+   "label": "Savor the seal",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "partnerRel",
+     "delta": "12"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three days of firelight and talk. The marriage bank overflows."
+    }
+   ]
+  },
+  {
+   "label": "Dig out early",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You trench to the road heroically. Neighbors cheer."
+    }
+   ]
+  }
+ ]
+}

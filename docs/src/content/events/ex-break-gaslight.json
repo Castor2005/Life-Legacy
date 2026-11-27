@@ -1,0 +1,171 @@
+{
+ "id": "ex-break-gaslight",
+ "minAge": 22,
+ "maxAge": 60,
+ "title": "Her idea",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "sex",
+      "truthy": true
+     },
+     {
+      "p": "sex.claims",
+      "truthy": true
+     }
+    ]
+   },
+   {
+    "p": "sex.claims.length",
+    "truthy": true
+   }
+  ]
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "c",
+    "expr": "s.sex&&s.sex.claims&&s.sex.claims.length?s.sex.claims[s.sex.claims.length-1]:null"
+   },
+   {
+    "name": "n",
+    "expr": "c?c.name:\"your girl\""
+   }
+  ],
+  "template": "{{n}} found the other woman's panties. She's crying, shaking: 'Tell me the truth.' The cruel genius move: make the collar HER idea by morning."
+ },
+ "choices": [
+  {
+   "label": "Twist it all on her",
+   "hint": "CRUEL mindfuck",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c",
+     "expr": "s.sex.claims[s.sex.claims.length-1]"
+    },
+    {
+     "op": "let",
+     "name": "nm",
+     "expr": "c.name"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "broken",
+     "value": "clamp(c.broken+24)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "obedience",
+     "value": "clamp(c.obedience+14)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "obsession",
+     "value": "clamp(c.obsession+6)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "own",
+     "value": "clamp(c.own+12)"
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "mode",
+     "value": "\"broken\""
+    },
+    {
+     "op": "corr",
+     "delta": "12"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(14)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "scandal",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "By dawn she's apologizing to YOU — for snooping, for doubting, for not being enough — on her knees, begging the collar back on. 'Punish me, I was wrong.' Will {{c.broken}}. Evil. Effective. Permanent."
+    }
+   ]
+  },
+  {
+   "label": "Confess everything",
+   "hint": "honest ruin",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c2",
+     "expr": "s.sex.claims[s.sex.claims.length-1]"
+    },
+    {
+     "op": "setv",
+     "target": "c2",
+     "path": "obedience",
+     "value": "clamp(c2.obedience-25)"
+    },
+    {
+     "op": "setv",
+     "target": "c2",
+     "path": "own",
+     "value": "clamp(c2.own-20)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(10)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "c2.obedience",
+      "lt": 8
+     },
+     "then": [
+      {
+       "op": "claimSplice",
+       "index": "s.sex.claims.length-1"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Truth told. She packs and leaves. The door sound will live in you."
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "Truth told. She stays, barely. Obedience {{c2.obedience}}. Rebuilding from ash."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

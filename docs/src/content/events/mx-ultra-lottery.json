@@ -1,0 +1,62 @@
+{
+ "id": "mx-ultra-lottery",
+ "minAge": 25,
+ "maxAge": 60,
+ "title": "Golden ticket",
+ "tags": [
+  "adult-life",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The legendary 100-miler lottery opens. Odds: slim.",
+ "choices": [
+  {
+   "label": "Enter everything",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.1",
+     "then": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "12"
+      },
+      {
+       "op": "outcome",
+       "tpl": "DRAWN! You finish the hundred. Buckle earned, legend made."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Not drawn. Training continues; the mountain waits."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Crew a runner",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pacing at mile 70. Your runner finishes because of you."
+    }
+   ]
+  }
+ ]
+}

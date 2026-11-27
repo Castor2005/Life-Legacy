@@ -1,0 +1,45 @@
+{
+ "id": "sr-paint-plein-air",
+ "minAge": 62,
+ "maxAge": 90,
+ "title": "Paint the light",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The plein air group paints Tuesdays wherever light lands.",
+ "choices": [
+  {
+   "label": "Paint weekly",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Forty canvases a year. The town hangs your seasons."
+    }
+   ]
+  },
+  {
+   "label": "Sketch only",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Light studies daily. The eye sharpens like a lens."
+    }
+   ]
+  }
+ ]
+}

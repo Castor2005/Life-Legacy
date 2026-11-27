@@ -1,0 +1,105 @@
+{
+ "id": "uw-vault",
+ "minAge": 25,
+ "maxAge": 70,
+ "title": "Casino blueprints",
+ "tags": [
+  "adult-life",
+  "underworld",
+  "crime",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "underworld",
+    "truthy": true
+   },
+   {
+    "p": "underworld.rank",
+    "gte": 4
+   }
+  ]
+ },
+ "text": "A retired pit boss with a grudge sells {{s.firstName}} the casino vault's blueprints, guard rotations and all.",
+ "choices": [
+  {
+   "label": "The legend job",
+   "hint": "huge risk",
+   "effects": [
+    {
+     "op": "let",
+     "name": "loot",
+     "expr": "30000+floor(rnd()*50000)"
+    },
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "money",
+       "amount": "loot"
+      },
+      {
+       "op": "set",
+       "path": "underworld.rep",
+       "value": "s.underworld.rep+(10)"
+      },
+      {
+       "op": "set",
+       "path": "underworld.stash",
+       "value": "s.underworld.stash+(round(loot*0.4))"
+      },
+      {
+       "op": "set",
+       "path": "fame",
+       "value": "clamp(s.fame+10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Textbook. +${{loot}}. They'll make movies about this night."
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "flags.inJail",
+       "value": "4+floor(rnd()*3)"
+      },
+      {
+       "op": "set",
+       "path": "crime",
+       "value": "s.crime+1"
+      },
+      {
+       "op": "set",
+       "path": "underworld.rep",
+       "value": "max(0,s.underworld.rep-8)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The silent alarm wasn't silent. 4-6 years, pending trial. The crew goes quiet."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Burn the blueprints",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Some nights you just enjoy dinner instead."
+    }
+   ]
+  }
+ ]
+}

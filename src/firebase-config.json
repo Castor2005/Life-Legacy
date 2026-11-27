@@ -1,0 +1,9 @@
+{
+  "_setup": "FIREBASE SETUP — fill the fields below from Firebase Console > Project settings > General > Your apps > Web app, then SAVE. Until apiKey is filled in, the game stays local-only and everything keeps working. Full steps: src/README.md, section 'Cloud sync (optional Firebase)'. Firebase web config is public-by-design; protection comes from firestore.rules (src/firestore.rules), never from hiding these values.",
+  "apiKey": "AIzaSyBSCxuJDhKmpc2AjnjDyy1khUzw8BSuZwU",
+  "authDomain": "life-legacy-a98f9.firebaseapp.com",
+  "projectId": "life-legacy-a98f9",
+  "storageBucket": "life-legacy-a98f9.firebasestorage.app",
+  "messagingSenderId": "663761814748",
+  "appId": "1:663761814748:web:cbe1d119f14e31ce1fe019"
+}

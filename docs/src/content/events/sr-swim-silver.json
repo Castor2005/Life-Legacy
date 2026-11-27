@@ -1,0 +1,45 @@
+{
+ "id": "sr-swim-silver",
+ "minAge": 60,
+ "maxAge": 88,
+ "title": "Silver lanes",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Masters swimming: lanes by pace, coffee after.",
+ "choices": [
+  {
+   "label": "Race the meets",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Gold in your age group. The cap barely contains the grin."
+    }
+   ]
+  },
+  {
+   "label": "Aqua friends",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lane four forever. Birthdays celebrated poolside."
+    }
+   ]
+  }
+ ]
+}

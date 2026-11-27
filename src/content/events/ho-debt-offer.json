@@ -1,0 +1,43 @@
+{
+ "id": "ho-debt-offer",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "Paper with a pulse",
+ "tags": ["houses", "money"],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {"p": "houses", "truthy": true},
+   {"p": "money", "gte": 10000}
+  ]
+ },
+ "text": "A Great House quietly offers you its harbor bonds at a discount — they need coin now, you have coin now. Paper with a pulse.",
+ "choices": [
+  {
+   "label": "Buy the bonds ($10,000)",
+   "hint": "pays back later",
+   "effects": [
+    {"op": "chance", "p": "0.65", "then": [
+     {"op": "set", "path": "money", "value": "max(0,s.money-10000)"},
+     {"op": "let", "name": "g", "expr": "13000+floor(rnd()*6000)"},
+     {"op": "set", "path": "money", "value": "s.money+(g)"},
+     {"op": "set", "path": "prestige", "value": "s.prestige+8"},
+     {"op": "outcome", "tpl": "The bonds mature fat. +${{g}} total returned, and a house that pays its debts. +8 prestige."}
+    ], "else": [
+     {"op": "set", "path": "money", "value": "max(0,s.money-10000)"},
+     {"op": "let", "name": "g", "expr": "5000+floor(rnd()*3000)"},
+     {"op": "set", "path": "money", "value": "s.money+(g)"},
+     {"op": "outcome", "tpl": "The house defaults sideways and settles for pennies. +${{g}} salvaged. Never lend to banners."}
+    ]}
+   ]
+  },
+  {
+   "label": "Decline politely",
+   "hint": "safe",
+   "effects": [
+    {"op": "stat", "key": "smarts", "delta": "2"},
+    {"op": "outcome", "tpl": "You pass. Someone else's paper, someone else's panic."}
+   ]
+  }
+ ]
+}

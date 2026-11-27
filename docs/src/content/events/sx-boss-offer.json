@@ -1,0 +1,168 @@
+{
+ "id": "sx-boss-offer",
+ "minAge": 20,
+ "maxAge": 50,
+ "title": "The boss's door",
+ "tags": [
+  "adult-life",
+  "sex",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "job": "employed"
+   },
+   {
+    "p": "jobId",
+    "ne": "unemployed"
+   }
+  ]
+ },
+ "text": "Your boss locks the office door, adult to adult: 'That promotion — I can sign it tonight. If you earn it on your knees first.'",
+ "choices": [
+  {
+   "label": "Earn it on your knees",
+   "hint": "promotion, corruption",
+   "effects": [
+    {
+     "op": "xp",
+     "n": "(2)"
+    },
+    {
+     "op": "skill",
+     "delta": "7"
+    },
+    {
+     "op": "corr",
+     "delta": "10"
+    },
+    {
+     "op": "kink",
+     "id": "power"
+    },
+    {
+     "op": "set",
+     "path": "salary",
+     "value": "round(s.salary*1.25)"
+    },
+    {
+     "op": "set",
+     "path": "performance",
+     "value": "clamp(s.performance+10)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(8)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "levOn",
+     "target": "\"boss\"",
+     "secret": "\"office sex\""
+    },
+    {
+     "op": "levOff",
+     "holder": "\"boss\"",
+     "secret": "\"office sex\""
+    },
+    {
+     "op": "scandal",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You suck/fuck your boss right on the desk — deep, messy, transactional — and cum thinking of the raise. Monday: promotion letter. Plus mutual blackmail forever."
+    }
+   ]
+  },
+  {
+   "label": "Report them",
+   "hint": "risky righteous",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "any": [
+       {
+        "p": "stats.social",
+        "gt": 55
+       },
+       {
+        "expr": "rnd()<0.5"
+       }
+      ]
+     },
+     "then": [
+      {
+       "op": "money",
+       "amount": "8000"
+      },
+      {
+       "op": "set",
+       "path": "prestige",
+       "value": "(s.prestige||0)+12"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "HR believes you. Settlement $8,000, boss gone. The office whispers your name."
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "jobId",
+       "value": "\"unemployed\""
+      },
+      {
+       "op": "set",
+       "path": "salary",
+       "value": "0"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "No proof. You are managed out. The boss smiles at your exit interview."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Refuse flat",
+   "hint": "pride",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You walk out. The promotion dies. So does the shame."
+    }
+   ]
+  }
+ ]
+}

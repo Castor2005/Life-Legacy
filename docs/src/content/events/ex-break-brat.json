@@ -1,0 +1,102 @@
+{
+ "id": "ex-break-brat",
+ "minAge": 18,
+ "maxAge": 40,
+ "title": "Mouthy brat",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The adult party brat has mocked you all night — your clothes, your car, your cock size: 'Bet you can't even handle a real woman. Prove it, little man.'",
+ "choices": [
+  {
+   "label": "Shut her mouth with cock",
+   "hint": "DOMINANT break",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "randName()"
+    },
+    {
+     "op": "call",
+     "fn": "sex.ownClaim",
+     "as": "c",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "via": {
+       "expr": "\"broken\""
+      },
+      "ob": {
+       "expr": "24"
+      },
+      "os": {
+       "expr": "18"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "name": "n",
+     "delta": "12"
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "\"oral\"",
+      "\"rough\"",
+      "\"tease\""
+     ]
+    },
+    {
+     "op": "kink",
+     "id": "degradation"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "14"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(8)"
+    },
+    {
+     "op": "scandal",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Wrist in her hair, cock down her smart throat till she gags and tears run — then fucked stupid against the wall, slapped red, cumming while apologizing. The brat leaves quiet, wet, and yours (will {{c.broken}})."
+    }
+   ]
+  },
+  {
+   "label": "Ice her out",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You turn your back mid-sentence. The party watches her shrink. Silence wins."
+    }
+   ]
+  }
+ ]
+}

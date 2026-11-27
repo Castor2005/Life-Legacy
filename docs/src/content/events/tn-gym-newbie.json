@@ -1,0 +1,45 @@
+{
+ "id": "tn-gym-newbie",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Iron beginnings",
+ "tags": [
+  "teen",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The school weight room opens to freshmen. The bar is empty and honest.",
+ "choices": [
+  {
+   "label": "Learn the lifts",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Squat, press, pull. Numbers climb monthly. Strength becomes identity."
+    }
+   ]
+  },
+  {
+   "label": "Run track instead",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "400 meters of fire. The team jacket fits perfectly."
+    }
+   ]
+  }
+ ]
+}

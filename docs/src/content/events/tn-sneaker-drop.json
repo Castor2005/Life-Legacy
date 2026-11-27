@@ -1,0 +1,43 @@
+{
+ "id": "tn-sneaker-drop",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Drop day",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Limited sneakers drop Saturday. Camp-out or app refresh?",
+ "choices": [
+  {
+   "label": "Camp out",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(160)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You get the pair. Resale value doubles by Monday."
+    }
+   ]
+  },
+  {
+   "label": "Skip and save",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "100"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You flip your old pair instead and keep 100 dollars."
+    }
+   ]
+  }
+ ]
+}

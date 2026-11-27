@@ -1,0 +1,45 @@
+{
+ "id": "tn-summer-league-soccer",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Summer league",
+ "tags": [
+  "teen",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Summer soccer: heat, turf, and a final under lights.",
+ "choices": [
+  {
+   "label": "Start every game",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two goals, five assists. The final goes to penalties. You score."
+    }
+   ]
+  },
+  {
+   "label": "Captain the bench",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Morale captain. The team runs on your chants."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "first-word",
+ "minAge": 1,
+ "maxAge": 2,
+ "title": "First word!",
+ "tags": [
+  "baby",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} babbles at breakfast. The whole family leans in — what will the first real word be?",
+ "choices": [
+  {
+   "label": "Cheer them on",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The word is 'mama'! Everyone cries. Happiness blooms."
+    }
+   ]
+  },
+  {
+   "label": "Record everything",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You capture it on video. Years later this clip still gets played."
+    }
+   ]
+  }
+ ]
+}

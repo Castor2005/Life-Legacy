@@ -1,0 +1,44 @@
+{
+ "id": "sr-telescope-retire",
+ "minAge": 62,
+ "maxAge": 90,
+ "title": "Saturn nights",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Retirement telescope: the rings await your driveway.",
+ "choices": [
+  {
+   "label": "Buy the big one",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1200)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rings, moons, deep sky. Neighbors line up nightly."
+    }
+   ]
+  },
+  {
+   "label": "Club observatory",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shared domes, shared wonder. The club gains a regular."
+    }
+   ]
+  }
+ ]
+}

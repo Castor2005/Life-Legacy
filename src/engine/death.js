@@ -98,11 +98,12 @@ function showDeath(){
   writeObituary(rib);
 }
 async function writeObituary(rib){
-  var el=$("obitEl");
+  var el=$("obitEl"), myGen=lifeGen();
   try{
     await aiText({instruction:aiPrompt("TASK: Write a 2-sentence obituary for this character (second person for sentence 1, epic for sentence 2), honoring ribbon \""+rib.name+"\" ("+rib.desc+"). Then an epitaph line starting with \"Epitaph:\". No preamble."),
-      onChunk:function(d){ el.textContent=d.fullTextSoFar; }});
-  }catch(e){ el.textContent='"'+S.firstName+" "+S.lastName+", "+rib.name.toLowerCase()+": "+rib.desc+'"'; }
+      onChunk:function(d){ if(myGen===lifeGen())el.textContent=d.fullTextSoFar; }});
+    if(myGen!==lifeGen())return;
+  }catch(e){ if(myGen!==lifeGen())return; el.textContent='"'+S.firstName+" "+S.lastName+", "+rib.name.toLowerCase()+": "+rib.desc+'"'; }
 }
 function heirPlan(){
   var heirs=heirCandidates();
@@ -134,8 +135,10 @@ async function writeLegacySummary(plan,passed,hadWill,fn,page,ln){
   var old=plan.old;
   var traitBit=passed.length?("You carry their "+passed.map(traitName).join(" and ")+"."):"You are your own person — none of their traits stuck to you.";
   var task="Write a 3-sentence 'inherited legacy' for the new protagonist "+fn+" "+ln+", age "+page+", who just inherited House "+ln+" after "+old.firstName+" "+old.lastName+" died at "+old.age+" of "+old.deathCause+". Hard facts to weave in: inheritance of "+fmt$(plan.inherit)+(plan.keepHouse!=="none"?" plus the family estate":"")+", house prestige "+plan.oldPrestige+" of which "+plan.newPrestige+" carries to you, "+(plan.n>1?("estate shared with "+(plan.n-1)+" sibling"+(plan.n>2?"s":"")):"sole heir")+", "+traitBit+" Second person (You ...), elegiac but forward-looking, no preamble, exactly 3 sentences.";
+  var myGen=lifeGen();
   try{
     var res=await aiText({instruction:aiPrompt(task)});
+    if(myGen!==lifeGen())throw new Error("stale");
     var t=res&&res.text?String(res.text).trim():"";
     if(t)return t;
   }catch(e){}

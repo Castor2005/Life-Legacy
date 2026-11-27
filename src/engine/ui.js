@@ -22,6 +22,9 @@ function applyTexts(){
   var ab=$("autoBtn"); if(ab&&!autoTimer)ab.textContent=t("auto");
 }
 function afterLoad(){
+  /* identity changed (new/load/heir/growTo/import): retire every in-flight
+   * async answer — see ASYNC-GEN GUARD in state.js. */
+  try{ bumpLifeGen(); }catch(e){}
   var res=migrate();
   /* GENETICS PATCH: old saves backfill genomes + named parents here — no bump */
   try{ parentsEnsure(); }catch(e){}

@@ -1,0 +1,53 @@
+{
+ "id": "yg-roadtrip-coast",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Coast run",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Four friends, one old car, the whole coastline.",
+ "choices": [
+  {
+   "label": "Take the week",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(450)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "12"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Salt, sunsets, breakdowns laughed through. The photos live forever."
+    }
+   ]
+  },
+  {
+   "label": "Weekend version",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two days, all highlights. Back with stories and savings."
+    }
+   ]
+  }
+ ]
+}

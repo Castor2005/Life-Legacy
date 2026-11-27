@@ -1,0 +1,45 @@
+{
+ "id": "sr-library-shift",
+ "minAge": 60,
+ "maxAge": 80,
+ "title": "Tuesday desk",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The library needs a Tuesday volunteer. The quiet calls.",
+ "choices": [
+  {
+   "label": "Shelve and smile",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Regulars ask for you. The new arrivals shelf glows."
+    }
+   ]
+  },
+  {
+   "label": "Read to kids",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Story hour legend. Toddlers reserve your lap."
+    }
+   ]
+  }
+ ]
+}

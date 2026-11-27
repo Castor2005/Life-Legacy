@@ -1,0 +1,64 @@
+{
+ "id": "flat-tire-rain",
+ "minAge": 18,
+ "maxAge": 85,
+ "title": "Flat at midnight",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Midnight, rain, nowhere: a tire strands {{s.firstName}} as trucks spray past.",
+ "choices": [
+  {
+   "label": "Change it yourself",
+   "hint": "fitness check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "stats.fitness",
+      "gt": 45
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Twelve wet minutes. Soaked, triumphant."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(5)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The jack wins round one. You win round two, shivering."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Call roadside ($90)",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(90)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Warm car, warm wait, warm bill."
+    }
+   ]
+  }
+ ]
+}

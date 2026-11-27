@@ -1,0 +1,49 @@
+{
+ "id": "sr-birding-life",
+ "minAge": 60,
+ "maxAge": 90,
+ "title": "Life list",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The life list stands at 200. The warblers migrate now.",
+ "choices": [
+  {
+   "label": "Chase the rarity",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The painted bunting! Seen, logged, celebrated. 201."
+    }
+   ]
+  },
+  {
+   "label": "Patch loyalty",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your local patch yields daily wonders. Depth beats distance."
+    }
+   ]
+  }
+ ]
+}

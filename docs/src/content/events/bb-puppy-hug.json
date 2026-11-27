@@ -1,0 +1,51 @@
+{
+ "id": "bb-puppy-hug",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Puppy ambush",
+ "tags": [
+  "baby",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A neighbor puppy bowls {{s.firstName}} over with pure love.",
+ "choices": [
+  {
+   "label": "Hug back",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "addPet",
+     "name": "\"Biscuit Jr\"",
+     "petType": "dog",
+     "rel": 70
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The puppy adopts you on the spot. Biscuit Jr. stays."
+    }
+   ]
+  },
+  {
+   "label": "Brush and wave bye",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A good brushing, a sad goodbye, a happy neighbor."
+    }
+   ]
+  }
+ ]
+}

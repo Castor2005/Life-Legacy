@@ -1,0 +1,59 @@
+{
+ "id": "cataract-surgery",
+ "minAge": 62,
+ "maxAge": 100,
+ "title": "World like wet paint",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}}'s world smears like wet paint. The eye doctor says: cataracts, both eyes, fixable.",
+ "choices": [
+  {
+   "label": "Surgery ($6k)",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(6000)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "10"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Colors return in HD. You cry at a sunset."
+    }
+   ]
+  },
+  {
+   "label": "Wait and squint",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(10)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(6)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Steps blur. The stairs negotiate badly."
+    }
+   ]
+  }
+ ]
+}

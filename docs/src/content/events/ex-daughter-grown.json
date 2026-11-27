@@ -1,0 +1,150 @@
+{
+ "id": "ex-daughter-grown",
+ "minAge": 30,
+ "maxAge": 65,
+ "title": "Daddy's grown girl",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "some": {
+   "arr": "relationships.children",
+   "where": {
+    "p": "$it.age",
+    "gte": 18
+   }
+  }
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "d",
+    "expr": "where(s.relationships.children||[],\"age\",\"gte\",18)"
+   }
+  ],
+  "template": "{{d?\"Your adult daughter \"+d.name+\" (\"+d.age+\") sunbathes topless where you can see, deliberate: 'Dad. I'm grown. Tell me I'm beautiful like you mean it.'\":\"Your grown girl looks at you like a man, not a father.\"}}"
+ },
+ "choices": [
+  {
+   "label": "Claim your blood grown",
+   "hint": "INCEST dark own",
+   "effects": [
+    {
+     "op": "let",
+     "name": "d2",
+     "expr": "where(s.relationships.children||[],\"age\",\"gte\",18)"
+    },
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "d2?d2.name:randName()"
+    },
+    {
+     "op": "call",
+     "fn": "sex.ownClaim",
+     "as": "c",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "via": {
+       "expr": "\"willing\""
+      },
+      "ob": {
+       "expr": "24"
+      },
+      "os": {
+       "expr": "24"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "name": "n",
+     "delta": "16"
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "\"tender\"",
+      "\"vanilla\"",
+      "\"oral\""
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(16)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "12"
+    },
+    {
+     "op": "scandal",
+     "delta": "18"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "d2",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "d2",
+       "path": "rel",
+       "value": "clamp(d2.rel+15)"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The line burns behind you: slow forbidden fucking, her first real cums wrung out on your cock while she calls you Daddy and means it twice. Owned blood (own {{c.own}}). There is no confession for this."
+    }
+   ]
+  },
+  {
+   "label": "Father only",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "14"
+    },
+    {
+     "op": "let",
+     "name": "d3",
+     "expr": "where(s.relationships.children||[],\"age\",\"gte\",18)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "d3",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "d3",
+       "path": "rel",
+       "value": "clamp(d3.rel+10)"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "You cover her with a towel and mean it: 'Forever my girl. Never my lover.' She cries. The boundary holds."
+    }
+   ]
+  }
+ ]
+}

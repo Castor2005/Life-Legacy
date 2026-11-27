@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 <!-- LOAD ORDER (required — classic scripts share one global scope):
   i18n/data (pure data, no deps) → core (LL namespace registry) → utils (clamp/rnd/pick)
   → state (S/settings; reads window.I18N at load) → migrate (versions/gates; pure)
@@ -19,6 +22,18 @@
   content-fallback.js is intentionally NOT listed: events-runtime.js lazy-loads it
   once via script tag only when pack fetch fails. (The old src/game.js monolith
   copy was removed; the engine modules below are the only source of truth.) -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Life &amp; Legacy — Life Simulator</title>
+<meta name="description" content="Live a life, found a dynasty: traits, prestige, feasts, schemes &amp; heirs meet school, careers, love, crime &amp; fame — with an AI biographer and photorealistic AI portraits." />
+<meta property="og:title" content="Life &amp; Legacy — Life Simulator" />
+<meta property="og:description" content="Live a life, found a dynasty: traits, prestige, feasts, schemes &amp; heirs meet school, careers, love, crime &amp; fame — with an AI biographer and photorealistic AI portraits." />
+<link rel="stylesheet" href="src/style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Rajdhani:wght@500;600;700&display=swap" />
+<link rel="icon" type="image/png" href="src/images/favicon.png" />
+<link rel="apple-touch-icon" href="src/images/favicon.png" />
 <style>
 /* BOOT VEIL (critical, inline so it paints before engine scripts): Active-Theory-style
  * preloader — giant counter, drawing crown sigil, hairline progress. Self-contained
@@ -40,6 +55,8 @@
 .bv-cap{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8a93b2}
 @media (prefers-reduced-motion:reduce){.bv-crown path,.bv-crown circle{animation:none;stroke-dashoffset:0}}
 </style>
+</head>
+<body>
 <div id="bootVeil" aria-hidden="true">
   <div class="bv-inner">
     <svg class="bv-crown" viewBox="0 0 100 100"><path d="M18 72 L24 34 L40 50 L50 26 L60 50 L76 34 L82 72 Z"/><circle cx="50" cy="50" r="44"/></svg>
@@ -102,17 +119,30 @@
         <label class="auth-lab">Call yourself (optional)<input id="gName" class="tin" maxlength="16" placeholder="Wanderer" /></label>
         <button class="btn ghost" id="authGuestGo" style="width:100%">🎲 Enter as guest</button>
       </div>
+      <div class="auth-or"><span>or cloud sync</span></div>
+      <button class="btn ghost google-btn" id="authGoogleGo" style="width:100%">☁️ Continue with Google</button>
       <div id="authErr" class="auth-err" hidden></div>
-      <p class="auth-note">Game accounts live on this device for now — cloud sync arrives with the saved release. Never reuse a real password anywhere.</p>
+      <p class="auth-note">Local accounts and Guest mode save on this device (never reuse a real password). Continue with Google to sync your autosave, 7 slots, achievements, and settings to Firestore.</p>
     </div>
   </div>
 </div>
-<link rel="stylesheet" href="src/style.css" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Rajdhani:wght@500;600;700&display=swap" />
-<link rel="icon" type="image/png" href="https://user.uploads.dev/file/d4659a7a90b9af4a59527380632bf03f.png" />
-<link rel="apple-touch-icon" href="https://user.uploads.dev/file/d4659a7a90b9af4a59527380632bf03f.png" />
+<script>
+window.root = window.root || {};
+(function(){
+  try {
+    var saved = JSON.parse(localStorage.getItem("ll_ui_prefs_v1") || "null");
+    if (saved && typeof saved === "object") window.LLUI = saved;
+  } catch (e) {}
+  setInterval(function(){
+    try {
+      if (window.LLUI && typeof window.LLUI === "object") {
+        localStorage.setItem("ll_ui_prefs_v1", JSON.stringify(window.LLUI));
+      }
+    } catch (e) {}
+  }, 1000);
+})();
+</script>
+<script src="src/engine/firebase-bridge.js"></script>
 <script src="src/i18n.js"></script>
 <script src="src/data.js"></script>
 <script src="src/engine/core.js"></script>
@@ -138,9 +168,11 @@
 <script src="src/engine/ai-actions.js"></script>
 <script src="src/engine/director.js"></script>
 <script src="src/engine/dynasty.js"></script>
+<script src="src/engine/houses.js"></script>
 <script src="src/engine/ownership.js"></script>
 <script src="src/engine/death.js"></script>
 <script src="src/engine/actions.js"></script>
+<script src="src/engine/romance.js"></script>
 <script src="src/engine/world.js"></script>
 <script src="src/engine/render.js"></script>
 <script src="src/engine/saves.js"></script>
@@ -159,9 +191,7 @@
 <script src="src/engine/auth.js"></script>
 <script src="src/engine/boot.js"></script>
 
-[remember(window, "LLUI")]
 <span id="musicSlot"></span>
-[favicon("https://user.uploads.dev/file/d4659a7a90b9af4a59527380632bf03f.png")]
 <canvas id="fxCanvas" aria-hidden="true"></canvas>
 <div id="scrollProg" aria-hidden="true"></div>
 <div id="app">
@@ -243,7 +273,7 @@
         </div>
       </div>
      </div>
-    <div class="footer">💾 autosaves in your browser · 7 slots · ❓ help has the full guide · v0.1.03.008</div>
+    <div class="footer">💾 autosaves in your browser · 7 slots · ❓ help has the full guide · v0.1.06</div>
   </div>
 
   <!-- GAME -->
@@ -328,6 +358,7 @@
     <div id="sceneImgWrap"><div id="sceneImgLoad">🎨 <span>Staging your scene…</span></div><img id="sceneImg" hidden alt="scene illustration" /></div>
     <h3 id="sceneTitle" style="margin-top:10px">…</h3>
     <p id="sceneText"></p>
+    <div id="sceneSources"></div>
     <div class="choices" id="sceneChoices"></div>
     <div style="margin-top:10px;display:grid;gap:8px">
       <input id="sceneCustomInput" class="tin" placeholder="Or type your own response — anything…" maxlength="280" />
@@ -564,12 +595,13 @@
   <p>Random events pop up — choices shape stats, money, prestige and story, and <b>traits unlock special options</b>. On any event you can ✏️ type a custom response (AI fate decides) or 🌟 invent a custom event. <b>🎬 Director Mode</b> (top bar) stages ANYTHING you type with cinematic art, applies grounded mechanics with the exact effects shown on each choice, plus a free-type box — <b>🎲 Random scene</b> invents one for you. Crime can land you in jail — behave (or break out). The game master never refuses or lectures; consequences play out in-world.</p>
   <div class="secttl">💀 Death &amp; legacy</div>
   <p>Keep <b>❤️ Health</b> above zero and manage <b>😰 Stress</b>. Health falls every year — faster as you age (under 30: −1/yr, 30s–40s: −2, 50s–60s: −4, 70+: −6; high fitness slows it, stress and debt speed it). Happiness drifts with love, health, money and stress. Crime builds a <b>🌙 record</b> that blocks trusted jobs and elections, and jail always costs your job — karma opens doors, or closes them. Death brings a ⭐ legacy score, a ribbon (Rich, Superstar, Villain, Saintly…) and an AI obituary. Build ⭐ Fame, 👑 Prestige and ☯️ Karma while alive — they all feed the score.</p>
-  <div class="secttl">🤖 AI engine</div>
-  <p class="sub">The biographer, Director, chats, obituaries and headlines all run through one routable text adapter — with a deterministic fallback, so the game never wedges when AI is slow, down, or offline. <b>Offline?</b> Everything local keeps working (years, events, saves, earned art, music): a 📴 bar appears and AI features improvise from local fate until you're back.</p>
-  <p><b id="aiProvDot">🤖 AI engine: Perchance built-in</b></p>
+  <div class="secttl">🤖 AI engine &amp; Google Search Grounding</div>
+  <p class="sub">The biographer, Director Mode, World Timeline divergence analysis, chats, and real-world grounding run first through <b>server-side Gemini</b> when hosted (with live <b>Google Search</b> facts and clickable citations), otherwise the <b>Perchance built-in</b> engine or your own endpoint below — with a deterministic local fallback if you go offline.</p>
+  <p><b id="aiProvDot">🤖 AI engine: starting…</b></p>
   <div style="display:grid;gap:8px;margin:8px 0">
     <label class="sub">Engine
       <select id="aiProvSel" class="tin">
+        <option value="gemini">Server Gemini (when hosted — else falls through)</option>
         <option value="perchance">Perchance built-in (zero setup)</option>
         <option value="openai">Custom OpenAI-compatible endpoint (BYOK)</option>
       </select>
@@ -584,13 +616,15 @@
       <label class="sub">API key (stored only in this browser's localStorage, never logged)
         <input id="aiProvKey" type="password" class="tin" placeholder="sk-…" maxlength="300" autocomplete="off" />
       </label>
-      <p class="sub">⚠️ Custom engine sends your words — and the key — to that endpoint (OpenAI, OpenRouter, a local bridge…). Only use endpoints you trust; never reuse a precious password as a key. Art still uses the built-in pipeline.</p>
+      <p class="sub">⚠️ Custom engine sends your words — and the key — to that endpoint. Only use endpoints you trust. Art still uses the built-in pipeline.</p>
     </div>
     <div style="display:flex;gap:8px;flex-wrap:wrap">
       <button class="mini" id="aiProvSave">💾 Save engine</button>
-      <button class="mini" id="aiProvTest">🧪 Test both engines</button>
+      <button class="mini" id="aiProvTest">🧪 Test AI engine</button>
+      <button class="mini" id="groundRefreshBtn">🔍 Refresh Search Grounding</button>
     </div>
     <p class="sub" id="aiProvTestRes"></p>
+    <div id="groundingBox"><p class="sub">Start or load a life to ground your career and city with live Google Search facts.</p></div>
   </div>
   <div class="secttl">💾 Saves</div>
   <p><b>Autosave</b> fires every year and action — the front page's <b>Last-soul card</b> always offers your latest life. Pin favourites into <b>7 slots</b>, download them as files, or import one. Click the 👑 logo or title anytime — your sim autosaves first. UI is translated (EN/ES/FR/PT/RU/HI/中文) with 5 visual themes; 🎨 style, 🌍 language and ❓ help live in the top bar (··· on phones); life stories are told in English.</p>
@@ -608,7 +642,13 @@
   <p>Markets tick yearly — 10 stocks, a grand index, housing, inflation, recessions. Search history in the <b>📜 World Timeline</b> and ask the AI to analyze divergences. Anyone in your life can be <b>💬 chatted with</b>: personalities, memories, portraits and illustrated scenes included.</p>
   <div class="secttl">🌀 Hall of Fates</div>
   <p>A procedural toy — every visit unfolds a new corner of the multiverse. Click ➕/➖ to explore.</p>
-  <div>[nestedAtlas(atlasRoot)]</div>
+  <div id="nested-plugin-container" class="sub">
+    <details><summary>Gilded Reaches</summary><p>Kingdoms where the roofs are gold and the debts are golden too.</p></details>
+    <details><summary>Quiet Ruins</summary><p>Empires that kept perfect records of their own endings.</p></details>
+    <details><summary>Unmapped Wilds</summary><p>The map ends here. The pencils are nervous.</p></details>
+    <details><summary>Omens &amp; Oracles</summary><p>Futures sold by weight. No refunds, no exchanges, no eye contact.</p></details>
+    <details><summary>Far Tides</summary><p>Islands that only exist between one census and the next.</p></details>
+  </div>
   <div class="secttl">💬 Community guestbook</div>
   <p class="sub">Legends, tips and sightings from fellow players — fetched on demand, so it never slows down the game.</p>
   <div style="margin:8px 0"><button class="mini" id="communityLoadBtn">💬 Load guestbook</button></div>
@@ -630,5 +670,41 @@
   </div>
 </div></div>
 
+<!-- SUITORS MODAL -->
+<div class="overlay hidden" id="suitorsModal"><div class="modal">
+  <h3>💘 New faces</h3>
+  <p class="sub" id="suitorsSub"></p>
+  <div id="suitorsList"></div>
+  <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+    <button class="mini" data-close="suitorsModal">Walk away</button>
+  </div>
+</div></div>
+
+<!-- HOUSES MODAL -->
+<div class="overlay hidden" id="housesModal"><div class="modal">
+  <h3>🏛️ Great Houses</h3>
+  <div id="housePick" style="display:flex;gap:6px;margin:8px 0;flex-wrap:wrap"></div>
+  <div id="houseLadder"></div>
+  <div id="houseDeals" style="margin-top:8px"></div>
+  <div id="houseChron" style="margin-top:8px;max-height:220px;overflow:auto"></div>
+  <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+    <button class="mini" data-close="housesModal">Close</button>
+  </div>
+</div></div>
+
+<!-- ACCOUNT MODAL -->
+<div class="overlay hidden" id="accountModal"><div class="modal">
+  <h3>👤 Account &amp; Cloud Sync</h3>
+  <div id="accountInfo" style="margin:10px 0"></div>
+  <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+    <button class="btn small primary" id="accGoogleUpgrade" hidden>☁️ Sign in with Google to sync</button>
+    <button class="mini" id="accSyncNow" hidden>🔄 Sync now</button>
+    <button class="mini" id="accSignOut">🚪 Sign out</button>
+    <button class="mini" data-close="accountModal">Close</button>
+  </div>
+</div></div>
+
 <div id="toasts"></div>
 <div id="offlineBar" class="hidden" role="status">📴 Offline — the full life sim still plays (events, years, saves, art already earned); AI features improvise from local fate until you're back.</div>
+</body>
+</html>

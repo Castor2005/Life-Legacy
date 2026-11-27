@@ -1,0 +1,78 @@
+{
+ "id": "allowance-deal",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "Allowance talks",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Allowance: $5 a week for chores. {{s.firstName}} declares this oppression.",
+ "choices": [
+  {
+   "label": "Negotiate $8",
+   "hint": "social check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "stats.social",
+      "gt": 50
+     },
+     "then": [
+      {
+       "op": "money",
+       "amount": "30"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A calm pitch wins! $8 a week plus $30 back pay."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(3)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Denied — with extra chores. Negotiation is a skill. You are learning."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Accept and hustle",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "money",
+     "amount": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Dishes gleam. Entrepreneurship simmers."
+    }
+   ]
+  }
+ ]
+}

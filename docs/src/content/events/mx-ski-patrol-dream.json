@@ -1,0 +1,68 @@
+{
+ "id": "mx-ski-patrol-dream",
+ "minAge": 20,
+ "maxAge": 55,
+ "title": "Red jacket",
+ "tags": [
+  "adult-life",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Ski patrol tryouts: skiing, medicine, courage.",
+ "choices": [
+  {
+   "label": "Try out",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.fitness>50"
+     },
+     "then": [
+      {
+       "op": "money",
+       "amount": "3000"
+      },
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "7"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You make the team! 3,000 dollars a season of purpose."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "3"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Skiing passes, medicine needs work. Next year: yours."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "First aid first",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Wilderness certification first. The mountain waits."
+    }
+   ]
+  }
+ ]
+}

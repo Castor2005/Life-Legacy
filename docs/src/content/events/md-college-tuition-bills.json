@@ -1,0 +1,46 @@
+{
+ "id": "md-college-tuition-bills",
+ "minAge": 48,
+ "maxAge": 57,
+ "title": "Tuition era",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.children.length",
+  "gte": 1
+ },
+ "text": "Tuition bills arrive like weather. Four years of them.",
+ "choices": [
+  {
+   "label": "Pay and plan",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(15000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Year one covered. The 529 and salary split the rest."
+    }
+   ]
+  },
+  {
+   "label": "Community first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(5000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two years local, then transfer. Diploma identical, debt halved."
+    }
+   ]
+  }
+ ]
+}

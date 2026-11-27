@@ -1,0 +1,76 @@
+{
+ "id": "cheat-test",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Answers for sale",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A kid sells the math final answers for $30.",
+ "choices": [
+  {
+   "label": "Buy them",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(30)"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "set",
+       "path": "education.grades",
+       "value": "clamp(s.education.grades+6)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A-! Your conscience itches all summer."
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "education.grades",
+       "value": "clamp(s.education.grades-15)"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "-(8)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "CAUGHT. Zero + detention. Expensive lesson."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Earn it honestly",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+3)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You study and earn a B+. Sleep well."
+    }
+   ]
+  }
+ ]
+}

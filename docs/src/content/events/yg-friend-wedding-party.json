@@ -1,0 +1,53 @@
+{
+ "id": "yg-friend-wedding-party",
+ "minAge": 22,
+ "maxAge": 29,
+ "title": "Wedding season",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Third wedding this summer. The dance floor knows your name.",
+ "choices": [
+  {
+   "label": "Dance every one",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bouquet adjacent, twice. Your moves get requested."
+    }
+   ]
+  },
+  {
+   "label": "Give generously",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A gift that matters. The couple cries. Worth it."
+    }
+   ]
+  }
+ ]
+}

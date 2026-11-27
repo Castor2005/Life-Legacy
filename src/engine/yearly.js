@@ -241,6 +241,10 @@ function yearlyMoney(silent){
 // custom start age doesn't arrive dead, hollow, or wrecked.
 function yearlyBody(silent){
   var g=S.stats;
+  /* Flatline is judged on arrival: ending last year at 0hp means the decay +
+   * warnings already had their say. (A focus tick or PCG lean later in this
+   * function must not resurrect the flatline into a dice roll.) */
+  var __flat=(g.health<=0);
   sanitizeApForAge(); facialEmergence();
   /* PCG lean: rest/spirit years soften stress, body years cushion health. */
   var __bm = null;
@@ -288,7 +292,8 @@ function yearlyBody(silent){
      * buys a saving throw (stat bonus + visible d20 vs DC) with real
      * choices in live years, or an auto-roll in silent fast-forward years.
      * Flatline (health 0) still kills outright — the decay + warnings were
-     * the interaction there. */
+     * the interaction there. (The dice below are only for the living.) */
+    if(__flat){ die(pickDeath()); return; }
     if(rnd()<risk){ raiseDeathCrisis(pickDeath(),false,silent); if(!S.alive)return; }
     else if(g.happiness<=0&&rnd()<0.05){ raiseDeathCrisis("lost the will to go on",true,silent); if(!S.alive)return; } }
 }

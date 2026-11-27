@@ -1,0 +1,50 @@
+{
+ "id": "ad-dog-aging",
+ "minAge": 32,
+ "maxAge": 44,
+ "title": "Gray muzzle",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The dog slows on stairs. The vet talks about comfort.",
+ "choices": [
+  {
+   "label": "Spoil gently",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(600)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ramps, soft beds, slow walks. Every day counts double."
+    }
+   ]
+  },
+  {
+   "label": "Puppy pipeline",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "addPet",
+     "name": "\"Pip\"",
+     "petType": "dog",
+     "rel": 70
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pip arrives. The old dog teaches, the young one learns."
+    }
+   ]
+  }
+ ]
+}

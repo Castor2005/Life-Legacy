@@ -1,0 +1,68 @@
+{
+ "id": "tn-first-kiss-rumor",
+ "minAge": 14,
+ "maxAge": 16,
+ "title": "Rumor mill",
+ "tags": [
+  "teen",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The school says you kissed someone. You did not. Yet.",
+ "choices": [
+  {
+   "label": "Laugh it off",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You deny with style. The rumor dies of boredom."
+    }
+   ]
+  },
+  {
+   "label": "Make it true",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "partnerSet",
+       "name": "partnerName()",
+       "rel": "65",
+       "age": "s.age"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "9"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Plot twist: you ask them out for real. It works."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(4)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Bold ask, kind no. The rumor retires anyway."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

@@ -41,6 +41,7 @@ function baseMock(age){
     relationships:{partner:null,children:[],siblings:[],pets:[],friends:[],parentRel:50,momAge:50,dadAge:52},
     assets:{houseId:"none",carId:"none",stocks:0,crypto:0,savings:0,houseVal:0,carVal:0,houseYears:0,shares:{}},
     heirId:null, will:false, ach:{vacations:0,jobs:0,partners:0,feasts:0,crimes:0,wishes:0},
+    houses:{v:1, list:[], chron:[], married:null, posted:false, foundedYear:2000},
     flags:{student:false,retired:false,memoir:false,hasWill:false,inJail:0,homeless:false,noBad:false,
       infiniteStats:false,unfiltered:true,ageless:false,undying:false,everYouth:false,joyful:false,
       blessed:false,goldenTouch:false,charming:false,community:false,grad:false},

@@ -1,0 +1,45 @@
+{
+ "id": "md-quilt-legacy",
+ "minAge": 47,
+ "maxAge": 59,
+ "title": "Stitch history",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Grandmother's quilt top waits thirty years for backing.",
+ "choices": [
+  {
+   "label": "Finish it",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Quilted, bound, gifted. Three generations under one blanket."
+    }
+   ]
+  },
+  {
+   "label": "Teach the stitch",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Six learners, one tradition saved. The frames hum again."
+    }
+   ]
+  }
+ ]
+}

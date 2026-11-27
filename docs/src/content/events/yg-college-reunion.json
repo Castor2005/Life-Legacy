@@ -1,0 +1,49 @@
+{
+ "id": "yg-college-reunion",
+ "minAge": 24,
+ "maxAge": 29,
+ "title": "Five years on",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "College reunion: same quad, new lives, old jokes.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(250)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Dawn talks, bad singing, best weekend in years."
+    }
+   ]
+  },
+  {
+   "label": "Host the afterparty",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your place, forty people, zero regrets. Legend status renewed."
+    }
+   ]
+  }
+ ]
+}

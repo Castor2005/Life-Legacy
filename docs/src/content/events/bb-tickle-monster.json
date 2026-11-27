@@ -1,0 +1,45 @@
+{
+ "id": "bb-tickle-monster",
+ "minAge": 0,
+ "maxAge": 4,
+ "title": "Tickle monster",
+ "tags": [
+  "baby",
+  "happiness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The tickle monster has cornered {{s.firstName}} behind the couch.",
+ "choices": [
+  {
+   "label": "Full tickle",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Squeals echo. The monster shows mercy. Eventually."
+    }
+   ]
+  },
+  {
+   "label": "Reverse tickle",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The monster gets got. Justice is giggly."
+    }
+   ]
+  }
+ ]
+}

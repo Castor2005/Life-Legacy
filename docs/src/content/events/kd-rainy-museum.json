@@ -1,0 +1,49 @@
+{
+ "id": "kd-rainy-museum",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Rainy museum day",
+ "tags": [
+  "kid",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Rain cancels the game. The museum beckons, dinosaur wing first.",
+ "choices": [
+  {
+   "label": "Dino deep dive",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You can now name fourteen sauropods. Power."
+    }
+   ]
+  },
+  {
+   "label": "Gift shop restraint",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(12)"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One crystal, chosen after an hour. Worth it."
+    }
+   ]
+  }
+ ]
+}

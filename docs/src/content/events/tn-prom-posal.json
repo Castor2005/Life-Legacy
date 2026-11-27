@@ -1,0 +1,70 @@
+{
+ "id": "tn-prom-posal",
+ "minAge": 15,
+ "maxAge": 17,
+ "title": "The big ask",
+ "tags": [
+  "teen",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "Prom looms. Someone worth asking keeps smiling at you.",
+ "choices": [
+  {
+   "label": "Grand gesture",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.65",
+     "then": [
+      {
+       "op": "partnerSet",
+       "name": "partnerName()",
+       "rel": "75",
+       "age": "s.age"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "12"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Poster, petals, yes! The photos break the group chat."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(6)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A kind no. Your friends rally with ice cream."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Go with friends",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The crew table is the best table. Dance floor: conquered."
+    }
+   ]
+  }
+ ]
+}

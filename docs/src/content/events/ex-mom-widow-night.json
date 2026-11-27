@@ -1,0 +1,114 @@
+{
+ "id": "ex-mom-widow-night",
+ "minAge": 20,
+ "maxAge": 50,
+ "title": "Her bed is cold",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "any": [
+   {
+    "p": "relationships.momAge",
+    "gt": -100
+   },
+   {
+    "p": "relationships.dadAge",
+    "gt": -100
+   }
+  ]
+ },
+ "text": "Your widowed mother, adult and starved for touch, climbs into your bed during the storm blackout: 'Pretend to be him. Just tonight. Touch me like a husband would.'",
+ "choices": [
+  {
+   "label": "Husband her",
+   "hint": "INCEST keep",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "\"Widowed Mother\""
+    },
+    {
+     "op": "call",
+     "fn": "sex.ownClaim",
+     "as": "c",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "via": {
+       "expr": "\"willing\""
+      },
+      "ob": {
+       "expr": "22"
+      },
+      "os": {
+       "expr": "24"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "name": "n",
+     "delta": "16"
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "\"tender\"",
+      "\"rough\"",
+      "\"vanilla\""
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(16)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "scandal",
+     "delta": "18"
+    },
+    {
+     "op": "set",
+     "path": "relationships.parentRel",
+     "value": "clamp(s.relationships.parentRel+10)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Darkness, thunder, forbidden comfort: you take your mother slow then hard, cumming deep while she weeps his name and yours together. Kept (own {{c.own}}). God forgive this house — it won't."
+    }
+   ]
+  },
+  {
+   "label": "Hold her clothed",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "12"
+    },
+    {
+     "op": "set",
+     "path": "relationships.parentRel",
+     "value": "clamp(s.relationships.parentRel+8)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You hold her till the lights return, hands clean. She sleeps. You stare at the ceiling till dawn."
+    }
+   ]
+  }
+ ]
+}

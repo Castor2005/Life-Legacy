@@ -1,0 +1,65 @@
+{
+ "id": "lottery-old",
+ "minAge": 30,
+ "maxAge": 80,
+ "title": "Lucky ticket?",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Jackpot $40M. A ticket is $5. The line buzzes with hope.",
+ "choices": [
+  {
+   "label": "One ticket, why not",
+   "hint": "$5 dream",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(5)"
+    },
+    {
+     "op": "chance",
+     "p": "0.02",
+     "then": [
+      {
+       "op": "money",
+       "amount": "2000000"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "30"
+      },
+      {
+       "op": "outcome",
+       "tpl": "IMPOSSIBLE. You win $2M (lump, taxes)! SCREAMING!"
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "Numbers dance. Not yours."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Math says no",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You keep the $5. Statistically victorious."
+    }
+   ]
+  }
+ ]
+}

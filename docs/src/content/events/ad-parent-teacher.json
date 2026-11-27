@@ -1,0 +1,48 @@
+{
+ "id": "ad-parent-teacher",
+ "minAge": 30,
+ "maxAge": 42,
+ "title": "Conference season",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.children.length",
+  "gte": 1
+ },
+ "text": "The teacher says your kid is bright but distractible. Familiar.",
+ "choices": [
+  {
+   "label": "Routines together",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Homework hour, same time daily. Grades climb within weeks."
+    }
+   ]
+  },
+  {
+   "label": "Celebrate strengths",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The art is incredible. You frame the focus issue as fuel."
+    }
+   ]
+  }
+ ]
+}

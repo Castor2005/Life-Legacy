@@ -1,0 +1,98 @@
+{
+ "id": "ex-aunt-visit",
+ "minAge": 20,
+ "maxAge": 55,
+ "title": "Auntie's guest room",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your adult aunt arrives for the week, suitcase and wine, eyeing your body openly: 'My, the boy grew up everywhere. Show your auntie around... the bedroom first.'",
+ "choices": [
+  {
+   "label": "Show her everything",
+   "hint": "INCEST claim",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "randName()"
+    },
+    {
+     "op": "call",
+     "fn": "sex.ownClaim",
+     "as": "c",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "via": {
+       "expr": "\"claim\""
+      },
+      "ob": {
+       "expr": "22"
+      },
+      "os": {
+       "expr": "22"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "name": "n",
+     "delta": "10"
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "\"vanilla\"",
+      "\"oral\"",
+      "\"rough\""
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(10)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "14"
+    },
+    {
+     "op": "scandal",
+     "delta": "12"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Guest room door locked for seven days: aunt ridden hard every night, mouth fucked every morning, cumming with a pillow over her screams. She extends her 'visit' a month. Family dinners will never recover."
+    }
+   ]
+  },
+  {
+   "label": "Tourist guide only",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Museums, dinners, cheek kisses. She leaves wondering. You keep the bloodline clean."
+    }
+   ]
+  }
+ ]
+}

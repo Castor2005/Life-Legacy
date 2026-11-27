@@ -1,0 +1,94 @@
+{
+ "id": "sx-cell-trade",
+ "minAge": 18,
+ "maxAge": 60,
+ "title": "Cell-block trade",
+ "tags": [
+  "adult-life",
+  "sex",
+  "underworld",
+  "crime"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "flags",
+    "truthy": true
+   },
+   {
+    "p": "flags.inJail",
+    "gt": 0
+   }
+  ]
+ },
+ "text": "Inside, an adult cellmate with power offers: 'Protection, extra food, warmth at night — if you warm MY nights first.'",
+ "choices": [
+  {
+   "label": "Trade sex for safety",
+   "hint": "survive",
+   "effects": [
+    {
+     "op": "xp",
+     "n": "(2)"
+    },
+    {
+     "op": "skill",
+     "delta": "5"
+    },
+    {
+     "op": "corr",
+     "delta": "10"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "p": "underworld",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "underworld.prisonRep",
+       "value": "min(100,(s.underworld.prisonRep||0)+8)"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "You submit on the bunk — hard, transactional adult sex, grunting and cumming in the dark — and nobody touches you after. Survival has a taste."
+    }
+   ]
+  },
+  {
+   "label": "Bleed instead",
+   "hint": "pride, pain",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(12)"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You refuse and take the beating. Respect, bruises, intact boundaries."
+    }
+   ]
+  }
+ ]
+}

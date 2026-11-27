@@ -1,0 +1,45 @@
+{
+ "id": "sr-tai-chi-park",
+ "minAge": 60,
+ "maxAge": 90,
+ "title": "Slow mornings",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The park group flows at 7am. The invitation stands.",
+ "choices": [
+  {
+   "label": "Join daily",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Balance returns. Mornings move like water."
+    }
+   ]
+  },
+  {
+   "label": "Weekend only",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Saturdays suffice. The form still deepens."
+    }
+   ]
+  }
+ ]
+}

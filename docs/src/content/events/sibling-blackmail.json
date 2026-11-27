@@ -1,0 +1,81 @@
+{
+ "id": "sibling-blackmail",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Sibling leverage",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your sibling read {{s.firstName}}'s messages and wants $20 for silence.",
+ "choices": [
+  {
+   "label": "Pay up",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(20)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Peace purchased. They will be back. They always come back."
+    }
+   ]
+  },
+  {
+   "label": "Counter-blackmail",
+   "hint": "karma-",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(8)"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "outcome",
+       "tpl": "Mutually assured silence. Cold war."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "-(5)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(5)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Escalation! Both grounded. Nobody wins."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Confess first",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You tell everything first. Their leverage evaporates."
+    }
+   ]
+  }
+ ]
+}

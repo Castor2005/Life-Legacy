@@ -1,0 +1,96 @@
+{
+ "id": "sx-onlyfans-launch",
+ "minAge": 18,
+ "maxAge": 45,
+ "title": "Monetize the body",
+ "tags": [
+  "adult-life",
+  "sex",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Rent is due. Your adult body is perfect right now — wet, hard, photogenic. A explicit-content account could pay thousands monthly.",
+ "choices": [
+  {
+   "label": "Launch it raw",
+   "hint": "money/fame+, scandal",
+   "effects": [
+    {
+     "op": "corr",
+     "delta": "12"
+    },
+    {
+     "op": "kink",
+     "id": "exhibition"
+    },
+    {
+     "op": "let",
+     "name": "w",
+     "expr": "3000+floor(rnd()*9000)"
+    },
+    {
+     "op": "money",
+     "amount": "w"
+    },
+    {
+     "op": "set",
+     "path": "fame",
+     "value": "clamp((s.fame||0)+12)"
+    },
+    {
+     "op": "set",
+     "path": "followers",
+     "value": "(s.followers||0)+25000"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(5)"
+    },
+    {
+     "op": "scandal",
+     "delta": "18"
+    },
+    {
+     "op": "levOff",
+     "holder": "\"internet\"",
+     "secret": "\"nudes forever\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Close-ups of you cumming, riding toys/cocks, squirting/gushing for the camera — ${{w}} this month. Fans worship you. Family would die if they knew."
+    }
+   ]
+  },
+  {
+   "label": "Anonymous masks only",
+   "hint": "safer cash",
+   "effects": [
+    {
+     "op": "let",
+     "name": "w2",
+     "expr": "1200+floor(rnd()*3000)"
+    },
+    {
+     "op": "money",
+     "amount": "w2"
+    },
+    {
+     "op": "set",
+     "path": "fame",
+     "value": "clamp((s.fame||0)+4)"
+    },
+    {
+     "op": "corr",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mask on, body out — you cum for strangers and cash ${{w2}} with deniability."
+    }
+   ]
+  }
+ ]
+}

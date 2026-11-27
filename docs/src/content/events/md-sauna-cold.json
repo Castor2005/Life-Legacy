@@ -1,0 +1,45 @@
+{
+ "id": "md-sauna-cold",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Heat and ice",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The gym adds sauna and cold plunge. Members swear by it.",
+ "choices": [
+  {
+   "label": "Contrast weekly",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Heat, ice, repeat. Sleep deepens, aches fade."
+    }
+   ]
+  },
+  {
+   "label": "Sauna social",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Thursday sauna club. Deals and confessions in the heat."
+    }
+   ]
+  }
+ ]
+}

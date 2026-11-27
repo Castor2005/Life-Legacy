@@ -1,0 +1,48 @@
+{
+ "id": "md-teen-drivers",
+ "minAge": 45,
+ "maxAge": 55,
+ "title": "Teen keys",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.children.length",
+  "gte": 1
+ },
+ "text": "Your teen passes the test. The car keys have never been heavier.",
+ "choices": [
+  {
+   "label": "Set the rules",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Clear rules, tracked app, trust with guardrails. All survive."
+    }
+   ]
+  },
+  {
+   "label": "Ride along month",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Thirty days of co-pilot. They drive like you now. Carefully."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Life & Legacy",
+  "description": "Live a life, found a dynasty: traits, prestige, feasts, schemes & heirs meet school, careers, love, crime & fame — with an AI biographer and photorealistic AI portraits.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

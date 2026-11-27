@@ -1,0 +1,49 @@
+{
+ "id": "best-friend-move",
+ "minAge": 7,
+ "maxAge": 12,
+ "title": "Best friend moving",
+ "tags": [
+  "kid"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your best friend's family is moving across the country. Last weekend together.",
+ "choices": [
+  {
+   "label": "Epic farewell + promise letters",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(4)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tears, bracelets, a promise to write. You keep it for years."
+    }
+   ]
+  },
+  {
+   "label": "Party hard, no tears",
+   "hint": "happiness",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Best weekend ever. The goodbye still stings."
+    }
+   ]
+  }
+ ]
+}

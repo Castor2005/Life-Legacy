@@ -1,0 +1,45 @@
+{
+ "id": "md-swim-channel-dream",
+ "minAge": 45,
+ "maxAge": 55,
+ "title": "Channel curious",
+ "tags": [
+  "adult-life",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Someone mentions channel swimming. Your pilot license of madness tingles.",
+ "choices": [
+  {
+   "label": "Train the cold",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hour-long cold swims. Respect for the channel: total."
+    }
+   ]
+  },
+  {
+   "label": "Relay instead",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Six swimmers, one boat, shared glory. The channel bows."
+    }
+   ]
+  }
+ ]
+}

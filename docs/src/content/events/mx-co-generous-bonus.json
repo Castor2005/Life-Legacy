@@ -1,0 +1,53 @@
+{
+ "id": "mx-co-generous-bonus",
+ "minAge": 30,
+ "maxAge": 70,
+ "title": "Profit share",
+ "tags": [
+  "adult-life",
+  "company"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "company",
+  "truthy": true
+ },
+ "text": "A record quarter. Bonuses or reinvestment?",
+ "choices": [
+  {
+   "label": "Share the win",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.morale",
+     "value": "clamp(s.company.morale+(10))"
+    },
+    {
+     "op": "set",
+     "path": "company.cash",
+     "value": "s.company.cash+(-(8000))"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bonuses all around. Morale soars; loyalty locks in."
+    }
+   ]
+  },
+  {
+   "label": "Reinvest all",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.cash",
+     "value": "s.company.cash+(12000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New equipment ordered. 12,000 dollars planted for spring."
+    }
+   ]
+  }
+ ]
+}

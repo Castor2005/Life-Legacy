@@ -1,0 +1,71 @@
+{
+ "id": "monkeybars",
+ "minAge": 5,
+ "maxAge": 11,
+ "title": "The dare",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} attempts the monkey bars backwards — because a dare is a dare.",
+ "choices": [
+  {
+   "label": "Go for it",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.7",
+     "then": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Clean across! The playground erupts."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(12)"
+      },
+      {
+       "op": "money",
+       "amount": "-(500)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A snap, a cast, a $500 ER bill. The dare wins."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Sit this one out",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You spot instead. The dare passes to someone louder."
+    }
+   ]
+  }
+ ]
+}

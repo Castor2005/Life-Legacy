@@ -1,0 +1,107 @@
+{
+ "id": "ex-break-shy",
+ "minAge": 20,
+ "maxAge": 50,
+ "title": "The shy one",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The quiet adult neighbor blushes when you look at her: 'I've only been with one man. He was gentle. I keep dreaming about... not gentle.'",
+ "choices": [
+  {
+   "label": "Unmake her gently cruelly",
+   "hint": "corrupt + own",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "randName()"
+    },
+    {
+     "op": "call",
+     "fn": "sex.ownClaim",
+     "as": "c",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "via": {
+       "expr": "\"willing\""
+      },
+      "ob": {
+       "expr": "22"
+      },
+      "os": {
+       "expr": "24"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "name": "n",
+     "delta": "14"
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "\"rough\"",
+      "\"bondage\"",
+      "\"oral\""
+     ]
+    },
+    {
+     "op": "kink",
+     "id": "submission"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "14"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(8)"
+    },
+    {
+     "op": "scandal",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lesson by lesson: hair pulled, throat used, ass spread, filthy words taught till she begs in language that would kill her mother. The shy girl now cums hardest choked (own {{c.own}}, corr {{c.corr}}). Unmade right."
+    }
+   ]
+  },
+  {
+   "label": "Book club",
+   "hint": "slow",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n2",
+     "expr": "randName()"
+    },
+    {
+     "op": "lovPush",
+     "name": "n2"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tea and novels with {{n2}}. She blooms slow. Maybe next year."
+    }
+   ]
+  }
+ ]
+}

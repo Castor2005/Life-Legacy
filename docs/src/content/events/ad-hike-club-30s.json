@@ -1,0 +1,45 @@
+{
+ "id": "ad-hike-club-30s",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Summit Sundays",
+ "tags": [
+  "adult-life",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A hiking group meets Sundays. The peaks are calling.",
+ "choices": [
+  {
+   "label": "Join the ridge",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Twelve summits this year. Legs: forged. Views: banked."
+    }
+   ]
+  },
+  {
+   "label": "Lead beginners",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You sweep the slow group. Three finish their first peak."
+    }
+   ]
+  }
+ ]
+}

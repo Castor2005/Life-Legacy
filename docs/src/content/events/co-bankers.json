@@ -1,0 +1,73 @@
+{
+ "id": "co-bankers",
+ "minAge": 18,
+ "maxAge": 80,
+ "title": "Suits in the lobby",
+ "tags": [
+  "adult-life",
+  "company",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "all": [
+     {
+      "p": "company",
+      "truthy": true
+     },
+     {
+      "p": "company.value",
+      "gte": 400000
+     }
+    ]
+   },
+   {
+    "not": {
+     "p": "company.ipoDone",
+     "truthy": true
+    }
+   }
+  ]
+ },
+ "text": "Bankers fill {{s.company.name}}'s lobby, using words like 'multiple' and 'liquidity event' while eyeing the coffee machine.",
+ "choices": [
+  {
+   "label": "Hear them out",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(8)"
+    },
+    {
+     "op": "set",
+     "path": "company.ipoReady",
+     "value": "true"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The IPO path is mapped: $500k+ value, 👑 Rule tab. The bell gleams in the distance."
+    }
+   ]
+  },
+  {
+   "label": "Throw them out",
+   "hint": "morale+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.morale",
+     "value": "clamp(s.company.morale+5)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "'We build things here!' The staff applauds. The suits bill you anyway."
+    }
+   ]
+  }
+ ]
+}

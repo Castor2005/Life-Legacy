@@ -1,0 +1,49 @@
+{
+ "id": "kd-comic-strip",
+ "minAge": 7,
+ "maxAge": 12,
+ "title": "Comic empire",
+ "tags": [
+  "kid",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your hallway comic has ten readers and one very invested janitor.",
+ "choices": [
+  {
+   "label": "Daily strip",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Thirty strips in. The janitor gets a character arc."
+    }
+   ]
+  },
+  {
+   "label": "Sell copies",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "45"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fifty-cent copies. You earn 45 dollars and a fanbase."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+ "id": "mx-rainforest-canopy",
+ "minAge": 20,
+ "maxAge": 70,
+ "title": "Canopy walk",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Hanging bridges through the canopy. Monkeys included.",
+ "choices": [
+  {
+   "label": "Walk the bridges",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(700)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Toucans at eye level. The forest breathes around you."
+    }
+   ]
+  },
+  {
+   "label": "Night walk",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(800)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Frogs, eyeshine, bioluminescence. The dark comes alive."
+    }
+   ]
+  }
+ ]
+}

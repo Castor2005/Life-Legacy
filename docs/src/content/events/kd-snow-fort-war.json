@@ -1,0 +1,45 @@
+{
+ "id": "kd-snow-fort-war",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Snow fort wars",
+ "tags": [
+  "kid",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The big snow brings the annual fort war against Maple Street.",
+ "choices": [
+  {
+   "label": "Build the wall",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Walls hold. Snowballs fly. Victory is cold and sweet."
+    }
+   ]
+  },
+  {
+   "label": "Negotiate peace",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Treaty over cocoa. Both forts become one castle."
+    }
+   ]
+  }
+ ]
+}

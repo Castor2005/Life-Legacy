@@ -1,0 +1,70 @@
+{
+ "id": "sleepover-scary",
+ "minAge": 6,
+ "maxAge": 11,
+ "title": "Scary movie night",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "At a sleepover, the older kids put on a horror movie. {{s.firstName}} wants to go home but fears looking babyish.",
+ "choices": [
+  {
+   "label": "Call for pickup",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "-(3)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Home by ten. Teased Monday, slept great."
+    }
+   ]
+  },
+  {
+   "label": "Tough it out",
+   "hint": "social check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "stats.social",
+      "gt": 45
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You survive AND get the jokes. Respect."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(6)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Nightmares for a week. The closet stays shut."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

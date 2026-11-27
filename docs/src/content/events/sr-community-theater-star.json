@@ -1,0 +1,45 @@
+{
+ "id": "sr-community-theater-star",
+ "minAge": 62,
+ "maxAge": 88,
+ "title": "Center stage",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The community theater needs a lead with gravitas. That is you.",
+ "choices": [
+  {
+   "label": "Take the role",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Opening night standing ovation. The review names you twice."
+    }
+   ]
+  },
+  {
+   "label": "Direct it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your staging stuns. The cast cries at strike."
+    }
+   ]
+  }
+ ]
+}

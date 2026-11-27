@@ -1,0 +1,168 @@
+{
+ "id": "ex-sis-rent",
+ "minAge": 20,
+ "maxAge": 45,
+ "title": "Rent week",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "some": {
+   "arr": "relationships.siblings",
+   "where": {
+    "p": "$it.age",
+    "gte": 18
+   }
+  }
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "sib",
+    "expr": "where(s.relationships.siblings||[],\"age\",\"gte\",18)"
+   }
+  ],
+  "template": "{{sib?\"Your adult sister \"+sib.name+\" is short on rent, crying at your table: 'I'll do anything. ANYTHING. You know what I mean.'\":\"Your adult sister-figure begs rent help with her skirt riding high.\"}}"
+ },
+ "choices": [
+  {
+   "label": "Rent for obedience",
+   "hint": "INCEST own + leverage",
+   "effects": [
+    {
+     "op": "let",
+     "name": "sib2",
+     "expr": "where(s.relationships.siblings||[],\"age\",\"gte\",18)"
+    },
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "sib2?sib2.name:randName()"
+    },
+    {
+     "op": "call",
+     "fn": "sex.ownClaim",
+     "as": "c",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "via": {
+       "expr": "\"broken\""
+      },
+      "ob": {
+       "expr": "22"
+      },
+      "os": {
+       "expr": "20"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "name": "n",
+     "delta": "12"
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "\"rough\"",
+      "\"oral\""
+     ]
+    },
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "levOn",
+     "target": "n",
+     "secret": "\"rent tapes\""
+    },
+    {
+     "op": "setv",
+     "target": "c",
+     "path": "levOn",
+     "value": "\"rent tapes\""
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(12)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "scandal",
+     "delta": "12"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "sib2",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "sib2",
+       "path": "rel",
+       "value": "clamp(sib2.rel+10)"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rent paid $500 — in trade: on her knees nightly, throat fucked, filmed, then fucked bent over her own kitchen counter. Tapes kept. Sister, tenant, property (own {{c.own}})."
+    }
+   ]
+  },
+  {
+   "label": "Gift the rent",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "10"
+    },
+    {
+     "op": "let",
+     "name": "sib3",
+     "expr": "where(s.relationships.siblings||[],\"age\",\"gte\",18)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "sib3",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "sib3",
+       "path": "rel",
+       "value": "clamp(sib3.rel+12)"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "You cover it free, no strings. She cries harder. Family means something."
+    }
+   ]
+  }
+ ]
+}

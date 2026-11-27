@@ -1,0 +1,79 @@
+{
+ "id": "feast-invite",
+ "minAge": 16,
+ "maxAge": 80,
+ "title": "Feast invitation!",
+ "tags": [
+  "family",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A wealthy cousin invites House {{s.lastName}} to a grand feast: roast, wine, gossip.",
+ "choices": [
+  {
+   "label": "Attend in style ($200)",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "(s.prestige||0)+10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You toast, dance, network. +10 prestige!"
+    }
+   ]
+  },
+  {
+   "label": "Bring a gift ($500)",
+   "hint": "big prestige",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "(s.prestige||0)+22"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your gift steals the night. Bards mention House {{s.lastName}}. +22 prestige!"
+    }
+   ]
+  },
+  {
+   "label": "Skip it",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "outcome",
+     "tpl": "You stay home. The pies were apparently legendary."
+    }
+   ]
+  }
+ ]
+}

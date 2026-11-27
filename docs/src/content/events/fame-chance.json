@@ -1,0 +1,72 @@
+{
+ "id": "fame-chance",
+ "minAge": 16,
+ "maxAge": 45,
+ "title": "Reality TV casting",
+ "tags": [
+  "family",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Casting agents want YOU for a reality show: 6 weeks, $10k, possible fame.",
+ "choices": [
+  {
+   "label": "Sign up!",
+   "hint": "chaos",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "10000"
+    },
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "12"
+      },
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "15"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Fan favorite! $10k + 200k followers!"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(6)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Edited as the villain. $10k consolation."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Hard no",
+   "hint": "peace",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Dignity intact."
+    }
+   ]
+  }
+ ]
+}

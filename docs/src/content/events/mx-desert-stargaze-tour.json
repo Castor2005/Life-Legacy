@@ -1,0 +1,43 @@
+{
+ "id": "mx-desert-stargaze-tour",
+ "minAge": 18,
+ "maxAge": 72,
+ "title": "Milky Way tour",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A guided dark-sky night with telescopes the size of cars.",
+ "choices": [
+  {
+   "label": "Book the night",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(180)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Saturn's rings live. Gasps ripple through the dark."
+    }
+   ]
+  },
+  {
+   "label": "Bring friends",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Four friends, one sky. The drive home is all wonder."
+    }
+   ]
+  }
+ ]
+}

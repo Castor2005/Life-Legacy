@@ -1,0 +1,50 @@
+{
+ "id": "ho-heir-scandal",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "An heir's indiscretion",
+ "tags": ["houses", "status", "danger"],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {"p": "houses", "truthy": true},
+   {"p": "prestige", "gte": 30}
+  ]
+ },
+ "text": "A young heir of a Great House is caught somewhere they should not have been, with someone they should not have been with — and the fixer comes to YOU, because you know how to keep a secret.",
+ "choices": [
+  {
+   "label": "Bury it for a price ($2,000)",
+   "hint": "karma−, prestige+",
+   "effects": [
+    {"op": "set", "path": "money", "value": "max(0,s.money-2000)"},
+    {"op": "set", "path": "prestige", "value": "s.prestige+14"},
+    {"op": "stat", "key": "karma", "delta": "-(7)"},
+    {"op": "outcome", "tpl": "Witnesses paid, records misplaced, heir grateful. A house now owes you silence-priced favors. +14 prestige."}
+   ]
+  },
+  {
+   "label": "Leak it to the pamphlets",
+   "hint": "fame+, risky",
+   "effects": [
+    {"op": "chance", "p": "0.5", "then": [
+     {"op": "set", "path": "fame", "value": "min(100,s.fame+10)"},
+     {"op": "stat", "key": "karma", "delta": "-(12)"},
+     {"op": "outcome", "tpl": "The scandal blooms beautifully and your name is nowhere on it. +10 fame, −12 karma."}
+    ], "else": [
+     {"op": "set", "path": "prestige", "value": "max(0,s.prestige-20)"},
+     {"op": "stat", "key": "karma", "delta": "-(8)"},
+     {"op": "outcome", "tpl": "Traced to your doorstep. The house denies everything and ruins your week. −20 prestige."}
+    ]}
+   ]
+  },
+  {
+   "label": "Refuse the fixer",
+   "hint": "karma+, safe",
+   "effects": [
+    {"op": "stat", "key": "karma", "delta": "6"},
+    {"op": "outcome", "tpl": "You send the fixer away. Your conscience is clean; the heir is, reportedly, not. +6 karma."}
+   ]
+  }
+ ]
+}

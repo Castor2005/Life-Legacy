@@ -1,0 +1,44 @@
+{
+ "id": "md-sailing-license",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Skipper ticket",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Sailing courses run all summer at the lake club.",
+ "choices": [
+  {
+   "label": "Get licensed",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(800)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Certified skipper. Sunsets now have sails."
+    }
+   ]
+  },
+  {
+   "label": "Crew often",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Reliable rail crew. Every captain wants you."
+    }
+   ]
+  }
+ ]
+}

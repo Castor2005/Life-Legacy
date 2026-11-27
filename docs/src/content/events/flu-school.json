@@ -1,0 +1,62 @@
+{
+ "id": "flu-school",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "School plague",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Half the class is out with flu. {{s.firstName}} feels scratchy.",
+ "choices": [
+  {
+   "label": "Rest & soup",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three days of soup. Back stronger."
+    }
+   ]
+  },
+  {
+   "label": "Power through",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You tough it out. Perfect attendance!"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Pneumonia. Two weeks in bed."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

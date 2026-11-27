@@ -1,0 +1,69 @@
+{
+ "id": "yg-marathon-first",
+ "minAge": 22,
+ "maxAge": 29,
+ "title": "26.2",
+ "tags": [
+  "adult-life",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The marathon entry is paid. Sixteen weeks of training await.",
+ "choices": [
+  {
+   "label": "Follow the plan",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.fitness>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "10"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You finish upright, crying at mile 25. Medal: earned."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "6"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You walk-run to the line. Finishers medal anyway."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Half instead",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "13.1 and smiling. The full waits for next year."
+    }
+   ]
+  }
+ ]
+}

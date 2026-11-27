@@ -1,0 +1,48 @@
+{
+ "id": "yg-urban-chickens",
+ "minAge": 24,
+ "maxAge": 29,
+ "title": "Backyard hens",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "City code allows three hens. Fresh eggs whisper your name.",
+ "choices": [
+  {
+   "label": "Build the coop",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(350)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three hens, daily eggs, endless entertainment. Breakfast: solved."
+    }
+   ]
+  },
+  {
+   "label": "Split with neighbors",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shared coop, shared eggs, shared joy. The alley clucks."
+    }
+   ]
+  }
+ ]
+}

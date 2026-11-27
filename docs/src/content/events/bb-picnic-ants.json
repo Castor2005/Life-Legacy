@@ -1,0 +1,45 @@
+{
+ "id": "bb-picnic-ants",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Ant summit",
+ "tags": [
+  "baby",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Ants discover the picnic. {{s.firstName}} wants to invite them to stay.",
+ "choices": [
+  {
+   "label": "Relocate lunch",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Blanket moved, ants keep the crumbs, all happy."
+    }
+   ]
+  },
+  {
+   "label": "Study the colony",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "An hour of ant science. Picnic saved, knowledge gained."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "id": "kid-steps",
+ "minAge": 18,
+ "maxAge": 60,
+ "title": "First steps",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "some": {
+   "arr": "relationships.children",
+   "where": {
+    "p": "$it.age",
+    "lte": 1
+   }
+  }
+ },
+ "text": {
+  "lets": [
+   {
+    "name": "k",
+    "expr": "where(s.relationships.children||[],\"age\",\"lte\",1)"
+   }
+  ],
+  "template": "{{k?k.name+\" lets go of the couch. \":\"A small miracle unfolds. \"}}Wobbly. Arms out. The whole room holds its breath."
+ },
+ "choices": [
+  {
+   "label": "Cheer wildly",
+   "hint": "rel+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "k",
+     "expr": "where(s.relationships.children,\"age\",\"lte\",1)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "k",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "k",
+       "path": "rel",
+       "value": "clamp(k.rel+8)"
+      }
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three steps! Four! The video gets watched a hundred times."
+    }
+   ]
+  },
+  {
+   "label": "Film everything",
+   "hint": "joy",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shaky footage, perfect audio: everyone screaming with joy."
+    }
+   ]
+  }
+ ]
+}

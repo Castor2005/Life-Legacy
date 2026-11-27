@@ -1,0 +1,45 @@
+{
+ "id": "sr-history-volunteer",
+ "minAge": 65,
+ "maxAge": 92,
+ "title": "Museum years",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The museum wants guides for the new wing.",
+ "choices": [
+  {
+   "label": "Learn the wing",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Railroad history, delivered with drama. Visitors linger."
+    }
+   ]
+  },
+  {
+   "label": "School groups",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fourth graders adore you. History lands like stories."
+    }
+   ]
+  }
+ ]
+}

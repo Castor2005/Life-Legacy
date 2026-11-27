@@ -1,0 +1,55 @@
+{
+ "id": "yg-puppy-first",
+ "minAge": 22,
+ "maxAge": 29,
+ "title": "First dog",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The shelter has a dog with your eyes. Landlord says maybe.",
+ "choices": [
+  {
+   "label": "Adopt properly",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "addPet",
+     "name": "\"Miso II\"",
+     "petType": "dog",
+     "rel": 80
+    },
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Miso II comes home. Walks fix everything."
+    }
+   ]
+  },
+  {
+   "label": "Foster first",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two weeks foster. The dog was always staying. Everyone knew."
+    }
+   ]
+  }
+ ]
+}

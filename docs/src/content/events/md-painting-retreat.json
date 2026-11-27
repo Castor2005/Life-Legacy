@@ -1,0 +1,48 @@
+{
+ "id": "md-painting-retreat",
+ "minAge": 47,
+ "maxAge": 59,
+ "title": "Canvas week",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A painting retreat in the hills: easels, wine, no agenda.",
+ "choices": [
+  {
+   "label": "Paint daily",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(900)"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Seven canvases, two great. A new identity: painter."
+    }
+   ]
+  },
+  {
+   "label": "Sketchbook only",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Thirty sketches. The hills live in your bag now."
+    }
+   ]
+  }
+ ]
+}

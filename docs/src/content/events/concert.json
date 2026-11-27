@@ -1,0 +1,49 @@
+{
+ "id": "concert",
+ "minAge": 18,
+ "maxAge": 45,
+ "title": "Dream concert",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your favorite artist plays ONE night. $180 tickets, friends going.",
+ "choices": [
+  {
+   "label": "Front row energy",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(180)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "12"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three hours of pure electricity. You'll tell grandkids."
+    }
+   ]
+  },
+  {
+   "label": "Watch clips online",
+   "hint": "save",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(2)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "FOMO in 240p."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "id": "affair-tempt",
+ "minAge": 24,
+ "maxAge": 55,
+ "title": "Temptation",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "exists"
+ },
+ "text": "A coworker flirts hard at the work trip bar. Your phone shows your partner's photo.",
+ "choices": [
+  {
+   "label": "Stay loyal",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "10"
+    },
+    {
+     "op": "partnerRel",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You show the photo and laugh. Loyalty feels great."
+    }
+   ]
+  },
+  {
+   "label": "Stray…",
+   "hint": "risky!",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "partnerRel",
+       "delta": "-(40)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(15)"
+      },
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-(20)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "They find out. The fallout is brutal."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-(15)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A secret you carry like a stone."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

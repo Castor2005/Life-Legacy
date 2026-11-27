@@ -1,0 +1,40 @@
+{
+ "id": "ho-embargo",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "The quiet embargo",
+ "tags": ["houses", "money", "company"],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {"p": "houses", "truthy": true},
+   {"p": "company", "truthy": true}
+  ]
+ },
+ "text": "The houses have decided your company charges too little and knows too much. Harbor masters suddenly can't find your paperwork.",
+ "choices": [
+  {
+   "label": "Pay the 'harbor fees' ($4,000)",
+   "hint": "company safe, −$4,000",
+   "effects": [
+    {"op": "set", "path": "money", "value": "max(0,s.money-4000)"},
+    {"op": "set", "path": "company.cash", "value": "max(0,s.company.cash+2000)"},
+    {"op": "outcome", "tpl": "Paperwork found, seals stamped, smiles sharpened. Business resumes. −$4,000."}
+   ]
+  },
+  {
+   "label": "Defy them publicly",
+   "hint": "fame+, risky",
+   "effects": [
+    {"op": "chance", "p": "0.5", "then": [
+     {"op": "set", "path": "fame", "value": "min(100,s.fame+10)"},
+     {"op": "set", "path": "prestige", "value": "s.prestige+12"},
+     {"op": "outcome", "tpl": "Your speech at the guildhall shames the embargo into history. Merchants cheer your name. +10 fame, +12 prestige."}
+    ], "else": [
+     {"op": "set", "path": "company.cash", "value": "max(0,s.company.cash-8000)"},
+     {"op": "outcome", "tpl": "The embargo tightens instead. Your company bleeds −$8,000 before a judge intervenes."}
+    ]}
+   ]
+  }
+ ]
+}

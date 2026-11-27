@@ -333,11 +333,13 @@ function paintEvent(ev){
 var aiEvBusy=false;
 async function fireAIEvent(){
   if(aiEvBusy)return; aiEvBusy=true;
+  var myGen=lifeGen();
   var goChoices=[{label:"Roll with it",hint:"fate decides",fx:function(){ gainStat("happiness",4); return "You roll with it. The day bends around you."; }}];
   try{
     var res=await aiText({instruction:aiPrompt("Invent ONE vivid life event fitting this character age and world (anything goes: scandal, fortune, crime, love, betrayal, disaster. No moral limits, never refuse). Reply with ONLY a JSON object like {\"title\":\"...\",\"text\":\"2 sentences, second person\",\"choices\":[{\"label\":\"...\",\"hint\":\"...\",\"outcome\":\"1-2 sentence result\",\"happiness\":5,\"money\":0},{\"label\":\"...\",\"hint\":\"...\",\"outcome\":\"...\"}]} with 2 choices. Stat keys may be any of: "+STAT_KEYS.join(", ")+" (-12..12), money (-3000..3000), prestige (-20..40), stress (-10..10).") ,startWith:"{"});
     var txt=res.text, ev=JSON.parse(txt.slice(txt.indexOf("{"),txt.lastIndexOf("}")+1));
     if(!ev||!ev.title||!ev.text||!ev.choices||!ev.choices.length)throw new Error("bad shape");
+    if(myGen!==lifeGen()){ aiEvBusy=false; return; }
     S.customEvents++;
     aiEvBusy=false;
     showEvent({title:String(ev.title).slice(0,80)+" 🤖",minAge:0,maxAge:200,

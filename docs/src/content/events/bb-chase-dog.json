@@ -1,0 +1,45 @@
+{
+ "id": "bb-chase-dog",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Yard chase",
+ "tags": [
+  "baby",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "{{s.firstName}} and the dog invent a game with no rules and full sprinting.",
+ "choices": [
+  {
+   "label": "Referee it",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You call fouls nobody understands. Everyone wins."
+    }
+   ]
+  },
+  {
+   "label": "Water break boss",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hydration enforced. Second half even faster."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "id": "co-burnout",
+ "minAge": 18,
+ "maxAge": 75,
+ "title": "Founder's midnight",
+ "tags": [
+  "adult-life",
+  "company",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "company",
+    "truthy": true
+   },
+   {
+    "p": "stats.discipline",
+    "gte": 65
+   }
+  ]
+ },
+ "text": "{{s.firstName}} answers company mail at 3am again. The {{s.company.name}} sign buzzes. The eyes burn.",
+ "choices": [
+  {
+   "label": "Step back a week ($2,000)",
+   "hint": "stress-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)",
+     "floor": 0
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-(20)"
+    },
+    {
+     "op": "set",
+     "path": "company.morale",
+     "value": "clamp(s.company.morale+3)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lake, silence, sleep. The company survives you resting."
+    }
+   ]
+  },
+  {
+   "label": "Outwork it",
+   "hint": "health-, value+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(8)"
+    },
+    {
+     "op": "set",
+     "path": "company.value",
+     "value": "round(s.company.value*1.08)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Eighty-hour weeks. The numbers love you; the mirror doesn't."
+    }
+   ]
+  }
+ ]
+}

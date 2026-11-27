@@ -1,0 +1,49 @@
+{
+ "id": "ad-sleep-study",
+ "minAge": 33,
+ "maxAge": 44,
+ "title": "Snore report",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your partner reports freight-train snoring. A study is suggested.",
+ "choices": [
+  {
+   "label": "Do the study",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mild apnea, simple fix. Energy returns like youth."
+    }
+   ]
+  },
+  {
+   "label": "Side-sleep era",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pillows arranged like architecture. Snoring halves."
+    }
+   ]
+  }
+ ]
+}

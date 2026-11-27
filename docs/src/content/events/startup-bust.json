@@ -1,0 +1,85 @@
+{
+ "id": "startup-bust",
+ "minAge": 22,
+ "maxAge": 55,
+ "title": "Startup implodes!",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "job": "employed"
+   },
+   {
+    "p": "jobId",
+    "ne": "unemployed"
+   }
+  ]
+ },
+ "text": "Your employer's startup misses payroll. The CEO cries on a call. Equity = wallpaper?",
+ "choices": [
+  {
+   "label": "Jump ship now",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "set",
+     "path": "jobId",
+     "value": "\"unemployed\""
+    },
+    {
+     "op": "set",
+     "path": "salary",
+     "value": "0"
+    },
+    {
+     "op": "money",
+     "amount": "3000"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You land softly with severance. Dodged."
+    }
+   ]
+  },
+  {
+   "label": "Stay loyal",
+   "hint": "gamble",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "money",
+       "amount": "40000"
+      },
+      {
+       "op": "outcome",
+       "tpl": "ACQUIRED! Your loyalty vests into $40,000!"
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "jobId",
+       "value": "\"unemployed\""
+      },
+      {
+       "op": "set",
+       "path": "salary",
+       "value": "0"
+      },
+      {
+       "op": "outcome",
+       "tpl": "It dies. Your options are wallpaper. Job hunt begins."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

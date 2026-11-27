@@ -1,0 +1,94 @@
+{
+ "id": "uw-truck",
+ "minAge": 20,
+ "maxAge": 70,
+ "title": "An armored schedule",
+ "tags": [
+  "adult-life",
+  "underworld",
+  "crime",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "underworld",
+    "truthy": true
+   },
+   {
+    "p": "underworld.rank",
+    "gte": 2
+   }
+  ]
+ },
+ "text": "A guard with debts sells {{s.firstName}} an armored truck's route and timing. One window. Big money. Big risk.",
+ "choices": [
+  {
+   "label": "Hit it with the crew",
+   "hint": "needs crew",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "not": {
+       "p": "underworld.crew.length",
+       "truthy": true
+      }
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "heat",
+       "value": "min(100,(s.heat||0)+10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "No crew, no truck. The guard sells the route to someone else."
+      }
+     ],
+     "else": [
+      {
+       "op": "let",
+       "name": "loot",
+       "expr": "8000+s.underworld.rank*4000+floor(rnd()*8000)"
+      },
+      {
+       "op": "money",
+       "amount": "loot"
+      },
+      {
+       "op": "set",
+       "path": "underworld.rep",
+       "value": "s.underworld.rep+(6)"
+      },
+      {
+       "op": "set",
+       "path": "heat",
+       "value": "min(100,(s.heat||0)+20)"
+      },
+      {
+       "op": "set",
+       "path": "underworld.stash",
+       "value": "s.underworld.stash+(round(loot*0.3))"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Clean and fast. +${{loot}} (a third buried deep). Every siren in the city is awake."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Pass",
+   "hint": "safe",
+   "effects": [
+    {
+     "op": "outcome",
+     "tpl": "Some scores you frame and hang on the wall of almost."
+    }
+   ]
+  }
+ ]
+}

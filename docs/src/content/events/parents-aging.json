@@ -1,0 +1,53 @@
+{
+ "id": "parents-aging",
+ "minAge": 30,
+ "maxAge": 55,
+ "title": "Parents slowing down",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Mom's hands shake now. Dad naps mid-sentence. They need more help.",
+ "choices": [
+  {
+   "label": "Care for them",
+   "hint": "time, karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "12"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "money",
+     "amount": "-(3000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Doctor visits, groceries, stories. Precious hard months."
+    }
+   ]
+  },
+  {
+   "label": "Hire help ($8k)",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(8000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A kind aide helps. You visit Sundays."
+    }
+   ]
+  }
+ ]
+}

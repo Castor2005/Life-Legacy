@@ -1,11 +1,96 @@
 # Life & Legacy — Changelog
 
-Current version: **v0.1.03.008** (canonical stamp: `LL.APP_VERSION` in `src/engine/migrate.js`).
+Current version: **v0.1.06** (canonical stamp: `LL.APP_VERSION` in `src/engine/migrate.js`).
 Save format `SAVE_VERSION = 7`, content `CONTENT_VERSION = 4`, event schema `EVENT_SCHEMA = 1`.
 Patch rule (declared 2026-11-27, standing until the next minor/major is declared): every
 game-tree change ships as the next `v0.1.03.00N` with a CHANGELOG entry — no silent changes.
 
 ---
+
+## v0.1.06 — 2026-11-27 — Full audit: cross-life AI guard + flatline fix
+
+- Full extensive test pass over the whole game (user: "TEST EVRYTHING EXTENSIVELY THEN BUG FIX THEM ALL"): static battery green (namespace-lint 47 files 0/0/0, typo-scan 0 hits, validate-content 797 events/0 errors, validate-mods ok) and runtime harnesses green (migration-test 40/40, parity ok:true 2101 pass/0 condFail/0 fxFail over 728 events, perf budgets pass, soak-test ok:true 0 failed/0 invariant fails/errDelta 0). Live: verb sweep 173/173 with 0 throws, event modal fire/choice/close with the double-click guard holding, i18n EN→ES→EN, all 5 themes, music toggle + SFX enable-flip verified (false→true→false, 12/12 bank sounds), all 15 modals open/close, Anya fallback routes + a live AI ask, company war, gestation→birth, heat raids at design rate, houses ally/aid/sabotage, romance flows, community offline note, grounding empty-valid, import/export round-trip via validateSave, auto mode through open modals, viewports 390px + 1920px clean, one live director custom scene (mechanics applied) + one live portrait (real JPEG). Bug log stayed at 0 throughout.
+- **BUG #1 (real, fixed): cross-life AI contamination.** A director scene staged in life A could resolve after life B started and apply its money/log to B (proven with a held-AI experiment: +$5 landed in the wrong life). Cause: async AI completions never checked life identity — cancellation only came from UI buttons. Fix = ASYNC-GEN GUARD: `__lifeGen` counter + `bumpLifeGen()` in `state.js` (also retires portrait/desc/evImg/chatArt tokens and cancels staged director runs), bumped once per identity change at the top of `afterLoad()` (covers new/load/import/heir/growTo/boot), capture-and-discard in `runDirector` (2 gates), `resolveSceneChoice`/`resolveSceneCustom`, `aiCustomResponse`/`aiCustomEvent`, `fireAIEvent`, the chat-ask funnel, `writeObituary`/`writeLegacySummary`, `chatArt`, plus an S-identity check in `aiAdjudicateBg`. Verified: a held-AI cross-life run is discarded cleanly with the UI reset (no money, no log, no stuck staging), and a same-life scene still applies. Stubbed AI throughout, no quota burned.
+- **BUG #2 (real, fixed): flatline at 0 HP didn't kill.** Two stacked causes: (a) risk 1 was multiplied by the genetics longevity bend (~0.94), so ~6% of flatlines silently survived with no crisis at all; (b) the code routed 0 HP into a survivable saving-throw crisis despite the documented "flatline kills outright" rule. Fix (`yearly.js`): capture `__flat = g.health <= 0` at function entry (before focus/PCG heals can resurrect it) and `die(pickDeath())` inside the existing `!growShield` gate after the undying check. Verified: forced 0 HP → dead with cause + death screen; crisis path re-verified separately (3 choices, fight-to-survive works). Silent-year callers unaffected (only the shielded growTo path uses silent). Incidental finding, not a bug: kids get fully random names at birth, so a "Freya Okafor" heir after "Freya Costa" is the heir taking the parent's surname by design (heir flow verified end-to-end: will → flatline → death screen → continue as heir with genome, succession log, ~90% estate). SAVE 7 unchanged (no save-shape change), no migration bump.
+
+## v0.1.05 — 2026-11-27 — Choose your person (suitors, casual vs dating, breakup)
+
+- NEW `romance.js`: 💘 Find date opens a suitors modal — 3 faces (name, age, vibe: trait + looks + situation) to look over BEFORE deciding. Each face: 💘 Ask out (dating → partner slot, same odds as before + hotter faces are harder to land) or 🔥 Keep casual (16+, no-strings lover, partner slot untouched). Taken players get honest choices: leave your partner for someone new, or risk an affair (jealousy roll from partner-rel/social/traits — getting caught ends the relationship + scandal).
+- NEW verbs: 💔 Break up (end an unmarried partnership cleanly — no more marrying just to divorce), 💘 Commit (promote latest lover to partner), 🚶 End fling (drop the latest casual thing). Answers "can I have more than one relationship?": yes — casual lovers (up to 8, visible in the 👪 Family roster) alongside or instead of a partner, plus the 18+ claims/harem path which still exists underneath.
+- Lovers sync into world NPCs (role "lover"), so they render in the roster with 💬 chat like everyone who matters. Anya love entry rewritten with the new flow. SAVE 7 unchanged (no new save shape — suitors are transient, never saved).
+
+## v0.1.04 — 2026-11-27 — Great Houses (AI dynasties, Renown ladder, Hall of Houses)
+
+- NEW `houses.js`: five AI Great Houses per life (wealth, heads, gene-carrying heirs, traits, feuds, wars) ticked yearly in `runDynastyDepth` (silent-safe; economies lean on the regime, heirs born, heads die and heirs succeed, heirless houses enter purchasable SUCCESSION CRISIS, vacancies refill). 40-entry House Chronicle; ally wars and crises also hit the main log.
+- Renown ladder (Unproven→Mythic) ranks your house power against the five; Crown tab shows rank + 🏛️ Great Houses modal (ladder, chronicle, deal buttons). Dealings: ally/aid/sabotage/bid/marry — marriage writes the heir's genes onto the partner record, so children inherit house blood through the normal pregnancy pipeline (verified: twins, 9-locus genotypes, legit).
+- 14 `ho-*` flavor events in the mature pack (797 events, 0 errors). Hall of Houses: opt-in cross-player board (`hallOfHouses/{uid}`, bridge `hallPost`/`hallBoard`, owner-write + signed-in-read rules — re-publish `src/firestore.rules` to enable; signed-out reads fail closed with an honest message).
+- Battery: migration 40/40, parity 1584/0/0 (439 events incl. all ho-*), lint 46 files 0/0/0 (one real collision found+fixed: `houseName`), typo 0, perf pass (ageUp 23ms), 100y soak (12 wars + 12 successions, chron capped, natural death 85), live founding/tick/modal/all verbs/marriage→birth verified. SAVE 7 unchanged (lazy-ensure, no bump).
+
+## v0.1.03.011 — 2026-11-27 — Perchance + Firebase, working together
+
+- Yes, they can: verified the Firebase compat SDKs load inside the Perchance
+  preview (~150ms, popups allowed), so Google sign-in + Firestore sync run from
+  the live game — only a Firebase project of yours was missing, no platform wall.
+- `firebase-bridge.js`: new documented config path `src/firebase-config.json`
+  (template shipped, blank = dormant local-only as before); popup-blocked now
+  falls back to redirect sign-in with `getRedirectResult` completing it on return;
+  `signInWithGoogle` enriches the fixable failures (unauthorized-domain prints the
+  exact host to authorize, provider-off and bad-config each say what to do).
+- `auth.js`: new `authWireFirebase()` (once-guard) registers the auth listener at
+  init AND on `ll-firebase-ready`, so a bridge that finishes loading after the gate
+  still signs in, shows Continue-as, and syncs — previously only the init-time race
+  was covered. `src/firestore.rules` shipped (owner-only, matches bridge writes);
+  `src/README.md` gained the 4-step setup (project → authorized domain →
+  Firestore + rules → paste web config).
+- Files: `firebase-bridge.js`, `auth.js`, NEW `src/firebase-config.json`,
+  NEW `src/firestore.rules`, `src/README.md`; version stamp `v0.1.03.011`.
+
+## v0.1.03.010 — 2026-11-27 — Auth gate matches design (Google row always visible)
+
+- `auth.js`: the Google button + "or cloud sync" divider + upgrade affordance stay
+  visible on every host (Perchance, Pages, file://) exactly like the auth-gate
+  design — no more local-only hiding. Without a Firebase bridge the buttons stay
+  clickable and explain honestly that cloud sync appears automatically on
+  server-hosted builds with Firebase configured; local + guest saves keep working.
+  The gate note is back to the design copy (device saves + Continue with Google
+  to sync autosave/7 slots/achievements/settings to Firestore) and
+  `ll-firebase-ready` simply re-applies the same visible state.
+- Files: `auth.js`; version stamp `v0.1.03.010` (migrate.js + 5 surfaces).
+
+## v0.1.03.009 — 2026-11-27 — Cloud/AI merge (Firebase + Gemini, hardened for all hosts)
+
+- Kept the Google-AI-Studio change set (Firebase Google Sign-In + Firestore cloud sync for
+  autosave/7 slots/achievements/settings, server-side Gemini 4 Hydrogen + Google Search
+  grounding with citation chips in grounding box, timeline analysis and Director Mode), and
+  hardened every leg so the game is identical-or-better on hosts without a server
+  (Perchance live game, GitHub Pages, file://): nothing throws, everything falls back.
+- `ai-providers.js` is now a real chain — Gemini server (same-origin `/api/ai/*`, reached
+  only after a cached per-session probe) → Perchance built-in plugin → optional
+  OpenAI-compatible BYOK — first success wins; BYOK engine form restored in Help (AI Studio
+  had deleted it) with its `boot.js` wiring, plus a chain-aware PONG test reporting the
+  answering provider. FIXED en route: their `aiCfgSave` re-rendered without persisting
+  (engine choice was lost on reload).
+- `research.js` is server-first, Wikipedia-second: `/api/ai/ground` when hosted, else the
+  previous superFetch plugin path, else direct CORS fetch to Wikipedia, else empty string.
+  `LL.groundingSources` + citation strip UI kept; `wikiSummary` keeps its signature.
+- `auth.js` keeps Google + local + guest, plus: pre-cloud `ll_accounts_v1` records migrate
+  transparently on next login (re-hashed into the new store, old record removed); the 5-fail
+  30s lockout is restored on login/signup; the Google button/divider/upgrade affordances
+  hide with an honest local-only note whenever no Firebase bridge is configured (they
+  reappear on `ll-firebase-ready`); account modal notes the server-only scope of sync.
+- NEW `src/engine/firebase-bridge.js` (wired in `index.html`, optional — absent from boot
+  EXPECTs by design): exposes the 11-method `window.LLFirebase` surface (compat SDKs,
+  runtime config via `window.FIREBASE_CONFIG` or `firebase-applet-config.json`, Firestore
+  native-map encode + 650KB state trim, newer-wins profile). Dormant (undefined) when
+  unconfigured — the whole game guards on its absence.
+- `saves.js`: Firestore autosave/slot mirrors stay signed-in-only and debounced; FIXED a
+  mirror gap — cloud-wins branches now mirror back into kv (autosave) and kv slots, not
+  just IndexedDB, so a cloud restore no longer leaves the kv tier stale.
+- Verified: worker battery (validate 783/0, lint 45 files 0/0/0, typo 0, mods ok), migration
+  40/40, parity ok:true 266/0/0, perf budgets pass (offline drill 10y/0 throws), soak ok:true
+  errDelta 0; live chain PONG via perchance, Wikipedia grounding live, signup/login/
+  wrong-pass/legacy-migrate/lockout/guest/logout + slot save/load round-trip identical,
+  timeline analysis + director fallback intact, bootOK, badge clean on normal play.
 
 ## v0.1.03.008 — 2026-11-27 — Persistent NPC agents
 

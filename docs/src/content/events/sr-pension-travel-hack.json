@@ -1,0 +1,43 @@
+{
+ "id": "sr-pension-travel-hack",
+ "minAge": 62,
+ "maxAge": 80,
+ "title": "Travel points",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Points and pensions: the travel math of freedom.",
+ "choices": [
+  {
+   "label": "Hack the fares",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1200"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Points cover flights. 1,200 dollars saved for suites."
+    }
+   ]
+  },
+  {
+   "label": "Slow travel",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1800)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One month, one village. Living, not touring."
+    }
+   ]
+  }
+ ]
+}

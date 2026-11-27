@@ -1,0 +1,55 @@
+{
+ "id": "ho-rumor",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "Whispers in the gallery",
+ "tags": ["houses", "status", "danger"],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {"p": "houses", "truthy": true},
+   {"p": "prestige", "gte": 50}
+  ]
+ },
+ "text": "You hear something ruinous about a Great House — true enough to wound, loose enough to deny. Words are weapons that leave no fingerprints. Usually.",
+ "choices": [
+  {
+   "label": "Spread it everywhere",
+   "hint": "prestige+, risky",
+   "effects": [
+    {"op": "chance", "p": "0.55", "then": [
+     {"op": "set", "path": "prestige", "value": "s.prestige+20"},
+     {"op": "stat", "key": "karma", "delta": "-(10)"},
+     {"op": "outcome", "tpl": "By week's end every salon repeats your whisper as their own discovery. A rival house bleeds standing; you gain it. +20 prestige."}
+    ], "else": [
+     {"op": "set", "path": "prestige", "value": "max(0,s.prestige-18)"},
+     {"op": "stat", "key": "karma", "delta": "-(6)"},
+     {"op": "outcome", "tpl": "The whisper is traced to your table. Liars are remembered longer than scandals. −18 prestige."}
+    ]}
+   ]
+  },
+  {
+   "label": "Sell the secret back to them",
+   "hint": "money+, smarts 55+",
+   "effects": [
+    {"op": "chance", "p": "0.6", "then": [
+     {"op": "let", "name": "g", "expr": "4000+floor(rnd()*5000)"},
+     {"op": "set", "path": "money", "value": "s.money+(g)"},
+     {"op": "stat", "key": "karma", "delta": "-(8)"},
+     {"op": "outcome", "tpl": "They pay handsomely for your discretion. +${{g}}. Everyone understands the arrangement."}
+    ], "else": [
+     {"op": "set", "path": "prestige", "value": "max(0,s.prestige-10)"},
+     {"op": "outcome", "tpl": "They call your bluff and bury the story — and your reputation with it. −10 prestige."}
+    ]}
+   ]
+  },
+  {
+   "label": "Forget you heard it",
+   "hint": "safe",
+   "effects": [
+    {"op": "stat", "key": "karma", "delta": "4"},
+    {"op": "outcome", "tpl": "Some weapons are too dirty to hold. You wash your hands of it."}
+   ]
+  }
+ ]
+}

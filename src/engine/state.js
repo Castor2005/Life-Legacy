@@ -5,6 +5,24 @@
  */
 "use strict";
 window.LL=(window.LL||{v:1,files:[]});
+/* ASYNC-GEN GUARD (audit 2026-11-27): every S-identity change funnels through
+ * afterLoad(), which bumps __lifeGen exactly once per transition (new life,
+ * slot load, import, heir, growTo, boot continue). In-flight AI (director,
+ * chat, custom moves/events, art, obituary, bg adjudication) captures the gen
+ * (or the S reference) at send time and discards its answer when the life
+ * moved on — a slow answer can never write another life's log, money, claims
+ * or portrait. bumpLifeGen also retires every painter token + cancels any
+ * staged director run, so pixels follow the same rule. */
+window.__lifeGen=(window.__lifeGen||0);
+function lifeGen(){ return window.__lifeGen; }
+function bumpLifeGen(){
+  window.__lifeGen++;
+  try{ if(typeof cancelDirectorRun==="function")cancelDirectorRun(); }catch(e){}
+  try{ if(typeof portraitToken==="number")portraitToken++; }catch(e){}
+  try{ if(typeof descToken==="number")descToken++; }catch(e){}
+  try{ if(typeof evImgToken==="number")evImgToken++; }catch(e){}
+  try{ if(typeof chatArtToken==="number")chatArtToken++; }catch(e){}
+}
 /* -- SECTION 1: GLOBAL STATE (the one mutable save object; kept as-is) -- */
 /* S holds the entire life save. Do NOT add a second global store: future
  * modules receive S (or a slice) as an argument and return patches. */
@@ -62,12 +80,50 @@ var THEMES=[
   {id:"abyss",name:"Abyss",icon:"🌊",desc:"Deep teal neon",sw:["#0a2c3a","#22d3ee"]}
 ];
 if(!THEMES.some(function(t){return t.id===settings.theme;}))settings.theme="crimson";
+function cloudMirrorSettings(){
+  try{
+    if(window.LLFirebase&&window.LLFirebase.getUser()&&window.LLPlayer&&window.LLPlayer.cloud===true&&!window.LLPlayer.guest){
+      window.LLFirebase.saveSettings(
+        {theme:settings.theme,lang:settings.lang},
+        {tab:(LLUI&&LLUI.tab)||"activities",music:(LLUI&&typeof LLUI.music==="boolean")?LLUI.music:true}
+      ).catch(function(e){ console.warn("Cloud settings mirror failed:",e); });
+    }
+  }catch(e){}
+}
+function cloudApplySettings(prefs){
+  if(!prefs||typeof prefs!=="object")return;
+  try{
+    if(prefs.theme&&THEMES.some(function(x){return x.id===prefs.theme;})){
+      settings.theme=prefs.theme;
+      document.documentElement.dataset.theme=prefs.theme;
+      var tb=$("themeSelTop"); if(tb)tb.value=prefs.theme;
+    }
+    if(prefs.lang&&window.I18N&&window.I18N[prefs.lang]){
+      settings.lang=prefs.lang; window.__lang=prefs.lang;
+      var lb=$("langSel2"); if(lb)lb.value=prefs.lang;
+    }
+    try{ localStorage.setItem("sdls_settings",JSON.stringify(settings)); }catch(e){}
+    if(prefs.uiTab&&typeof prefs.uiTab==="string"&&LLUI){
+      LLUI.tab=prefs.uiTab;
+      if(document.querySelector('.tab[data-tab="'+prefs.uiTab+'"]'))curTab=prefs.uiTab;
+    }
+    if(typeof prefs.uiMusic==="boolean"&&LLUI){
+      LLUI.music=prefs.uiMusic;
+      if(typeof applyMusic==="function")applyMusic();
+    }
+    if(typeof applyTexts==="function")applyTexts();
+    if(typeof render==="function"&&S)render();
+  }catch(e){}
+}
 function setTheme(t){
   if(!THEMES.some(function(x){return x.id===t;}))t="crimson";
   settings.theme=t; document.documentElement.dataset.theme=t;
   try{ localStorage.setItem("sdls_settings",JSON.stringify(settings)); }catch(e){}
   var b=$("themeSelTop"); if(b)b.value=t;
+  cloudMirrorSettings();
 }
+window.cloudMirrorSettings=cloudMirrorSettings;
+window.cloudApplySettings=cloudApplySettings;
 window.__lang=settings.lang;
 
 

@@ -1,0 +1,197 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Pillar 1 / Global Safety Net: default-deny catch-all
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // ---- Hardened Global Primitives ----
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function isValidSlotId(slotId) {
+      return isValidId(slotId) && slotId.size() <= 16 && slotId.matches('^(auto|slot[0-6])$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isVerifiedUser() {
+      return isSignedIn() && request.auth.token.email_verified == true;
+    }
+
+    function isVerifiedOwner(userId) {
+      return isVerifiedUser() && request.auth.uid == userId;
+    }
+
+    function parentUserExists(userId) {
+      return exists(/databases/$(database)/documents/users/$(userId));
+    }
+
+    // ---- Pillar 2: Validation Blueprints ----
+    function isValidTheme(theme) {
+      return theme is string && theme.size() <= 20 &&
+        theme in ['dark', 'light', 'parchment', 'crimson', 'abyss'];
+    }
+
+    function isValidLang(lang) {
+      return lang is string && lang.size() <= 8 &&
+        lang in ['en', 'es', 'fr', 'pt', 'ru', 'hi', 'zh'];
+    }
+
+    function isValidUiTab(tab) {
+      return tab is string && tab.size() <= 24 &&
+        tab in ['activities', 'social', 'family', 'education', 'money', 'health', 'crown', 'world'];
+    }
+
+    function isValidUserProfile(data, userId) {
+      return data.keys().hasAll([
+          'uid', 'displayName', 'email', 'theme', 'lang', 'uiTab', 'uiMusic', 'createdAt', 'updatedAt'
+        ]) &&
+        data.keys().hasOnly([
+          'uid', 'displayName', 'email', 'photoURL', 'theme', 'lang', 'uiTab', 'uiMusic', 'createdAt', 'updatedAt'
+        ]) &&
+        data.uid is string && isValidId(data.uid) &&
+        data.uid == request.auth.uid && data.uid == userId &&
+        data.displayName is string && data.displayName.size() >= 1 && data.displayName.size() <= 100 &&
+        data.email is string && data.email.size() >= 3 && data.email.size() <= 254 &&
+        (!('photoURL' in data) || (data.photoURL is string && data.photoURL.size() <= 500)) &&
+        isValidTheme(data.theme) &&
+        isValidLang(data.lang) &&
+        isValidUiTab(data.uiTab) &&
+        data.uiMusic is bool &&
+        data.createdAt is timestamp &&
+        data.updatedAt is timestamp;
+    }
+
+    function isValidSaveSlot(data, userId, slotId) {
+      return data.keys().hasAll([
+          'ownerUid', 'slotId', 'savedAt', 'summaryName', 'summaryAge',
+          'summaryMoney', 'summaryStatus', 'state', 'createdAt', 'updatedAt'
+        ]) &&
+        data.keys().hasOnly([
+          'ownerUid', 'slotId', 'savedAt', 'summaryName', 'summaryAge',
+          'summaryMoney', 'summaryStatus', 'state', 'createdAt', 'updatedAt'
+        ]) &&
+        data.ownerUid is string && isValidId(data.ownerUid) &&
+        data.ownerUid == request.auth.uid && data.ownerUid == userId &&
+        data.slotId is string && isValidSlotId(data.slotId) && data.slotId == slotId &&
+        data.savedAt is int && data.savedAt > 0 &&
+        data.summaryName is string && data.summaryName.size() >= 1 && data.summaryName.size() <= 120 &&
+        data.summaryAge is int && data.summaryAge >= 0 && data.summaryAge <= 500 &&
+        data.summaryMoney is number &&
+        data.summaryStatus is string && data.summaryStatus.size() >= 1 && data.summaryStatus.size() <= 120 &&
+        data.state is map && data.state.keys().size() <= 100 &&
+        data.createdAt is timestamp &&
+        data.updatedAt is timestamp;
+    }
+
+    function isValidAchievementsRecord(data, userId) {
+      return data.keys().hasAll(['ownerUid', 'unlocked', 'createdAt', 'updatedAt']) &&
+        data.keys().hasOnly(['ownerUid', 'unlocked', 'createdAt', 'updatedAt']) &&
+        data.ownerUid is string && isValidId(data.ownerUid) &&
+        data.ownerUid == request.auth.uid && data.ownerUid == userId &&
+        data.unlocked is map && data.unlocked.keys().size() <= 64 &&
+        data.createdAt is timestamp &&
+        data.updatedAt is timestamp;
+    }
+
+    // ---- Collection: /users/{userId} (PII strictly owner-only; no list) ----
+    match /users/{userId} {
+      allow get: if isVerifiedOwner(userId) && isValidId(userId);
+      allow list: if false;
+
+      allow create: if isVerifiedOwner(userId) &&
+        isValidId(userId) &&
+        isValidUserProfile(incoming(), userId) &&
+        incoming().createdAt == request.time &&
+        incoming().updatedAt == request.time;
+
+      allow update: if isVerifiedOwner(userId) &&
+        isValidId(userId) &&
+        isValidUserProfile(incoming(), userId) &&
+        incoming().uid == existing().uid &&
+        incoming().createdAt == existing().createdAt &&
+        incoming().updatedAt == request.time &&
+        (
+          // Action: Update player settings & UI prefs
+          incoming().diff(existing()).affectedKeys().hasOnly(['theme', 'lang', 'uiTab', 'uiMusic', 'updatedAt']) ||
+          // Action: Refresh synced Google profile display info + prefs
+          incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'email', 'photoURL', 'theme', 'lang', 'uiTab', 'uiMusic', 'updatedAt'])
+        );
+
+      allow delete: if false;
+
+      // ---- Subcollection: /users/{userId}/saves/{slotId} ----
+      match /saves/{slotId} {
+        allow get: if isVerifiedOwner(userId) && isValidId(userId) && isValidSlotId(slotId) &&
+          parentUserExists(userId);
+        allow list: if false;
+
+        allow create: if isVerifiedOwner(userId) &&
+          isValidId(userId) &&
+          isValidSlotId(slotId) &&
+          isValidSaveSlot(incoming(), userId, slotId) &&
+          incoming().createdAt == request.time &&
+          incoming().updatedAt == request.time &&
+          parentUserExists(userId);
+
+        allow update: if isVerifiedOwner(userId) &&
+          isValidId(userId) &&
+          isValidSlotId(slotId) &&
+          isValidSaveSlot(incoming(), userId, slotId) &&
+          incoming().ownerUid == existing().ownerUid &&
+          incoming().slotId == existing().slotId &&
+          incoming().createdAt == existing().createdAt &&
+          incoming().updatedAt == request.time &&
+          incoming().diff(existing()).affectedKeys().hasOnly([
+            'savedAt', 'summaryName', 'summaryAge', 'summaryMoney', 'summaryStatus', 'state', 'updatedAt'
+          ]) &&
+          parentUserExists(userId);
+
+        allow delete: if isVerifiedOwner(userId) &&
+          isValidId(userId) &&
+          isValidSlotId(slotId) &&
+          parentUserExists(userId);
+      }
+
+      // ---- Subcollection: /users/{userId}/meta/{metaId} ----
+      match /meta/{metaId} {
+        allow get: if isVerifiedOwner(userId) && isValidId(userId) && metaId == 'achievements' &&
+          parentUserExists(userId);
+        allow list: if false;
+
+        allow create: if isVerifiedOwner(userId) &&
+          isValidId(userId) &&
+          metaId == 'achievements' &&
+          isValidAchievementsRecord(incoming(), userId) &&
+          incoming().createdAt == request.time &&
+          incoming().updatedAt == request.time &&
+          parentUserExists(userId);
+
+        allow update: if isVerifiedOwner(userId) &&
+          isValidId(userId) &&
+          metaId == 'achievements' &&
+          isValidAchievementsRecord(incoming(), userId) &&
+          incoming().ownerUid == existing().ownerUid &&
+          incoming().createdAt == existing().createdAt &&
+          incoming().updatedAt == request.time &&
+          incoming().diff(existing()).affectedKeys().hasOnly(['unlocked', 'updatedAt']) &&
+          parentUserExists(userId);
+
+        allow delete: if false;
+      }
+    }
+  }
+}

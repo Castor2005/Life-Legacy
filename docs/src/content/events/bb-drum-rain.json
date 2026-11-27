@@ -1,0 +1,50 @@
+{
+ "id": "bb-drum-rain",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Rain listener",
+ "tags": [
+  "baby",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Rain hammers the windows and {{s.firstName}} just listens, wide-eyed.",
+ "choices": [
+  {
+   "label": "Listen together",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ten quiet minutes. The storm does the talking."
+    }
+   ]
+  },
+  {
+   "label": "Puddle plan tomorrow",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Boots by the door. Tomorrow: puddles."
+    }
+   ]
+  }
+ ]
+}

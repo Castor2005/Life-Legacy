@@ -1,0 +1,107 @@
+{
+ "id": "sx-casting-couch",
+ "minAge": 18,
+ "maxAge": 40,
+ "title": "The producer's couch",
+ "tags": [
+  "adult-life",
+  "sex",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The famous producer looks at your adult body head to toe: 'The part needs someone... flexible. Show me tonight.'",
+ "choices": [
+  {
+   "label": "Audition naked",
+   "hint": "fame gamble",
+   "effects": [
+    {
+     "op": "xp",
+     "n": "(2)"
+    },
+    {
+     "op": "skill",
+     "delta": "7"
+    },
+    {
+     "op": "corr",
+     "delta": "11"
+    },
+    {
+     "op": "kink",
+     "id": "exhibition"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "any": [
+       {
+        "expr": "s.stats.looks+s.stats.creativity>110"
+       },
+       {
+        "expr": "rnd()<0.45"
+       }
+      ]
+     },
+     "then": [
+      {
+       "op": "money",
+       "amount": "25000"
+      },
+      {
+       "op": "set",
+       "path": "fame",
+       "value": "clamp((s.fame||0)+18)"
+      },
+      {
+       "op": "set",
+       "path": "followers",
+       "value": "(s.followers||0)+40000"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You fuck/suck on camera-grade leather — moaning, cumming on cue — and wake up CAST. $25,000 and your name in lights."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(8)"
+      },
+      {
+       "op": "scandal",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You give everything; the part goes to someone's niece. The tape stays in a drawer. You know it."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Walk out",
+   "hint": "pride",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "(s.prestige||0)+6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You dress and leave. The door slams like an anthem."
+    }
+   ]
+  }
+ ]
+}

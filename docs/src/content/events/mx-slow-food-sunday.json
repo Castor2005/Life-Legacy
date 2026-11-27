@@ -1,0 +1,44 @@
+{
+ "id": "mx-slow-food-sunday",
+ "minAge": 18,
+ "maxAge": 75,
+ "title": "Sunday sauce",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The sauce simmers six hours. The family gathers.",
+ "choices": [
+  {
+   "label": "Cook the tradition",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(80)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Six hours, three generations, one pot. This is wealth."
+    }
+   ]
+  },
+  {
+   "label": "Teach the young",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Stirring lessons passed down. The recipe survives."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "band",
+ "minAge": 13,
+ "maxAge": 18,
+ "title": "Garage band",
+ "tags": [
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Friends need a bassist. They own a garage and zero skills.",
+ "choices": [
+  {
+   "label": "Join!",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "12"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Noise becomes music. First gig: a birthday. Magic."
+    }
+   ]
+  },
+  {
+   "label": "Pass",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "outcome",
+     "tpl": "They become locally famous without you. Ouch."
+    }
+   ]
+  }
+ ]
+}

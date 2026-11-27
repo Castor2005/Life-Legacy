@@ -1,0 +1,45 @@
+{
+ "id": "yg-5k-turkey-trot",
+ "minAge": 20,
+ "maxAge": 29,
+ "title": "Turkey trot",
+ "tags": [
+  "adult-life",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Thanksgiving 5k. Costumes encouraged, pie at stake.",
+ "choices": [
+  {
+   "label": "Race it",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Third in your age group. The pie tastes like victory."
+    }
+   ]
+  },
+  {
+   "label": "Costume division",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Full turkey suit. You win the crowd, lose three minutes."
+    }
+   ]
+  }
+ ]
+}

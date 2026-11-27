@@ -1,0 +1,54 @@
+{
+ "id": "bb-first-steps",
+ "minAge": 0,
+ "maxAge": 2,
+ "title": "First steps",
+ "tags": [
+  "baby",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Everyone gathers as {{s.firstName}} wobbles upright, arms out like a tiny acrobat.",
+ "choices": [
+  {
+   "label": "Cheer wildly",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three steps, then a plop onto the rug. The room erupts."
+    }
+   ]
+  },
+  {
+   "label": "Lure with cookies",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "money",
+     "amount": "-(20)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cookie-powered: five whole steps. Cookies work."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+{
+ "id": "mx-lottery-pool-work",
+ "minAge": 20,
+ "maxAge": 70,
+ "title": "Office pool",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Twenty coworkers, one ticket stack, a signed pool agreement.",
+ "choices": [
+  {
+   "label": "Join the pool",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.05",
+     "then": [
+      {
+       "op": "money",
+       "amount": "200000"
+      },
+      {
+       "op": "outcome",
+       "tpl": "IT HITS! Your share: 200,000 dollars. Retirement rumors start."
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(20)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Nothing won. The ritual was worth 20 dollars."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Sit this out",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You keep your 20 dollars and watch the frenzy fondly."
+    }
+   ]
+  }
+ ]
+}

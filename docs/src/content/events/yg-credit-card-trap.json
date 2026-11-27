@@ -1,0 +1,45 @@
+{
+ "id": "yg-credit-card-trap",
+ "minAge": 18,
+ "maxAge": 26,
+ "title": "Plastic temptation",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Pre-approved for 5,000 dollars. The mall glows.",
+ "choices": [
+  {
+   "label": "Cut it up",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": " scissors. The card dies unused. Future-you approves."
+    }
+   ]
+  },
+  {
+   "label": "One emergency only",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Locked in a drawer for true emergencies. Dentist, not jackets."
+    }
+   ]
+  }
+ ]
+}

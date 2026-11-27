@@ -1,0 +1,77 @@
+{
+ "id": "sx-film-leverage",
+ "minAge": 20,
+ "maxAge": 60,
+ "title": "Insurance photos",
+ "tags": [
+  "adult-life",
+  "sex",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "After a wild adult night — bodies slick, cum drying — you realize you filmed everything. Their face, crystal clear. This is power.",
+ "choices": [
+  {
+   "label": "Keep as leverage",
+   "hint": "leverage+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "s.sex.lovers.length?s.sex.lovers[s.sex.lovers.length-1]:randName()"
+    },
+    {
+     "op": "levOn",
+     "target": "n",
+     "secret": "\"explicit film\""
+    },
+    {
+     "op": "corr",
+     "delta": "10"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(10)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You back it up twice. Next raise, next favor, next silence — {{n}} will remember this night."
+    }
+   ]
+  },
+  {
+   "label": "Delete in front of them",
+   "hint": "trust+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "10"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "partner": "exists"
+     },
+     "then": [
+      {
+       "op": "partnerRel",
+       "delta": "10"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "You hit delete while they watch. The trust in their cum-drunk eyes is worth more than power."
+    }
+   ]
+  }
+ ]
+}

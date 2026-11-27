@@ -1,0 +1,45 @@
+{
+ "id": "kd-mud-cupcakes",
+ "minAge": 5,
+ "maxAge": 8,
+ "title": "Mud bakery",
+ "tags": [
+  "kid",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The garden becomes a bakery. Mud cupcakes, grass frosting, rock sprinkles.",
+ "choices": [
+  {
+   "label": "Open for business",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Full menu served to very patient worms."
+    }
+   ]
+  },
+  {
+   "label": "Keep the garden alive",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You bake only in the dirt patch. Garden saved, fun kept."
+    }
+   ]
+  }
+ ]
+}

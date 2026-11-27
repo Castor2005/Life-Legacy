@@ -1,0 +1,51 @@
+{
+ "id": "sr-train-grandkids",
+ "minAge": 60,
+ "maxAge": 85,
+ "title": "Rail adventure",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.grandkids.length",
+  "gte": 1
+ },
+ "text": "Two grandkids, one sleeper train, endless windows.",
+ "choices": [
+  {
+   "label": "Take the train",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(800)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bunk beds rolling through mountains. They talk about it for years."
+    }
+   ]
+  },
+  {
+   "label": "Day trip first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One scenic day trip. A trial run for the grand tour."
+    }
+   ]
+  }
+ ]
+}

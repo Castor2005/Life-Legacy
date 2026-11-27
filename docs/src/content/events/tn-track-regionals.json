@@ -1,0 +1,64 @@
+{
+ "id": "tn-track-regionals",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Regional final",
+ "tags": [
+  "teen",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The 4x400 final. You run anchor. The stadium is loud.",
+ "choices": [
+  {
+   "label": "Run your race",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.fitness>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You chase down two runners. Silver medals, golden memory."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "fitness",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Fourth by a step. The team hugs anyway. Next year."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Hype the squad",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your warmup speech goes program-legendary."
+    }
+   ]
+  }
+ ]
+}

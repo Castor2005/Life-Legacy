@@ -1,0 +1,45 @@
+{
+ "id": "kd-hole-dig",
+ "minAge": 6,
+ "maxAge": 11,
+ "title": "Great hole project",
+ "tags": [
+  "kid",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Three friends, four shovels, one hole to the center of the earth.",
+ "choices": [
+  {
+   "label": "Dig daily",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Four feet deep. China is notified."
+    }
+   ]
+  },
+  {
+   "label": "Museum of finds",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bottle caps, a key, a mystery bone. Exhibits labeled."
+    }
+   ]
+  }
+ ]
+}

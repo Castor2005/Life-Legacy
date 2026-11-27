@@ -1,0 +1,54 @@
+{
+ "id": "pension-pitch",
+ "minAge": 30,
+ "maxAge": 50,
+ "title": "Retirement pitch",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A advisor says: put $10k/yr into retirement for 20 years. Boring. Powerful.",
+ "choices": [
+  {
+   "label": "Start investing",
+   "hint": "money now-, rich later",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(10000)"
+    },
+    {
+     "op": "set",
+     "path": "assets.savings",
+     "value": "(s.assets.savings||0)+10000"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Future-you sends thanks through time."
+    }
+   ]
+  },
+  {
+   "label": "YOLO now",
+   "hint": "joy",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Vacation photos > compound interest (for now)."
+    }
+   ]
+  }
+ ]
+}

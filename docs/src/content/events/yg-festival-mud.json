@@ -1,0 +1,49 @@
+{
+ "id": "yg-festival-mud",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Mud and music",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Three-day festival. Day two rains. The field becomes soup.",
+ "choices": [
+  {
+   "label": "Dance anyway",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "11"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mud to the knees, headliner at dusk. Worth every stain."
+    }
+   ]
+  },
+  {
+   "label": "Volunteer crew",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(100)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You work gates, catch sets free. Dry socks included."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "id": "mx-co-factory-fire",
+ "minAge": 25,
+ "maxAge": 70,
+ "title": "Smoke call",
+ "tags": [
+  "adult-life",
+  "company"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "company",
+  "truthy": true
+ },
+ "text": "A supplier fire halts your line. Orders pile.",
+ "choices": [
+  {
+   "label": "Air freight now",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.cash",
+     "value": "s.company.cash+(-(9000))"
+    },
+    {
+     "op": "set",
+     "path": "company.rep",
+     "value": "clamp(s.company.rep+(5))"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Expensive air freight saves the quarter. Clients stay."
+    }
+   ]
+  },
+  {
+   "label": "Honest delays",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.rep",
+     "value": "clamp(s.company.rep+(-(4)))"
+    },
+    {
+     "op": "set",
+     "path": "company.cash",
+     "value": "s.company.cash+(2000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You call every client personally. Most wait. Trust compounds."
+    }
+   ]
+  }
+ ]
+}

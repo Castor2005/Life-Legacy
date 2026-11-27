@@ -1,0 +1,90 @@
+{
+ "id": "promotion-race",
+ "minAge": 28,
+ "maxAge": 55,
+ "title": "Promotion slot",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "job": "employed"
+   },
+   {
+    "p": "jobId",
+    "ne": "unemployed"
+   }
+  ]
+ },
+ "text": "One promotion. Two candidates. You vs. the office politician.",
+ "choices": [
+  {
+   "label": "Outwork them",
+   "hint": "discipline check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "stats.discipline",
+      "gt": 55
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "salary",
+       "value": "round(s.salary*1.25)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "10"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Promoted! New salary ${{s.salary}}!"
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "You grind; they golf with the boss. Next time."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Schmooze too",
+   "hint": "social check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "stats.social",
+      "gt": 60
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "salary",
+       "value": "round(s.salary*1.25)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You play the game and win. Salary ${{s.salary}}!"
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "Awkward lunches. No promotion."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

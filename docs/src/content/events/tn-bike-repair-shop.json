@@ -1,0 +1,49 @@
+{
+ "id": "tn-bike-repair-shop",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Wrench skills",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The bike co-op teaches repairs. Flats fixed free for kids.",
+ "choices": [
+  {
+   "label": "Learn everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "120"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You fix half the block. Tips total 120 dollars."
+    }
+   ]
+  },
+  {
+   "label": "Volunteer Saturdays",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Free repairs for kids. The co-op pins a star on you."
+    }
+   ]
+  }
+ ]
+}

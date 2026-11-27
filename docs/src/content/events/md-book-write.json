@@ -1,0 +1,45 @@
+{
+ "id": "md-book-write",
+ "minAge": 47,
+ "maxAge": 59,
+ "title": "The memoir",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your stories deserve pages. Mornings are free.",
+ "choices": [
+  {
+   "label": "Draft the year",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "70,000 words. The family fights over chapters."
+    }
+   ]
+  },
+  {
+   "label": "Stories for grandkids",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Recorded tales, printed hardcover. Immortality: achieved."
+    }
+   ]
+  }
+ ]
+}

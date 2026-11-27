@@ -1,4 +1,4 @@
-# LIFE & LEGACY — Architecture (v0.1.03.008)
+# LIFE & LEGACY — Architecture (v0.1.06)
 
 One-page contract for anyone touching this engine. Read this before adding a
 file, a global, or a save field. Details live in `src/README.md` (systems)
@@ -64,7 +64,7 @@ year's economy exists before salaries) → `advanceCalendar` (age/year++,
 `perYear` reset) → body systems (`yearlySchool` → `yearlyWork` → `yearlyMoney`
 → `yearlyBody`, which owns the mortality dice: a failed roll raises a death
 crisis, never a corpse) → social systems (`yearlyFamily` → `lifestyleTick` →
-`yearlyGenetics` → `yearlyFate` → `runDynastyDepth` → `wTickLife`) → events
+`yearlyGenetics` → `yearlyFate` → `runDynastyDepth` (underworld → children → company → sex → pregnancy → `yearlyHouseTick` → achievements) → `wTickLife`) → events
 (`runYearlyEvents`: kids flavor ≤12, then ONE slot — a live death crisis IS
 the year's event, so no second modal ever stacks; silent years stay quiet) →
 `endYear` (`maybeStory` → ambition → flag overrides → burnout → history →

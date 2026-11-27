@@ -1,0 +1,45 @@
+{
+ "id": "kd-worm-race",
+ "minAge": 5,
+ "maxAge": 9,
+ "title": "Worm Grand Prix",
+ "tags": [
+  "kid",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "After rain, the sidewalk hosts the Worm Grand Prix.",
+ "choices": [
+  {
+   "label": "Train a champion",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your worm, Lightning, places third. Sponsors pending."
+    }
+   ]
+  },
+  {
+   "label": "Save them all",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Every worm relocated to grass. Hero of the soil."
+    }
+   ]
+  }
+ ]
+}

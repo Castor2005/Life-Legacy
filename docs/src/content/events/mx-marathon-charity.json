@@ -1,0 +1,48 @@
+{
+ "id": "mx-marathon-charity",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "Charity miles",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Run for the children's fund. Pledges per mile.",
+ "choices": [
+  {
+   "label": "Run the full",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1800"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You finish, weeping. Pledges total 1,800 dollars of good."
+    }
+   ]
+  },
+  {
+   "label": "Walk and raise",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "900"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You walk it, raising 900 dollars. Every mile matters."
+    }
+   ]
+  }
+ ]
+}

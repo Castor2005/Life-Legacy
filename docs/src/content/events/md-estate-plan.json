@@ -1,0 +1,52 @@
+{
+ "id": "md-estate-plan",
+ "minAge": 50,
+ "maxAge": 59,
+ "title": "Legacy papers",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.children.length",
+  "gte": 1
+ },
+ "text": "Wills, trusts, letters. The paperwork of forever.",
+ "choices": [
+  {
+   "label": "Lawyer everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1200)"
+    },
+    {
+     "op": "flag",
+     "key": "hasWill",
+     "value": "true"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Trusts funded, letters sealed. The future is organized."
+    }
+   ]
+  },
+  {
+   "label": "Letters first",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Letters to each child, written crying. The lawyers can wait."
+    }
+   ]
+  }
+ ]
+}

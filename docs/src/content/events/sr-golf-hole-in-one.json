@@ -1,0 +1,57 @@
+{
+ "id": "sr-golf-hole-in-one",
+ "minAge": 62,
+ "maxAge": 90,
+ "title": "Ace chase",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Thirty years, no ace. The par-3 seventh keeps winking.",
+ "choices": [
+  {
+   "label": "Chase weekly",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.15",
+     "then": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "12"
+      },
+      {
+       "op": "outcome",
+       "tpl": "ACE! The ball drops, the patio erupts. Drinks are on everyone but you."
+      }
+     ],
+     "else": [
+      {
+       "op": "outcome",
+       "tpl": "Lipped out again. The chase continues gloriously."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Celebrate near-misses",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Closest-to-pin pool funds the lunches. Joy either way."
+    }
+   ]
+  }
+ ]
+}

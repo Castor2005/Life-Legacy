@@ -1,0 +1,51 @@
+{
+ "id": "yg-burnout-wall",
+ "minAge": 24,
+ "maxAge": 29,
+ "title": "The wall",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "You hit the wall at full speed. Something has to change.",
+ "choices": [
+  {
+   "label": "Rest two weeks",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sleep, sun, nothing. You return human."
+    }
+   ]
+  },
+  {
+   "label": "Redesign the job",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Boundaries set, hours sane. The wall becomes a door."
+    }
+   ]
+  }
+ ]
+}

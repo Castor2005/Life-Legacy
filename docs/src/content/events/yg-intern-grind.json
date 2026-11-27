@@ -1,0 +1,65 @@
+{
+ "id": "yg-intern-grind",
+ "minAge": 18,
+ "maxAge": 24,
+ "title": "Unpaid prestige",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A famous firm offers an unpaid internship with golden promises.",
+ "choices": [
+  {
+   "label": "Grind three months",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "jobSet",
+       "id": "\"intern\""
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "8"
+      },
+      {
+       "op": "outcome",
+       "tpl": "They hire you! Junior title, real salary, foot in the door."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "No offer, but the reference letter opens the next door."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Paid work instead",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1800"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You take the paying job. Rent thanks you."
+    }
+   ]
+  }
+ ]
+}

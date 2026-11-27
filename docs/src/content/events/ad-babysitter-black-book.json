@@ -1,0 +1,48 @@
+{
+ "id": "ad-babysitter-black-book",
+ "minAge": 30,
+ "maxAge": 40,
+ "title": "Sitter network",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "relationships.children.length",
+  "gte": 1
+ },
+ "text": "Date nights die without sitters. A network must be built.",
+ "choices": [
+  {
+   "label": "Build the rotation",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three trusted sitters. Date night: resurrected."
+    }
+   ]
+  },
+  {
+   "label": "Trade with neighbors",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You watch theirs, they watch yours. Free and trusted."
+    }
+   ]
+  }
+ ]
+}

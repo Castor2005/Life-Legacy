@@ -1,0 +1,29 @@
+{
+ "id": "plane-crash-near",
+ "minAge": 18,
+ "maxAge": 80,
+ "title": "Turbulence!!",
+ "tags": [
+  "adult-life"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The plane drops 1,000 feet. Oxygen masks dangle. Someone prays loudly.",
+ "choices": [
+  {
+   "label": "Breathe. Hold neighbor's hand.",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "-(5)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "It levels. Applause erupts. You tip the pilot mentally."
+    }
+   ]
+  }
+ ]
+}

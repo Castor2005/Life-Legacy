@@ -1,0 +1,63 @@
+{
+ "id": "spring-break",
+ "minAge": 18,
+ "maxAge": 23,
+ "title": "Spring break!",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Friends rent a beach house: $700 each. Sun, music, questionable decisions.",
+ "choices": [
+  {
+   "label": "GO",
+   "hint": "money-, joy+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(700)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "13"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "set",
+     "path": "stress",
+     "value": "clamp((s.stress||20)-10)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sunburns, salt, 4am talks. Core memory unlocked."
+    }
+   ]
+  },
+  {
+   "label": "Work the week",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "900"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You cover shifts. The photos still hurt."
+    }
+   ]
+  }
+ ]
+}

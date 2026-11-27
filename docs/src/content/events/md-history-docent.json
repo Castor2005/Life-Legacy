@@ -1,0 +1,45 @@
+{
+ "id": "md-history-docent",
+ "minAge": 48,
+ "maxAge": 59,
+ "title": "Docent days",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The historic house needs guides. You know every story.",
+ "choices": [
+  {
+   "label": "Guide weekends",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Victorian gossip delivered with flair. Visitors rave."
+    }
+   ]
+  },
+  {
+   "label": "Research the attic",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You find the lost letters. The tour gains a ghost."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "md-golf-reinvention",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Fairway era",
+ "tags": [
+  "adult-life",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Everyone plays golf suddenly. The invitation stands.",
+ "choices": [
+  {
+   "label": "Take lessons",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Respectable bogeys. Deals and jokes flow on the cart paths."
+    }
+   ]
+  },
+  {
+   "label": "Walk the course",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You walk, they ride. Nine miles of thinking per round."
+    }
+   ]
+  }
+ ]
+}

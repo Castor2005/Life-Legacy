@@ -1,0 +1,69 @@
+{
+ "id": "acne-breakout",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Picture-day volcano",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Picture day. A volcano erupts on {{s.firstName}}'s forehead overnight.",
+ "choices": [
+  {
+   "label": "Pop it",
+   "hint": "health-, looks-",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(3)"
+    },
+    {
+     "op": "stat",
+     "key": "looks",
+     "delta": "-(4)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "It fights back. Concealer, damage control, survival."
+    }
+   ]
+  },
+  {
+   "label": "Dermatologist ($120)",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "stat",
+     "key": "looks",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Prescription magic. Clear in weeks."
+    }
+   ]
+  },
+  {
+   "label": "Own it",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You walk in chin-up. Confidence is the best filter."
+    }
+   ]
+  }
+ ]
+}

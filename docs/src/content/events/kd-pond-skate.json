@@ -1,0 +1,45 @@
+{
+ "id": "kd-pond-skate",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "Pond skate day",
+ "tags": [
+  "kid",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The pond freezes thick enough. The whole street laces up.",
+ "choices": [
+  {
+   "label": "Race the loop",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Third place, first in style points. Cocoa after."
+    }
+   ]
+  },
+  {
+   "label": "Teach a newbie",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You teach stops and starts. The pond gains a skater."
+    }
+   ]
+  }
+ ]
+}

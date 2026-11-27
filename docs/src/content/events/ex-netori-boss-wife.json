@@ -1,0 +1,184 @@
+{
+ "id": "ex-netori-boss-wife",
+ "minAge": 22,
+ "maxAge": 55,
+ "title": "The boss's wife",
+ "tags": [
+  "adult-life",
+  "sex",
+  "extreme",
+  "status",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "job": "employed"
+   },
+   {
+    "p": "jobId",
+    "ne": "unemployed"
+   }
+  ]
+ },
+ "text": "Office party. The boss's adult wife corners you by the bar, wedding rock flashing: 'He works late. I get lonely. And you... you look like trouble that fucks.'",
+ "choices": [
+  {
+   "label": "Fuck her in his office",
+   "hint": "NETORI + career bomb",
+   "effects": [
+    {
+     "op": "let",
+     "name": "n",
+     "expr": "randName()"
+    },
+    {
+     "op": "call",
+     "fn": "sex.ownClaim",
+     "args": {
+      "name": {
+       "expr": "n"
+      },
+      "via": {
+       "expr": "\"netori\""
+      },
+      "ob": {
+       "expr": "24"
+      },
+      "os": {
+       "expr": "22"
+      }
+     }
+    },
+    {
+     "op": "corr",
+     "name": "n",
+     "delta": "12"
+    },
+    {
+     "op": "histLog",
+     "name": "n",
+     "acts": [
+      "\"rough\"",
+      "\"public\""
+     ]
+    },
+    {
+     "op": "levOn",
+     "target": "\"boss's wife\"",
+     "secret": "\"office tape\""
+    },
+    {
+     "op": "let",
+     "name": "cc",
+     "expr": "null"
+    },
+    {
+     "op": "forClaims",
+     "idxAs": "i",
+     "body": [
+      {
+       "op": "branch",
+       "cond": {
+        "expr": "s.sex.claims[i].name===n"
+       },
+       "then": [
+        {
+         "op": "let",
+         "name": "cc",
+         "expr": "s.sex.claims[i]"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "v": "cc",
+      "truthy": true
+     },
+     "then": [
+      {
+       "op": "setv",
+       "target": "cc",
+       "path": "levOn",
+       "value": "\"office tape\""
+      }
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(14)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "16"
+    },
+    {
+     "op": "scandal",
+     "delta": "14"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "set",
+       "path": "jobId",
+       "value": "\"unemployed\""
+      },
+      {
+       "op": "set",
+       "path": "salary",
+       "value": "0"
+      },
+      {
+       "op": "set",
+       "path": "prestige",
+       "value": "max(0,(s.prestige||0)-40)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "His desk, his chair, his wife cumming on your cock — filmed. HR finds out. Fired on the spot, prestige gutted. Worth it? Her texts say yes."
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "performance",
+       "value": "clamp(s.performance+8)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "His desk, his wife, your cock — cumming while his employee-of-the-month plaque watches. Tape kept. Promotion AND blackmail. Dangerous game, played well."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Compliment and retreat",
+   "hint": "career+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "performance",
+     "value": "clamp(s.performance+6)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "'Lovely earrings, ma'am.' You vanish into the buffet line. Career intact."
+    }
+   ]
+  }
+ ]
+}

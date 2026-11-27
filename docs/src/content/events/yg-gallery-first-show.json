@@ -1,0 +1,44 @@
+{
+ "id": "yg-gallery-first-show",
+ "minAge": 22,
+ "maxAge": 29,
+ "title": "Wall space",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A cafe offers your photos wall space for a month.",
+ "choices": [
+  {
+   "label": "Hang twelve",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "600"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two sell! 600 dollars and a red dot apiece. Artist: exhibited."
+    }
+   ]
+  },
+  {
+   "label": "Theme it tight",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One river, twelve moods. Visitors stay long and buy prints."
+    }
+   ]
+  }
+ ]
+}

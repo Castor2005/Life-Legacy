@@ -1,0 +1,45 @@
+{
+ "id": "kd-playground-mayor",
+ "minAge": 6,
+ "maxAge": 12,
+ "title": "Playground mayor",
+ "tags": [
+  "kid",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Someone must organize the four-square ladder. It might as well be you.",
+ "choices": [
+  {
+   "label": "Run the ladder",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rankings posted daily. Disputes: zero. Legacy: secured."
+    }
+   ]
+  },
+  {
+   "label": "Invent new rules",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Four-square with a bonus box. Chaos, then brilliance."
+    }
+   ]
+  }
+ ]
+}

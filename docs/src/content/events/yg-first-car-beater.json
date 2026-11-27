@@ -1,0 +1,49 @@
+{
+ "id": "yg-first-car-beater",
+ "minAge": 18,
+ "maxAge": 27,
+ "title": "Beater with a heater",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Two thousand dollars buys four wheels and a personality.",
+ "choices": [
+  {
+   "label": "Buy the beater",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "It rattles, it runs, it is yours. Freedom smells like vinyl."
+    }
+   ]
+  },
+  {
+   "label": "Save for better",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bus year. Next spring buys twice the car."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "kd-spelling-revenge",
+ "minAge": 7,
+ "maxAge": 12,
+ "title": "Spelling redemption",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Last year's on-stage freeze still burns. This year's bee is here.",
+ "choices": [
+  {
+   "label": "Drill nightly",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "7"
+    },
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(4))"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You spell ANTEDILUVIAN without blinking. Redemption."
+    }
+   ]
+  },
+  {
+   "label": "Comedy first",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You go out round three but your definitions slay."
+    }
+   ]
+  }
+ ]
+}

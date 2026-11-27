@@ -1,0 +1,45 @@
+{
+ "id": "yg-blood-drive-habit",
+ "minAge": 20,
+ "maxAge": 29,
+ "title": "Gallon club",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your eighth donation earns a pin. The cookies are tradition.",
+ "choices": [
+  {
+   "label": "Keep donating",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Gallon reached. Somewhere, strangers keep breathing."
+    }
+   ]
+  },
+  {
+   "label": "Recruit five",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Five first-timers join. The bus beats its record."
+    }
+   ]
+  }
+ ]
+}

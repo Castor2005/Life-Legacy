@@ -262,6 +262,7 @@ function runDynastyDepth(silent){
   yearlyCompany(silent);
   yearlySex(silent);
   yearlyPregs(silent);
+  try{ yearlyHouseTick(silent); }catch(e){}
   try{ checkAch(silent); }catch(e){}
 }
 
@@ -411,7 +412,31 @@ function achStore(){
   }catch(e){}
   return d;
 }
-function achSave(d){ try{ if(window.localStorage)window.localStorage.setItem("ll_ach_v1",JSON.stringify(d)); }catch(e){} }
+function achSave(d){
+  try{ if(window.localStorage)window.localStorage.setItem("ll_ach_v1",JSON.stringify(d)); }catch(e){}
+  try{
+    if(window.LLFirebase&&window.LLFirebase.getUser()&&window.LLPlayer&&window.LLPlayer.cloud===true&&!window.LLPlayer.guest&&d&&d.ids){
+      window.LLFirebase.saveAchievements(d.ids).catch(function(e){ console.warn("Cloud achievements mirror failed:",e); });
+    }
+  }catch(e){}
+}
+async function cloudSyncAchievements(){
+  if(!window.LLFirebase||!window.LLFirebase.getUser()||!window.LLPlayer||window.LLPlayer.cloud!==true||window.LLPlayer.guest)return;
+  var remote=await window.LLFirebase.loadAchievements();
+  var local=achStore();
+  var merged={}, k;
+  for(k in (remote||{})) if(Object.prototype.hasOwnProperty.call(remote,k)) merged[k]=remote[k];
+  for(k in (local.ids||{})) if(Object.prototype.hasOwnProperty.call(local.ids,k)) {
+    if(!merged[k]||(local.ids[k].at&&(!merged[k].at||local.ids[k].at<merged[k].at))) merged[k]=local.ids[k];
+  }
+  var out={ids:merged};
+  try{ if(window.localStorage)window.localStorage.setItem("ll_ach_v1",JSON.stringify(out)); }catch(e){}
+  if(Object.keys(merged).length>Object.keys(remote||{}).length){
+    await window.LLFirebase.saveAchievements(merged);
+  }
+  try{ renderAch(); }catch(e){}
+}
+window.cloudSyncAchievements=cloudSyncAchievements;
 function achUnlock(id){
   var d=achStore();
   if(d.ids[id])return false;

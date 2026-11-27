@@ -1,0 +1,112 @@
+{
+ "id": "blackmail-target",
+ "minAge": 20,
+ "maxAge": 60,
+ "title": "Someone knows…",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A stranger claims to have an embarrassing photo of you. Price: $2,000 silence.",
+ "choices": [
+  {
+   "label": "Pay quietly",
+   "hint": "money-",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Paid. Deleted (probably). Sleep returns."
+    }
+   ]
+  },
+  {
+   "label": "Call the bluff",
+   "hint": "brave/paranoid",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "any": [
+       {
+        "any": [
+         {
+          "all": [
+           {
+            "p": "traits",
+            "truthy": true
+           },
+           {
+            "expr": "s.traits.includes(\"brave\")"
+           }
+          ]
+         },
+         {
+          "all": [
+           {
+            "p": "traits",
+            "truthy": true
+           },
+           {
+            "expr": "s.traits.includes(\"paranoid\")"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "expr": "rnd()<0.6"
+       }
+      ]
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "4"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Bluff called — there was nothing. They slink off."
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(2000)"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-(8)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "It was real. You pay double, learn opsec."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Go to police",
+   "hint": "lawful",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Extortionists hate paperwork. Case closed."
+    }
+   ]
+  }
+ ]
+}

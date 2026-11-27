@@ -1,0 +1,50 @@
+{
+ "id": "bb-splash-pad",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Splash pad dash",
+ "tags": [
+  "baby",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The splash pad opens and {{s.firstName}} sprints straight into the jets.",
+ "choices": [
+  {
+   "label": "Race through",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(2)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shivering, giggling, and begging for one more run."
+    }
+   ]
+  },
+  {
+   "label": "Towel station first",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Towel cape on. Splash hero, zero sniffles."
+    }
+   ]
+  }
+ ]
+}

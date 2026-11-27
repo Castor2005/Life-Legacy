@@ -1,0 +1,44 @@
+{
+ "id": "yg-first-mortgage-hunt",
+ "minAge": 25,
+ "maxAge": 29,
+ "title": "House hunt",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Rent math breaks. The suburbs list open houses.",
+ "choices": [
+  {
+   "label": "Buy small",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(15000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A small place with good bones. Equity begins."
+    }
+   ]
+  },
+  {
+   "label": "Keep renting free",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You invest the difference instead. Flexibility compounds."
+    }
+   ]
+  }
+ ]
+}

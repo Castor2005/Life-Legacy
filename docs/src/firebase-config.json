@@ -1,0 +1,9 @@
+{
+  "_setup": "FIREBASE SETUP — fill the fields below from Firebase Console > Project settings > General > Your apps > Web app, then SAVE. Until apiKey is filled in, the game stays local-only. Full steps in README.txt (GOOGLE LOGIN section). Firebase web config is public-by-design; protection comes from src/firestore.rules, never from hiding these values.",
+  "apiKey": "",
+  "authDomain": "",
+  "projectId": "",
+  "storageBucket": "",
+  "messagingSenderId": "",
+  "appId": ""
+}

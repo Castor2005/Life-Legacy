@@ -1,0 +1,155 @@
+{
+ "id": "co-walkout",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "Grumbling by the coffee machine",
+ "tags": [
+  "adult-life",
+  "company",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "company",
+    "truthy": true
+   },
+   {
+    "p": "company.morale",
+    "lt": 45
+   }
+  ]
+ },
+ "text": "The staff of {{s.company.name}} are done smiling. A walkout brews over pay — morale {{s.company.morale}}.",
+ "choices": [
+  {
+   "label": "Raise wages ($5,000)",
+   "hint": "morale+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "all": [
+       {
+        "p": "money",
+        "lt": 5000
+       },
+       {
+        "p": "company.cash",
+        "lt": 5000
+       }
+      ]
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "company.morale",
+       "value": "clamp(s.company.morale-5)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "The tin is empty. They know it."
+      }
+     ],
+     "else": [
+      {
+       "op": "branch",
+       "cond": {
+        "p": "company.cash",
+        "gte": 5000
+       },
+       "then": [
+        {
+         "op": "set",
+         "path": "company.cash",
+         "value": "s.company.cash-(5000)"
+        }
+       ],
+       "else": [
+        {
+         "op": "money",
+         "amount": "-(5000)"
+        }
+       ]
+      },
+      {
+       "op": "set",
+       "path": "company.morale",
+       "value": "clamp(s.company.morale+15)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Money talks, then everyone else talks — happily."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Fire the organizer",
+   "hint": "ruthless",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.employees",
+     "value": "max(1,s.company.employees-1)"
+    },
+    {
+     "op": "set",
+     "path": "company.morale",
+     "value": "clamp(s.company.morale-8)"
+    },
+    {
+     "op": "set",
+     "path": "company.rep",
+     "value": "clamp(s.company.rep-4)"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "-(5)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Quiet office. Too quiet."
+    }
+   ]
+  },
+  {
+   "label": "Listen all night",
+   "hint": "social check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "stats.social",
+      "gt": 55
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "company.morale",
+       "value": "clamp(s.company.morale+10)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "Pizza, honesty, a whiteboard of fixes. They stay."
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "company.morale",
+       "value": "clamp(s.company.morale-3)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You listen. They leave anyway. Some of them."
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

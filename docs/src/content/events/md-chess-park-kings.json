@@ -1,0 +1,45 @@
+{
+ "id": "md-chess-park-kings",
+ "minAge": 48,
+ "maxAge": 59,
+ "title": "Park tables",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The park chess tables host sharks and philosophers.",
+ "choices": [
+  {
+   "label": "Play the regulars",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You take two of five from the old master. Respect exchanged."
+    }
+   ]
+  },
+  {
+   "label": "Teach kids Saturdays",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Twelve kids, plastic sets, infinite rematches."
+    }
+   ]
+  }
+ ]
+}

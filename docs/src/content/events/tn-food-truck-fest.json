@@ -1,0 +1,49 @@
+{
+ "id": "tn-food-truck-fest",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Truck rally",
+ "tags": [
+  "teen",
+  "friends"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Twelve trucks, one afternoon, empty stomachs.",
+ "choices": [
+  {
+   "label": "Taste them all",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(35)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Twelve trucks, twelve bites. The dumpling wins."
+    }
+   ]
+  },
+  {
+   "label": "Judge with friends",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Scorecards, debates, a champion crowned. Tradition born."
+    }
+   ]
+  }
+ ]
+}

@@ -13,12 +13,12 @@ function avatar(){ var a=S.age; if(a<2)return "👶"; if(a<6)return "🧒"; if(a
 /* TABS entries: [id, label, sub, minAge] — hidden until minAge (needAge stays as backstop) */
 var TABS={
   activities:[["nap","😴 Nap","rest up",0],["toys","🧸 Playtime","toys!",2,10],["games","🎮 Games","joy",3],["playground","🛝 Playground","fun+",5,13],["movies","🎬 Movies","joy, $25",6],["stargaze","🔭 Stargaze","wonder",6],["study","📚 Study","smarts+, grades",4],["read","📖 Read","smarts+, joy",5],["museum","🏛️ Museum","smarts+, $10",8],["lemonade","🍋 Lemonade stand","+$",8],["instrument","🎻 Practice instrument","creativity+",8],["team","⚽ Join team","fitness+, friends",10],["meditate","🧘 Meditate","-stress",10],["hike","🥾 Hike","health+, joy",10],["volunteer","🤝 Volunteer","karma+",10],["jog","🏃 Jog","health+, joy",8],["socialmedia","📱 Social media","???",13],["salon","💇 Salon","looks+, $80",12],["gym","🏋️ Gym","fitness+ (1/yr)",12],["party","🎉 Party","joy+, $60",14],["audition","🎬 Audition","fame shot",14],["hustle","💪 Side hustle","cash",14],["deepstudy","📖 Deep study","scholar/genius",15],["trainpro","🏋️ Pro training","athletes",15],["gig","🎨 Gig","pay, 50+ crea",15],["retreat","🏔️ Retreat","-stress, $2k",16],["casino","🎰 Casino","21+, $200",21],["direct","🎬 Direct a Scene","ANYTHING happens",10],["scenerand","🎲 Random Scene","AI invents",10],["vacation","✈️ Vacation","big joy, $1.5k",18],["roadtrip","🛤️ Road trip","big joy, $800",18],["surgery","✨ Surgery","looks gamble $6k",18],["lottery","🎟️ Lottery","$5 dream",16],["pickpocket","🌙 Pickpocket","crime!",12],["burglary","🦹 Burglary","crime!",16],["bank","🏦 Bank job","BIG crime!",18],["embezzle","🕵️ Embezzle","white-collar crime",21],["crew","🔪 Join the crew","crime career",16],["score","💰 Run a score","rank job",16],["laylow","🧼 Lay low","-heat (1/yr)",16],["stashcash","🧺 Wash cash","hide $5k",18]],
-  social:[["claim","⛓️ Claim lover","mark yours 18+",18],["train","🎓 Train devotee","obedience+",18],["break","💔 Break will","mind games 18+",18],["harem","👑 Harem order","alpha & ranks 18+",18],["protection","🛡️ Protection","preg control",18],["mendrival","🤝 Bury hatchet","end the feud",10],["exposerival","⚖️ Expose nemesis","ruin them publicly",16],["ruinrival","🔪 Ruin them first","crime, $3k",18],["makefriend","👋 Make friend","new bond",4],["compliment","💛 Compliment","kindness+",6],["hangout","🍕 Hang out","joy (1/yr)",5],["apologize","🙏 Apologize","mend bonds",6],["giftfriend","🎁 Gift friend","$30, rel+",8],["club","🎭 Join club","belonging",10],["network","🥂 Work the room","socialites",16],["befriend-scheme","🤝 Befriend scheme","prestige play",10],["finddate","💘 Find date","14+",14],["datenight","🌹 Date night","$120",14],["seduce","🔥 Seduce scheme","scheme",16],["propose","💍 Propose","$2k ring",16],["mentor","🦉 Mentor youth","karma+",30]],
-  family:[["visitparents","🏡 Visit parents","love",0],["callgrandparents","📞 Call grandparents","love",4],["familydinner","🍽️ Family dinner","$40, warmth",4],["pet","🐾 Adopt pet","$300",6],["siblingbond","🤝 Sibling time","bond",5],["wedding","💒 Wedding","$5k",18],["grandwed","👑 Grand wedding","$25k, prestige+",18],["divorce","💔 Divorce","costly",18],["baby","🍼 Have baby","$3k, due ~2yrs",20],["prenatal","🩺 Prenatal care","$500, healthy babies",18],["custody","⚖️ Sue for custody","$2k, win them back",18],["adopt","🏠 Adopt","$8k",22],["supportparents","🧓 Support parents","$1k, karma+",25],["will","📜 Write Will","$300",18],["babysit","🧸 Babysit grandkids","joy+",35],["nameheir","👑 Name Heir","dynasty",0],["bond","❤️ Bond with kids","closest +",6],["tutorkid","📐 Tutor kids","grades+",6],["praise","🌟 Praise kids","rel+",6],["scold","📏 Discipline","order vs love",6],["groomheir","🌱 Groom heir","18+ heir",18]],
+  social:[["claim","⛓️ Claim lover","mark yours 18+",18],["train","🎓 Train devotee","obedience+",18],["break","💔 Break will","mind games 18+",18],["harem","👑 Harem order","alpha & ranks 18+",18],["protection","🛡️ Protection","preg control",18],["mendrival","🤝 Bury hatchet","end the feud",10],["exposerival","⚖️ Expose nemesis","ruin them publicly",16],["ruinrival","🔪 Ruin them first","crime, $3k",18],["makefriend","👋 Make friend","new bond",4],["compliment","💛 Compliment","kindness+",6],["hangout","🍕 Hang out","joy (1/yr)",5],["apologize","🙏 Apologize","mend bonds",6],["giftfriend","🎁 Gift friend","$30, rel+",8],["club","🎭 Join club","belonging",10],["network","🥂 Work the room","socialites",16],["befriend-scheme","🤝 Befriend scheme","prestige play",10],["finddate","💘 Find date","meet 3 faces",14],["commit","💘 Commit","lover → partner",14],["dumplover","🚶 End fling","latest casual",16],["datenight","🌹 Date night","$120",14],["seduce","🔥 Seduce scheme","scheme",16],["propose","💍 Propose","$2k ring",16],["mentor","🦉 Mentor youth","karma+",30]],
+  family:[["visitparents","🏡 Visit parents","love",0],["callgrandparents","📞 Call grandparents","love",4],["familydinner","🍽️ Family dinner","$40, warmth",4],["pet","🐾 Adopt pet","$300",6],["siblingbond","🤝 Sibling time","bond",5],["wedding","💒 Wedding","$5k",18],["grandwed","👑 Grand wedding","$25k, prestige+",18],["divorce","💔 Divorce","costly",18],["breakup","💔 Break up","end it clean",14],["baby","🍼 Have baby","$3k, due ~2yrs",20],["prenatal","🩺 Prenatal care","$500, healthy babies",18],["custody","⚖️ Sue for custody","$2k, win them back",18],["adopt","🏠 Adopt","$8k",22],["supportparents","🧓 Support parents","$1k, karma+",25],["will","📜 Write Will","$300",18],["babysit","🧸 Babysit grandkids","joy+",35],["nameheir","👑 Name Heir","dynasty",0],["bond","❤️ Bond with kids","closest +",6],["tutorkid","📐 Tutor kids","grades+",6],["praise","🌟 Praise kids","rel+",6],["scold","📏 Discipline","order vs love",6],["groomheir","🌱 Groom heir","18+ heir",18]],
   education:[["tummytime","🍼 Tummy time","grow strong",0,3],["babble","🔊 Babble & listen","first words",1,4],["study","📚 Study hard","grades+",4],["read","📖 Read","smarts+",5],["library","🔎 Library","deep smarts+",6],["sciencefair","🔬 Science fair","glory?",8],["skipclass","🃏 Skip class","risky fun",13],["tutor","✏️ Tutor kids","+$",16],["onlinecourse","💻 Online course","$100, smarts+",18],["publish","📝 Publish paper","degree, $+",20],["findjob","💼 Find job","careers",12],["workhard","🔥 Work hard","promotion",14],["askraise","💰 Ask raise","risk",16],["quit","🚪 Quit","freedom",12],["retire","🏖️ Retire","55+",55],["applycollege","🎓 Apply college","55+ (90+ = free)",17],["major-Business","🔬 Major: Business","exec fast-track",17],["major-STEM","🔬 Major: STEM","engineer/doctor",17],["major-Medicine","🩺 Major: Medicine","doctor",17],["major-Nursing","💉 Major: Nursing","nurse",17],["major-Law","⚖️ Major: Law","lawyer/judge",17],["major-Engineering","🏗️ Major: Engineering","engineer/pilot",17],["major-Computer Science","💻 Major: Computer Sci","developer",17],["major-Arts","🎨 Major: Arts","actor/director",17],["major-Music","🎵 Major: Music","musician",17],["major-Education","🍎 Major: Education","teacher",17],["major-Psychology","🧠 Major: Psychology","management",17],["major-Architecture","📐 Major: Architecture","architect",17],["gradschool","🎓 Grad school","needs degree",21]],
   money:[["piggybank","🐷 Piggy bank","save $50",5],["chores","🧹 Chores","+$",6],["askcash","💵 Ask for cash","parents?",5],["hustle","💪 Side hustle","cash",14],["freelance","⌨️ Freelance","skill cash",16],["savings","🏦 Save $1k","4%/yr",10],["stocks","📈 Buy stocks","$1k",18],["crypto","🪙 Buy crypto","$500",18],["sellstocks","💵 Sell stocks","cash out",18],["sellhouse","🏚️ Sell home","cash out",18],["sellcar","🚗 Sell car","cash out",16],["sellcrypto","🪙 Sell Koin","cash out",18],["withdrawsavings","🏦 Withdraw savings","cash out",10],["buyhouse","🏠 Homes","browse",18],["buycar","🚗 Cars","browse",16],["lottery","🎟️ Lottery","$5",16],["rentroom","🚪 Rent a room","income",18],["negotiate","💼 Negotiate raise","moguls",16],["biztech","💻 Found tech co","$15k",18],["bizfood","🍲 Found food co","$12k",18],["biztrade","🚚 Found trade co","$12k",18],["hire","🧑‍💼 Hire staff","$2k",18],["expandbiz","🏭 Expand company","$10k",18],["sellco","🏷️ Sell company","cash out",18],["undercut","📉 Undercut rival","$5k price war",18],["acquire","🏦 Acquire rival","buy them out",18],["cosec","🛡️ Corporate security","$3k, -raids",18],["hitrival","🌃 Hit the rival","stash $2k, heat+",18],["takeover","🤝 Takeover bid","answer offer",18],["snubbid","🦁 Snub the bid","defy them",18]],
   health:[["vaccinate","💉 Vaccinate","health+",0],["playoutside","⚽ Play outside","health+",3],["sleep","😴 Sleep well","free -stress",3],["diet","🥗 Eat clean","glow",8],["dentist","🦷 Dentist","$120, smile",6],["doctor","🩺 Doctor","$200 (1/yr)",0],["meditate","🧘 Meditate","-stress",10],["gym","🏋️ Gym","fitness",12],["jog","🏃 Jog","free",8],["therapy","🛋️ Therapy","-stress $150",12],["fast","🕯️ Fast & reflect","ascetics",16],["retreat","🏔️ Retreat","-stress $2k",16],["blood","🩸 Donate blood","karma",17]],
-  crown:[["leverage","🕵️ Cash leverage","extort $",18],["dec-hunt","🏹 Royal Hunt","$300",12],["dec-feast","🍖 Hold Feast","$800 prestige",16],["dec-pilgrimage","🕯️ Pilgrimage","$1200 karma",16],["dec-tournament","⚔️ Tournament","$2000 fame",16],["dec-gala","💎 Charity Gala","$5000",18],["parade","🎖️ Parade","fame+",18],["dec-writebook","📖 Write Book","legacy",14],["dec-startup","🚀 Found Startup","$15k",18],["blackmail","🕵️ Blackmail","scheme",18],["dec-office","🏛️ Run for Office","$10k",25],["sponsor","📜 Sponsor scholar","$3k, karma+",25],["holdcourt","⚖️ Hold court","$2k, prestige+",30],["ipo","📈 Take company public","$500k value",21]],
+  crown:[["leverage","🕵️ Cash leverage","extort $",18],["dec-hunt","🏹 Royal Hunt","$300",12],["dec-feast","🍖 Hold Feast","$800 prestige",16],["dec-pilgrimage","🕯️ Pilgrimage","$1200 karma",16],["dec-tournament","⚔️ Tournament","$2000 fame",16],["dec-gala","💎 Charity Gala","$5000",18],["parade","🎖️ Parade","fame+",18],["dec-writebook","📖 Write Book","legacy",14],["dec-startup","🚀 Found Startup","$15k",18],["blackmail","🕵️ Blackmail","scheme",18],["dec-office","🏛️ Run for Office","$10k",25],["sponsor","📜 Sponsor scholar","$3k, karma+",25],["holdcourt","⚖️ Hold court","$2k, prestige+",30],["ipo","📈 Take company public","$500k value",21],["houses","🏛️ Great Houses","ladders & deals",18]],
   world:[]
 };
 /* ---- family roster + tree entry at the top of the Family tab ---- */
@@ -51,6 +51,7 @@ function famRoster(p){
   (R.siblings||[]).forEach(function(s){ var n=wFindNPC(s.name); h+=row("🧬",s.name+" ("+s.age+")","sibling · rel "+s.rel+" · "+(n&&n.alive?(n.jobId&&n.jobId!=="unemployed"?jobNameById(n.jobId):(s.age>=18?"between jobs":"in school")):"🕊️"),n?n.id:null); });
   (R.grandparents||[]).forEach(function(g){ var n=g.npcId?npcById(g.npcId):wFindNPC(g.name); h+=row("📜",g.name+" · "+g.side,g.alive?("age "+g.age+" · rel "+g.rel+(n&&n.alive&&n.jobId&&n.jobId!=="unemployed"?" · "+jobNameById(n.jobId):"")):"🕊️ remembered",n?n.id:null); });
   if(R.partner){ var pn=wFindNPC(R.partner.name); h+=row("💘",R.partner.name+(R.partner.married?" 💍":""),"partner · rel "+R.partner.rel+(pn&&pn.alive&&pn.jobId&&pn.jobId!=="unemployed"?" · "+jobNameById(pn.jobId):""),pn?pn.id:null); }
+  try{ var _lv=(S.sex&&S.sex.lovers)||[]; for(var _li=0;_li<_lv.length;_li++){ var _ln=null; try{_ln=wFindNPC(_lv[_li]);}catch(e){} h+=row("🔥",_lv[_li],"casual fling",_ln?_ln.id:null); } }catch(e){}
   (R.children||[]).forEach(function(c){ var cn=wFindNPC(c.name); h+=row("🌱",c.name+" ("+c.age+")","child · rel "+c.rel+(c.trait?" · "+c.trait:"")+(c.dream?" → "+c.dream:"")+((c.age>=5&&c.age<18)?" · grades "+(c.grades||60):"")+(c.legit===false?" · ⚖️ contested":"")+(c.custody==="ex"?" · 🏠 with ex":""),cn?cn.id:null); });
   try{ var _pr=(typeof pregEnsure==="function")?pregEnsure():[]; if(_pr.length){ var _ph=_pr.map(function(p){return "🤰 "+p.carrier+" (tri "+p.tri+"/3"+(p.care?", cared":"")+")";}).join(" · "); h+=row("🤰","Expecting",_ph,null); } }catch(e){}
   if(!h)h='<div class="slot"><div class="grow"><b>👪 Just you, for now</b><small>Find love, have children — the tree grows.</small></div></div>';
@@ -161,7 +162,7 @@ function render(){
       return "👥 People";
     }
     if(tab==="family"){
-      if(id==="wedding"||id==="grandwed"||id==="divorce"||id==="baby"||id==="prenatal"||id==="custody"||id==="adopt"||id==="nameheir"||id==="groomheir"||id==="will")return "💍 Love, kids & heirs";
+      if(id==="wedding"||id==="grandwed"||id==="divorce"||id==="breakup"||id==="baby"||id==="prenatal"||id==="custody"||id==="adopt"||id==="nameheir"||id==="groomheir"||id==="will")return "💍 Love, kids & heirs";
       return "🏠 Household";
     }
     if(tab==="crown"){ if(id==="leverage"||id==="blackmail")return "🕵️ Schemes"; return "👑 Rule"; }
@@ -207,6 +208,9 @@ function render(){
       d1.innerHTML='<div class="grow"><b>🏢 '+esc(S.company.name)+'</b><small>'+esc((CO_SECTORS[S.company.sector]||{}).name||S.company.sector)+' · value '+fmt$(S.company.value)+' · '+S.company.employees+' staff · morale '+S.company.morale+_sc+_rv+_bd+'</small></div>'; p.appendChild(d1); }
     if(curTab==="crown"&&S.underworld&&S.underworld.rep>0){ var d2=document.createElement("div"); d2.className="slot"; d2.style.gridColumn="1/-1";
       d2.innerHTML='<div class="grow"><b>'+uwRankName()+'</b><small>rep '+S.underworld.rep+' · stash '+fmt$(S.underworld.stash)+' · territory '+S.underworld.territory+'% · crew '+S.underworld.crew.length+'</small></div>'; p.appendChild(d2); }
+    if(curTab==="crown"){ try{ if(typeof housesEnsure==="function"&&housesEnsure()){ var d3=document.createElement("div"); d3.className="slot"; d3.style.gridColumn="1/-1";
+      var _hr=1; try{ _hr=houseRank(); }catch(e){} var _ht="Unproven"; try{ _ht=houseTitle(); }catch(e2){}
+      d3.innerHTML='<div class="grow"><b>🏛️ House '+esc(S.lastName)+' — '+esc(_ht)+', rank #'+_hr+'</b><small>Climb the ladder, marry heirs, buy ruins. Open 🏛️ Great Houses to deal.</small></div>'; p.appendChild(d3); } }catch(e3){} }
     addFilter(curTab);
     var lastGrp=null, grpOpen=true;
     for(var li=0;li<list.length;li++){ var a=list[li], aid=a[0];
@@ -322,8 +326,21 @@ function wSearchTimeline(q,y0,y1,st){
     return (e.text+" "+e.year).toLowerCase().indexOf(q)>=0;
   }).slice(0,200);
 }
+function renderSourcesHtml(sources){
+  if(!Array.isArray(sources)||!sources.length)return "";
+  var links=[];
+  for(var i=0;i<sources.length&&links.length<6;i++){
+    var s=sources[i];
+    if(!s||typeof s.uri!=="string"||!/^https?:\/\//i.test(s.uri))continue;
+    var label=String(s.title||s.uri).replace(/^https?:\/\/(www\.)?/i,"").slice(0,48);
+    links.push('<a class="src-chip" href="'+esc(s.uri)+'" target="_blank" rel="noopener noreferrer">🔗 '+esc(label)+'</a>');
+  }
+  if(!links.length)return "";
+  return '<div class="src-strip"><span class="src-lbl">Google Search sources:</span>'+links.join("")+'</div>';
+}
+window.renderSourcesHtml=renderSourcesHtml;
 async function wAnalyzeDivergence(btn){
-  if(btn){ btn.disabled=true; var old=btn.textContent; btn.textContent="🌀 analyzing…"; }
+  if(btn){ btn.disabled=true; var old=btn.textContent; btn.textContent="🔍 searching & analyzing…"; }
   var w=S.world, R=wRealYear();
   var H=(window.GDATA&&window.GDATA.history)||[];
   var alt=[],avt=[];
@@ -331,16 +348,17 @@ async function wAnalyzeDivergence(btn){
   var divLine=["war","politics","tech","economy","science","culture"].map(function(k){return k+" "+Math.round(w.div[k]||0);}).join(", ");
   var fall="Divergence "+wDivLevel()+" (score "+wDivTotal()+"): "+divLine+". "+alt.length+" events diverted ("+alt.slice(0,3).join("; ")+"...), "+avt.length+" averted. Beyond "+R+", the future is hypothetical — shaped by your "+w.regime+" economy, index "+Math.round(w.idx)+" and mood "+Math.round(w.mood)+".";
   try{
-    var res=await aiText({instruction:aiPrompt("TASK: Analyze how this simulated world diverged from real history. Divergence by domain: "+divLine+". Diverted: "+(alt.join("; ")||"none")+". Averted: "+(avt.join("; ")||"none")+". Sim year "+S.year+", real year "+R+", "+w.regime+" economy, Grand Index "+Math.round(w.idx)+", mood "+Math.round(w.mood)+". Reply with ONLY a JSON object like {\"verdict\":\"2-3 sentences on what changed and what proved inevitable\",\"ripples\":[\"ripple 1\",\"ripple 2\",\"ripple 3\"]} — concrete ripple effects on upcoming/history events."),
-      startWith:"{"});
+    var res=await aiText({instruction:aiPrompt("TASK: Analyze how this simulated world diverged from real history. Divergence by domain: "+divLine+". Diverted: "+(alt.join("; ")||"none")+". Averted: "+(avt.join("; ")||"none")+". Sim year "+S.year+", real year "+R+", "+w.regime+" economy, Grand Index "+Math.round(w.idx)+", mood "+Math.round(w.mood)+". Reply with ONLY a JSON object like {\"verdict\":\"2-3 sentences on what changed and what proved inevitable\",\"ripples\":[\"ripple 1\",\"ripple 2\",\"ripple 3\"]} — concrete ripple effects grounded in real-world history and current affairs."),
+      startWith:"{", endpoint:"/api/ai/timeline", useSearch:true});
     var txt=res.text, fx=JSON.parse(txt.slice(txt.indexOf("{"),txt.lastIndexOf("}")+1));
     var tx=String(fx.verdict||fall).slice(0,600);
     var rp=(fx.ripples||[]).slice(0,4).map(function(x){return String(x).slice(0,160);});
-    w.divAnalysis={text:tx+(rp.length?" Ripples: "+rp.join(" / "):""),age:S.age};
+    var srcs=Array.isArray(res.sources)?res.sources:[];
+    w.divAnalysis={text:tx+(rp.length?" Ripples: "+rp.join(" / "):""),age:S.age,sources:srcs};
     w.aiCalls++;
-  }catch(e){ w.divAnalysis={text:fall,age:S.age}; }
+  }catch(e){ w.divAnalysis={text:fall,age:S.age,sources:[]}; }
   if(btn){ btn.disabled=false; btn.textContent=old; }
-  toast("🔮 Divergence analysis updated.");
+  toast("🔮 Search-grounded divergence analysis updated.");
   if(S&&S.alive){ autosave(); }
   renderTimelineModal(); render();
 }
@@ -617,12 +635,14 @@ function chatWorldContinueTask(tail,need){
   return "NARRATOR, send the NEXT chat message of the chapter — roughly "+Math.min(CHAT_LEG_WORDS,need)+" more words continuing EXACTLY where it left off. No recap, no wrap-up. Last message ended: \""+tail+"\" Reply with ONLY a JSON object like {\"reply\":\"...\",\"memory\":\"...\"}.";
 }
 async function chatAsk(n,task,progressLabel){
-  var streamed="";
+  var streamed="", myGen=lifeGen();
   try{
     var res=await aiText({instruction:aiPrompt(task),startWith:"{",onChunk:function(d){
+      if(myGen!==lifeGen())return;
       streamed+=((d&&d.textChunk)||"");
       var el=$("chatTyping"); if(el)el.textContent="💭 "+progressLabel+" ("+chatWords(streamed).toLocaleString()+" words)…";
     }});
+    if(myGen!==lifeGen())return null;
     return parseChatJSON(res.text);
   }catch(e){ return null; }
 }
@@ -844,6 +864,7 @@ function chatSetRole(n,role){
 }
 function chatArt(kind){
   var n=npcById(chatNpcId); if(!n||!n.alive)return;
+  var myGen=lifeGen();
   if(!artEnabled()){ toast("🎨 AI art is OFF — tap 🎨 Art in the top bar to paint."); return; }
   npcChat(n);
   var st=(S.chatImg&&S.chatImg.style)||"cine", res=(S.chatImg&&S.chatImg.res)||"512x512";
@@ -872,6 +893,7 @@ function chatArt(kind){
   if(kind!=="portrait")neg+=", close-up, closeup, headshot, single person, selfie, face close-up";
   try{
     requestImage({prompt:prompt,negativePrompt:neg,resolution:res,guidanceScale:9,seed:seed}).then(function(r){
+      if(myGen!==lifeGen())return;
       if(!r||!r.dataUrl){
         for(var j=n.chat.length-1;j>=0;j--) if(n.chat[j]&&n.chat[j].pending===my){ n.chat.splice(j,1); break; }
         if(chatNpcId===n.id)renderChatThread();
@@ -900,7 +922,10 @@ function renderTimelineModal(){
   if(dv){ var ds=["war","politics","tech","economy","science","culture"].map(function(k){return k+" "+Math.round(S.world.div[k]||0);}).join(" · ");
     dv.innerHTML='<div class="slot"><div class="grow"><b>🧬 Divergence: '+wDivLevel()+' ('+wDivTotal()+' pts)</b><small>'+esc(ds)+'</small></div></div>'; }
   var an=$("tlAnalysis");
-  if(an&&S.world.divAnalysis){ var g=an.querySelector(".grow"); if(g)g.innerHTML='<b>🔮 Divergence analysis (age '+S.world.divAnalysis.age+')</b><small>'+esc(S.world.divAnalysis.text)+'</small>'; }
+  if(an&&S.world.divAnalysis){
+    var g=an.querySelector(".grow");
+    if(g)g.innerHTML='<b>🔮 Divergence analysis (age '+S.world.divAnalysis.age+')</b><small>'+esc(S.world.divAnalysis.text)+'</small>'+renderSourcesHtml(S.world.divAnalysis.sources);
+  }
   try{ renderDivergenceChart(); }catch(e){}
   tlSearch();
 }

@@ -1,0 +1,36 @@
+// LIFE & LEGACY — Firestore rules for Firebase cloud sync.
+// How to use: Firebase Console > Firestore Database > Rules tab > paste this
+// file (src/firestore.rules) > Publish. Every player may read/write ONLY their
+// own documents (request.auth.uid must equal the userId in the path); the game
+// writes users/{uid}, users/{uid}/saves/* and users/{uid}/meta/achievements.
+// Everything else is denied. Field shapes are intentionally open: the game uses
+// merge-writes and trims old saves to fit, so strict per-field checks would
+// break legitimate syncs — per-owner isolation is the protection that matters.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      match /saves/{slotId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+      match /meta/{metaId} {
+        allow read, write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+    // Hall of Houses (v0.1.04): opt-in cross-player dynasty board. Public to
+    // signed-in players (that's the point of a leaderboard); each player may
+    // only write their own doc. Score must be a sane number.
+    match /hallOfHouses/{userId} {
+      allow read: if request.auth != null;
+      allow create, update: if request.auth != null && request.auth.uid == userId
+        && request.resource.data.ownerUid == userId
+        && request.resource.data.score is number
+        && request.resource.data.score >= 0 && request.resource.data.score < 100000000;
+      allow delete: if false;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

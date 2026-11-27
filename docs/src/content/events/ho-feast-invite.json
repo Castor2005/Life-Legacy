@@ -1,0 +1,49 @@
+{
+ "id": "ho-feast-invite",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "A seat at the high table",
+ "tags": ["houses", "status", "social"],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {"p": "houses", "truthy": true},
+   {"p": "prestige", "gte": 20}
+  ]
+ },
+ "text": "A sealed invitation arrives: a Great House holds its winter feast and your name is on the seating chart — near enough to the salt to matter.",
+ "choices": [
+  {
+   "label": "Attend in your best",
+   "hint": "prestige+, -$500",
+   "effects": [
+    {"op": "set", "path": "money", "value": "max(0,s.money-500)"},
+    {"op": "set", "path": "prestige", "value": "s.prestige+12"},
+    {"op": "stat", "key": "social", "delta": "4"},
+    {"op": "outcome", "tpl": "You toast the host in the old words and mean them. Doors open that money alone never could. +12 prestige."}
+   ]
+  },
+  {
+   "label": "Send regrets and a gift",
+   "hint": "safe, -$150",
+   "effects": [
+    {"op": "set", "path": "money", "value": "max(0,s.money-150)"},
+    {"op": "set", "path": "prestige", "value": "s.prestige+3"},
+    {"op": "outcome", "tpl": "Silver candlesticks, no card. They notice the taste, if not the absence. +3 prestige."}
+   ]
+  },
+  {
+   "label": "Snub them openly",
+   "hint": "risky",
+   "effects": [
+    {"op": "chance", "p": "0.4", "then": [
+     {"op": "set", "path": "fame", "value": "min(100,s.fame+6)"},
+     {"op": "outcome", "tpl": "Your absence becomes the gossip of the feast — played exactly right, it reads as power. +6 fame."}
+    ], "else": [
+     {"op": "set", "path": "prestige", "value": "max(0,s.prestige-15)"},
+     {"op": "outcome", "tpl": "Played wrong. The slight is remembered at every table that matters. −15 prestige."}
+    ]}
+   ]
+  }
+ ]
+}

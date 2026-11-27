@@ -1,0 +1,82 @@
+{
+ "id": "co-starhire",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "The superstar applicant",
+ "tags": [
+  "adult-life",
+  "company",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "company",
+  "truthy": true
+ },
+ "text": "A resume made of gold lands on {{s.company.name}}'s desk: the best in the field, wanting double the wage.",
+ "choices": [
+  {
+   "label": "Pay for the best",
+   "hint": "cash-, staff+",
+   "effects": [
+    {
+     "op": "let",
+     "name": "c",
+     "expr": "min(8000,s.company.cash+s.money)"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.company.cash>=c"
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "company.cash",
+       "value": "s.company.cash-(c)"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(c)"
+      }
+     ]
+    },
+    {
+     "op": "set",
+     "path": "company.employees",
+     "value": "s.company.employees+(2)"
+    },
+    {
+     "op": "set",
+     "path": "company.morale",
+     "value": "clamp(s.company.morale+6)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "They sign. The whole office levels up around them."
+    }
+   ]
+  },
+  {
+   "label": "Grow your own",
+   "hint": "morale+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "company.morale",
+     "value": "clamp(s.company.morale+5)"
+    },
+    {
+     "op": "money",
+     "amount": "1000"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Promote from within. Cheaper, warmer, nearly as good."
+    }
+   ]
+  }
+ ]
+}

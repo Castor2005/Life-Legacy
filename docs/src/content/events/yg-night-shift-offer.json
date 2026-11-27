@@ -1,0 +1,51 @@
+{
+ "id": "yg-night-shift-offer",
+ "minAge": 20,
+ "maxAge": 29,
+ "title": "Night differential",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Nights pay 20 percent more. Sleep pays nothing.",
+ "choices": [
+  {
+   "label": "Take nights a year",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "5200"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-(5)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A year of nights banks 5,200 extra. You sleep at dawn like a vampire king."
+    }
+   ]
+  },
+  {
+   "label": "Protect the rhythm",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Days kept. Energy kept. Money: enough."
+    }
+   ]
+  }
+ ]
+}

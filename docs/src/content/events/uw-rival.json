@@ -1,0 +1,150 @@
+{
+ "id": "uw-rival",
+ "minAge": 18,
+ "maxAge": 70,
+ "title": "Marked corners",
+ "tags": [
+  "adult-life",
+  "underworld",
+  "crime",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "all": [
+   {
+    "p": "underworld",
+    "truthy": true
+   },
+   {
+    "p": "underworld.territory",
+    "gte": 5
+   }
+  ]
+ },
+ "text": "A rival crew tags over {{s.firstName}}'s corners downtown. Their lieutenant is asking who runs this block.",
+ "choices": [
+  {
+   "label": "Take it back",
+   "hint": "fitness check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "any": [
+       {
+        "p": "stats.fitness",
+        "gt": 50
+       },
+       {
+        "p": "underworld.rank",
+        "gte": 3
+       }
+      ]
+     },
+     "then": [
+      {
+       "op": "set",
+       "path": "underworld.territory",
+       "value": "min(100,s.underworld.territory+5)"
+      },
+      {
+       "op": "set",
+       "path": "underworld.rep",
+       "value": "s.underworld.rep+(4)"
+      },
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(5)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "A short, sharp night. Your tags fly again. +5% territory."
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-(12)"
+      },
+      {
+       "op": "set",
+       "path": "underworld.territory",
+       "value": "max(0,s.underworld.territory-5)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You get jumped by four of them. Hospital, then humility. -5% territory."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Negotiate a split",
+   "hint": "social check",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "p": "stats.social",
+      "gt": 55
+     },
+     "then": [
+      {
+       "op": "let",
+       "name": "c",
+       "expr": "400+s.underworld.rank*300"
+      },
+      {
+       "op": "money",
+       "amount": "c"
+      },
+      {
+       "op": "set",
+       "path": "underworld.territory",
+       "value": "max(0,s.underworld.territory-3)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "You carve the map over whiskey. +${{c}} tribute, -3% turf. Peace, priced."
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "underworld.rep",
+       "value": "max(0,s.underworld.rep-3)"
+      },
+      {
+       "op": "outcome",
+       "tpl": "They laugh you out of the room. Word travels."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "label": "Back down",
+   "hint": "lose turf",
+   "effects": [
+    {
+     "op": "set",
+     "path": "underworld.territory",
+     "value": "max(0,s.underworld.territory-5)"
+    },
+    {
+     "op": "set",
+     "path": "underworld.rep",
+     "value": "max(0,s.underworld.rep-2)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You yield the block. Living to fight later is also a strategy."
+    }
+   ]
+  }
+ ]
+}

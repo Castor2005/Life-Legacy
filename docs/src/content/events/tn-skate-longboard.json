@@ -1,0 +1,49 @@
+{
+ "id": "tn-skate-longboard",
+ "minAge": 14,
+ "maxAge": 17,
+ "title": "Longboard commute",
+ "tags": [
+  "teen",
+  "fitness"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "School is two miles. The longboard calls.",
+ "choices": [
+  {
+   "label": "Ride daily",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Carves, hills, arrived awake. Commute: solved beautifully."
+    }
+   ]
+  },
+  {
+   "label": "Rain bus pass",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(50)"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bus pass for storms. Dry and punctual."
+    }
+   ]
+  }
+ ]
+}

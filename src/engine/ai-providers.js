@@ -1,13 +1,14 @@
 /* LIFE & LEGACY — engine/ai-providers.js
  * AI provider registry: text generation behind one routable adapter.
  *
- * WHY: the game must be both (A) drivable by the most advanced AI the player
- * can reach, and (B) fully playable with no AI at all. Every game system
- * already calls aiText() with a deterministic fallback; this file decides
- * WHERE aiText() goes: the built-in Perchance plugin (default, zero config),
- * an optional OpenAI-compatible endpoint (OpenAI, OpenRouter, local bridges —
- * key + model + base URL, yours to configure), chained so a dead provider
- * falls through to the next instead of wedging the game.
+ * Chain (first success wins, never wedges the game):
+ *   1. gemini  — server-side Gemini 4 Hydrogen + Google Search grounding,
+ *      via same-origin /api/ai/* (only attempted when the probe succeeds;
+ *      dormant on Perchance, Pages, and file:// builds).
+ *   2. perchance — the built-in plugin (zero config; the live game's engine).
+ *   3. openai  — optional OpenAI-compatible endpoint (BYOK key in localStorage).
+ * Every game system already calls aiText() with a deterministic fallback, so a
+ * dead provider only costs one fast failure before the next leg or the fallback.
  *
  * Privacy: custom-provider keys live in localStorage only, are never logged,
  * and the settings UI states exactly where your words go. Images always use
@@ -19,16 +20,16 @@
  */
 "use strict";
 window.LL = (window.LL || { v: 1, files: [] });
-/* Config shape: {active:"perchance"|"openai", openai:{base,model,key}} */
+/* Config shape: {active:"gemini"|"perchance"|"openai", openai:{base,model,key}} */
 var AI_CFG_KEY = "ll_ai_cfg";
 function aiCfg() {
-  var d = { active: "perchance", openai: { base: "https://api.openai.com/v1", model: "gpt-4o-mini", key: "" } };
+  var d = { active: "gemini", openai: { base: "https://api.openai.com/v1", model: "gpt-4o-mini", key: "" } };
   try {
     var raw = window.localStorage && localStorage.getItem(AI_CFG_KEY);
     if (raw) {
       var c = JSON.parse(raw);
       if (c && typeof c === "object") {
-        if (c.active === "openai" || c.active === "perchance") d.active = c.active;
+        if (c.active === "perchance" || c.active === "openai" || c.active === "gemini") d.active = c.active;
         if (c.openai && typeof c.openai === "object") {
           if (typeof c.openai.base === "string" && c.openai.base) d.openai.base = c.openai.base.slice(0, 120);
           if (typeof c.openai.model === "string" && c.openai.model) d.openai.model = c.openai.model.slice(0, 80);
@@ -40,22 +41,118 @@ function aiCfg() {
   return d;
 }
 function aiCfgSave(cfg) {
-  try { if (window.localStorage) localStorage.setItem(AI_CFG_KEY, JSON.stringify(cfg)); } catch (e) {}
-  try { renderAiProvider(); } catch (e) {}
+  try { if (window.localStorage && cfg) localStorage.setItem(AI_CFG_KEY, JSON.stringify(cfg)); } catch (e) {}
+  try { renderAiProvider(); } catch (e2) {}
+}
+/* ---- server probe: is a Gemini backend reachable? (cached per session) ---- */
+var serverAiProbe = null, serverAiFlight = null;
+function serverAiOk() {
+  if (serverAiProbe !== null) return Promise.resolve(serverAiProbe);
+  if (serverAiFlight) return serverAiFlight;
+  serverAiFlight = (async function () {
+    try {
+      if (typeof window === "undefined" || typeof window.fetch !== "function") return false;
+      var proto = (window.location && window.location.protocol) || "";
+      if (proto === "file:") return false; /* static/file builds: no backend */
+      var ctrl = null;
+      try { ctrl = new AbortController(); } catch (e) { ctrl = null; }
+      var timer = setTimeout(function () { try { if (ctrl) ctrl.abort(); } catch (e) {} }, 8000);
+      var res = null;
+      try { res = await fetch("/api/ai/status", { cache: "no-store", signal: ctrl ? ctrl.signal : undefined }); }
+      finally { try { clearTimeout(timer); } catch (e) {} }
+      return !!(res && res.ok);
+    } catch (e) { return false; }
+  })().then(function (v) { serverAiProbe = !!v; serverAiFlight = null; return serverAiProbe; },
+    function () { serverAiProbe = false; serverAiFlight = null; return false; });
+  return serverAiFlight;
 }
 function aiProviderChain() {
-  /* Ordered provider ids to try. Active first, then the other if configured. */
+  /* Sync snapshot of the configured order (probe state may add gemini first). */
   var cfg = aiCfg(), chain = [];
-  function openaiReady() { return !!(cfg.openai && cfg.openai.key && cfg.openai.base && cfg.openai.model); }
-  if (cfg.active === "openai") { if (openaiReady()) chain.push("openai"); chain.push("perchance"); }
-  else { chain.push("perchance"); if (openaiReady()) chain.push("openai"); }
+  if (serverAiProbe) chain.push("gemini");
+  if (cfg.active === "openai") { if (openaiReady(cfg)) chain.push("openai"); chain.push("perchance"); }
+  else if (cfg.active === "perchance") { chain.push("perchance"); if (openaiReady(cfg)) chain.push("openai"); }
+  else { if (serverAiProbe) chain.push("gemini"); chain.push("perchance"); if (openaiReady(cfg)) chain.push("openai"); }
   return chain;
+}
+function openaiReady(cfg) {
+  cfg = cfg || aiCfg();
+  return !!(cfg.openai && cfg.openai.key && cfg.openai.base && cfg.openai.model);
 }
 function aiProviderStatus() {
   var cfg = aiCfg();
-  var openaiReady = !!(cfg.openai && cfg.openai.key);
-  return { active: cfg.active, perchance: true, openaiReady: openaiReady, model: cfg.openai.model, chain: aiProviderChain() };
+  return { active: cfg.active, geminiServer: serverAiProbe, perchance: true,
+    openaiReady: openaiReady(cfg), model: cfg.openai.model, chain: aiProviderChain() };
 }
+function aiInstrText(instr) {
+  if (typeof instr === "string") return instr;
+  if (Array.isArray(instr)) {
+    for (var i = 0; i < instr.length; i++) {
+      if (typeof instr[i] === "string") return instr[i];
+    }
+    return "";
+  }
+  return String(instr == null ? "" : instr);
+}
+
+/* ---- Server-side Gemini 4 Hydrogen leg ---- */
+function aiGeminiText(opts, ms, onStop) {
+  return new Promise(function (resolve, reject) {
+    var ctrl = null;
+    try { ctrl = new AbortController(); } catch (e) { ctrl = null; }
+    if (onStop && ctrl) onStop(function () { try { ctrl.abort(); } catch (e) {} });
+    var timer = setTimeout(function () {
+      if (ctrl) { try { ctrl.abort(); } catch (e) {} }
+    }, Math.max(5000, ms || 90000));
+    function done(ok, v) {
+      try { clearTimeout(timer); } catch (e) {}
+      ok ? resolve(v) : reject(v);
+    }
+
+    (async function () {
+      try {
+        var prompt = aiInstrText(opts && opts.instruction);
+        var startWith = (opts && typeof opts.startWith === "string") ? opts.startWith : "";
+        var endpoint = (opts && typeof opts.endpoint === "string" && opts.endpoint.indexOf("/api/ai/") === 0)
+          ? opts.endpoint
+          : "/api/ai/generate";
+        var useSearch = !!(opts && opts.useSearch);
+
+        var res = await fetch(endpoint, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ prompt: prompt, startWith: startWith, useSearch: useSearch }),
+          signal: ctrl ? ctrl.signal : undefined
+        });
+
+        var bodyText = "";
+        try { bodyText = await res.text(); } catch (e) {}
+        var data = null;
+        try { data = JSON.parse(bodyText); } catch (e) { data = null; }
+
+        if (!res.ok) {
+          var errMsg = (data && data.error) ? data.error : ("AI endpoint " + res.status + " " + bodyText.slice(0, 140));
+          var err = new Error(errMsg);
+          if (data && data.code) err.code = data.code;
+          return done(false, err);
+        }
+
+        var out = String((data && data.text) || "");
+        var sources = Array.isArray(data && data.sources) ? data.sources : [];
+        if (!out) return done(false, new Error("Gemini returned an empty reply."));
+        try {
+          if (opts && typeof opts.onChunk === "function") {
+            opts.onChunk({ textChunk: out, fullTextSoFar: out });
+          }
+        } catch (e) {}
+        return done(true, { text: out, sources: sources });
+      } catch (e) {
+        return done(false, e && e.name === "AbortError" ? new Error("AI request timed out") : e);
+      }
+    })();
+  });
+}
+
 /* ---- Perchance leg (built-in plugin, zero config) ---- */
 function aiPerchanceText(opts, ms, onStop) {
   return new Promise(function (resolve, reject) {
@@ -69,11 +166,11 @@ function aiPerchanceText(opts, ms, onStop) {
     Promise.resolve(p).then(resolve, reject);
   });
 }
+
 /* ---- OpenAI-compatible leg (custom endpoint, BYOK) ----
  * opts passthrough: instruction (string, or [text, Blob] vision), startWith,
  * onChunk({textChunk, fullTextSoFar}). Non-streaming POST; onChunk fires once
- * with the full text so typing indicators keep working (coarser than plugin
- * streaming — a future upgrade can flip stream:true + SSE). */
+ * with the full text so typing indicators keep working. */
 function aiOpenaiText(opts, ms, onStop) {
   var cfg = aiCfg().openai;
   return new Promise(function (resolve, reject) {
@@ -82,14 +179,6 @@ function aiOpenaiText(opts, ms, onStop) {
     if (onStop) onStop(function () { try { ctrl.abort(); } catch (e) {} });
     var timer = setTimeout(function () { try { ctrl.abort(); } catch (e) {} }, Math.max(5000, ms || 90000));
     function done(ok, v) { try { clearTimeout(timer); } catch (e) {} ok ? resolve(v) : reject(v); }
-    function instrText(instr) {
-      if (typeof instr === "string") return instr;
-      if (Array.isArray(instr)) {
-        for (var i = 0; i < instr.length; i++) if (typeof instr[i] === "string") return instr[i];
-        return "";
-      }
-      return String(instr == null ? "" : instr);
-    }
     function blobToDataUrl(blob) {
       return new Promise(function (res, rej) {
         try { var fr = new FileReader(); fr.onload = function () { res(fr.result); }; fr.onerror = rej; fr.readAsDataURL(blob); }
@@ -101,7 +190,7 @@ function aiOpenaiText(opts, ms, onStop) {
         var instr = (opts && opts.instruction !== undefined) ? opts.instruction : "";
         var startWith = (opts && typeof opts.startWith === "string") ? opts.startWith : "";
         var content = [];
-        var txt = instrText(instr) + (startWith ? "\n\nBegin your reply with exactly: " + startWith : "");
+        var txt = aiInstrText(instr) + (startWith ? "\n\nBegin your reply with exactly: " + startWith : "");
         content.push({ type: "text", text: txt });
         if (Array.isArray(instr)) {
           for (var i = 0; i < instr.length; i++) {
@@ -135,66 +224,85 @@ function aiOpenaiText(opts, ms, onStop) {
     })();
   });
 }
-/* Chain call used by ai-core's aiText: tries providers in order, resolves
- * {provider, result} with the FIRST success. Stoppable: .stop() aborts the
- * in-flight leg and poisons the rest of the chain. Never resolves empty. */
+
+/* ---- Chain: gemini (when hosted) → configured engine → other → throw ---- */
 function aiProviderText(opts, ms) {
-  var chain = aiProviderChain();
   var stopped = false, curStop = null;
   function reg(fn) { curStop = fn; }
   var p = (async function () {
-    var lastErr = null;
-    for (var i = 0; i < chain.length; i++) {
+    if (stopped) throw new Error("stopped");
+    var errs = [], legs = [];
+    try { if (await serverAiOk()) legs.push("gemini"); } catch (e) {}
+    var cfg = aiCfg();
+    if (cfg.active === "openai") { if (openaiReady(cfg)) legs.push("openai"); legs.push("perchance"); }
+    else { legs.push("perchance"); if (openaiReady(cfg)) legs.push("openai"); }
+    for (var i = 0; i < legs.length; i++) {
       if (stopped) throw new Error("stopped");
       try {
-        var r = chain[i] === "openai"
-          ? await aiOpenaiText(opts, ms, reg)
+        var r = legs[i] === "gemini" ? await aiGeminiText(opts, ms, reg)
+          : legs[i] === "openai" ? await aiOpenaiText(opts, ms, reg)
           : await aiPerchanceText(opts, ms, reg);
         if (stopped) throw new Error("stopped");
-        return { provider: chain[i], result: r };
-      } catch (e) { lastErr = e; }
+        return { provider: legs[i], result: r };
+      } catch (e) { errs.push(legs[i] + ": " + ((e && e.message) || e)); }
     }
-    throw lastErr || new Error("no AI provider available");
+    throw new Error(errs.length ? errs.join(" | ") : "no AI provider available");
   })();
-  p.stop = function () { stopped = true; try { if (curStop) curStop(); } catch (e) {} };
+  p.stop = function () {
+    stopped = true;
+    try { if (curStop) curStop(); } catch (e) {}
+  };
   return p;
 }
-/* ---- settings UI (Help modal section) ---- */
+
+/* ---- Settings UI (Help modal section) ---- */
 function renderAiProvider() {
   try {
-    var st = aiProviderStatus();
-    var dot = $("aiProvDot"), sel = $("aiProvSel"), row = $("aiProvOpenai");
-    if (dot) {
-      var label = st.active === "openai" ? ("custom endpoint" + (st.openaiReady ? "" : " (no key — will fall back)")) : "Perchance built-in";
-      dot.textContent = "🤖 AI engine: " + label;
-    }
-    if (sel && String(sel.value) !== st.active) sel.value = st.active;
     var cfg = aiCfg();
-    if (row) row.style.display = (st.active === "openai") ? "grid" : "none";
+    var sel = $("aiProvSel");
+    if (sel) { try { sel.value = cfg.active; } catch (e) {} }
+    var row = $("aiProvOpenai");
+    if (row) row.style.display = (cfg.active === "openai") ? "grid" : "none";
     if ($("aiProvBase") && document.activeElement !== $("aiProvBase")) $("aiProvBase").value = cfg.openai.base;
     if ($("aiProvModel") && document.activeElement !== $("aiProvModel")) $("aiProvModel").value = cfg.openai.model;
-    if ($("aiProvKey") && document.activeElement !== $("aiProvKey") && !$("aiProvKey").value) $("aiProvKey").placeholder = cfg.openai.key ? "key saved ●●●● (enter a new one to replace)" : "sk-… / or-openrouter key";
+    if ($("aiProvKey") && document.activeElement !== $("aiProvKey") && !$("aiProvKey").value) $("aiProvKey").placeholder = cfg.openai.key ? "•••••••• (saved)" : "sk-…";
+    var label = cfg.active === "openai" ? "Custom endpoint" : cfg.active === "perchance" ? "Perchance built-in" : "Server Gemini (with fallbacks)";
+    var dot = $("aiProvDot");
+    if (dot) dot.textContent = "🤖 AI engine: " + label;
+    try {
+      var proto = (window.location && window.location.protocol) || "";
+      if (proto !== "file:" && typeof fetch === "function") {
+        fetch("/api/ai/status").then(function (r) { return r.ok ? r.json() : null; }).then(function (st) {
+          if (!dot) return;
+          if (st && st.configured === false) {
+            dot.textContent = "🤖 AI engine: " + label + " (server key missing — Gemini leg parked)";
+          } else if (st) {
+            dot.textContent = "🤖 AI engine: Gemini 4 Hydrogen (Google Search Grounding enabled)";
+          }
+        }).catch(function () {});
+      }
+    } catch (e) {}
+    if (typeof renderGroundingBox === "function") renderGroundingBox();
   } catch (e) {}
 }
+
 async function aiProviderTest() {
   var el = $("aiProvTestRes");
   function say(t) { try { if (el) el.textContent = t; } catch (e) {} }
-  say("…asking each engine one short question…");
-  var cfg = aiCfg(), report = [];
+  say("…testing the active AI chain…");
   try {
-    var p = aiPerchanceText({ instruction: "Reply with exactly: PONG" }, 60000);
-    var r = await p;
-    report.push("Perchance: " + (/PONG/.test((r && r.text) || "") ? "OK" : "answered (no PONG)"));
-  } catch (e) { report.push("Perchance: FAIL (" + String((e && e.message) || e).slice(0, 80) + ")"); }
-  if (cfg.openai && cfg.openai.key) {
-    try {
-      var q = await aiOpenaiText({ instruction: "Reply with exactly: PONG" }, 60000);
-      var t = (q && q.text) || "";
-      report.push("Custom (" + cfg.openai.model + "): " + (/PONG/.test(t) ? "OK" : "answered (no PONG): " + t.slice(0, 60)));
-    } catch (e) { report.push("Custom: FAIL (" + String((e && e.message) || e).slice(0, 90) + ")"); }
-  } else report.push("Custom: no key saved — skipped");
-  say(report.join(" · "));
-  try { toast("🤖 " + report.join(" | ")); } catch (e) {}
+    var w = await aiProviderText({ instruction: "Reply with exactly: PONG" }, 60000);
+    var txt = String((w.result && w.result.text) || "");
+    var msg = /PONG/i.test(txt)
+      ? "✅ " + w.provider + ": OK (connected)"
+      : (w.provider + " responded — " + txt.slice(0, 80));
+    say(msg);
+    try { toast("🤖 " + msg); } catch (e) {}
+  } catch (e) {
+    var errMsg = "AI chain: " + String((e && e.message) || e).slice(0, 200);
+    say(errMsg);
+    try { toast("⚠️ " + errMsg); } catch (e2) {}
+  }
 }
 
 LL.files.push("ai-providers"); /* end-of-file registration: counts as loaded only after this file fully ran */
