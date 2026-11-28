@@ -1,0 +1,50 @@
+{
+ "id": "zxad-pta-054",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Maya judges the talent show",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The school group chat never rests. The bake sale industrial complex demands tribute.",
+ "choices": [
+  {
+   "label": "Chair the thing",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(8)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Maya applauds your courage. The fundraiser triples its goal."
+    }
+   ]
+  },
+  {
+   "label": "Quiet helper",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Setup crew, no spotlight. Maya notices anyway."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "zxmd-nest-049",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Empty nest week one",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Quiet dinners. Loud thoughts. The house echoes with their absence. The spare room becomes a gym.",
+ "choices": [
+  {
+   "label": "Reclaim a room",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The study rises where posters hung. Empty nest week one: survived."
+    }
+   ]
+  },
+  {
+   "label": "Visit monthly",
+   "hint": "family+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sunday calls, surprise visits. The nest stretches, never breaks."
+    }
+   ]
+  }
+ ]
+}

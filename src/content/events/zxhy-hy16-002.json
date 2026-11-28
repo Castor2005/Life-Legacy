@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy16-002",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "The web arrives at work",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 1993
+   },
+   {
+    "p": "year",
+    "lte": 1997
+   }
+  ]
+ },
+ "text": "Modems screech their song. The world fits through a phone line. You feel the hinge of history swing.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The web arrives lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The web arrives observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

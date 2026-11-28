@@ -1,0 +1,49 @@
+{
+ "id": "zxyg-apart-022",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "First apartment has paper walls",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The lease is twelve pages of adventure. Mira lives two floors up.",
+ "choices": [
+  {
+   "label": "Fix it up",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "First apartment becomes home. Mira helps paint for pizza."
+    }
+   ]
+  },
+  {
+   "label": "Embrace the chaos",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The has paper walls becomes a running joke. Character: built."
+    }
+   ]
+  }
+ ]
+}

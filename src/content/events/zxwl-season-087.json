@@ -1,0 +1,45 @@
+{
+ "id": "zxwl-season-087",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "First snow ritual",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Light slants differently. Everything glows. Noah declares it the best one yet.",
+ "choices": [
+  {
+   "label": "Mark the day",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "First snow ritual with Noah. Traditions start exactly like this."
+    }
+   ]
+  },
+  {
+   "label": "Photograph it",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Golden hour captured. First snow framed above the mantel."
+    }
+   ]
+  }
+ ]
+}

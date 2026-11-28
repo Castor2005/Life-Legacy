@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-066",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Long division group project",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Desks in a circle. Something is about to happen. Idris sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Long division bends to your will. Idris copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Idris",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Idris gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

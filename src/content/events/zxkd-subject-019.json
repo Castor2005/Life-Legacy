@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-019",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Spelling bees group project",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The classroom smells of glue and ambition. Koa sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Spelling bees bends to your will. Koa copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Koa",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Koa gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "zxbb-night-002",
+ "minAge": 0,
+ "maxAge": 2,
+ "title": "Sleep regression week",
+ "tags": [
+  "baby",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Nobody sleeps. Everyone runs on love and coffee. You trade shifts like a night crew.",
+ "choices": [
+  {
+   "label": "Rock and hum",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The old songs still work. Sleep finally lands like snow."
+    }
+   ]
+  },
+  {
+   "label": "Tag-team shifts",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shifts assigned, earplugs distributed. Parenting is logistics."
+    }
+   ]
+  }
+ ]
+}

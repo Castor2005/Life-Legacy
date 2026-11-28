@@ -1,0 +1,55 @@
+{
+ "id": "zxbm-spirit-054",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Fasting month morning",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Stillness teaches loudly. Callum walks the path beside you.",
+ "choices": [
+  {
+   "label": "Go deeper",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "9"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fasting month reshapes the weeks. Callum notices the calm first."
+    }
+   ]
+  },
+  {
+   "label": "Serve others",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bowls filled, floors swept. Fasting month lives in the hands."
+    }
+   ]
+  }
+ ]
+}

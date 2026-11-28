@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-screen-063",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Vision check season",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The gown, the wait, the thumbs-up. Fifty is when the manual gets serious. Dr. Yilmaz is brisk and kind.",
+ "choices": [
+  {
+   "label": "Do it all",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Vision check clear. The season bring relief and a sticker."
+    }
+   ]
+  },
+  {
+   "label": "One change",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Walking daily, smirking at elevators. Vision check approves."
+    }
+   ]
+  }
+ ]
+}

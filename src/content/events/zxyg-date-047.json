@@ -1,0 +1,70 @@
+{
+ "id": "zxyg-date-047",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Vera bookstore browse",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "Nervous laughter, good signs.",
+ "choices": [
+  {
+   "label": "Ask them out",
+   "hint": "love+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-3"
+      },
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Vera says yes. The bookstore browse becomes a story."
+    }
+   ]
+  },
+  {
+   "label": "Slow burn",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Friends first, maybe more. Vera likes the pace."
+    }
+   ]
+  }
+ ]
+}

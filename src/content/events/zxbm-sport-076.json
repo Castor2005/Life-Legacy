@@ -1,0 +1,68 @@
+{
+ "id": "zxbm-sport-076",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "rowing dawn club",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The learning curve is steep and fun. Nico is annoyingly better at this.",
+ "choices": [
+  {
+   "label": "Train weekly",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.25",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-2"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "rowing clicks. Nico demands a rematch you will win."
+    }
+   ]
+  },
+  {
+   "label": "Social league",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Beers after rowing. Nico brings the whole crew."
+    }
+   ]
+  }
+ ]
+}

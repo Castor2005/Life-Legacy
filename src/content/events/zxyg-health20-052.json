@@ -1,0 +1,54 @@
+{
+ "id": "zxyg-health20-052",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Back revolt at 24",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Web searches spiral at 2am.",
+ "choices": [
+  {
+   "label": "See a doctor",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Treatable, fixable, fine. Back revolt retreats before the pros."
+    }
+   ]
+  },
+  {
+   "label": "Lifestyle overhaul",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sleep, greens, walks. Back revolt meets its match: routine."
+    }
+   ]
+  }
+ ]
+}

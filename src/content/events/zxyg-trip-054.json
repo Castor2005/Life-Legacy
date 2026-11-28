@@ -1,0 +1,58 @@
+{
+ "id": "zxyg-trip-054",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Cape Town the long way",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The map is more suggestion than plan. Reyes navigates by snacks.",
+ "choices": [
+  {
+   "label": "Splurge once",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cape Town at sunset. Reyes takes the photo you'll frame."
+    }
+   ]
+  },
+  {
+   "label": "Budget wizard",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Street food, free museums, perfect days. Cape Town done right."
+    }
+   ]
+  }
+ ]
+}

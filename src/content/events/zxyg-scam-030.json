@@ -1,0 +1,49 @@
+{
+ "id": "zxyg-scam-030",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "The timeshare tour pitch",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The returns defy mathematics. Maya almost fell for it last year.",
+ "choices": [
+  {
+   "label": "Smell the rat",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Blocked, reported, warned Maya. Scam radar: calibrated."
+    }
+   ]
+  },
+  {
+   "label": "Lose a little",
+   "hint": "lesson",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tuition paid to experience: $120. The timeshare tour pitch never again."
+    }
+   ]
+  }
+ ]
+}

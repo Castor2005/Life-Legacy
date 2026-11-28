@@ -59,8 +59,13 @@ function renderSuitors(){
       var s=st[i], sym=s.sex==="female"?"♀":"♂";
       var askLbl=taken?("💘 Leave "+esc(S.relationships.partner.name.split(" ")[0])+" for "+esc(s.name.split(" ")[0])):"💘 Ask out";
       var casOk=S.age>=16;
-      h+='<div class="slot" style="margin-bottom:6px"><div class="grow"><b>'+sym+" "+esc(s.name)+", "+s.age+'</b><small>'+esc(s.vibe)+'</small></div>'
-        +'<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px">'
+      var face=""; try{ face=npcFaceHTML(s.name,true,true); }catch(e){}
+      var vibeLines=String(s.vibe||"").split(/[·•]/).map(function(x){return x.trim();}).filter(Boolean);
+      h+='<div class="slot suitface" style="margin-bottom:6px;text-align:center"><div class="grow">'+face
+        +'<b class="suitname">'+sym+" "+esc(s.name)+", "+s.age+'</b>'
+        +vibeLines.slice(0,3).map(function(v){return '<small class="suitvibe">'+esc(v)+'</small>';}).join("")
+        +'</div>'
+        +'<div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:6px;justify-content:center">'
         +'<button class="mini" data-sidx="'+i+'" data-sact="ask">'+askLbl+'</button>'
         +(casOk?'<button class="mini" data-sidx="'+i+'" data-sact="cas">🔥 Keep casual</button>':'<button class="mini" data-sidx="'+i+'" data-sact="casyoung" title="Casual flings unlock at 16">🔥 16+</button>')
         +'</div></div>';

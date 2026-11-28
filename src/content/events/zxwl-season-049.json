@@ -1,0 +1,45 @@
+{
+ "id": "zxwl-season-049",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Equinox dawn ritual",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Light slants differently. Everything glows. Marco declares it the best one yet.",
+ "choices": [
+  {
+   "label": "Mark the day",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Equinox dawn ritual with Marco. Traditions start exactly like this."
+    }
+   ]
+  },
+  {
+   "label": "Photograph it",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Golden hour captured. Equinox dawn framed above the mantel."
+    }
+   ]
+  }
+ ]
+}

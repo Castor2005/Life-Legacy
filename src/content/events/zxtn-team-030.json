@@ -1,0 +1,68 @@
+{
+ "id": "zxtn-team-030",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Swim tryouts",
+ "tags": [
+  "teen",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Cleats, chalk, loud music. Coach Yilmaz runs a tight ship.",
+ "choices": [
+  {
+   "label": "Start every game",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Coach Yilmaz nods once. That nod means everything."
+    }
+   ]
+  },
+  {
+   "label": "Sixth-player energy",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Loudest cheers, best snacks. Teams need hearts too."
+    }
+   ]
+  }
+ ]
+}

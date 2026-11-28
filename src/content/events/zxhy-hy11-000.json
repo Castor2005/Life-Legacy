@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy11-000",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Computer dawn at school",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 1981
+   },
+   {
+    "p": "year",
+    "lte": 1985
+   }
+  ]
+ },
+ "text": "Beige boxes hum on desks. The future has a floppy drive. Everyone will remember where they were.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Computer dawn lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Computer dawn observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-008",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Nadia's dinner party dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Candles lit, playlist perfect. Your partner Reyes charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Nadia raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Nadia\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nadia opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

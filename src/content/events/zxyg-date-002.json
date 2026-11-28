@@ -1,0 +1,70 @@
+{
+ "id": "zxyg-date-002",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Omar third-date cooking",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "Your friends demand updates hourly.",
+ "choices": [
+  {
+   "label": "Ask them out",
+   "hint": "love+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "7"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-1"
+      },
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Omar says yes. The third-date cooking becomes a story."
+    }
+   ]
+  },
+  {
+   "label": "Slow burn",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Friends first, maybe more. Omar likes the pace."
+    }
+   ]
+  }
+ ]
+}

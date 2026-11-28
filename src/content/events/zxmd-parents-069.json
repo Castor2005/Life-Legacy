@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-parents-069",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Both parents forget the stove twice",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Love becomes logistics. The roles reverse gently, then all at once. The will gets updated calmly.",
+ "choices": [
+  {
+   "label": "Step up",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Both parents lean on you now. forget the stove twice — handled with grace."
+    }
+   ]
+  },
+  {
+   "label": "Organize care",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Aides, schedules, check-ins. Both parents stay safe and proud."
+    }
+   ]
+  }
+ ]
+}

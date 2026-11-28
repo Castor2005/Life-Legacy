@@ -1,0 +1,49 @@
+{
+ "id": "zxad-reunion-056",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "The tenth high school reunion",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Name tags, old photos, new wrinkles. Anika organized the whole thing and looks tired but proud.",
+ "choices": [
+  {
+   "label": "Work the room",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Every table gets a story. Anika declares you the reunion MVP."
+    }
+   ]
+  },
+  {
+   "label": "Find your people",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Anika\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "The old circle reforms instantly. Anika never really left."
+    }
+   ]
+  }
+ ]
+}

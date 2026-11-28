@@ -1,0 +1,57 @@
+{
+ "id": "zxpf-funny-078",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "accountant fire drill",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Someone is filming. Everyone poses. At the studio, legend is born.",
+ "choices": [
+  {
+   "label": "Lean into it",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The accountant fire drill enters company lore. You star in it."
+    }
+   ]
+  },
+  {
+   "label": "Play it cool",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Calm amid chaos. At the studio, they remember composure."
+    }
+   ]
+  }
+ ]
+}

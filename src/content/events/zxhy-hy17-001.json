@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy17-001",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Millennium fever at work",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 1998
+   },
+   {
+    "p": "year",
+    "lte": 1999
+   }
+  ]
+ },
+ "text": "Two thousand approaches. Parties planned; computers patched. The old folks say: told you so.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Millennium fever lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Millennium fever observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

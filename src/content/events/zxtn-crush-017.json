@@ -1,0 +1,86 @@
+{
+ "id": "zxtn-crush-017",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Koa notices you",
+ "tags": [
+  "teen",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your locker suddenly needs visiting ten times a day.",
+ "choices": [
+  {
+   "label": "Say hi first",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "3"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Koa smiles back. The hallway glows a little brighter."
+    }
+   ]
+  },
+  {
+   "label": "Play it cool",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mystery preserved. Koa wonders about you instead."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "id": "zxsr-retire-038",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Retirement day arrives",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Thirty years distilled to one speech. The gold watch is real. So is the freedom. The rival firm sends flowers. The garden demands attention.",
+ "choices": [
+  {
+   "label": "Consult back",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "3000"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two days a week, triple the rate. Retirement day pays twice."
+    }
+   ]
+  },
+  {
+   "label": "Full stop",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Alarm: deleted. Retirement day begins with a long nap."
+    }
+   ]
+  }
+ ]
+}

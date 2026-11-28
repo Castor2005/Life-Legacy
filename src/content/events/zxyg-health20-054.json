@@ -1,0 +1,54 @@
+{
+ "id": "zxyg-health20-054",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Allergy season at 24",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The body sends its first invoice.",
+ "choices": [
+  {
+   "label": "See a doctor",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Treatable, fixable, fine. Allergy season retreats before the pros."
+    }
+   ]
+  },
+  {
+   "label": "Lifestyle overhaul",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sleep, greens, walks. Allergy season meets its match: routine."
+    }
+   ]
+  }
+ ]
+}

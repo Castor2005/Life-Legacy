@@ -1,0 +1,58 @@
+{
+ "id": "zxwl-voyage-063",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Portugal island hop",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The flight lands at dawn. Ellis packs three outfits too many.",
+ "choices": [
+  {
+   "label": "Splurge well",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Portugal island hop with Ellis. The stories pay dividends forever."
+    }
+   ]
+  },
+  {
+   "label": "Travel slow",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(700)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Markets, backstreets, long lunches. Portugal seeps into you."
+    }
+   ]
+  }
+ ]
+}

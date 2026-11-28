@@ -1,0 +1,50 @@
+{
+ "id": "zxwl-sea-006",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the cove dawn kayak",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The water is impossibly clear. Salt air fixes what cities break. The lighthouse blinks approval.",
+ "choices": [
+  {
+   "label": "Dive in",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the cove dawn kayak. The ocean returns you to yourself."
+    }
+   ]
+  },
+  {
+   "label": "Shore slow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tide pools and novels. the cove at walking pace."
+    }
+   ]
+  }
+ ]
+}

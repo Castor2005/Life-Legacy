@@ -1,0 +1,54 @@
+{
+ "id": "zxkd-season-010",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Autumn leaves rules",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The weather rewrites every plan. Good.",
+ "choices": [
+  {
+   "label": "Rally the crew",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Felix\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Felix brings hot chocolate. The day enters legend."
+    }
+   ]
+  },
+  {
+   "label": "Solo expedition",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Just you and the weather. You return muddy and wise."
+    }
+   ]
+  }
+ ]
+}

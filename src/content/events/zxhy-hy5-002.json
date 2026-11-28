@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy5-002",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Summer of change on the radio",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 1967
+   },
+   {
+    "p": "year",
+    "lte": 1968
+   }
+  ]
+ },
+ "text": "Flowers, protests, new ideas in old streets. Everyone will remember where they were.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Summer of change lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Summer of change observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

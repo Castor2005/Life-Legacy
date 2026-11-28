@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-029",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Yuki's dinner party dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The guest list is a social chessboard. Your partner Dario charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Yuki raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Yuki\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Yuki opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

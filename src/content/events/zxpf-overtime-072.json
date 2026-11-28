@@ -1,0 +1,61 @@
+{
+ "id": "zxpf-overtime-072",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "nurse launch crunch",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Week three of late nights. The vending machine knows your order.",
+ "choices": [
+  {
+   "label": "Bank the hours",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "3000"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-5"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "launch crunch pays triple. The nurse grind leaves marks and money."
+    }
+   ]
+  },
+  {
+   "label": "Set boundaries",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You log off at six. The launch crunch survives without you."
+    }
+   ]
+  }
+ ]
+}

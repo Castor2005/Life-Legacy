@@ -1,0 +1,50 @@
+{
+ "id": "zxtn-style-033",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The vintage denim phase",
+ "tags": [
+  "teen",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The allowance has a new purpose. Stellan approves cautiously.",
+ "choices": [
+  {
+   "label": "Commit fully",
+   "hint": "looks+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "looks",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The vintage denim phase rules. Compliments from unexpected people."
+    }
+   ]
+  },
+  {
+   "label": "Keep one piece",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Subtle nod to the trend. Stellan calls it tasteful."
+    }
+   ]
+  }
+ ]
+}

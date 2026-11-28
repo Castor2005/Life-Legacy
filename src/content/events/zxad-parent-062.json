@@ -1,0 +1,54 @@
+{
+ "id": "zxad-parent-062",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Growth spurt season",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The calendar is a mosaic of small commitments. Your partner Ines handles bedtime with military grace.",
+ "choices": [
+  {
+   "label": "Show up fully",
+   "hint": "family+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Growth spurt resolved with hugs. Ines winks over the chaos."
+    }
+   ]
+  },
+  {
+   "label": "Hire help",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A sitter saves the week. Growth spurt barely notice the upgrade."
+    }
+   ]
+  }
+ ]
+}

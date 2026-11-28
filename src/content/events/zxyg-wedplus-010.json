@@ -1,0 +1,68 @@
+{
+ "id": "zxyg-wedplus-010",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Emmett's wedding speech slot",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Seating chart politics: navigated. Open bar. Dangerous dance floor.",
+ "choices": [
+  {
+   "label": "Give the speech",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "set",
+       "path": "fame",
+       "value": "min(100,s.fame+(3))"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Emmett cries laughing. The speech enters family lore."
+    }
+   ]
+  },
+  {
+   "label": "Dance all night",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shoes off by midnight. Emmett approves from the sweetheart table."
+    }
+   ]
+  }
+ ]
+}

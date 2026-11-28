@@ -1,0 +1,50 @@
+{
+ "id": "zxad-pta-024",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Umar chairs the fundraiser",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Volunteer signups fill in minutes. The bake sale industrial complex demands tribute.",
+ "choices": [
+  {
+   "label": "Chair the thing",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(8)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Umar applauds your courage. The fundraiser triples its goal."
+    }
+   ]
+  },
+  {
+   "label": "Quiet helper",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Setup crew, no spotlight. Umar notices anyway."
+    }
+   ]
+  }
+ ]
+}

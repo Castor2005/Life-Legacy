@@ -1,0 +1,65 @@
+{
+ "id": "zxfa-bless-042",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "Quiet blessing arrives",
+ "tags": [
+  "adult-life",
+  "fate"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "stats.karma",
+  "gte": 60
+ },
+ "text": "The universe keeps receipts, apparently. Goodness accrues interest. On a rainy Tuesday.",
+ "choices": [
+  {
+   "label": "Accept gracefully",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "money",
+       "amount": "1000"
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "prestige",
+       "value": "s.prestige+(4)"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Quiet blessing lands softly. You pass a third of it onward."
+    }
+   ]
+  },
+  {
+   "label": "Pay it forward",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Quiet blessing multiplies through you. The ledger of grace grows."
+    }
+   ]
+  }
+ ]
+}

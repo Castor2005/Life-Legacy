@@ -1,0 +1,50 @@
+{
+ "id": "zxbm-read-043",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "The thick biography marathon",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The margins fill with arguments. Wren presses it into your hands.",
+ "choices": [
+  {
+   "label": "Finish and discuss",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The thick biography rewires something. Wren debates you till midnight."
+    }
+   ]
+  },
+  {
+   "label": "Read widely",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three books at once. The thick biography is just the start."
+    }
+   ]
+  }
+ ]
+}

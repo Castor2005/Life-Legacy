@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy15-001",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Channel surfing at school",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 1991
+   },
+   {
+    "p": "year",
+    "lte": 1994
+   }
+  ]
+ },
+ "text": "A hundred channels bloom. Remote controls gain power. Your diary entry writes itself.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Channel surfing lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Channel surfing observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

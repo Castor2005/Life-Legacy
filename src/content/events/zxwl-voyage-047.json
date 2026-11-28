@@ -1,0 +1,58 @@
+{
+ "id": "zxwl-voyage-047",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Korea coast drive",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The flight lands at dawn. Luz packs three outfits too many.",
+ "choices": [
+  {
+   "label": "Splurge well",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Korea coast drive with Luz. The stories pay dividends forever."
+    }
+   ]
+  },
+  {
+   "label": "Travel slow",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(700)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Markets, backstreets, long lunches. Korea seeps into you."
+    }
+   ]
+  }
+ ]
+}

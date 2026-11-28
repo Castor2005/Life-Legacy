@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-035",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Diego's dinner party dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The guest list is a social chessboard. Your partner Noor charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Diego raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Diego\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Diego opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-drama-056",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Cleo is mad at you",
+ "tags": [
+  "kid",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Whispers travel at the speed of gossip.",
+ "choices": [
+  {
+   "label": "Talk it out",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Honest words on the swings. The friendship survives stronger."
+    }
+   ]
+  },
+  {
+   "label": "Write a letter",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three pages, one drawing. Cleo keeps it for years."
+    }
+   ]
+  }
+ ]
+}

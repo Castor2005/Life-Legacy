@@ -1,0 +1,45 @@
+{
+ "id": "zxwl-season-018",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "First snow morning",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Light slants differently. Everything glows. Tessa declares it the best one yet.",
+ "choices": [
+  {
+   "label": "Mark the day",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "First snow morning with Tessa. Traditions start exactly like this."
+    }
+   ]
+  },
+  {
+   "label": "Photograph it",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Golden hour captured. First snow framed above the mantel."
+    }
+   ]
+  }
+ ]
+}

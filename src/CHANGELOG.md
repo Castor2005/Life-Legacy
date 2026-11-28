@@ -1,11 +1,50 @@
 # Life & Legacy — Changelog
 
-Current version: **v0.1.07** (canonical stamp: `LL.APP_VERSION` in `src/engine/migrate.js`).
+Current version: **v0.1.07.006** (canonical stamp: `LL.APP_VERSION` in `src/engine/migrate.js`).
 Save format `SAVE_VERSION = 7`, content `CONTENT_VERSION = 4`, event schema `EVENT_SCHEMA = 1`.
 Patch rule (declared 2026-11-27, standing until the next minor/major is declared): every
 game-tree change ships as the next `v0.1.03.00N` with a CHANGELOG entry — no silent changes.
 
 ---
+
+## v0.1.07.006 — 2026-11-28 — AI knows about Fate (director + Anya)
+
+- Director Mode scenes now stage with the Universe Will + real history in the prompt: `directorMechState` carries the current tide (radiant→dark, boons/trials), the active omen, and the in-game year's real headline + era — so staged scenes rhyme with the cosmos instead of ignoring it. One guarded string segment, fully silent when fate/history are unavailable.
+- Anya knows Fate too: live player context includes the Will + omen + year headline (AI answers stay in-world), and the offline fallback gains a fate/omen/boon/trial/tide/karma entry pointing at the dynbar chip and World tab (keyword-chosen to never hijack "history"/"will"/"year" questions — those still route to the World/timeline answers).
+- SAVE 7 unchanged, no migration bump.
+- Full audit battery green (folded here, no code change): static — namespace-lint 50 files 0 unresolved/0 duplicates, typo-scan 0, validate-mods ok (content packs untouched since the .004 validation of 8285/0); runtime — migration-test 40/40, parity 8,285 events 0 condFail/0 fxFail, perf all pass except saveLoad WARN-only 78ms vs 50ms budget (round-trip byte-identical; warn-only by design), soak ok:true 0 failed/0 invariant fails/errDelta 0; live — verb sweep 161/161 case-ids 0 throws, all 15 modals open/close, i18n EN→ES→EN, all 5 themes, phone 390px + desktop 1920px clean with screenshots, saveTo/loadFrom round-trip identical + validateSave null, auto advances, music toggle on→off→on, SFX bank 12/12, one live AI director scene staged + applied, one gestation→birth. Bug log: 0.
+
+---
+
+## v0.1.07.005 — 2026-11-28 — The Universe Will + real history + visible NPC goals
+
+- NEW `src/engine/fate.js`: Fate/Universe Will as a top-level layer above the old personal-fate table — a slow tide (−100…100) that rises with a luminous life (karma, prestige, renown) and sinks with a dark one. Extremes intervene: boons and trials (tiny, logged, at most every 4 years each), milestone omens at life's hinge ages (18/21/30/40/50/65/80/100), faint flavor murmurs otherwise. Ticked once per year from `runYearlySocialSystems` (silent years drift the tide but never log or pay out). Dynbar chip shows the Will (🌌 radiant → 🌑 dark); 🌍 World panel shows the current omen plus the in-game year's real-history headline.
+- NEW `src/engine/history.js`: a real-world historical-year engine (1900–2070 headlines + era flavor) — every distinct year reads distinctly in the World panel's "Universe Will + this-year-in-history" block and in fate omen lines, so long lives actually live through history instead of floating in a timeless pool.
+- NPC inner lives become visible (gap 3 of the standing dream): 🌍 World roster rows now show each living person's current goal (🎯 detail, pure view — render never creates goals), and the 👪 Family roster shows partner + children goals. Goals themselves still come from the existing agent/drives in `world.js` (unchanged); chat/director/AI prompts already honor them via `npcPersonaLine`.
+- Boot contract extended (files + order + globals for `history`/`fate`), load order `yearly → history → fate → events-runtime` so fate flavor can lean on era names. SAVE 7 unchanged (all fields lazy-ensured; old saves grow them on first tick), no migration bump.
+
+---
+
+## v0.1.07.004 — 2026-11-28 — 8,285 events: the mass-content drop
+
+- Content goes 797 → **8,285 events** (7,488 new, validator-clean, zero orphans/mismatches): every life stage gets ~10x variety — baby 222, kid ~969, teen ~990, young ~1,042, adult ~961, mid ~899, senior ~837, mature overlay ~2,953 (professions matrix, world travel, food, neighbors, seasons, sports, craft, spirit, tech eras, fate blessings/trials/omens, 42 historical year-windows 1950–2070 from moon landing to Mars tickets, all year-gated so lives actually live through history).
+- NEW authoring pipeline `src/tools/mass-builder.js` + `src/tools/mass-banks/` (11 banks, 144 families): situation-template × slot-matrix expansion with seeded RNG, per-family combo budgets, title+text+outcome uniqueness, automatic builder guards (unfilled-slot detection, fame/prestige set-path routing), and real `effects-validate` gating before anything is written — any grammar slip fails the build, never the player.
+- Pack bodies are now minified (`build-events.js` layoutAndEmit; identical after parse, validator-confirmed): mature 2.0 MB for 2,670 events; total packs ~5.7 MB. Loader math re-proven: 34µs compile/event, pool filter + cond eval well inside budgets.
+- SAVE 7 unchanged (content-only, no save shape touched), no migration bump.
+
+---
+
+## v0.1.07.003 — 2026-11-28 — Action-Event Engine: every press is an event
+
+- NEW `src/engine/act-events.js`: every verb that does something now produces a VISIBLE outcome, not just a log line. 15 hand-written outcomes per tab (105 verb outcomes + 15 world beats): the press pins an outcome card atop the panel; entries with choices open as full scenes (synthetic `showEvent`, majors-first) with real mini-fx. Online, the text-AI leg writes a bespoke 2-3 sentence narration that upgrades the card (throttled, gen-guarded, cards only — never a modal you are reading). NPCs get circular glow-ring portraits (photo if painted, initials if not) in the roster, suitor cards, and chat header; 📸 tap-to-paint caches into `S.npcArt` (cap 8), partner auto-paints once. SAVE 7 unchanged (lazy field, no migration).
+
+## v0.1.07.002 — 2026-11-28 — Start-screen numbers removed
+
+- The decorative 01/02/03 section numbers on the start screen are gone (they were a leftover template flourish, not meaning). SAVE 7 unchanged, no migration.
+
+## v0.1.07.001 — 2026-11-28 — One family name (bloodlines read as bloodlines)
+
+- Family generation now shares surnames: dad's line (dad, siblings, paternal grandparents, you) carries your birth name; mom's line (mom's married name + maternal grandparents) carries her maiden name (`R.momMaiden`, distinct by construction). Newborns take the House name with a sex-appropriate first name (twins too) — so siblings match and heirs keep flowing under one name. NPC mirrors inherit the record names automatically. Old saves untouched (history stays as it was; only new lives). SAVE 7 unchanged, no migration.
 
 ## v0.1.07 — 2026-11-28 — No other games' names anywhere
 

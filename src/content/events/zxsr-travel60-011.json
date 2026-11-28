@@ -1,0 +1,53 @@
+{
+ "id": "zxsr-travel60-011",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Slow Peru by coastal road",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Linger longer. That is the whole plan. Anya keeps the same unhurried pace.",
+ "choices": [
+  {
+   "label": "First class slow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(4000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Slow Peru by coastal road. Anya naps through the best valley."
+    }
+   ]
+  },
+  {
+   "label": "Group tour",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1800)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New friends, shared buses. Peru by coastal road with laughter."
+    }
+   ]
+  }
+ ]
+}

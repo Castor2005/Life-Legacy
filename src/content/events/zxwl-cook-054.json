@@ -1,0 +1,63 @@
+{
+ "id": "zxwl-cook-054",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "dumplings cook-off",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Ingredients cover every surface. Ines claims their version is better.",
+ "choices": [
+  {
+   "label": "Follow the recipe",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "dumplings triumphs. Ines demands the recipe, gets it."
+    }
+   ]
+  },
+  {
+   "label": "Improvise wildly",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "7"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "dumplings cook-off goes experimental. Ines eats it anyway."
+    }
+   ]
+  }
+ ]
+}

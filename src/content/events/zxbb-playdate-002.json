@@ -1,0 +1,49 @@
+{
+ "id": "zxbb-playdate-002",
+ "minAge": 2,
+ "maxAge": 4,
+ "title": "Playdate with Ines",
+ "tags": [
+  "baby",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Ines from down the street comes over. Two toddlers, one ball.",
+ "choices": [
+  {
+   "label": "Share the toys",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Ines\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ines trades a block for a truck. Diplomacy begins early."
+    }
+   ]
+  },
+  {
+   "label": "Parallel play",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Side by side, separate worlds. Perfectly normal, perfectly sweet."
+    }
+   ]
+  }
+ ]
+}

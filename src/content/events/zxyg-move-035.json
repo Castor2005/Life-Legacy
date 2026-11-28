@@ -1,0 +1,58 @@
+{
+ "id": "zxyg-move-035",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Move to Athens",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Restlessness wins the vote. Umar already lives there and promises a couch.",
+ "choices": [
+  {
+   "label": "Leap",
+   "hint": "life+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "-2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Athens or bust. Umar meets you with keys and noodles."
+    }
+   ]
+  },
+  {
+   "label": "Visit first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Recon week in Athens. The fantasy survives contact."
+    }
+   ]
+  }
+ ]
+}

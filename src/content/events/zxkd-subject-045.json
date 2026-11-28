@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-045",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Map skills reading circle",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The teacher dims the lights. Stellan sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Map skills bends to your will. Stellan copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Stellan",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Stellan gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

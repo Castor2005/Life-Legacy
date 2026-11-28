@@ -1,0 +1,68 @@
+{
+ "id": "zxpf-crisis-129",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "teacher equipment failure",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Everyone looks at you. Of course. At the newsroom, the day goes sideways.",
+ "choices": [
+  {
+   "label": "Save the day",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "1500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "6"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The teacher crisis bends. At the newsroom, they tell this story."
+    }
+   ]
+  },
+  {
+   "label": "Document everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Paper trail perfect. The equipment failure becomes a case study."
+    }
+   ]
+  }
+ ]
+}

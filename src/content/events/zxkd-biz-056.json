@@ -1,0 +1,57 @@
+{
+ "id": "zxkd-biz-056",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The rock painting stand",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Grand opening. The neighbors are curious. Startup capital: allowance money.",
+ "choices": [
+  {
+   "label": "Hustle all day",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "35"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The rock painting stand clears $35. Capitalism tastes sweet."
+    }
+   ]
+  },
+  {
+   "label": "Split with Paloma",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "20"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Paloma\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Paloma handles marketing. Profits split, friendship doubled."
+    }
+   ]
+  }
+ ]
+}

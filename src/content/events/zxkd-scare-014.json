@@ -1,0 +1,70 @@
+{
+ "id": "zxkd-scare-014",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Brave vs. the deep end",
+ "tags": [
+  "kid",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Courage is just fear that said yes. Bram dares you to face it.",
+ "choices": [
+  {
+   "label": "Face it",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.discipline>45"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-2"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "the deep end faced. The story grows with every retelling."
+    }
+   ]
+  },
+  {
+   "label": "Strategic retreat",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Not today. Bravery keeps office hours, and that's fine."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,73 @@
+{
+ "id": "zxtn-rebel-016",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The forbidden shortcut goes sideways",
+ "tags": [
+  "teen",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Senior lore says this is tradition. Nadia is already in.",
+ "choices": [
+  {
+   "label": "Full send",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-4"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "-3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nadia laughs for a week. The story outlives the detention."
+    }
+   ]
+  },
+  {
+   "label": "Talk them down",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cooler heads, warm cocoa. Nadia thanks you later."
+    }
+   ]
+  }
+ ]
+}

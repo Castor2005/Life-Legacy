@@ -1,0 +1,54 @@
+{
+ "id": "zxyg-health20-045",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Wisdom teeth at 24",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The knees request a meeting.",
+ "choices": [
+  {
+   "label": "See a doctor",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Treatable, fixable, fine. Wisdom teeth retreats before the pros."
+    }
+   ]
+  },
+  {
+   "label": "Lifestyle overhaul",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sleep, greens, walks. Wisdom teeth meets its match: routine."
+    }
+   ]
+  }
+ ]
+}

@@ -1419,7 +1419,7 @@ async function layoutAndEmit(events, priorIndex) {
     .concat(ADULT_BUCKETS.map((b) => ({ id: b.id, evs: byId(buckets[b.id]) })))
     .concat([{ id: 'mature', evs: byId(mature) }]);
   for (const p of allPacks)
-    await fs.writeTextFile('src/content/packs/' + p.id + '.json', JSON.stringify({ pack: p.id, events: p.evs }, null, 1));
+    await fs.writeTextFile('src/content/packs/' + p.id + '.json', JSON.stringify({ pack: p.id, events: p.evs }));
   const migTxt = await fs.readTextFile('src/engine/migrate.js');
   const cvM = /LL\.CONTENT_VERSION\s*=\s*(\d+)/.exec(migTxt);
   const contentVersion = cvM ? +cvM[1] : 4; // single source of truth: migrate.js

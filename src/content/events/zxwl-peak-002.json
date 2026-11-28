@@ -1,0 +1,63 @@
+{
+ "id": "zxwl-peak-002",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the volcanic slope sunrise",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Thin air, big views. Yuki trained all spring for this.",
+ "choices": [
+  {
+   "label": "Summit push",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "the volcanic slope sunrise with Yuki. The photo barely captures it."
+    }
+   ]
+  },
+  {
+   "label": "Base camp joy",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Soup, stars, stories. the volcanic slope from below is plenty."
+    }
+   ]
+  }
+ ]
+}

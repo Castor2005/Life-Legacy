@@ -1,0 +1,54 @@
+{
+ "id": "zxad-money30-021",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Retirement bump moment",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Compound interest does quiet magic. The advisor Rios speaks in calm percentages.",
+ "choices": [
+  {
+   "label": "Max it out",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(3000)"
+    },
+    {
+     "op": "set",
+     "path": "assets.savings",
+     "value": "s.assets.savings+(3200)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Retirement bump funded. Rios nods with professional calm."
+    }
+   ]
+  },
+  {
+   "label": "Stay liquid",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "set",
+     "path": "assets.savings",
+     "value": "s.assets.savings+(800)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cash is king and comfort. Retirement bump grows gently."
+    }
+   ]
+  }
+ ]
+}

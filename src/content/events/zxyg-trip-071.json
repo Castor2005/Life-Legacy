@@ -1,0 +1,58 @@
+{
+ "id": "zxyg-trip-071",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Quebec City on $40 a day",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Hostel bunk, top floor, new friends. Tessa navigates by snacks.",
+ "choices": [
+  {
+   "label": "Splurge once",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Quebec City at sunset. Tessa takes the photo you'll frame."
+    }
+   ]
+  },
+  {
+   "label": "Budget wizard",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Street food, free museums, perfect days. Quebec City done right."
+    }
+   ]
+  }
+ ]
+}

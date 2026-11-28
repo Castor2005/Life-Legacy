@@ -1,0 +1,50 @@
+{
+ "id": "zxsr-legacy-014",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Video stories grows",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A lifetime sorts itself into chapters. The grandkids will fight over these lovingly. Jasper keeps the box.",
+ "choices": [
+  {
+   "label": "Finish it",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(8)"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Video stories complete. Tears at the reading. Legacy: secured."
+    }
+   ]
+  },
+  {
+   "label": "Record audio",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your voice telling all. Video stories play at every gathering."
+    }
+   ]
+  }
+ ]
+}

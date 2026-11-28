@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-053",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Rhea asks about money",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "You earned this answer the hard way. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rhea listens hard. Your answer about about money lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Rhea\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Rhea retells it for years."
+    }
+   ]
+  }
+ ]
+}

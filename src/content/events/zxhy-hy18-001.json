@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy18-001",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Y2K passes at work",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 2000
+   },
+   {
+    "p": "year",
+    "lte": 2001
+   }
+  ]
+ },
+ "text": "The clocks roll over. The lights stay on. Relief tastes sweet. Your diary entry writes itself.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Y2K passes lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Y2K passes observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

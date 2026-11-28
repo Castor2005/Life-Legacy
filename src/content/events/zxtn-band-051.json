@@ -1,0 +1,68 @@
+{
+ "id": "zxtn-band-051",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Garage band first show",
+ "tags": [
+  "teen",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Somebody's parents are filming everything. Callum plays bass badly and with heart.",
+ "choices": [
+  {
+   "label": "Take the solo",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.45",
+     "then": [
+      {
+       "op": "set",
+       "path": "fame",
+       "value": "min(100,s.fame+(4))"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Wrong notes, right feeling. The crowd roars anyway."
+    }
+   ]
+  },
+  {
+   "label": "Run the lights",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cues nailed, blackout perfect. Callum dedicates a song to the crew."
+    }
+   ]
+  }
+ ]
+}

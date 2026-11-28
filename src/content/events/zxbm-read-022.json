@@ -1,0 +1,50 @@
+{
+ "id": "zxbm-read-022",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "The thick biography binge",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Forty pages a night, minimum. Diego presses it into your hands.",
+ "choices": [
+  {
+   "label": "Finish and discuss",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The thick biography rewires something. Diego debates you till midnight."
+    }
+   ]
+  },
+  {
+   "label": "Read widely",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three books at once. The thick biography is just the start."
+    }
+   ]
+  }
+ ]
+}

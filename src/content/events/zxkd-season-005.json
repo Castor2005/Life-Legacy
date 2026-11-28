@@ -1,0 +1,54 @@
+{
+ "id": "zxkd-season-005",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Heat wave games",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The weather rewrites every plan. Good.",
+ "choices": [
+  {
+   "label": "Rally the crew",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Kofi\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Kofi brings hot chocolate. The day enters legend."
+    }
+   ]
+  },
+  {
+   "label": "Solo expedition",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Just you and the weather. You return muddy and wise."
+    }
+   ]
+  }
+ ]
+}

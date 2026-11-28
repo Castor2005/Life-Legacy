@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-screen-055",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Stress test season",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The gown, the wait, the thumbs-up. Fifty is when the manual gets serious. Dr. Tobin is brisk and kind.",
+ "choices": [
+  {
+   "label": "Do it all",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Stress test clear. The season bring relief and a sticker."
+    }
+   ]
+  },
+  {
+   "label": "One change",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Walking daily, smirking at elevators. Stress test approves."
+    }
+   ]
+  }
+ ]
+}

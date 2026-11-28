@@ -1,0 +1,53 @@
+{
+ "id": "zxmd-grandtour-037",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Morocco with old friends",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Business class. Earned. Every mile of it. Finally: the trip you postponed for decades.",
+ "choices": [
+  {
+   "label": "No budget",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(6000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Morocco with old friends. The photos need no filter and get none."
+    }
+   ]
+  },
+  {
+   "label": "Smart splurge",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Morocco done wisely. with old friends — every penny a memory."
+    }
+   ]
+  }
+ ]
+}

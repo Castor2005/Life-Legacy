@@ -1,0 +1,68 @@
+{
+ "id": "zxtn-rival-000",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Paloma outscores you",
+ "tags": [
+  "teen",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The whole grade picks sides.",
+ "choices": [
+  {
+   "label": "Outwork them",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "6"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "You close the gap. Paloma respects the grind."
+    }
+   ]
+  },
+  {
+   "label": "Befriend them",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rivals make the best allies. Paloma agrees over fries."
+    }
+   ]
+  }
+ ]
+}

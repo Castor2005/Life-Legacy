@@ -1,0 +1,68 @@
+{
+ "id": "zxtn-rival-044",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Sana outscores you",
+ "tags": [
+  "teen",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The rivalry nobody asked for begins.",
+ "choices": [
+  {
+   "label": "Outwork them",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "You close the gap. Sana respects the grind."
+    }
+   ]
+  },
+  {
+   "label": "Befriend them",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rivals make the best allies. Sana agrees over fries."
+    }
+   ]
+  }
+ ]
+}

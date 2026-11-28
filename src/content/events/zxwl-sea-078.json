@@ -1,0 +1,50 @@
+{
+ "id": "zxwl-sea-078",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the cove sailing",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The horizon does its old trick. Salt air fixes what cities break. A seal judges your stroke.",
+ "choices": [
+  {
+   "label": "Dive in",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the cove sailing. The ocean returns you to yourself."
+    }
+   ]
+  },
+  {
+   "label": "Shore slow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tide pools and novels. the cove at walking pace."
+    }
+   ]
+  }
+ ]
+}

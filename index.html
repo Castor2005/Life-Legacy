@@ -162,6 +162,8 @@ window.root = window.root || {};
 <script src="src/engine/research.js"></script>
 <script src="src/engine/life.js"></script>
 <script src="src/engine/yearly.js"></script>
+<script src="src/engine/history.js"></script>
+<script src="src/engine/fate.js"></script>
 <script src="src/engine/events-runtime.js"></script>
 <script src="src/engine/mods.js"></script>
 <script src="src/engine/portrait.js"></script>
@@ -172,6 +174,7 @@ window.root = window.root || {};
 <script src="src/engine/ownership.js"></script>
 <script src="src/engine/death.js"></script>
 <script src="src/engine/actions.js"></script>
+<script src="src/engine/act-events.js"></script>
 <script src="src/engine/romance.js"></script>
 <script src="src/engine/world.js"></script>
 <script src="src/engine/render.js"></script>
@@ -222,7 +225,7 @@ window.root = window.root || {};
   <div id="startScreen">
     <div class="hero">
       <div class="card gilded hero-main at-hero">
-        <div class="eyebrow at-index"><i>01</i><span>AI biographer — a life simulator</span></div>
+        <div class="eyebrow at-index"><span>AI biographer — a life simulator</span></div>
         <h2 class="at-display">Live a life.<br><span class="stroke">Found a dynasty.</span></h2>
        <p class="lede">One soul, one roll of fate — traits, family, ambition. Study, hustle, scheme, love, rule, fall, rise again. Your biographer writes every chapter; your heir carries the name.</p>
        <div class="statstrip sub">🎯 Focuses · 🎓 13 majors · 💼 40+ careers · 🌍 living markets · 💾 7 save slots</div>
@@ -238,13 +241,13 @@ window.root = window.root || {};
             <button class="btn small ghost" id="freshBtn"><span class="rl"><span class="rl-a">✨ Fresh soul</span><span class="rl-b" aria-hidden="true">✨ Fresh soul</span></span></button>
           </div>
         </div>
-        <div class="secttl at-index" style="margin-top:16px"><i>02</i><span>Quick start</span></div>
+        <div class="secttl at-index" style="margin-top:16px"><span>Quick start</span></div>
         <div class="qstarts">
           <button class="qstart" id="quickPeasant" title="Born poor, karma rich"><b>🌱 Peasant</b><small>Born poor, karma rich</small></button>
           <button class="qstart" id="quickRoyal" title="Born rich, prestige loaded"><b>👑 Royal</b><small>Born rich, prestige loaded</small></button>
           <button class="qstart" id="quickChaos" title="Random chaos: nemesis and crime flag"><b>🎲 Chaos</b><small>Nemesis, crime flag</small></button>
         </div>
-        <div class="secttl at-index" style="margin-top:16px"><i>03</i><span>What's inside</span></div>
+        <div class="secttl at-index" style="margin-top:16px"><span>What's inside</span></div>
        <div class="feat">
           <div><b>👑 Dynasty, not just a life</b>Traits, focuses, prestige &amp; renown, family tree — continue as your heir.</div>
           <div><b>🎓 School to Senate</b>Grades, 13 majors, 40+ careers, fame, weddings, prison, business.</div>
@@ -273,7 +276,7 @@ window.root = window.root || {};
         </div>
       </div>
      </div>
-    <div class="footer">💾 autosaves in your browser · 7 slots · ❓ help has the full guide · v0.1.07</div>
+    <div class="footer">💾 autosaves in your browser · 7 slots · ❓ help has the full guide · v0.1.07.006</div>
   </div>
 
   <!-- GAME -->

@@ -1,0 +1,60 @@
+{
+ "id": "zxmd-secondact-002",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Second act: franchise",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The resume gets a bold new chapter. Twenty years of skill wants a new stage. First client: a nonprofit.",
+ "choices": [
+  {
+   "label": "Leap fully",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "money",
+       "amount": "12000"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "3000"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Second act: franchise pays. Courage compounds."
+    }
+   ]
+  },
+  {
+   "label": "Bridge slowly",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "4000"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nights and weekends first. franchise grows without risk."
+    }
+   ]
+  }
+ ]
+}

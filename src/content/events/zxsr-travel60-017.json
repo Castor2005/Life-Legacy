@@ -1,0 +1,53 @@
+{
+ "id": "zxsr-travel60-017",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Slow Canada on foot",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Linger longer. That is the whole plan. Noor keeps the same unhurried pace.",
+ "choices": [
+  {
+   "label": "First class slow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(4000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Slow Canada on foot. Noor naps through the best valley."
+    }
+   ]
+  },
+  {
+   "label": "Group tour",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1800)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New friends, shared buses. Canada on foot with laughter."
+    }
+   ]
+  }
+ ]
+}

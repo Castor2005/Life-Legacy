@@ -1,0 +1,57 @@
+{
+ "id": "zxpf-funny-068",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "driver potluck",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Someone is filming. Everyone poses. At the clinic, legend is born.",
+ "choices": [
+  {
+   "label": "Lean into it",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The driver potluck enters company lore. You star in it."
+    }
+   ]
+  },
+  {
+   "label": "Play it cool",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Calm amid chaos. At the clinic, they remember composure."
+    }
+   ]
+  }
+ ]
+}

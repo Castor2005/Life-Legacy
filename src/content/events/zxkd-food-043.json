@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-food-043",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Bake sale triumph",
+ "tags": [
+  "kid",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The lunchroom holds its breath.",
+ "choices": [
+  {
+   "label": "Taste everything",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A balanced review. The Bake sale earns four stars."
+    }
+   ]
+  },
+  {
+   "label": "Trade up",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your sandwich for their cookies plus chips. Lunch arbitrage."
+    }
+   ]
+  }
+ ]
+}

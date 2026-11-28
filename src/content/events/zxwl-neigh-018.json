@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-018",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Ravi loses a cat",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The group chat lights up. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Ravi\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ravi becomes a real friend over loses a cat fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The loses a cat saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

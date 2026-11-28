@@ -1,0 +1,45 @@
+{
+ "id": "zxwl-season-040",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Monsoon break walk",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The year turns its great wheel. Bram declares it the best one yet.",
+ "choices": [
+  {
+   "label": "Mark the day",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Monsoon break walk with Bram. Traditions start exactly like this."
+    }
+   ]
+  },
+  {
+   "label": "Photograph it",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Golden hour captured. Monsoon break framed above the mantel."
+    }
+   ]
+  }
+ ]
+}

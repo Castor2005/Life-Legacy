@@ -1,0 +1,54 @@
+{
+ "id": "zxyg-roomie-002",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Nico eats your leftovers",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Roommate diplomacy enters a delicate phase.",
+ "choices": [
+  {
+   "label": "House meeting",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rules posted on the fridge. Nico signs in fancy script."
+    }
+   ]
+  },
+  {
+   "label": "Move out",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(900)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New place, no eats your leftovers. Peace has a price: $900."
+    }
+   ]
+  }
+ ]
+}

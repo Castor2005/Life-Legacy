@@ -1,0 +1,68 @@
+{
+ "id": "zxbm-sport-037",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "fencing dawn club",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The learning curve is steep and fun. Dario is annoyingly better at this.",
+ "choices": [
+  {
+   "label": "Train weekly",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.25",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "fencing clicks. Dario demands a rematch you will win."
+    }
+   ]
+  },
+  {
+   "label": "Social league",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Beers after fencing. Dario brings the whole crew."
+    }
+   ]
+  }
+ ]
+}

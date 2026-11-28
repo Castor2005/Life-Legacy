@@ -1,0 +1,69 @@
+{
+ "id": "zxkd-animal-047",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The crow parade",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Behind the garage: eyes, then a miracle. It happens at the creek.",
+ "choices": [
+  {
+   "label": "Befriend it",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "addPet",
+       "name": "\"Ziggy\"",
+       "petType": "dog",
+       "rel": 70
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The crow trusts you. Ziggy wags along as honorary sibling."
+    }
+   ]
+  },
+  {
+   "label": "Observe and sketch",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Field notes, careful drawings. A young naturalist is born."
+    }
+   ]
+  }
+ ]
+}

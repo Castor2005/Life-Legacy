@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-041",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Wren loses a cat",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Suburbia stages its daily drama. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Wren\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Wren becomes a real friend over loses a cat fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The loses a cat saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

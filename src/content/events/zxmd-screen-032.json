@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-screen-032",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Stress test results",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Prep day is the worst part. Everyone says so. Fifty is when the manual gets serious. Dr. Tobin is brisk and kind.",
+ "choices": [
+  {
+   "label": "Do it all",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Stress test clear. The results bring relief and a sticker."
+    }
+   ]
+  },
+  {
+   "label": "One change",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Walking daily, smirking at elevators. Stress test approves."
+    }
+   ]
+  }
+ ]
+}

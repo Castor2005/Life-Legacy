@@ -1,0 +1,68 @@
+{
+ "id": "zxyg-gym20-048",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Powerlifting era",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "January energy, but make it stick. Bram drags you along.",
+ "choices": [
+  {
+   "label": "Train serious",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The Powerlifting era transforms you. Bram can't keep up."
+    }
+   ]
+  },
+  {
+   "label": "Social pace",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Workouts plus gossip. Bram never misses leg day chat."
+    }
+   ]
+  }
+ ]
+}

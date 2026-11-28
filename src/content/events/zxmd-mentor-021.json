@@ -1,0 +1,55 @@
+{
+ "id": "zxmd-mentor-021",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Mentoring an intern",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Hungry to learn, humble enough to listen. You meet over long walks; an introduction email flies.",
+ "choices": [
+  {
+   "label": "Open doors",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "an intern lands the role. Your name carried weight."
+    }
+   ]
+  },
+  {
+   "label": "Tough love",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hard feedback, kindly given. an intern thanks you within a year."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-053",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Marco's cook-off dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The guest list is a social chessboard. Your partner Diego charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Marco raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Marco\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Marco opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-051",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Tariq feuds over the fence",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The group chat lights up. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Tariq\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tariq becomes a real friend over feuds over the fence fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The feuds over the fence saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

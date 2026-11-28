@@ -1,0 +1,49 @@
+{
+ "id": "zxad-reunion-049",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "The college reunion",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Someone rented the old gym. Noah organized the whole thing and looks tired but proud.",
+ "choices": [
+  {
+   "label": "Work the room",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Every table gets a story. Noah declares you the reunion MVP."
+    }
+   ]
+  },
+  {
+   "label": "Find your people",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Noah\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "The old circle reforms instantly. Noah never really left."
+    }
+   ]
+  }
+ ]
+}

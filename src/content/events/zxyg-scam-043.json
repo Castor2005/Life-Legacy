@@ -1,0 +1,49 @@
+{
+ "id": "zxyg-scam-043",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "The miracle course pitch",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The returns defy mathematics. Tessa almost fell for it last year.",
+ "choices": [
+  {
+   "label": "Smell the rat",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Blocked, reported, warned Tessa. Scam radar: calibrated."
+    }
+   ]
+  },
+  {
+   "label": "Lose a little",
+   "hint": "lesson",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tuition paid to experience: $120. The miracle course pitch never again."
+    }
+   ]
+  }
+ ]
+}

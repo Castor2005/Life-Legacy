@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-052",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Nadia's wine tasting dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Someone brings gossip as a side dish. Your partner Talia charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Nadia raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Nadia\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nadia opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

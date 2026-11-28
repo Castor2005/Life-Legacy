@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-downsize-017",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Condo move freedom",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Keep, gift, donate, toss. Forty years of stuff eyes you back. Best find: grandma's ring.",
+ "choices": [
+  {
+   "label": "Sell smart",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "5000"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Condo move profits. The freedom feels lighter already."
+    }
+   ]
+  },
+  {
+   "label": "Gift it all",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Kids, neighbors, charity. Condo move spreads the wealth of things."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "zxbm-craft-015",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Making a bookshelf masterclass",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Sawdust and satisfaction. Noah wants one for their hallway.",
+ "choices": [
+  {
+   "label": "Sell a few",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "600"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "a bookshelf sells to strangers. Noah takes three."
+    }
+   ]
+  },
+  {
+   "label": "Gift them",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Handmade beats bought. a bookshelf grace three homes."
+    }
+   ]
+  }
+ ]
+}

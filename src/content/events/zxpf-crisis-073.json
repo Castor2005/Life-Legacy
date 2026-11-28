@@ -1,0 +1,68 @@
+{
+ "id": "zxpf-crisis-073",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "electrician disaster client",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "The schedule collapses by noon. At the studio, the day goes sideways.",
+ "choices": [
+  {
+   "label": "Save the day",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "1500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "7"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The electrician crisis bends. At the studio, they tell this story."
+    }
+   ]
+  },
+  {
+   "label": "Document everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Paper trail perfect. The disaster client becomes a case study."
+    }
+   ]
+  }
+ ]
+}

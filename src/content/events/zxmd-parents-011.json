@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-parents-011",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Dad need a ride to everything",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Love becomes logistics. The roles reverse gently, then all at once. The medicine organizer fills weekly.",
+ "choices": [
+  {
+   "label": "Step up",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Dad lean on you now. need a ride to everything — handled with grace."
+    }
+   ]
+  },
+  {
+   "label": "Organize care",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Aides, schedules, check-ins. Dad stay safe and proud."
+    }
+   ]
+  }
+ ]
+}

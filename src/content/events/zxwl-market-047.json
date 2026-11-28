@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-market-047",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the harvest fair morning",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Samples multiply. Resistance fails. Cleo knows every vendor by name.",
+ "choices": [
+  {
+   "label": "Buy local",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bags heavy with good things. the harvest fair delivers again."
+    }
+   ]
+  },
+  {
+   "label": "Meet makers",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cleo introduces you around. The morning becomes a social tour."
+    }
+   ]
+  }
+ ]
+}

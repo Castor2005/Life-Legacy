@@ -1,0 +1,45 @@
+{
+ "id": "zxwl-season-016",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Cherry blossoms walk",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Light slants differently. Everything glows. Ellis declares it the best one yet.",
+ "choices": [
+  {
+   "label": "Mark the day",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cherry blossoms walk with Ellis. Traditions start exactly like this."
+    }
+   ]
+  },
+  {
+   "label": "Photograph it",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Golden hour captured. Cherry blossoms framed above the mantel."
+    }
+   ]
+  }
+ ]
+}

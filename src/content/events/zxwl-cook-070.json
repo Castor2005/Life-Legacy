@@ -1,0 +1,63 @@
+{
+ "id": "zxwl-cook-070",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "bibimbap night",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Ingredients cover every surface. Bram claims their version is better.",
+ "choices": [
+  {
+   "label": "Follow the recipe",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "bibimbap triumphs. Bram demands the recipe, gets it."
+    }
+   ]
+  },
+  {
+   "label": "Improvise wildly",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "bibimbap night goes experimental. Bram eats it anyway."
+    }
+   ]
+  }
+ ]
+}

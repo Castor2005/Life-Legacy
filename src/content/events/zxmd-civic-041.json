@@ -1,0 +1,50 @@
+{
+ "id": "zxmd-civic-041",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Zane drafts you for the library levy",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Democracy runs on volunteers and coffee. The town needs grown-ups. You qualify.",
+ "choices": [
+  {
+   "label": "Run for the seat",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(9)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the library levy gains a champion. Zane runs your ground game."
+    }
+   ]
+  },
+  {
+   "label": "Weekend warrior",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Gloves on for the library levy. The town looks better Monday."
+    }
+   ]
+  }
+ ]
+}

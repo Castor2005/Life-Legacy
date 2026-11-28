@@ -1,0 +1,54 @@
+{
+ "id": "zxsr-retire-049",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Retirement day era",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The office claps you out. The gold watch is real. So is the freedom. The intern cries. Everyone pretends not to see. The garden demands attention.",
+ "choices": [
+  {
+   "label": "Consult back",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "3000"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two days a week, triple the rate. Retirement day pays twice."
+    }
+   ]
+  },
+  {
+   "label": "Full stop",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Alarm: deleted. Retirement day begins with a long nap."
+    }
+   ]
+  }
+ ]
+}

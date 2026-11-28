@@ -1,0 +1,70 @@
+{
+ "id": "zxkd-scare-005",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Brave vs. the haunted house on Elm",
+ "tags": [
+  "kid",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Everyone is watching. No pressure. Much pressure. Stellan dares you to face it.",
+ "choices": [
+  {
+   "label": "Face it",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.discipline>45"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "7"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-2"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "the haunted house on Elm faced. The story grows with every retelling."
+    }
+   ]
+  },
+  {
+   "label": "Strategic retreat",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Not today. Bravery keeps office hours, and that's fine."
+    }
+   ]
+  }
+ ]
+}

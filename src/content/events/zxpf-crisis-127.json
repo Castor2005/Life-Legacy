@@ -1,0 +1,68 @@
+{
+ "id": "zxpf-crisis-127",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "nurse disaster client",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "The schedule collapses by noon. At the observatory, the day goes sideways.",
+ "choices": [
+  {
+   "label": "Save the day",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "1500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "7"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The nurse crisis bends. At the observatory, they tell this story."
+    }
+   ]
+  },
+  {
+   "label": "Document everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Paper trail perfect. The disaster client becomes a case study."
+    }
+   ]
+  }
+ ]
+}

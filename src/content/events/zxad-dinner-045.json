@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-045",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Amara's wine tasting dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The guest list is a social chessboard. Your partner Silas charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Amara raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Amara\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Amara opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

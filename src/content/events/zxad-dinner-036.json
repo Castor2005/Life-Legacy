@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-036",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Felix's rooftop grill dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Candles lit, playlist perfect. Your partner Stellan charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Felix raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Felix\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Felix opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

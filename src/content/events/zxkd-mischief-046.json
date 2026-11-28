@@ -1,0 +1,68 @@
+{
+ "id": "zxkd-mischief-046",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The fake spider works too well",
+ "tags": [
+  "kid",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The plan took eleven seconds to form. Ellis was there. Ellis saw everything.",
+ "choices": [
+  {
+   "label": "Own up",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Confession, apology, detention. The legend softens into a lesson."
+    }
+   ]
+  },
+  {
+   "label": "Deny everything",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-5"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "-2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ellis keeps your secret. The guilt keeps you."
+    }
+   ]
+  }
+ ]
+}

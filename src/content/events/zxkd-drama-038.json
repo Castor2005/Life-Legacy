@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-drama-038",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Sofia shares a secret",
+ "tags": [
+  "kid",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A note passed in class changes everything.",
+ "choices": [
+  {
+   "label": "Talk it out",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Honest words on the swings. The friendship survives stronger."
+    }
+   ]
+  },
+  {
+   "label": "Write a letter",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three pages, one drawing. Sofia keeps it for years."
+    }
+   ]
+  }
+ ]
+}

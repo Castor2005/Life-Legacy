@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-food-014",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Grandma's casserole triumph",
+ "tags": [
+  "kid",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Aroma drifts down the hallway.",
+ "choices": [
+  {
+   "label": "Taste everything",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A balanced review. The Grandma's casserole earns four stars."
+    }
+   ]
+  },
+  {
+   "label": "Trade up",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your sandwich for their cookies plus chips. Lunch arbitrage."
+    }
+   ]
+  }
+ ]
+}

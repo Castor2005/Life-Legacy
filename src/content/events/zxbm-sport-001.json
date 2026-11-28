@@ -1,0 +1,68 @@
+{
+ "id": "zxbm-sport-001",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "archery league",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "New gear, new hope. Callum is annoyingly better at this.",
+ "choices": [
+  {
+   "label": "Train weekly",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.25",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-2"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "archery clicks. Callum demands a rematch you will win."
+    }
+   ]
+  },
+  {
+   "label": "Social league",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Beers after archery. Callum brings the whole crew."
+    }
+   ]
+  }
+ ]
+}

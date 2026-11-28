@@ -1,0 +1,63 @@
+{
+ "id": "zxwl-cook-058",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "pierogi cook-off",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The kitchen smells like a promise. Idris claims their version is better.",
+ "choices": [
+  {
+   "label": "Follow the recipe",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "pierogi triumphs. Idris demands the recipe, gets it."
+    }
+   ]
+  },
+  {
+   "label": "Improvise wildly",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "7"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "pierogi cook-off goes experimental. Idris eats it anyway."
+    }
+   ]
+  }
+ ]
+}

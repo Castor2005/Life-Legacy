@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy1-001",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Television nights on the news",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 1955
+   },
+   {
+    "p": "year",
+    "lte": 1959
+   }
+  ]
+ },
+ "text": "A glowing box gathers the street. The world shrinks to one channel. You feel the hinge of history swing.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Television nights lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Television nights observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "zxbm-craft-078",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Making a birdhouse by hand",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Sawdust and satisfaction. Kenji wants one for their hallway.",
+ "choices": [
+  {
+   "label": "Sell a few",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "600"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "a birdhouse sells to strangers. Kenji takes three."
+    }
+   ]
+  },
+  {
+   "label": "Gift them",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Handmade beats bought. a birdhouse grace three homes."
+    }
+   ]
+  }
+ ]
+}

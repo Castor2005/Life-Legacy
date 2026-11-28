@@ -1,0 +1,49 @@
+{
+ "id": "zxad-school30-020",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Felix's kid gets the lead",
+ "tags": [
+  "adult-life",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The group text erupts with pride. Your own kids watch how you react.",
+ "choices": [
+  {
+   "label": "Celebrate big",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(100)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Felix's kid glows. Your kids take notes on joy."
+    }
+   ]
+  },
+  {
+   "label": "Mentor yours",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Inspired practice sessions. Your kids chase their own gets the lead."
+    }
+   ]
+  }
+ ]
+}

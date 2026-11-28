@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-045",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Liv asks about marriage",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "You earned this answer the hard way. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Liv listens hard. Your answer about about marriage lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Liv\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Liv retells it for years."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,60 @@
+{
+ "id": "zxmd-tuition-047",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Dorm deposits stagger",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Scholarship essays: a family project. The FAFSA forms breed overnight. The 529 plan covers the books.",
+ "choices": [
+  {
+   "label": "Pay and plan",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(5000)"
+    },
+    {
+     "op": "set",
+     "path": "assets.savings",
+     "value": "max(0,s.assets.savings-3000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Dorm deposits handled. Education: the priciest gift."
+    }
+   ]
+  },
+  {
+   "label": "Scholarship blitz",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "3000"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(1000)"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Essays by the dozen. Dorm deposits shrink a little."
+    }
+   ]
+  }
+ ]
+}

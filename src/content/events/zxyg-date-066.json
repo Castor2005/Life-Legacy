@@ -1,0 +1,70 @@
+{
+ "id": "zxyg-date-066",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Petra mini-golf showdown",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "The conversation flows past closing time.",
+ "choices": [
+  {
+   "label": "Ask them out",
+   "hint": "love+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "7"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-1"
+      },
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Petra says yes. The mini-golf showdown becomes a story."
+    }
+   ]
+  },
+  {
+   "label": "Slow burn",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Friends first, maybe more. Petra likes the pace."
+    }
+   ]
+  }
+ ]
+}

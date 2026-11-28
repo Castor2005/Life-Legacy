@@ -1,0 +1,73 @@
+{
+ "id": "zxtn-rebel-009",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The all-night diner run escalates",
+ "tags": [
+  "teen",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Senior lore says this is tradition. Nico is already in.",
+ "choices": [
+  {
+   "label": "Full send",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "7"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-5"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "-4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nico laughs for a week. The story outlives the detention."
+    }
+   ]
+  },
+  {
+   "label": "Talk them down",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cooler heads, warm cocoa. Nico thanks you later."
+    }
+   ]
+  }
+ ]
+}

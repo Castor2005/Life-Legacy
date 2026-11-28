@@ -1,0 +1,53 @@
+{
+ "id": "zxbm-tech-029",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Electric car era",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Setup takes an evening and three passwords. Amara adopted it months ago, insufferably.",
+ "choices": [
+  {
+   "label": "Early adopter",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(800)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Electric car hums along. Amara asks YOU for help now."
+    }
+   ]
+  },
+  {
+   "label": "Wait and see",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "money",
+     "amount": "200"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Prices drop, bugs vanish. Patience funds the Electric car fund."
+    }
+   ]
+  }
+ ]
+}

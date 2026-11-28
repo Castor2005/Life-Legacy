@@ -1,0 +1,55 @@
+{
+ "id": "zxbm-spirit-052",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Silent retreat vow",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Stillness teaches loudly. Priya walks the path beside you.",
+ "choices": [
+  {
+   "label": "Go deeper",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "9"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Silent retreat reshapes the weeks. Priya notices the calm first."
+    }
+   ]
+  },
+  {
+   "label": "Serve others",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bowls filled, floors swept. Silent retreat lives in the hands."
+    }
+   ]
+  }
+ ]
+}

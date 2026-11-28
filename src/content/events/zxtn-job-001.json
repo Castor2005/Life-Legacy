@@ -1,0 +1,53 @@
+{
+ "id": "zxtn-job-001",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Movie theater gig",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The application is one page. The interview is five minutes. Zane already works there and vouches for you.",
+ "choices": [
+  {
+   "label": "Work weekends",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "180"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The Movie theater gig pays $180. Zane covers your first break."
+    }
+   ]
+  },
+  {
+   "label": "Bank it all",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "120"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Straight to savings. Future-you sends thanks from the future."
+    }
+   ]
+  }
+ ]
+}

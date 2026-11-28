@@ -129,7 +129,7 @@ window.LL = (window.LL || { v: 1, files: [] });
       }
       var p = msg.params || {};
       if (msg.method === "initialize") {
-        res.result = { protocolVersion: "2024-11-05", serverInfo: { name: "life-and-legacy", version: (window.LL&&LL.APP_VERSION)||"v0.1.07" }, capabilities: { tools: {}, resources: {} } };
+        res.result = { protocolVersion: "2024-11-05", serverInfo: { name: "life-and-legacy", version: (window.LL&&LL.APP_VERSION)||"v0.1.07.006" }, capabilities: { tools: {}, resources: {} } };
       } else if (msg.method === "tools/list") {
         res.result = { tools: TOOLS };
       } else if (msg.method === "tools/call") {

@@ -1,0 +1,49 @@
+{
+ "id": "zxtn-mentor-019",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The art teacher takes notice",
+ "tags": [
+  "teen",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A book pressed into your hands. Emmett is jealous in the good way.",
+ "choices": [
+  {
+   "label": "Accept guidance",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Emmett\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "The art teacher opens doors. Emmett gets pulled along too."
+    }
+   ]
+  },
+  {
+   "label": "Prove it solo",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You deliver anyway. The art teacher smiles like this was the plan."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "id": "zxbb-toy-007",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "The toy boat era",
+ "tags": [
+  "baby",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The toy boat is now the center of the universe. Today it goes under the kitchen table.",
+ "choices": [
+  {
+   "label": "Play along",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "An hour of pure toy boat bliss. The giggles recharge everyone."
+    }
+   ]
+  },
+  {
+   "label": "Buy a spare",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(15)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A backup toy boat hides in the closet. Future crisis averted for $15."
+    }
+   ]
+  }
+ ]
+}

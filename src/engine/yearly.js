@@ -56,6 +56,7 @@ function runYearlySocialSystems(silent){
   yearlyFate(silent);
   runDynastyDepth(silent);
   wTickLife(silent);
+  try{ if(typeof fateWill==="function")fateWill(silent); }catch(e){}
 }
 function runYearlyEvents(silent){
   // Kids flavor + one event roll. Silent years (fast-forward) stay quiet.

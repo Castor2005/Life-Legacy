@@ -1,0 +1,50 @@
+{
+ "id": "zxtn-camp-027",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Coding camp session",
+ "tags": [
+  "teen",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "No signal for a week. Bliss. Freya bunks next door.",
+ "choices": [
+  {
+   "label": "Try everything",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Coding camp delivers. Freya and you return feral and happy."
+    }
+   ]
+  },
+  {
+   "label": "Find your thing",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One activity clicks completely. A lifelong thread begins."
+    }
+   ]
+  }
+ ]
+}

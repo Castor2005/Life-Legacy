@@ -1,0 +1,69 @@
+{
+ "id": "zxkd-animal-100",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The duckling mystery",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A rustle in the bushes reveals everything. It happens in the vacant lot.",
+ "choices": [
+  {
+   "label": "Befriend it",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "addPet",
+       "name": "\"Taffy\"",
+       "petType": "dog",
+       "rel": 70
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The duckling trusts you. Taffy wags along as honorary sibling."
+    }
+   ]
+  },
+  {
+   "label": "Observe and sketch",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Field notes, careful drawings. A young naturalist is born."
+    }
+   ]
+  }
+ ]
+}

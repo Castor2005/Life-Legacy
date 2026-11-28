@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy6-001",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Moon landing up close",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 1969
+   },
+   {
+    "p": "year",
+    "lte": 1970
+   }
+  ]
+ },
+ "text": "A boot print on the Moon, watched live. Humanity's biggest night. The old folks say: told you so.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Moon landing lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Moon landing observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

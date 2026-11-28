@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-club-064",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Astronomy club a guest coach",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "After school: Astronomy club. Today brings auditions for the spring showcase.",
+ "choices": [
+  {
+   "label": "Take the lead",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You run the meeting. Astronomy club has a new captain."
+    }
+   ]
+  },
+  {
+   "label": "Master the craft",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hours vanish. Your Astronomy skills jump a full level."
+    }
+   ]
+  }
+ ]
+}

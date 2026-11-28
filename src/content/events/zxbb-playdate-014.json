@@ -1,0 +1,49 @@
+{
+ "id": "zxbb-playdate-014",
+ "minAge": 2,
+ "maxAge": 4,
+ "title": "Playdate with Anika",
+ "tags": [
+  "baby",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Anika from down the street comes over. Two toddlers, one ball.",
+ "choices": [
+  {
+   "label": "Share the toys",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Anika\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Anika trades a block for a truck. Diplomacy begins early."
+    }
+   ]
+  },
+  {
+   "label": "Parallel play",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Side by side, separate worlds. Perfectly normal, perfectly sweet."
+    }
+   ]
+  }
+ ]
+}

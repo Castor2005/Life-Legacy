@@ -13,7 +13,7 @@ function capYr(key,limit){ limit=limit||3; var k="cap_"+key; S.perYear[k]=(S.per
 function gainLog(icon,text,type){ pushLog(S.age,icon,text,type||""); }
 function traitName(id){ for(var i=0;i<window.GDATA.traits.length;i++) if(window.GDATA.traits[i].id===id) return window.GDATA.traits[i].icon+" "+window.GDATA.traits[i].name; return id; }
 
-function doAct(id){
+function doActInner(id){
   if(!S||!S.alive)return; var g=S.stats;
   /* EDA/CQRS: record the intent on the command bus (validate + journal; the
    * switch below stays the executor — strangler pattern, zero behavior risk). */
@@ -228,12 +228,28 @@ function doAct(id){
       if(typeof modRunAct==="function"){ try{ if(modRunAct(id))return; }catch(e){} }
       if(id.indexOf("major-")===0){ var m=id.slice(6); S.major=m; gainLog("📚","Declared major: "+m+". Specialized path unlocked."); autosave(); render(); return; }
       if(id.indexOf("focus-")===0){ S.lifestyle=id.slice(6); gainLog("🎯","Lifestyle focus: "+id.slice(6)+". Yearly bonuses unlocked."); autosave(); render(); return; }
-      if(id.indexOf("dec-")===0){ doDecision(id.slice(4)); return; }
+      if(id.indexOf("dec-")===0){ doDecisionInner(id.slice(4)); return; }
       toast("Unknown action"); return;
   }
   autosave(); render();
 }
-function doDecision(did){
+/* Action-Event Engine hook: a verb that truly did something (log grew) narrates it. */
+function doAct(id){
+  if(!S||!S.alive)return;
+  var n=S.log.length, r;
+  try{ r=doActInner(id); }catch(e){ throw e; }
+  try{
+    if(["propose","wedding","grandwed","seduce","datenight","commit"].indexOf(id)>=0)autoPaintPartner();
+    if(S&&S.alive&&S.log.length>n){
+      actNarrate(id);
+      /* the inner verb already rendered BEFORE the card existed — repaint
+       * unless a choice scene just opened on top (it owns the screen now) */
+      try{ var __em=document.querySelector("#eventModal"); if(!__em||__em.classList.contains("hidden"))render(); }catch(ee){}
+    }
+  }catch(e){}
+  return r;
+}
+function doDecisionInner(did){
   if(!S||!S.alive)return;
   if(S.perYear["dec_"+did]){ toast("⏳ One big decision per year each — age up!"); return; }
   function payOK(c){ if(S.money<c){ toast("💸 Need "+fmt$(c)+"!"); return false; } S.money-=c; return true; }

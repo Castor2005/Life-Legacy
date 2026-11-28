@@ -1,0 +1,70 @@
+{
+ "id": "zxtn-exam-016",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The chemistry gauntlet marathon",
+ "tags": [
+  "teen",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Study groups form like storm systems. Noor is stress-highlighting the textbook.",
+ "choices": [
+  {
+   "label": "Grind nightly",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(6))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.discipline>50"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "6"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The chemistry gauntlet conquered. Noor owes you one for the notes."
+    }
+   ]
+  },
+  {
+   "label": "Study with Noor",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(3))"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Half studying, half laughing. The chemistry gauntlet still goes fine."
+    }
+   ]
+  }
+ ]
+}

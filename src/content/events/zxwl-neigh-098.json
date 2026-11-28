@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-098",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Bram feuds over the fence",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Suburbia stages its daily drama. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Bram\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bram becomes a real friend over feuds over the fence fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The feuds over the fence saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

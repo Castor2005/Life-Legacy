@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-knee-022",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "The lower back files a complaint",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The weather now predicts itself in your joints. Stairs become negotiations. The pharmacist knows your name.",
+ "choices": [
+  {
+   "label": "Physio plan",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(600)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bands, stretches, patience. The lower back settles down."
+    }
+   ]
+  },
+  {
+   "label": "Adapt sports",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Swimming replaces running. The lower back approves the trade."
+    }
+   ]
+  }
+ ]
+}

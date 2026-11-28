@@ -1,0 +1,57 @@
+{
+ "id": "zxfa-trial-022",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "Broken deal week",
+ "tags": [
+  "adult-life",
+  "fate"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "stats.karma",
+  "lte": 25
+ },
+ "text": "The past sends its invoice. Debts come due in strange coin. The call comes at dinner.",
+ "choices": [
+  {
+   "label": "Make amends",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Apologies, restitution, change. Broken deal becomes tuition."
+    }
+   ]
+  },
+  {
+   "label": "Endure it",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You take the hit standing. Broken deal passes like weather."
+    }
+   ]
+  }
+ ]
+}

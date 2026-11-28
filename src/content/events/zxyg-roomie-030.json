@@ -1,0 +1,54 @@
+{
+ "id": "zxyg-roomie-030",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Yuki nails the chore chart",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The chore wheel spins toward drama.",
+ "choices": [
+  {
+   "label": "House meeting",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rules posted on the fridge. Yuki signs in fancy script."
+    }
+   ]
+  },
+  {
+   "label": "Move out",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(900)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New place, no nails the chore chart. Peace has a price: $900."
+    }
+   ]
+  }
+ ]
+}

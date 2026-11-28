@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-club-016",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Drama club showcase night",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "After school: Drama club. Today brings a visiting expert with wild stories.",
+ "choices": [
+  {
+   "label": "Take the lead",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You run the meeting. Drama club has a new captain."
+    }
+   ]
+  },
+  {
+   "label": "Master the craft",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hours vanish. Your Drama skills jump a full level."
+    }
+   ]
+  }
+ ]
+}

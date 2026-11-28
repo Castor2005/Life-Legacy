@@ -1,0 +1,68 @@
+{
+ "id": "zxkd-playground-015",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "hide-and-seek rain edition",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Recess. hide-and-seek is underway when the whistle blows early.",
+ "choices": [
+  {
+   "label": "Play hard",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Legends are born at recess. Scraped knees and glory."
+    }
+   ]
+  },
+  {
+   "label": "Referee it",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fair calls, firm whistle. hide-and-seek has never run smoother."
+    }
+   ]
+  }
+ ]
+}

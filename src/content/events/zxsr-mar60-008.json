@@ -1,0 +1,54 @@
+{
+ "id": "zxsr-mar60-008",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Golden fiftieth anniversary dance",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "married"
+ },
+ "text": "The vows aged better than the photos. Your partner Dario still steals the blankets.",
+ "choices": [
+  {
+   "label": "Renew the vows",
+   "hint": "love+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1000)"
+    },
+    {
+     "op": "partnerRel",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Dario cries again. The Golden fiftieth anniversary outshines the wedding."
+    }
+   ]
+  },
+  {
+   "label": "Quiet ritual",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "partnerRel",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Same restaurant, same table. Dario orders for both of you."
+    }
+   ]
+  }
+ ]
+}

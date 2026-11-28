@@ -1,0 +1,50 @@
+{
+ "id": "zxtn-camp-034",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Lake camp escape",
+ "tags": [
+  "teen",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The bus leaves at dawn. Emmett bunks next door.",
+ "choices": [
+  {
+   "label": "Try everything",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lake camp delivers. Emmett and you return feral and happy."
+    }
+   ]
+  },
+  {
+   "label": "Find your thing",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One activity clicks completely. A lifelong thread begins."
+    }
+   ]
+  }
+ ]
+}

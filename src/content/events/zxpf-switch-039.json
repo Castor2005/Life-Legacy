@@ -1,0 +1,70 @@
+{
+ "id": "zxpf-switch-039",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "nurse opening",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Restlessness has a salary band. Sofia made the same leap last year.",
+ "choices": [
+  {
+   "label": "Jump fields",
+   "hint": "career+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "8000"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(2000)"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "nurse life begins. Sofia shows you the ropes."
+    }
+   ]
+  },
+  {
+   "label": "Freelance first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1500"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Weekend nurse gigs test the water. Warm enough."
+    }
+   ]
+  }
+ ]
+}

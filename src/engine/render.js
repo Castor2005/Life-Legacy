@@ -27,7 +27,8 @@ function famRoster(p){
   var R=S.relationships, rows=[];
   function row(icon,name,sub,npcId){
     var nr=npcId?'<button class="mini" data-chat="'+npcId+'">💬</button>':"";
-    return '<div class="slot" style="margin-bottom:6px"><div class="grow"><b>'+icon+" "+esc(name)+'</b><small>'+esc(sub)+'</small></div>'+nr+'</div>';
+    var face=""; try{ face=npcFaceHTML(name,false,!!npcId); }catch(e){}
+    return '<div class="slot" style="margin-bottom:6px"><div class="grow"><b>'+face+" "+icon+" "+esc(name)+'</b><small>'+esc(sub)+'</small></div><div style="display:flex;gap:6px">'+nr+'</div></div>';
   }
   var treeBtn=document.createElement("button"); treeBtn.className="act"; treeBtn.style.gridColumn="1/-1";
   var gens=(R.grandparents&&R.grandparents.length)?(R.grandparents.filter(function(g){return g.alive;}).length+" grandparent"+(R.grandparents.filter(function(g){return g.alive;}).length===1?"":"s")):"parents";
@@ -50,9 +51,9 @@ function famRoster(p){
   if(R.dadAge>-100)h+=parentRow("dad");
   (R.siblings||[]).forEach(function(s){ var n=wFindNPC(s.name); h+=row("🧬",s.name+" ("+s.age+")","sibling · rel "+s.rel+" · "+(n&&n.alive?(n.jobId&&n.jobId!=="unemployed"?jobNameById(n.jobId):(s.age>=18?"between jobs":"in school")):"🕊️"),n?n.id:null); });
   (R.grandparents||[]).forEach(function(g){ var n=g.npcId?npcById(g.npcId):wFindNPC(g.name); h+=row("📜",g.name+" · "+g.side,g.alive?("age "+g.age+" · rel "+g.rel+(n&&n.alive&&n.jobId&&n.jobId!=="unemployed"?" · "+jobNameById(n.jobId):"")):"🕊️ remembered",n?n.id:null); });
-  if(R.partner){ var pn=wFindNPC(R.partner.name); h+=row("💘",R.partner.name+(R.partner.married?" 💍":""),"partner · rel "+R.partner.rel+(pn&&pn.alive&&pn.jobId&&pn.jobId!=="unemployed"?" · "+jobNameById(pn.jobId):""),pn?pn.id:null); }
+  if(R.partner){ var pn=wFindNPC(R.partner.name); var pg=""; try{ pg=(pn&&pn.agent&&pn.agent.goal)?(" · 🎯 "+pn.agent.goal.detail):""; }catch(e){} h+=row("💘",R.partner.name+(R.partner.married?" 💍":""),"partner · rel "+R.partner.rel+(pn&&pn.alive&&pn.jobId&&pn.jobId!=="unemployed"?" · "+jobNameById(pn.jobId):"")+pg,pn?pn.id:null); }
   try{ var _lv=(S.sex&&S.sex.lovers)||[]; for(var _li=0;_li<_lv.length;_li++){ var _ln=null; try{_ln=wFindNPC(_lv[_li]);}catch(e){} h+=row("🔥",_lv[_li],"casual fling",_ln?_ln.id:null); } }catch(e){}
-  (R.children||[]).forEach(function(c){ var cn=wFindNPC(c.name); h+=row("🌱",c.name+" ("+c.age+")","child · rel "+c.rel+(c.trait?" · "+c.trait:"")+(c.dream?" → "+c.dream:"")+((c.age>=5&&c.age<18)?" · grades "+(c.grades||60):"")+(c.legit===false?" · ⚖️ contested":"")+(c.custody==="ex"?" · 🏠 with ex":""),cn?cn.id:null); });
+  (R.children||[]).forEach(function(c){ var cn=wFindNPC(c.name); var cg=""; try{ cg=(cn&&cn.agent&&cn.agent.goal)?(" · 🎯 "+cn.agent.goal.detail):""; }catch(e){} h+=row("🌱",c.name+" ("+c.age+")","child · rel "+c.rel+(c.trait?" · "+c.trait:"")+(c.dream?" → "+c.dream:"")+cg+((c.age>=5&&c.age<18)?" · grades "+(c.grades||60):"")+(c.legit===false?" · ⚖️ contested":"")+(c.custody==="ex"?" · 🏠 with ex":""),cn?cn.id:null); });
   try{ var _pr=(typeof pregEnsure==="function")?pregEnsure():[]; if(_pr.length){ var _ph=_pr.map(function(p){return "🤰 "+p.carrier+" (tri "+p.tri+"/3"+(p.care?", cared":"")+")";}).join(" · "); h+=row("🤰","Expecting",_ph,null); } }catch(e){}
   if(!h)h='<div class="slot"><div class="grow"><b>👪 Just you, for now</b><small>Find love, have children — the tree grows.</small></div></div>';
   var wrap=document.createElement("div"); wrap.style.gridColumn="1/-1"; wrap.innerHTML=h;
@@ -95,6 +96,7 @@ function render(){
   $("dynBarTop").innerHTML='<span class="dynch">👑 '+esc(S.firstName+" "+S.lastName)+'</span>'
     +'<span class="dynch">'+dAge+'</span><span class="dynch">'+dMon+'</span>'
     +'<span class="dynch">⚖ '+S.prestige+'</span>'
+    +(function(){ try{ return fateChipHTML(); }catch(e){ return ""; } })()
     +(S.flags.inJail>0?'<span class="dynch">⛓️ '+S.flags.inJail+'y</span>':"");
   $("moneyLine").innerHTML=
     '<span class="chip '+(S.money<0?"neg":"pos")+'">💵 '+fmt$(S.money)+(S.debt>0?(" (debt "+fmt$(S.debt)+")"):"")+'</span>'
@@ -115,6 +117,17 @@ function render(){
   var tabs=document.querySelectorAll(".tab");
   for(var ti=0;ti<tabs.length;ti++)tabs[ti].classList.toggle("on",tabs[ti].dataset.tab===curTab);
   var p=$("panel"); p.innerHTML="";
+  /* Action-Event Engine: latest outcome pins a card atop the panel */
+  try{
+    var __lo=window.__lastOutcome;
+    if(__lo&&S&&S.alive){
+      var __card=document.createElement("div");
+      __card.className="actout"+(__lo.ai?" ai":"");
+      __card.innerHTML='<div class="acted"><b>'+esc(__lo.icon+" "+__lo.title)+'</b>'+(__lo.ai?'<span class="aitag">✨ AI</span>':"")+'</div><div class="actxt">'+esc(__lo.text)+'</div>'
+        +(__lo.side?'<div class="actside"><b>'+esc(__lo.side.icon+" "+__lo.side.title)+'</b> '+esc(__lo.side.text)+'</div>':"");
+      p.appendChild(__card);
+    }
+  }catch(e){}
   if(!window.__llFilter)window.__llFilter={};
   if(!window.__llSec)window.__llSec={};
   function tabCount(tab){ try{
@@ -544,7 +557,7 @@ function renderChatThread(typing){
   box.innerHTML=h; box.scrollTop=box.scrollHeight;
 }
 function fillChatSettings(n){
-  var t=$("chatTitle"); if(t)t.textContent="Chat with "+n.name;
+  var t=$("chatTitle"); if(t){ try{ t.innerHTML=npcFaceHTML(n.name,false,true)+" Chat with "+esc(n.name); }catch(e){ t.textContent="Chat with "+n.name; } }
   var rl=$("chatRel"); if(rl)rl.value=Math.round(n.rel);
   var rv=$("chatRelVal"); if(rv)rv.textContent=Math.round(n.rel)+" · "+chatRelWord(n.rel);
   var ro=$("chatRole"); if(ro){ ro.innerHTML=chatRoleList().map(function(r){return "<option"+(r===n.role?" selected":"")+">"+r+"</option>";}).join(""); }
@@ -972,6 +985,13 @@ function renderWorldPanel(p){
   p.appendChild(row);
   if(w.outlook){ var od=document.createElement("div"); od.className="slot"; od.style.gridColumn="1/-1";
     od.innerHTML='<div class="grow"><b>📊 Analyst (age '+w.outlook.age+')</b><small>'+esc(w.outlook.text)+'</small></div>'; p.appendChild(od); }
+  try{ var __fw=document.createElement("div"); __fw.className="slot"; __fw.style.gridColumn="1/-1";
+    var __om="The Will has not spoken yet."; try{ fateEnsure(); if(S.fate&&S.fate.omen)__om=S.fate.omen; }catch(e){}
+    var __hh=""; try{ __hh=historyHeadline(S.year); }catch(e){}
+    var __era=""; try{ __era=historyEra(S.year); }catch(e){}
+    __fw.innerHTML='<div class="grow"><b>🌌 Universe Will · '+esc((function(){try{return fateTideWord();}catch(e){return "still";}})())+'</b><small>'+esc(__om)+'</small></div>'
+      +'<div class="grow"><b>📜 '+S.year+' · '+esc(__era)+'</b><small>'+esc(__hh)+'</small></div>';
+    p.appendChild(__fw); }catch(e){}
   h("📈 Markets — buy $500 · sell half");
   var order=w.tickers.slice().sort(function(a,b){return b.chg-a.chg;});
   for(i=0;i<order.length;i++){ (function(t){
@@ -1002,7 +1022,7 @@ function renderWorldPanel(p){
   for(i=0;i<show.length;i++){ (function(n){
     var d=document.createElement("div"); d.className="npc"; d.style.gridColumn="1/-1";
     var roleI=WORLD_ROLE_ICON[n.role]||"👤";
-    d.innerHTML='<div class="grow"><b>'+roleI+" "+esc(n.name)+'</b><small>'+n.role+" · age "+n.age+" · "+esc(jobNameById(n.jobId))+" · rel "+Math.round(n.rel)+(n.note?" · "+esc(n.note).slice(0,90):"")+'</small><div class="relbar"><i style="width:'+Math.round(n.rel)+'%"></i></div></div>';
+    d.innerHTML='<div class="grow"><b>'+roleI+" "+esc(n.name)+'</b><small>'+n.role+" · age "+n.age+" · "+esc(jobNameById(n.jobId))+" · rel "+Math.round(n.rel)+(n.agent&&n.agent.goal?" · 🎯 "+esc(n.agent.goal.detail||n.agent.goal.kind):"")+(n.note?" · "+esc(n.note).slice(0,90):"")+'</small><div class="relbar"><i style="width:'+Math.round(n.rel)+'%"></i></div></div>';
     var r3=document.createElement("div"); r3.className="row";
     function mb(t,fn,dis){ var b=document.createElement("button"); b.className="mini"; b.textContent=t; if(dis)b.disabled=true; b.onclick=fn; r3.appendChild(b); return b; }
     mb("🗨️ Chat",function(){ openChat(n.id); });

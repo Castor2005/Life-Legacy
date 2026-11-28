@@ -1,0 +1,50 @@
+{
+ "id": "zxtn-camp-044",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Sailing week escape",
+ "tags": [
+  "teen",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "No signal for a week. Bliss. Tessa bunks next door.",
+ "choices": [
+  {
+   "label": "Try everything",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sailing week delivers. Tessa and you return feral and happy."
+    }
+   ]
+  },
+  {
+   "label": "Find your thing",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "One activity clicks completely. A lifelong thread begins."
+    }
+   ]
+  }
+ ]
+}

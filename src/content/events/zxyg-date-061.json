@@ -1,0 +1,70 @@
+{
+ "id": "zxyg-date-061",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Noah third-date cooking",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "Nervous laughter, good signs.",
+ "choices": [
+  {
+   "label": "Ask them out",
+   "hint": "love+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-3"
+      },
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Noah says yes. The third-date cooking becomes a story."
+    }
+   ]
+  },
+  {
+   "label": "Slow burn",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Friends first, maybe more. Noah likes the pace."
+    }
+   ]
+  }
+ ]
+}

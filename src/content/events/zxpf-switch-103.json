@@ -1,0 +1,70 @@
+{
+ "id": "zxpf-switch-103",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "carpenter calling",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The listing glows on the screen. Petra made the same leap last year.",
+ "choices": [
+  {
+   "label": "Jump fields",
+   "hint": "career+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "8000"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(2000)"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "carpenter life begins. Petra shows you the ropes."
+    }
+   ]
+  },
+  {
+   "label": "Freelance first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1500"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Weekend carpenter gigs test the water. Warm enough."
+    }
+   ]
+  }
+ ]
+}

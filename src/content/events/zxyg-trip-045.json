@@ -1,0 +1,58 @@
+{
+ "id": "zxyg-trip-045",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Kyoto by night train",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Hostel bunk, top floor, new friends. Aisha navigates by snacks.",
+ "choices": [
+  {
+   "label": "Splurge once",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Kyoto at sunset. Aisha takes the photo you'll frame."
+    }
+   ]
+  },
+  {
+   "label": "Budget wizard",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Street food, free museums, perfect days. Kyoto done right."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-058",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Freya's cook-off dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Candles lit, playlist perfect. Your partner Zane charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Freya raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Freya\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Freya opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

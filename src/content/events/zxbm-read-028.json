@@ -1,0 +1,50 @@
+{
+ "id": "zxbm-read-028",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "The science bestseller marathon",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The margins fill with arguments. Diego presses it into your hands.",
+ "choices": [
+  {
+   "label": "Finish and discuss",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The science bestseller rewires something. Diego debates you till midnight."
+    }
+   ]
+  },
+  {
+   "label": "Read widely",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three books at once. The science bestseller is just the start."
+    }
+   ]
+  }
+ ]
+}

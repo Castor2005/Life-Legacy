@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-059",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Idris's game night dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Candles lit, playlist perfect. Your partner Bram charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Idris raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Idris\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Idris opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

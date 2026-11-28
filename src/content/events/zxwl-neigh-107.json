@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-107",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Rhea loses a cat",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Suburbia stages its daily drama. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Rhea\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rhea becomes a real friend over loses a cat fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The loses a cat saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

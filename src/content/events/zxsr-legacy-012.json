@@ -1,0 +1,50 @@
+{
+ "id": "zxsr-legacy-012",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Family tree grows",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The attic yields its archives. The grandkids will fight over these lovingly. Maya keeps the box.",
+ "choices": [
+  {
+   "label": "Finish it",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(8)"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Family tree complete. Tears at the reading. Legacy: secured."
+    }
+   ]
+  },
+  {
+   "label": "Record audio",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your voice telling all. Family tree play at every gathering."
+    }
+   ]
+  }
+ ]
+}

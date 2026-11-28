@@ -1,0 +1,53 @@
+{
+ "id": "zxyg-fest-056",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "the kite carnival afterparty",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Three days. Zero regrets. Much mud. Liam has the tickets.",
+ "choices": [
+  {
+   "label": "Front row",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the kite carnival peak moment. Liam screams the lyrics wrong."
+    }
+   ]
+  },
+  {
+   "label": "Work the gate",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "150"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Wristbands and free entry. the kite carnival from the inside."
+    }
+   ]
+  }
+ ]
+}

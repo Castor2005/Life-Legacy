@@ -1,0 +1,45 @@
+{
+ "id": "zxbb-mess-013",
+ "minAge": 0,
+ "maxAge": 4,
+ "title": "The great bubble flood",
+ "tags": [
+  "baby",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "An entire bottle of bubbles, deployed at once. Grandma laughs so hard she cries.",
+ "choices": [
+  {
+   "label": "Photo first",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Evidence preserved. Cleanup takes an hour; the picture lasts forever."
+    }
+   ]
+  },
+  {
+   "label": "Clean together",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tiny sponge, huge effort. The mess becomes the lesson."
+    }
+   ]
+  }
+ ]
+}

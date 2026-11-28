@@ -1,0 +1,54 @@
+{
+ "id": "zxad-health30-018",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Dental deep clean verdict",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The waiting room magazine is from 2019. You text the family group chat immediately.",
+ "choices": [
+  {
+   "label": "Follow the plan",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(250)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Dental deep clean handled like an adult. The verdict please the doctor."
+    }
+   ]
+  },
+  {
+   "label": "Fix one habit",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Walking meetings and less sugar. Dental deep clean will show it next year."
+    }
+   ]
+  }
+ ]
+}

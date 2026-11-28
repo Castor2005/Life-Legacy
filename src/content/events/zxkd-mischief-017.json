@@ -1,0 +1,68 @@
+{
+ "id": "zxkd-mischief-017",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The glitter bomb works too well",
+ "tags": [
+  "kid",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "It seemed hilarious at planning time. Sana was there. Sana saw everything.",
+ "choices": [
+  {
+   "label": "Own up",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Confession, apology, detention. The legend softens into a lesson."
+    }
+   ]
+  },
+  {
+   "label": "Deny everything",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-6"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "-4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sana keeps your secret. The guilt keeps you."
+    }
+   ]
+  }
+ ]
+}

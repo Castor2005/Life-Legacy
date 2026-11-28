@@ -1,0 +1,53 @@
+{
+ "id": "zxtn-job-081",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Library shelving gig",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The manager shakes your hand like a deal. Ines already works there and vouches for you.",
+ "choices": [
+  {
+   "label": "Work weekends",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "180"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The Library shelving gig pays $180. Ines covers your first break."
+    }
+   ]
+  },
+  {
+   "label": "Bank it all",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "120"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Straight to savings. Future-you sends thanks from the future."
+    }
+   ]
+  }
+ ]
+}

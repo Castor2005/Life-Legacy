@@ -1,0 +1,70 @@
+{
+ "id": "zxpf-switch-071",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "gardener opening",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The listing glows on the screen. Nico made the same leap last year.",
+ "choices": [
+  {
+   "label": "Jump fields",
+   "hint": "career+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "8000"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(2000)"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "gardener life begins. Nico shows you the ropes."
+    }
+   ]
+  },
+  {
+   "label": "Freelance first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1500"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Weekend gardener gigs test the water. Warm enough."
+    }
+   ]
+  }
+ ]
+}

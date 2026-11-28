@@ -1,0 +1,54 @@
+{
+ "id": "zxad-health30-042",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Blood panel numbers",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The waiting room magazine is from 2019. A calm walk home settles everything.",
+ "choices": [
+  {
+   "label": "Follow the plan",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(250)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Blood panel handled like an adult. The numbers please the doctor."
+    }
+   ]
+  },
+  {
+   "label": "Fix one habit",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Walking meetings and less sugar. Blood panel will show it next year."
+    }
+   ]
+  }
+ ]
+}

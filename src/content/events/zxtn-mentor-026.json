@@ -1,0 +1,49 @@
+{
+ "id": "zxtn-mentor-026",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The debate coach takes notice",
+ "tags": [
+  "teen",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A book pressed into your hands. Luz is jealous in the good way.",
+ "choices": [
+  {
+   "label": "Accept guidance",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Luz\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "The debate coach opens doors. Luz gets pulled along too."
+    }
+   ]
+  },
+  {
+   "label": "Prove it solo",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You deliver anyway. The debate coach smiles like this was the plan."
+    }
+   ]
+  }
+ ]
+}

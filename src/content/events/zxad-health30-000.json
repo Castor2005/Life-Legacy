@@ -1,0 +1,54 @@
+{
+ "id": "zxad-health30-000",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Eye exam numbers",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The nurse compliments your veins. The parking costs more than the visit.",
+ "choices": [
+  {
+   "label": "Follow the plan",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(250)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Eye exam handled like an adult. The numbers please the doctor."
+    }
+   ]
+  },
+  {
+   "label": "Fix one habit",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Walking meetings and less sugar. Eye exam will show it next year."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "id": "zxwl-cook-019",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "paella cook-off",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Ingredients cover every surface. Kofi claims their version is better.",
+ "choices": [
+  {
+   "label": "Follow the recipe",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "paella triumphs. Kofi demands the recipe, gets it."
+    }
+   ]
+  },
+  {
+   "label": "Improvise wildly",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "paella cook-off goes experimental. Kofi eats it anyway."
+    }
+   ]
+  }
+ ]
+}

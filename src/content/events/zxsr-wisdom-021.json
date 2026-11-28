@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-021",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Nico asks about joy",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "You earned this answer the hard way. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nico listens hard. Your answer about about joy lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Nico\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Nico retells it for years."
+    }
+   ]
+  }
+ ]
+}

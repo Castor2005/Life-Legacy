@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-097",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Map skills math race",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Today's lesson crackles with chalk dust. June sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Map skills bends to your will. June copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help June",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. June gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "id": "zxtn-rival-033",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Umar outscores you",
+ "tags": [
+  "teen",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Comparison is the thief of joy, and joy is being robbed.",
+ "choices": [
+  {
+   "label": "Outwork them",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "6"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "You close the gap. Umar respects the grind."
+    }
+   ]
+  },
+  {
+   "label": "Befriend them",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rivals make the best allies. Umar agrees over fries."
+    }
+   ]
+  }
+ ]
+}

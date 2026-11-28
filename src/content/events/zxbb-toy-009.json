@@ -1,0 +1,67 @@
+{
+ "id": "zxbb-toy-009",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "The blocks era",
+ "tags": [
+  "baby",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The blocks is now the center of the universe. Today it goes into the bathtub.",
+ "choices": [
+  {
+   "label": "Play along",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "An hour of pure blocks bliss. The giggles recharge everyone."
+    }
+   ]
+  },
+  {
+   "label": "Buy a spare",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(15)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A backup blocks hides in the closet. Future crisis averted for $15."
+    }
+   ]
+  }
+ ]
+}

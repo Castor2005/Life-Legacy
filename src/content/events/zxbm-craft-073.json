@@ -1,0 +1,49 @@
+{
+ "id": "zxbm-craft-073",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Making a cider press masterclass",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Sawdust and satisfaction. Zola wants one for their hallway.",
+ "choices": [
+  {
+   "label": "Sell a few",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "600"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "a cider press sells to strangers. Zola takes three."
+    }
+   ]
+  },
+  {
+   "label": "Gift them",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Handmade beats bought. a cider press grace three homes."
+    }
+   ]
+  }
+ ]
+}

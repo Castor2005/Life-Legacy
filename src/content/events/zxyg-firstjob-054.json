@@ -1,0 +1,51 @@
+{
+ "id": "zxyg-firstjob-054",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Cubicle era review season",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Slack never sleeps. Neither do you. Your manager Berg watches like a hawk with a spreadsheet.",
+ "choices": [
+  {
+   "label": "Outperform",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Berg notes your name twice. The Cubicle era bends in your favor."
+    }
+   ]
+  },
+  {
+   "label": "Learn everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shadow every team. Skills compound quietly."
+    }
+   ]
+  }
+ ]
+}

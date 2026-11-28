@@ -1,0 +1,64 @@
+{
+ "id": "zxad-sidebiz-021",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "The rental unit grows up",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The spreadsheet turns hopeful colors. Nights belong to the second job now. The first real order came via an old colleague.",
+ "choices": [
+  {
+   "label": "Reinvest",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "money",
+       "amount": "7000"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "1500"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The rental unit levels up. Real revenue, real taxes, real pride."
+    }
+   ]
+  },
+  {
+   "label": "Stay boutique",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "900"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Small, loved, manageable. The rental unit stays joyful."
+    }
+   ]
+  }
+ ]
+}

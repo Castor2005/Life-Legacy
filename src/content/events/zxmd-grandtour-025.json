@@ -1,0 +1,53 @@
+{
+ "id": "zxmd-grandtour-025",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Norway with your partner",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Business class. Earned. Every mile of it. Finally: the trip you postponed for decades.",
+ "choices": [
+  {
+   "label": "No budget",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(6000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Norway with your partner. The photos need no filter and get none."
+    }
+   ]
+  },
+  {
+   "label": "Smart splurge",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Norway done wisely. with your partner — every penny a memory."
+    }
+   ]
+  }
+ ]
+}

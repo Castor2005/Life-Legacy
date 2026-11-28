@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy7-001",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Pocket calculators on the news",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 1971
+   },
+   {
+    "p": "year",
+    "lte": 1972
+   }
+  ]
+ },
+ "text": "Arithmetic goes electronic. Homework will never be the same. Everyone will remember where they were.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pocket calculators lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pocket calculators observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

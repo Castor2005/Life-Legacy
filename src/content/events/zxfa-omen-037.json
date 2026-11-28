@@ -1,0 +1,74 @@
+{
+ "id": "zxfa-omen-037",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "Elder's warning before the storm",
+ "tags": [
+  "adult-life",
+  "fate"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "any": [
+   {
+    "p": "fame",
+    "gte": 50
+   },
+   {
+    "p": "prestige",
+    "gte": 60
+   }
+  ]
+ },
+ "text": "The timing defies statistics. Great names attract great weather. Barometers spin.",
+ "choices": [
+  {
+   "label": "Heed it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Elder's warning guides a real choice. before the storm proves it right."
+    }
+   ]
+  },
+  {
+   "label": "Shrug it off",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Omens are weather. You dress accordingly and walk on."
+    }
+   ]
+  }
+ ]
+}

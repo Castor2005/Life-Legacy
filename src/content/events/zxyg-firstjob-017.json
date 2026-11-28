@@ -1,0 +1,51 @@
+{
+ "id": "zxyg-firstjob-017",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Cubicle era crunch month",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Slack never sleeps. Neither do you. Your manager Kim watches like a hawk with a spreadsheet.",
+ "choices": [
+  {
+   "label": "Outperform",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Kim notes your name twice. The Cubicle era bends in your favor."
+    }
+   ]
+  },
+  {
+   "label": "Learn everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shadow every team. Skills compound quietly."
+    }
+   ]
+  }
+ ]
+}

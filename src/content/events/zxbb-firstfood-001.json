@@ -1,0 +1,45 @@
+{
+ "id": "zxbb-firstfood-001",
+ "minAge": 0,
+ "maxAge": 4,
+ "title": "First taste of apple sauce",
+ "tags": [
+  "baby",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Today the baby tries apple sauce for the first time. The verdict: wide-eyed wonder.",
+ "choices": [
+  {
+   "label": "One more spoon",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Suspicion turns to joy. apple sauce is officially approved."
+    }
+   ]
+  },
+  {
+   "label": "Back to milk",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rejected with drama. Milk wins again. No shame in retreat."
+    }
+   ]
+  }
+ ]
+}

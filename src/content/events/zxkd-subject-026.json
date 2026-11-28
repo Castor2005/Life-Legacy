@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-026",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Fractions poster contest",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Today's lesson crackles with chalk dust. Aisha sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fractions bends to your will. Aisha copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Aisha",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Aisha gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

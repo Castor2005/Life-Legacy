@@ -1,0 +1,45 @@
+{
+ "id": "zxwl-season-079",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Monsoon break ritual",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The year turns its great wheel. Jasper declares it the best one yet.",
+ "choices": [
+  {
+   "label": "Mark the day",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Monsoon break ritual with Jasper. Traditions start exactly like this."
+    }
+   ]
+  },
+  {
+   "label": "Photograph it",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Golden hour captured. Monsoon break framed above the mantel."
+    }
+   ]
+  }
+ ]
+}

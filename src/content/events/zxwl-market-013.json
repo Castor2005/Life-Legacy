@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-market-013",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the kite carnival haul",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Samples multiply. Resistance fails. Wren knows every vendor by name.",
+ "choices": [
+  {
+   "label": "Buy local",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bags heavy with good things. the kite carnival delivers again."
+    }
+   ]
+  },
+  {
+   "label": "Meet makers",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Wren introduces you around. The haul becomes a social tour."
+    }
+   ]
+  }
+ ]
+}

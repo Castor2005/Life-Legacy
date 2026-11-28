@@ -1,0 +1,53 @@
+{
+ "id": "zxyg-fest-040",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "the solstice market road trip",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Three days. Zero regrets. Much mud. Rosa has the tickets.",
+ "choices": [
+  {
+   "label": "Front row",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the solstice market peak moment. Rosa screams the lyrics wrong."
+    }
+   ]
+  },
+  {
+   "label": "Work the gate",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "150"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Wristbands and free entry. the solstice market from the inside."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "id": "zxyg-move-008",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Move to Kyoto",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The job offer tips the scale. Anika already lives there and promises a couch.",
+ "choices": [
+  {
+   "label": "Leap",
+   "hint": "life+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "-2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Kyoto or bust. Anika meets you with keys and noodles."
+    }
+   ]
+  },
+  {
+   "label": "Visit first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Recon week in Kyoto. The fantasy survives contact."
+    }
+   ]
+  }
+ ]
+}

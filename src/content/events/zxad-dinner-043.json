@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-043",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Cleo's game night dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The guest list is a social chessboard. Your partner Anika charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Cleo raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Cleo\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cleo opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

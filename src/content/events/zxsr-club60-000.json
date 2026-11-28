@@ -1,0 +1,55 @@
+{
+ "id": "zxsr-club60-000",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Garden club social",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "New friends at an age when that is rare gold. Koa recruited you over pie.",
+ "choices": [
+  {
+   "label": "Run for president",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(7)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Garden club elects you unanimously. Koa runs the campaign."
+    }
+   ]
+  },
+  {
+   "label": "Happy member",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Show up, pitch in, belong. Garden club is the week's highlight."
+    }
+   ]
+  }
+ ]
+}

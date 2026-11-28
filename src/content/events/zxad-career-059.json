@@ -1,0 +1,71 @@
+{
+ "id": "zxad-career-059",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Leadership review heats up",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "The org chart shifts like sand. Your rival Haddad circles the same prize.",
+ "choices": [
+  {
+   "label": "Take the shot",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "money",
+       "amount": "9000"
+      },
+      {
+       "op": "perf",
+       "delta": "8"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "2000"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Leadership review lands. Haddad sends a gracious, furious email."
+    }
+   ]
+  },
+  {
+   "label": "Build allies",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "perf",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lunches, credit shared, favors banked. The Leadership review can wait."
+    }
+   ]
+  }
+ ]
+}

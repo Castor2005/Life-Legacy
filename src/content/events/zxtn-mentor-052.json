@@ -1,0 +1,49 @@
+{
+ "id": "zxtn-mentor-052",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The debate coach takes notice",
+ "tags": [
+  "teen",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Stay after class, they say. Just to talk. Koa is jealous in the good way.",
+ "choices": [
+  {
+   "label": "Accept guidance",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Koa\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "The debate coach opens doors. Koa gets pulled along too."
+    }
+   ]
+  },
+  {
+   "label": "Prove it solo",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You deliver anyway. The debate coach smiles like this was the plan."
+    }
+   ]
+  }
+ ]
+}

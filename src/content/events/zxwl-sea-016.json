@@ -1,0 +1,50 @@
+{
+ "id": "zxwl-sea-016",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the fjord sailing",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The horizon does its old trick. Salt air fixes what cities break. A seal judges your stroke.",
+ "choices": [
+  {
+   "label": "Dive in",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the fjord sailing. The ocean returns you to yourself."
+    }
+   ]
+  },
+  {
+   "label": "Shore slow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tide pools and novels. the fjord at walking pace."
+    }
+   ]
+  }
+ ]
+}

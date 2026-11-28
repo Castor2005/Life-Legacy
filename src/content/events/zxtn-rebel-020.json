@@ -1,0 +1,73 @@
+{
+ "id": "zxtn-rebel-020",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The prank war goes sideways",
+ "tags": [
+  "teen",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Rules were made to be negotiated. Idris is already in.",
+ "choices": [
+  {
+   "label": "Full send",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-5"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "-2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Idris laughs for a week. The story outlives the detention."
+    }
+   ]
+  },
+  {
+   "label": "Talk them down",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cooler heads, warm cocoa. Idris thanks you later."
+    }
+   ]
+  }
+ ]
+}

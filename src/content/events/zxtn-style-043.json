@@ -1,0 +1,50 @@
+{
+ "id": "zxtn-style-043",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The thrift flip phase",
+ "tags": [
+  "teen",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The allowance has a new purpose. Silas approves cautiously.",
+ "choices": [
+  {
+   "label": "Commit fully",
+   "hint": "looks+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "looks",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The thrift flip phase rules. Compliments from unexpected people."
+    }
+   ]
+  },
+  {
+   "label": "Keep one piece",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Subtle nod to the trend. Silas calls it tasteful."
+    }
+   ]
+  }
+ ]
+}

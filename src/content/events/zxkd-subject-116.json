@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-116",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Times tables show-and-tell",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A surprise worksheet lands on every desk. Emmett sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Times tables bends to your will. Emmett copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Emmett",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Emmett gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "id": "zxyg-move-014",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Move to Seoul",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "One-way ticket, two suitcases. Anika already lives there and promises a couch.",
+ "choices": [
+  {
+   "label": "Leap",
+   "hint": "life+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "-1"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Seoul or bust. Anika meets you with keys and noodles."
+    }
+   ]
+  },
+  {
+   "label": "Visit first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Recon week in Seoul. The fantasy survives contact."
+    }
+   ]
+  }
+ ]
+}

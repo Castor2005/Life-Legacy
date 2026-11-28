@@ -1,0 +1,45 @@
+{
+ "id": "zxbb-outing-010",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "Trip to grandma's porch",
+ "tags": [
+  "baby",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The stroller rolls toward grandma's porch under soft gray skies. The baby narrates in vowels.",
+ "choices": [
+  {
+   "label": "Slow wander",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "grandma's porch has never been this interesting. Pigeons: astonishing."
+    }
+   ]
+  },
+  {
+   "label": "Nap on the go",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fresh air works its magic. Two hours of stroller sleep."
+    }
+   ]
+  }
+ ]
+}

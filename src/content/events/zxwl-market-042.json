@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-market-042",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the river regatta haul",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Stalls stretch down the whole street. Freya knows every vendor by name.",
+ "choices": [
+  {
+   "label": "Buy local",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bags heavy with good things. the river regatta delivers again."
+    }
+   ]
+  },
+  {
+   "label": "Meet makers",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Freya introduces you around. The haul becomes a social tour."
+    }
+   ]
+  }
+ ]
+}

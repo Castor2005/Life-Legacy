@@ -1,0 +1,67 @@
+{
+ "id": "zxpf-raise-013",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "writer contract renewal",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Numbers season arrives. Thorne holds the budget like a dragon.",
+ "choices": [
+  {
+   "label": "Make the case",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "money",
+       "amount": "5000"
+      },
+      {
+       "op": "perf",
+       "delta": "6"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "800"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Thorne blinks first. The writer contract renewal pays out."
+    }
+   ]
+  },
+  {
+   "label": "Skill up first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Certified, sharpened, undeniable. Next contract renewal, no contest."
+    }
+   ]
+  }
+ ]
+}

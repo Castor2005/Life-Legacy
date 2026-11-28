@@ -1,0 +1,45 @@
+{
+ "id": "zxwl-season-088",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Equinox dawn feast",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The year turns its great wheel. Liam declares it the best one yet.",
+ "choices": [
+  {
+   "label": "Mark the day",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Equinox dawn feast with Liam. Traditions start exactly like this."
+    }
+   ]
+  },
+  {
+   "label": "Photograph it",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Golden hour captured. Equinox dawn framed above the mantel."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "id": "zxwl-holiday-030",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "New Year chaos",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Recipes older than you emerge. Nico brings the chaos and the pie.",
+ "choices": [
+  {
+   "label": "Host everyone",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New Year chaos at yours. Nico does dishes without asking."
+    }
+   ]
+  },
+  {
+   "label": "Quiet version",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Small New Year, deep peace. Nico understands completely."
+    }
+   ]
+  }
+ ]
+}

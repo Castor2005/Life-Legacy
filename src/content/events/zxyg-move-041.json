@@ -1,0 +1,58 @@
+{
+ "id": "zxyg-move-041",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Move to Cusco",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "One-way ticket, two suitcases. Callum already lives there and promises a couch.",
+ "choices": [
+  {
+   "label": "Leap",
+   "hint": "life+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "-1"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cusco or bust. Callum meets you with keys and noodles."
+    }
+   ]
+  },
+  {
+   "label": "Visit first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Recon week in Cusco. The fantasy survives contact."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "id": "zxmd-teendrive-059",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Teaching your teen to drive",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Empty lot, Sunday dawn. In the the minivan, down the country loop, your knuckles whiten on the door handle.",
+ "choices": [
+  {
+   "label": "Stay calm",
+   "hint": "family+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "your teen parks it clean. Pride beats panic."
+    }
+   ]
+  },
+  {
+   "label": "Hire the pro",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A professional absorbs the terror. your teen passes first try."
+    }
+   ]
+  }
+ ]
+}

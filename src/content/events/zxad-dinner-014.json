@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-014",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Maya's dinner party dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Candles lit, playlist perfect. Your partner Noor charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Maya raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Maya\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Maya opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

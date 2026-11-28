@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-mastery-065",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "stargazing mastery",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Twenty years in, the craft opens new rooms. Sana shares the obsession.",
+ "choices": [
+  {
+   "label": "Teach it",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(5)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Students gather. stargazing flows through you to Sana."
+    }
+   ]
+  },
+  {
+   "label": "Exhibit it",
+   "hint": "fame+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "fame",
+     "value": "min(100,s.fame+(6))"
+    },
+    {
+     "op": "money",
+     "amount": "800"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The stargazing show sells out. Sana buys piece one."
+    }
+   ]
+  }
+ ]
+}

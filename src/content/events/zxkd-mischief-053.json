@@ -1,0 +1,68 @@
+{
+ "id": "zxkd-mischief-053",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The chalkboard message backfires",
+ "tags": [
+  "kid",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The plan took eleven seconds to form. Nadia was there. Nadia saw everything.",
+ "choices": [
+  {
+   "label": "Own up",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Confession, apology, detention. The legend softens into a lesson."
+    }
+   ]
+  },
+  {
+   "label": "Deny everything",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-6"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "-3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nadia keeps your secret. The guilt keeps you."
+    }
+   ]
+  }
+ ]
+}

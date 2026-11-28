@@ -1,0 +1,53 @@
+{
+ "id": "zxsr-travel60-012",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Slow Portugal on foot",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "No itinerary survives contact with wonder. Aisha keeps the same unhurried pace.",
+ "choices": [
+  {
+   "label": "First class slow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(4000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Slow Portugal on foot. Aisha naps through the best valley."
+    }
+   ]
+  },
+  {
+   "label": "Group tour",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1800)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New friends, shared buses. Portugal on foot with laughter."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "id": "zxsr-club60-020",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Bridge league season",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The calendar fills with delightful obligations. Diego recruited you over pie.",
+ "choices": [
+  {
+   "label": "Run for president",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(7)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bridge league elects you unanimously. Diego runs the campaign."
+    }
+   ]
+  },
+  {
+   "label": "Happy member",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Show up, pitch in, belong. Bridge league is the week's highlight."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,70 @@
+{
+ "id": "zxyg-date-009",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Nadia third-date cooking",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "single"
+ },
+ "text": "Your friends demand updates hourly.",
+ "choices": [
+  {
+   "label": "Ask them out",
+   "hint": "love+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-1"
+      },
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nadia says yes. The third-date cooking becomes a story."
+    }
+   ]
+  },
+  {
+   "label": "Slow burn",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Friends first, maybe more. Nadia likes the pace."
+    }
+   ]
+  }
+ ]
+}

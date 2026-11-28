@@ -1,0 +1,54 @@
+{
+ "id": "zxad-marriage-055",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Seventh anniversary trip",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "married"
+ },
+ "text": "The years stack like good bricks. Your partner Maya remembers everything.",
+ "choices": [
+  {
+   "label": "Grand gesture",
+   "hint": "love+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(800)"
+    },
+    {
+     "op": "partnerRel",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Maya cries happy tears. The Seventh anniversary sets a high bar."
+    }
+   ]
+  },
+  {
+   "label": "Love letter",
+   "hint": "love+",
+   "effects": [
+    {
+     "op": "partnerRel",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two pages, no gifts. Maya keeps it in the nightstand forever."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "zxmd-civic-052",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Otto drafts you for the food bank drive",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Democracy runs on volunteers and coffee. The town needs grown-ups. You qualify.",
+ "choices": [
+  {
+   "label": "Run for the seat",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(9)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the food bank drive gains a champion. Otto runs your ground game."
+    }
+   ]
+  },
+  {
+   "label": "Weekend warrior",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Gloves on for the food bank drive. The town looks better Monday."
+    }
+   ]
+  }
+ ]
+}

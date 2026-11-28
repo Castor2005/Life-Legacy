@@ -1,0 +1,54 @@
+{
+ "id": "zxwl-holiday-048",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Spring festival chaos",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The house fills with voices. Yuki brings the chaos and the pie.",
+ "choices": [
+  {
+   "label": "Host everyone",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Spring festival chaos at yours. Yuki does dishes without asking."
+    }
+   ]
+  },
+  {
+   "label": "Quiet version",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Small Spring festival, deep peace. Yuki understands completely."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "zxbb-grandma-010",
+ "minAge": 0,
+ "maxAge": 4,
+ "title": "Grandma's soft toy",
+ "tags": [
+  "baby",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Grandma arrives with soft toy. The baby's eyes go enormous. \"Hush, little one,\" she says.",
+ "choices": [
+  {
+   "label": "Soak it in",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "soft toy works its ancient magic. Three generations on one couch."
+    }
+   ]
+  },
+  {
+   "label": "Learn the trick",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You memorize every step of soft toy. Traditions need couriers."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-113",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Tessa bakes too much",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Suburbia stages its daily drama. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Tessa\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tessa becomes a real friend over bakes too much fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The bakes too much saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

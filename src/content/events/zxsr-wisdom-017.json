@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-017",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Tessa asks about joy",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The porch is the right venue. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tessa listens hard. Your answer about about joy lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Tessa\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Tessa retells it for years."
+    }
+   ]
+  }
+ ]
+}

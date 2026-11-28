@@ -1,0 +1,69 @@
+{
+ "id": "zxkd-animal-020",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The duckling rescue",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Behind the garage: eyes, then a miracle. It happens at the creek.",
+ "choices": [
+  {
+   "label": "Befriend it",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "addPet",
+       "name": "\"Moose\"",
+       "petType": "dog",
+       "rel": 70
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The duckling trusts you. Moose wags along as honorary sibling."
+    }
+   ]
+  },
+  {
+   "label": "Observe and sketch",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Field notes, careful drawings. A young naturalist is born."
+    }
+   ]
+  }
+ ]
+}

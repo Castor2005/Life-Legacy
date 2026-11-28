@@ -1,0 +1,58 @@
+{
+ "id": "zxsr-health60-011",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Blood pressure plan upgrade",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Modern medicine is a marvel. The doctor Driscoll knows you by name now.",
+ "choices": [
+  {
+   "label": "Top surgeon",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(3000)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Blood pressure plan perfect. Dr. Driscoll works miracles on schedule."
+    }
+   ]
+  },
+  {
+   "label": "Steady rehab",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Exercises thrice daily. Blood pressure plan earns its keep."
+    }
+   ]
+  }
+ ]
+}

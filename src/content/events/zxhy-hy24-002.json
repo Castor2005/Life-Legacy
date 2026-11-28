@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy24-002",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Streaming wars up close",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 2013
+   },
+   {
+    "p": "year",
+    "lte": 2016
+   }
+  ]
+ },
+ "text": "Binge becomes a verb. The theater moves to the couch. You feel the hinge of history swing.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Streaming wars lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Streaming wars observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

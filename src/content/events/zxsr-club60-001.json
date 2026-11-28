@@ -1,0 +1,55 @@
+{
+ "id": "zxsr-club60-001",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Choir social",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The calendar fills with delightful obligations. Reyes recruited you over pie.",
+ "choices": [
+  {
+   "label": "Run for president",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(7)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Choir elects you unanimously. Reyes runs the campaign."
+    }
+   ]
+  },
+  {
+   "label": "Happy member",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Show up, pitch in, belong. Choir is the week's highlight."
+    }
+   ]
+  }
+ ]
+}

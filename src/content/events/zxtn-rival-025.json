@@ -1,0 +1,68 @@
+{
+ "id": "zxtn-rival-025",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Rhea makes varsity first",
+ "tags": [
+  "teen",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The whole grade picks sides.",
+ "choices": [
+  {
+   "label": "Outwork them",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "2"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "You close the gap. Rhea respects the grind."
+    }
+   ]
+  },
+  {
+   "label": "Befriend them",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rivals make the best allies. Rhea agrees over fries."
+    }
+   ]
+  }
+ ]
+}

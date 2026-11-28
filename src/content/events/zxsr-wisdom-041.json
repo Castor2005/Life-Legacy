@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-041",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Paloma asks about money",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "You earned this answer the hard way. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Paloma listens hard. Your answer about about money lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Paloma\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Paloma retells it for years."
+    }
+   ]
+  }
+ ]
+}

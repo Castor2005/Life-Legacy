@@ -1,0 +1,58 @@
+{
+ "id": "zxyg-trip-069",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Seoul with one backpack",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The first meal alone abroad tastes like freedom. Maya navigates by snacks.",
+ "choices": [
+  {
+   "label": "Splurge once",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Seoul at sunset. Maya takes the photo you'll frame."
+    }
+   ]
+  },
+  {
+   "label": "Budget wizard",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Street food, free museums, perfect days. Seoul done right."
+    }
+   ]
+  }
+ ]
+}

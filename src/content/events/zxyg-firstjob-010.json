@@ -1,0 +1,51 @@
+{
+ "id": "zxyg-firstjob-010",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Cubicle era reorg rumors",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Slack never sleeps. Neither do you. Your manager Haddad watches like a hawk with a spreadsheet.",
+ "choices": [
+  {
+   "label": "Outperform",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Haddad notes your name twice. The Cubicle era bends in your favor."
+    }
+   ]
+  },
+  {
+   "label": "Learn everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shadow every team. Skills compound quietly."
+    }
+   ]
+  }
+ ]
+}

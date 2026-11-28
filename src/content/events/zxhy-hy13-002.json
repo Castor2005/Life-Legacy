@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy13-002",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Mixtape era on the news",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 1986
+   },
+   {
+    "p": "year",
+    "lte": 1987
+   }
+  ]
+ },
+ "text": "Dubbing songs off the radio takes timing and love. The old folks say: told you so.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mixtape era lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mixtape era observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

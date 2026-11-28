@@ -1,0 +1,54 @@
+{
+ "id": "zxad-marriage-010",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Tenth anniversary trip",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "married"
+ },
+ "text": "The wedding photo has faded; the feeling hasn't. Your partner Noah remembers everything.",
+ "choices": [
+  {
+   "label": "Grand gesture",
+   "hint": "love+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(800)"
+    },
+    {
+     "op": "partnerRel",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Noah cries happy tears. The Tenth anniversary sets a high bar."
+    }
+   ]
+  },
+  {
+   "label": "Love letter",
+   "hint": "love+",
+   "effects": [
+    {
+     "op": "partnerRel",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two pages, no gifts. Noah keeps it in the nightstand forever."
+    }
+   ]
+  }
+ ]
+}

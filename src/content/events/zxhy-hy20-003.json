@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy20-003",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Video sites bloom on the news",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 2004
+   },
+   {
+    "p": "year",
+    "lte": 2006
+   }
+  ]
+ },
+ "text": "Anyone can broadcast. Cats become the first stars. The old folks say: told you so.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Video sites bloom lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Video sites bloom observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

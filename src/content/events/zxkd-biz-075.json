@@ -1,0 +1,57 @@
+{
+ "id": "zxkd-biz-075",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The dog wash stand",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The corner location is secured. Business is open. Startup capital: allowance money.",
+ "choices": [
+  {
+   "label": "Hustle all day",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "35"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The dog wash stand clears $35. Capitalism tastes sweet."
+    }
+   ]
+  },
+  {
+   "label": "Split with Felix",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "20"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Felix\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Felix handles marketing. Profits split, friendship doubled."
+    }
+   ]
+  }
+ ]
+}

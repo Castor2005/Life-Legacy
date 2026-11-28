@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-072",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Long division show-and-tell",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Today's lesson crackles with chalk dust. Noah sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Long division bends to your will. Noah copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Noah",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Noah gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "id": "zxtn-job-076",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Dog walking gig",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Help wanted sign, still up. Noor already works there and vouches for you.",
+ "choices": [
+  {
+   "label": "Work weekends",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "180"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The Dog walking gig pays $180. Noor covers your first break."
+    }
+   ]
+  },
+  {
+   "label": "Bank it all",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "120"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Straight to savings. Future-you sends thanks from the future."
+    }
+   ]
+  }
+ ]
+}

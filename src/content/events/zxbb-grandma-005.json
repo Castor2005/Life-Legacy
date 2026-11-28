@@ -1,0 +1,45 @@
+{
+ "id": "zxbb-grandma-005",
+ "minAge": 0,
+ "maxAge": 4,
+ "title": "Grandma's secret cookie recipe",
+ "tags": [
+  "baby",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Grandma arrives with secret cookie recipe. The baby's eyes go enormous. \"There, there, my love.\"",
+ "choices": [
+  {
+   "label": "Soak it in",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "secret cookie recipe works its ancient magic. Three generations on one couch."
+    }
+   ]
+  },
+  {
+   "label": "Learn the trick",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You memorize every step of secret cookie recipe. Traditions need couriers."
+    }
+   ]
+  }
+ ]
+}

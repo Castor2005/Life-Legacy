@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-094",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Kenji borrows the ladder",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Suburbia stages its daily drama. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Kenji\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Kenji becomes a real friend over borrows the ladder fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The borrows the ladder saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

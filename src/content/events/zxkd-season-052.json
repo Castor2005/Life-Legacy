@@ -1,0 +1,54 @@
+{
+ "id": "zxkd-season-052",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Autumn leaves games",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The sky does something dramatic. Recess extends itself.",
+ "choices": [
+  {
+   "label": "Rally the crew",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Freya\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Freya brings hot chocolate. The day enters legend."
+    }
+   ]
+  },
+  {
+   "label": "Solo expedition",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Just you and the weather. You return muddy and wise."
+    }
+   ]
+  }
+ ]
+}

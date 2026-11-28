@@ -1,0 +1,68 @@
+{
+ "id": "zxbm-sport-087",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "curling league",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "New gear, new hope. Stellan is annoyingly better at this.",
+ "choices": [
+  {
+   "label": "Train weekly",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.25",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "curling clicks. Stellan demands a rematch you will win."
+    }
+   ]
+  },
+  {
+   "label": "Social league",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Beers after curling. Stellan brings the whole crew."
+    }
+   ]
+  }
+ ]
+}

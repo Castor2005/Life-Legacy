@@ -1,0 +1,54 @@
+{
+ "id": "zxad-parent-046",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Homework wars campaign",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The calendar is a mosaic of small commitments. Your partner Sana handles bedtime with military grace.",
+ "choices": [
+  {
+   "label": "Show up fully",
+   "hint": "family+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Homework wars resolved with hugs. Sana winks over the chaos."
+    }
+   ]
+  },
+  {
+   "label": "Hire help",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A sitter saves the week. Homework wars barely notice the upgrade."
+    }
+   ]
+  }
+ ]
+}

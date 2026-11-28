@@ -1,0 +1,50 @@
+{
+ "id": "zxbm-read-035",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "The memoir everyone cites marathon",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Forty pages a night, minimum. Yuki presses it into your hands.",
+ "choices": [
+  {
+   "label": "Finish and discuss",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The memoir everyone cites rewires something. Yuki debates you till midnight."
+    }
+   ]
+  },
+  {
+   "label": "Read widely",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three books at once. The memoir everyone cites is just the start."
+    }
+   ]
+  }
+ ]
+}

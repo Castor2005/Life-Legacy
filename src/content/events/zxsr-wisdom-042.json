@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-042",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Silas asks about marriage",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The porch is the right venue. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Silas listens hard. Your answer about about marriage lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Silas\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Silas retells it for years."
+    }
+   ]
+  }
+ ]
+}

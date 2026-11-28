@@ -1,0 +1,51 @@
+{
+ "id": "zxbb-petmeet-005",
+ "minAge": 0,
+ "maxAge": 4,
+ "title": "Taffy meets the baby",
+ "tags": [
+  "baby",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Taffy sniffs the baby's toes and decides: this one is mine to guard.",
+ "choices": [
+  {
+   "label": "Supervised cuddles",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "addPet",
+     "name": "\"Taffy\"",
+     "petType": "dog",
+     "rel": 70
+    },
+    {
+     "op": "outcome",
+     "tpl": "Taffy curls beside the crib. The bond is instant and lifelong."
+    }
+   ]
+  },
+  {
+   "label": "Gentle boundaries",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Slow introductions, treats for good behavior — for the pet, mostly."
+    }
+   ]
+  }
+ ]
+}

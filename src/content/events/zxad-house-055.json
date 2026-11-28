@@ -1,0 +1,53 @@
+{
+ "id": "zxad-house-055",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "The house grows a deck",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Contractors quote numbers that sting. The mortgage hums in the background. It started in the bathroom.",
+ "choices": [
+  {
+   "label": "Renovate right",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(6000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The house grows a deck no longer. Equity and pride both rise."
+    }
+   ]
+  },
+  {
+   "label": "DIY weekends",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1200)"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "YouTube tutorials and sore thumbs. The house grows a deck — fixed by you."
+    }
+   ]
+  }
+ ]
+}

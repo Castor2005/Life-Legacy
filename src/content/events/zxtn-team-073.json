@@ -1,0 +1,68 @@
+{
+ "id": "zxtn-team-073",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Tennis playoffs",
+ "tags": [
+  "teen",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The bus smells of victory and oranges. Coach Nolan runs a tight ship.",
+ "choices": [
+  {
+   "label": "Start every game",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Coach Nolan nods once. That nod means everything."
+    }
+   ]
+  },
+  {
+   "label": "Sixth-player energy",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Loudest cheers, best snacks. Teams need hearts too."
+    }
+   ]
+  }
+ ]
+}

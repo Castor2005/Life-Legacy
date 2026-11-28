@@ -1,0 +1,55 @@
+{
+ "id": "zxsr-club60-041",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Pickleball ladder season",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The calendar fills with delightful obligations. Jasper recruited you over pie.",
+ "choices": [
+  {
+   "label": "Run for president",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(7)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pickleball ladder elects you unanimously. Jasper runs the campaign."
+    }
+   ]
+  },
+  {
+   "label": "Happy member",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Show up, pitch in, belong. Pickleball ladder is the week's highlight."
+    }
+   ]
+  }
+ ]
+}

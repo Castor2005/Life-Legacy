@@ -1,0 +1,63 @@
+{
+ "id": "zxwl-peak-014",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the canyon rim ascent",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The trail tests knees and resolve. Felix trained all spring for this.",
+ "choices": [
+  {
+   "label": "Summit push",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-2"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "the canyon rim ascent with Felix. The photo barely captures it."
+    }
+   ]
+  },
+  {
+   "label": "Base camp joy",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Soup, stars, stories. the canyon rim from below is plenty."
+    }
+   ]
+  }
+ ]
+}

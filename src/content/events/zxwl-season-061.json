@@ -1,0 +1,45 @@
+{
+ "id": "zxwl-season-061",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Wildflower spring walk",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Light slants differently. Everything glows. Sofia declares it the best one yet.",
+ "choices": [
+  {
+   "label": "Mark the day",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Wildflower spring walk with Sofia. Traditions start exactly like this."
+    }
+   ]
+  },
+  {
+   "label": "Photograph it",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Golden hour captured. Wildflower spring framed above the mantel."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "zxwl-sea-063",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the reef sailing",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The water is impossibly clear. Salt air fixes what cities break. A seal judges your stroke.",
+ "choices": [
+  {
+   "label": "Dive in",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the reef sailing. The ocean returns you to yourself."
+    }
+   ]
+  },
+  {
+   "label": "Shore slow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tide pools and novels. the reef at walking pace."
+    }
+   ]
+  }
+ ]
+}

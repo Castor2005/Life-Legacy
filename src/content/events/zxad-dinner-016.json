@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-016",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Nico's wine tasting dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Candles lit, playlist perfect. Your partner Bram charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Nico raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Nico\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nico opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

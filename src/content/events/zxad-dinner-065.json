@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-065",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Rosa's wine tasting dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Candles lit, playlist perfect. Your partner Umar charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Rosa raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Rosa\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rosa opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

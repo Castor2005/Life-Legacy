@@ -1,0 +1,69 @@
+{
+ "id": "zxkd-animal-012",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The rabbit rescue",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The backyard goes silent. Something is watching. It happens at the creek.",
+ "choices": [
+  {
+   "label": "Befriend it",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "addPet",
+       "name": "\"Noodle\"",
+       "petType": "dog",
+       "rel": 70
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The rabbit trusts you. Noodle wags along as honorary sibling."
+    }
+   ]
+  },
+  {
+   "label": "Observe and sketch",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Field notes, careful drawings. A young naturalist is born."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,63 @@
+{
+ "id": "zxwl-cook-103",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "lasagna feast",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Ingredients cover every surface. Yuki claims their version is better.",
+ "choices": [
+  {
+   "label": "Follow the recipe",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "lasagna triumphs. Yuki demands the recipe, gets it."
+    }
+   ]
+  },
+  {
+   "label": "Improvise wildly",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "lasagna feast goes experimental. Yuki eats it anyway."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "id": "zxyg-health20-002",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Mystery rash at 24",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The chair files a complaint.",
+ "choices": [
+  {
+   "label": "See a doctor",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Treatable, fixable, fine. Mystery rash retreats before the pros."
+    }
+   ]
+  },
+  {
+   "label": "Lifestyle overhaul",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sleep, greens, walks. Mystery rash meets its match: routine."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "id": "zxad-house-002",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "The house wants paint",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Homeownership: the gift that bills. The mortgage hums in the background. It started in the attic.",
+ "choices": [
+  {
+   "label": "Renovate right",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(6000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The house wants paint no longer. Equity and pride both rise."
+    }
+   ]
+  },
+  {
+   "label": "DIY weekends",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1200)"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "YouTube tutorials and sore thumbs. The house wants paint — fixed by you."
+    }
+   ]
+  }
+ ]
+}

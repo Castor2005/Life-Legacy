@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-parents-041",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Mom need the stairs talk",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The phone calls get longer. The roles reverse gently, then all at once. A stair lift gets priced out.",
+ "choices": [
+  {
+   "label": "Step up",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mom lean on you now. need the stairs talk — handled with grace."
+    }
+   ]
+  },
+  {
+   "label": "Organize care",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Aides, schedules, check-ins. Mom stay safe and proud."
+    }
+   ]
+  }
+ ]
+}

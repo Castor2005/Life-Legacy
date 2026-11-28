@@ -1,0 +1,54 @@
+{
+ "id": "zxyg-roomie-060",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Noah eats your leftovers",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Roommate diplomacy enters a delicate phase.",
+ "choices": [
+  {
+   "label": "House meeting",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rules posted on the fridge. Noah signs in fancy script."
+    }
+   ]
+  },
+  {
+   "label": "Move out",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(900)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New place, no eats your leftovers. Peace has a price: $900."
+    }
+   ]
+  }
+ ]
+}

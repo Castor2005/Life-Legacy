@@ -1,0 +1,45 @@
+{
+ "id": "zxbb-firstfood-006",
+ "minAge": 0,
+ "maxAge": 4,
+ "title": "First taste of mashed peas",
+ "tags": [
+  "baby",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Today the baby tries mashed peas for the first time. The verdict: deep suspicion.",
+ "choices": [
+  {
+   "label": "One more spoon",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Suspicion turns to joy. mashed peas is officially approved."
+    }
+   ]
+  },
+  {
+   "label": "Back to milk",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rejected with drama. Milk wins again. No shame in retreat."
+    }
+   ]
+  }
+ ]
+}

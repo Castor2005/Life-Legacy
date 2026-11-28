@@ -1,0 +1,57 @@
+{
+ "id": "zxkd-biz-008",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The lemonade stand",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Flyers on every lamppost. The brand is strong. Startup capital: allowance money.",
+ "choices": [
+  {
+   "label": "Hustle all day",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "35"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The lemonade stand clears $35. Capitalism tastes sweet."
+    }
+   ]
+  },
+  {
+   "label": "Split with Dario",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "20"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Dario\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Dario handles marketing. Profits split, friendship doubled."
+    }
+   ]
+  }
+ ]
+}

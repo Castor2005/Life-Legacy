@@ -1,0 +1,58 @@
+{
+ "id": "zxsr-health60-007",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "New hip verdict",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Recovery comes with daytime TV. The doctor Quade knows you by name now.",
+ "choices": [
+  {
+   "label": "Top surgeon",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(3000)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New hip perfect. Dr. Quade works miracles on schedule."
+    }
+   ]
+  },
+  {
+   "label": "Steady rehab",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Exercises thrice daily. New hip earns its keep."
+    }
+   ]
+  }
+ ]
+}

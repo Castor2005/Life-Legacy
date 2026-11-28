@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-parents-012",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Dad move closer",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Love becomes logistics. The roles reverse gently, then all at once. Sunday dinners stretch longer.",
+ "choices": [
+  {
+   "label": "Step up",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Dad lean on you now. move closer — handled with grace."
+    }
+   ]
+  },
+  {
+   "label": "Organize care",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Aides, schedules, check-ins. Dad stay safe and proud."
+    }
+   ]
+  }
+ ]
+}

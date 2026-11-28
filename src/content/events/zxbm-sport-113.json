@@ -1,0 +1,68 @@
+{
+ "id": "zxbm-sport-113",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "trail running lessons",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The learning curve is steep and fun. Dario is annoyingly better at this.",
+ "choices": [
+  {
+   "label": "Train weekly",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.25",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "trail running clicks. Dario demands a rematch you will win."
+    }
+   ]
+  },
+  {
+   "label": "Social league",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Beers after trail running. Dario brings the whole crew."
+    }
+   ]
+  }
+ ]
+}

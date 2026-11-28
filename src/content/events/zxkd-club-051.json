@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-club-051",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Debate club the big build",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "After school: Debate club. Today brings auditions for the spring showcase.",
+ "choices": [
+  {
+   "label": "Take the lead",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You run the meeting. Debate club has a new captain."
+    }
+   ]
+  },
+  {
+   "label": "Master the craft",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hours vanish. Your Debate skills jump a full level."
+    }
+   ]
+  }
+ ]
+}

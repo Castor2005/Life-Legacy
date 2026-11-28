@@ -1,0 +1,49 @@
+{
+ "id": "zxyg-apart-032",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Studio shoebox has paper walls",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The lease is twelve pages of adventure. Willa lives two floors up.",
+ "choices": [
+  {
+   "label": "Fix it up",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Studio shoebox becomes home. Willa helps paint for pizza."
+    }
+   ]
+  },
+  {
+   "label": "Embrace the chaos",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The has paper walls becomes a running joke. Character: built."
+    }
+   ]
+  }
+ ]
+}

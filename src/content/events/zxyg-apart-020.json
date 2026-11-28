@@ -1,0 +1,49 @@
+{
+ "id": "zxyg-apart-020",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Shared house has the best stoop",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Deposit paid. Freedom smells like fresh paint. Lena lives two floors up.",
+ "choices": [
+  {
+   "label": "Fix it up",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shared house becomes home. Lena helps paint for pizza."
+    }
+   ]
+  },
+  {
+   "label": "Embrace the chaos",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The has the best stoop becomes a running joke. Character: built."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "zxkd-collect-031",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The great card collection",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The binder is nearly full. Bram is your rival and trading partner.",
+ "choices": [
+  {
+   "label": "Trade smart",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "money",
+     "amount": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two commons for one holographic. The card market rewards patience."
+    }
+   ]
+  },
+  {
+   "label": "Gift the rare one",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bram stares, speechless. Generosity is the rarest card."
+    }
+   ]
+  }
+ ]
+}

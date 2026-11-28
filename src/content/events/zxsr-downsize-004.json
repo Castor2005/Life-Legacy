@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-downsize-004",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Downsizing math",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The attic is a museum of selves. Forty years of stuff eyes you back. Best find: tickets to everything.",
+ "choices": [
+  {
+   "label": "Sell smart",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "5000"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Downsizing profits. The math feels lighter already."
+    }
+   ]
+  },
+  {
+   "label": "Gift it all",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Kids, neighbors, charity. Downsizing spreads the wealth of things."
+    }
+   ]
+  }
+ ]
+}

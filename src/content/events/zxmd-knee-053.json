@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-knee-053",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "The right hip files a complaint",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "It only hurts when it rains. It always rains. Stairs become negotiations. The pharmacist knows your name.",
+ "choices": [
+  {
+   "label": "Physio plan",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(600)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bands, stretches, patience. The right hip settles down."
+    }
+   ]
+  },
+  {
+   "label": "Adapt sports",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Swimming replaces running. The right hip approves the trade."
+    }
+   ]
+  }
+ ]
+}

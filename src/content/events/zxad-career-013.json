@@ -1,0 +1,71 @@
+{
+ "id": "zxad-career-013",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Reorg shuffle goes political",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Visibility matters more than ever. Your rival Gorski circles the same prize.",
+ "choices": [
+  {
+   "label": "Take the shot",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "money",
+       "amount": "9000"
+      },
+      {
+       "op": "perf",
+       "delta": "8"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "2000"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Reorg shuffle lands. Gorski sends a gracious, furious email."
+    }
+   ]
+  },
+  {
+   "label": "Build allies",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "perf",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lunches, credit shared, favors banked. The Reorg shuffle can wait."
+    }
+   ]
+  }
+ ]
+}

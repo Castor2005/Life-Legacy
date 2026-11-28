@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-068",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Ellis feuds over the fence",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The group chat lights up. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Ellis\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ellis becomes a real friend over feuds over the fence fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The feuds over the fence saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

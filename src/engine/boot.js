@@ -18,8 +18,9 @@ window.__LL_BOOT_OK = (function bootHealthCheck(){
     for (i = 0; i < LL.files.length; i++) HAVE[LL.files[i]] = 1;
   var EXPECT_FILES = ["core","utils","state","migrate","ecs","bus","effects-parse","effects-run",
     "effects-validate","sex-events","appearance","genetics","ai-core","ai-providers","research","life","yearly",
+    "history","fate",
     "events-runtime","mods","portrait","ai-actions","director","dynasty","houses","ownership",
-    "death","actions","romance","world","render","saves","ui","music","creator","community","graphs","vfx","anya","wasm","compute","pcg","mcp","prelude","auth","boot"];
+    "death","actions","act-events","romance","world","render","saves","ui","music","creator","community","graphs","vfx","anya","wasm","compute","pcg","mcp","prelude","auth","boot"];
   for (i = 0; i < EXPECT_FILES.length; i++)
     if (!HAVE[EXPECT_FILES[i]]) missing.push("module:" + EXPECT_FILES[i]);
   /* ORDER check: presence isn't enough. Several files assume index.html order
@@ -51,7 +52,7 @@ window.__LL_BOOT_OK = (function bootHealthCheck(){
     "inheritAppearance","yearlyGenetics","screenGenetics","genomeSummary","npcSeed",
     "facialAllowed","figureFor","inheritTraits","twinChance","genesForAppearance",
     "ensureGrounding","refreshGrounding","groundingStatus","wikiSummary",
-    "newLife","ageUp","doAct","render","afterLoad","validateSave","gainStat",
+    "newLife","ageUp","doAct","actNarrate","npcFaceHTML","paintNpc","fateWill","fateChipHTML","fateTideWord","historyHeadline","historyEra","render","afterLoad","validateSave","gainStat",
     "migrateEvent","checkContentVersion","kvBootAdopt","applyTexts",
     "renderSaves","openModal","closeModal","toast","LLUI",
     "imgNoteOnline","renderAch","checkAch","pregEnsure","startPregnancy",

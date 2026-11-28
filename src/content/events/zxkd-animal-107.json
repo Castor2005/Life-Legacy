@@ -1,0 +1,69 @@
+{
+ "id": "zxkd-animal-107",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The goose friendship",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The whole street gathers around the sight. It happens in the vacant lot.",
+ "choices": [
+  {
+   "label": "Befriend it",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "addPet",
+       "name": "\"Rocky\"",
+       "petType": "dog",
+       "rel": 70
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The goose trusts you. Rocky wags along as honorary sibling."
+    }
+   ]
+  },
+  {
+   "label": "Observe and sketch",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Field notes, careful drawings. A young naturalist is born."
+    }
+   ]
+  }
+ ]
+}

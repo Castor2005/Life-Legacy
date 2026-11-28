@@ -1,0 +1,68 @@
+{
+ "id": "zxyg-wedplus-043",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Felix's wedding dance circle",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Your suit barely survived college. Open bar. Dangerous dance floor.",
+ "choices": [
+  {
+   "label": "Give the speech",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "set",
+       "path": "fame",
+       "value": "min(100,s.fame+(3))"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Felix cries laughing. The speech enters family lore."
+    }
+   ]
+  },
+  {
+   "label": "Dance all night",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shoes off by midnight. Felix approves from the sweetheart table."
+    }
+   ]
+  }
+ ]
+}

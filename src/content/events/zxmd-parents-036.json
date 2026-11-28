@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-parents-036",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Both parents forget the stove twice",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "You notice the small slips. The roles reverse gently, then all at once. A stair lift gets priced out.",
+ "choices": [
+  {
+   "label": "Step up",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Both parents lean on you now. forget the stove twice — handled with grace."
+    }
+   ]
+  },
+  {
+   "label": "Organize care",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Aides, schedules, check-ins. Both parents stay safe and proud."
+    }
+   ]
+  }
+ ]
+}

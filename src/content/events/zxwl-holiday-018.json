@@ -1,0 +1,54 @@
+{
+ "id": "zxwl-holiday-018",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Winter lights chaos",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The house fills with voices. Tessa brings the chaos and the pie.",
+ "choices": [
+  {
+   "label": "Host everyone",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Winter lights chaos at yours. Tessa does dishes without asking."
+    }
+   ]
+  },
+  {
+   "label": "Quiet version",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Small Winter lights, deep peace. Tessa understands completely."
+    }
+   ]
+  }
+ ]
+}

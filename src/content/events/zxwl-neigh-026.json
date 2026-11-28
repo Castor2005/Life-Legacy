@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-026",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Jasper bakes too much",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Suburbia stages its daily drama. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Jasper\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Jasper becomes a real friend over bakes too much fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The bakes too much saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

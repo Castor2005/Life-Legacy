@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy31-002",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Robot delivery on the news",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 2025
+   },
+   {
+    "p": "year",
+    "lte": 2028
+   }
+  ]
+ },
+ "text": "Sidewalk bots ferry groceries. Dogs remain unimpressed. Everyone will remember where they were.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Robot delivery lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Robot delivery observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

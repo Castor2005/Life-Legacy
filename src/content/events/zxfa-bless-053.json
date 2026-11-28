@@ -1,0 +1,65 @@
+{
+ "id": "zxfa-bless-053",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "Lucky break arrives",
+ "tags": [
+  "adult-life",
+  "fate"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "stats.karma",
+  "gte": 60
+ },
+ "text": "Years of decency come due. Goodness accrues interest. On a rainy Tuesday.",
+ "choices": [
+  {
+   "label": "Accept gracefully",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "money",
+       "amount": "1000"
+      }
+     ],
+     "else": [
+      {
+       "op": "set",
+       "path": "prestige",
+       "value": "s.prestige+(4)"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lucky break lands softly. You pass a third of it onward."
+    }
+   ]
+  },
+  {
+   "label": "Pay it forward",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lucky break multiplies through you. The ledger of grace grows."
+    }
+   ]
+  }
+ ]
+}

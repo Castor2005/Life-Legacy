@@ -1,0 +1,53 @@
+{
+ "id": "zxyg-fest-030",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "the lantern festival afterparty",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The lineup poster lives on your wall now. Kofi has the tickets.",
+ "choices": [
+  {
+   "label": "Front row",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the lantern festival peak moment. Kofi screams the lyrics wrong."
+    }
+   ]
+  },
+  {
+   "label": "Work the gate",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "150"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Wristbands and free entry. the lantern festival from the inside."
+    }
+   ]
+  }
+ ]
+}

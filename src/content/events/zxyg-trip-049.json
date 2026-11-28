@@ -1,0 +1,58 @@
+{
+ "id": "zxyg-trip-049",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Hanoi by night train",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Hostel bunk, top floor, new friends. Ravi navigates by snacks.",
+ "choices": [
+  {
+   "label": "Splurge once",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hanoi at sunset. Ravi takes the photo you'll frame."
+    }
+   ]
+  },
+  {
+   "label": "Budget wizard",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Street food, free museums, perfect days. Hanoi done right."
+    }
+   ]
+  }
+ ]
+}

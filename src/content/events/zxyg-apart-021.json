@@ -1,0 +1,49 @@
+{
+ "id": "zxyg-apart-021",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Shared house has a legend landlord",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Deposit paid. Freedom smells like fresh paint. Koa lives two floors up.",
+ "choices": [
+  {
+   "label": "Fix it up",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(400)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shared house becomes home. Koa helps paint for pizza."
+    }
+   ]
+  },
+  {
+   "label": "Embrace the chaos",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The has a legend landlord becomes a running joke. Character: built."
+    }
+   ]
+  }
+ ]
+}

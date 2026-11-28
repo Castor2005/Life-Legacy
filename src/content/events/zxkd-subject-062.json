@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-062",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "State capitals science demo",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Today's lesson crackles with chalk dust. Mira sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "State capitals bends to your will. Mira copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Mira",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Mira gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "id": "zxyg-gym20-052",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Yoga dawn era",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The soreness is a lifestyle now. Liv drags you along.",
+ "choices": [
+  {
+   "label": "Train serious",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-2"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The Yoga dawn era transforms you. Liv can't keep up."
+    }
+   ]
+  },
+  {
+   "label": "Social pace",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Workouts plus gossip. Liv never misses leg day chat."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "id": "zxyg-gym20-018",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Climbing gym era",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The soreness is a lifestyle now. Petra drags you along.",
+ "choices": [
+  {
+   "label": "Train serious",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The Climbing gym era transforms you. Petra can't keep up."
+    }
+   ]
+  },
+  {
+   "label": "Social pace",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Workouts plus gossip. Petra never misses leg day chat."
+    }
+   ]
+  }
+ ]
+}

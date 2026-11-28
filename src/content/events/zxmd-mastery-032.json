@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-mastery-032",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "urban sketching deep end",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Amateurs admire; masters tinker. Bram shares the obsession.",
+ "choices": [
+  {
+   "label": "Teach it",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(5)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Students gather. urban sketching flows through you to Bram."
+    }
+   ]
+  },
+  {
+   "label": "Exhibit it",
+   "hint": "fame+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "fame",
+     "value": "min(100,s.fame+(6))"
+    },
+    {
+     "op": "money",
+     "amount": "800"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The urban sketching show sells out. Bram buys piece one."
+    }
+   ]
+  }
+ ]
+}

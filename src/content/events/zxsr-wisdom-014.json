@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-014",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Tariq asks about money",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The porch is the right venue. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tariq listens hard. Your answer about about money lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Tariq\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Tariq retells it for years."
+    }
+   ]
+  }
+ ]
+}

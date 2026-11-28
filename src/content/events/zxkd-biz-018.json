@@ -1,0 +1,57 @@
+{
+ "id": "zxkd-biz-018",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The car wash stand",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The corner location is secured. Business is open. Startup capital: allowance money.",
+ "choices": [
+  {
+   "label": "Hustle all day",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "35"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The car wash stand clears $35. Capitalism tastes sweet."
+    }
+   ]
+  },
+  {
+   "label": "Split with Lena",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "20"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Lena\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lena handles marketing. Profits split, friendship doubled."
+    }
+   ]
+  }
+ ]
+}

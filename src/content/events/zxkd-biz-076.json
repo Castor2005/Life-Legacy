@@ -1,0 +1,57 @@
+{
+ "id": "zxkd-biz-076",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The lawn mow stand",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The corner location is secured. Business is open. Startup capital: allowance money.",
+ "choices": [
+  {
+   "label": "Hustle all day",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "35"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The lawn mow stand clears $35. Capitalism tastes sweet."
+    }
+   ]
+  },
+  {
+   "label": "Split with Freya",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "20"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Freya\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Freya handles marketing. Profits split, friendship doubled."
+    }
+   ]
+  }
+ ]
+}

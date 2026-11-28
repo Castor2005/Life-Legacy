@@ -1,0 +1,50 @@
+{
+ "id": "zxad-crisis30-032",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "The college weight at 35",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A quiet Tuesday triggers loud thoughts. Stellan calls it the reckoning. Stellan is thriving, annoyingly.",
+ "choices": [
+  {
+   "label": "New challenge",
+   "hint": "growth+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The college weight answered with action. Stellan signs up too."
+    }
+   ]
+  },
+  {
+   "label": "Gratitude audit",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Count the wins: health, Stellan, home. The college weight quiets down."
+    }
+   ]
+  }
+ ]
+}

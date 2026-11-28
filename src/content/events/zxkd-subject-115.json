@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-115",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The solar system science demo",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The teacher dims the lights. Otto sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The solar system bends to your will. Otto copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Otto",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Otto gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

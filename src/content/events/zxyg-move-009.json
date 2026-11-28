@@ -1,0 +1,58 @@
+{
+ "id": "zxyg-move-009",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Move to Reykjavik",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The job offer tips the scale. Freya already lives there and promises a couch.",
+ "choices": [
+  {
+   "label": "Leap",
+   "hint": "life+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "-1"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Reykjavik or bust. Freya meets you with keys and noodles."
+    }
+   ]
+  },
+  {
+   "label": "Visit first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Recon week in Reykjavik. The fantasy survives contact."
+    }
+   ]
+  }
+ ]
+}

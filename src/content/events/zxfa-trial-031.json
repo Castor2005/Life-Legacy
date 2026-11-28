@@ -1,0 +1,57 @@
+{
+ "id": "zxfa-trial-031",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "Lost chance hour",
+ "tags": [
+  "adult-life",
+  "fate"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "stats.karma",
+  "lte": 25
+ },
+ "text": "Chickens, roosting, home. Debts come due in strange coin. The news breaks at work.",
+ "choices": [
+  {
+   "label": "Make amends",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Apologies, restitution, change. Lost chance becomes tuition."
+    }
+   ]
+  },
+  {
+   "label": "Endure it",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You take the hit standing. Lost chance passes like weather."
+    }
+   ]
+  }
+ ]
+}

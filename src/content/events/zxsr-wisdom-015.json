@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-015",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Liam asks about regret",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "You earned this answer the hard way. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Liam listens hard. Your answer about about regret lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Liam\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Liam retells it for years."
+    }
+   ]
+  }
+ ]
+}

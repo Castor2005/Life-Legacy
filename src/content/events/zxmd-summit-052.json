@@ -1,0 +1,56 @@
+{
+ "id": "zxmd-summit-052",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Industry summit invitation",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Badges, buffets, big talk. Petrov from the rival firm attends too.",
+ "choices": [
+  {
+   "label": "Own the stage",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(10)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Standing ovation, three card offers. Petrov takes notes."
+    }
+   ]
+  },
+  {
+   "label": "Deal in halls",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "4000"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Handshake deals between sessions. The Industry summit pays off."
+    }
+   ]
+  }
+ ]
+}

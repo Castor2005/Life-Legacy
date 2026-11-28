@@ -1,0 +1,54 @@
+{
+ "id": "zxwl-holiday-034",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "New Year table",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The house fills with voices. Anya brings the chaos and the pie.",
+ "choices": [
+  {
+   "label": "Host everyone",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New Year table at yours. Anya does dishes without asking."
+    }
+   ]
+  },
+  {
+   "label": "Quiet version",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Small New Year, deep peace. Anya understands completely."
+    }
+   ]
+  }
+ ]
+}

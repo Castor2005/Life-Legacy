@@ -1,0 +1,49 @@
+{
+ "id": "zxyg-scam-009",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "The mystery box pitch",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A stranger is very excited about your future. Otto almost fell for it last year.",
+ "choices": [
+  {
+   "label": "Smell the rat",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Blocked, reported, warned Otto. Scam radar: calibrated."
+    }
+   ]
+  },
+  {
+   "label": "Lose a little",
+   "hint": "lesson",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tuition paid to experience: $120. The mystery box pitch never again."
+    }
+   ]
+  }
+ ]
+}

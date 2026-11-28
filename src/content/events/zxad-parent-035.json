@@ -1,0 +1,54 @@
+{
+ "id": "zxad-parent-035",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "First phone debates era",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The calendar is a mosaic of small commitments. Your partner Reyes handles bedtime with military grace.",
+ "choices": [
+  {
+   "label": "Show up fully",
+   "hint": "family+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "First phone debates resolved with hugs. Reyes winks over the chaos."
+    }
+   ]
+  },
+  {
+   "label": "Hire help",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A sitter saves the week. First phone debates barely notice the upgrade."
+    }
+   ]
+  }
+ ]
+}

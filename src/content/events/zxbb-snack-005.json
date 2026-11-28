@@ -1,0 +1,45 @@
+{
+ "id": "zxbb-snack-005",
+ "minAge": 0,
+ "maxAge": 4,
+ "title": "The rice cake incident",
+ "tags": [
+  "baby",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Someone gave the baby a rice cake. It went everywhere except the mouth. Right before guests arrived, of course.",
+ "choices": [
+  {
+   "label": "Laugh and clean",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The rice cake wiped off the walls, mostly. The photo stays forever."
+    }
+   ]
+  },
+  {
+   "label": "Snack strategy",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Smaller pieces, bigger bib. Engineering saves dinner."
+    }
+   ]
+  }
+ ]
+}

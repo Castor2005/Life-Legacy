@@ -1,0 +1,54 @@
+{
+ "id": "zxad-health30-034",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Cholesterol check results",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The nurse compliments your veins. You stop for soup on the way home.",
+ "choices": [
+  {
+   "label": "Follow the plan",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(250)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cholesterol check handled like an adult. The results please the doctor."
+    }
+   ]
+  },
+  {
+   "label": "Fix one habit",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Walking meetings and less sugar. Cholesterol check will show it next year."
+    }
+   ]
+  }
+ ]
+}

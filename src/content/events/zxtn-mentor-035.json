@@ -1,0 +1,49 @@
+{
+ "id": "zxtn-mentor-035",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The shop instructor takes notice",
+ "tags": [
+  "teen",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "An invitation to the advanced group. Rhea is jealous in the good way.",
+ "choices": [
+  {
+   "label": "Accept guidance",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Rhea\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "The shop instructor opens doors. Rhea gets pulled along too."
+    }
+   ]
+  },
+  {
+   "label": "Prove it solo",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You deliver anyway. The shop instructor smiles like this was the plan."
+    }
+   ]
+  }
+ ]
+}

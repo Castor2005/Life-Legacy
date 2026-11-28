@@ -1,0 +1,68 @@
+{
+ "id": "zxkd-playground-039",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "capture the flag remix rules",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Recess. capture the flag is underway when a teacher joins in.",
+ "choices": [
+  {
+   "label": "Play hard",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Legends are born at recess. Scraped knees and glory."
+    }
+   ]
+  },
+  {
+   "label": "Referee it",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fair calls, firm whistle. capture the flag has never run smoother."
+    }
+   ]
+  }
+ ]
+}

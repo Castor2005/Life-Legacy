@@ -1,0 +1,45 @@
+{
+ "id": "zxbb-firstfood-009",
+ "minAge": 0,
+ "maxAge": 4,
+ "title": "First taste of carrot mash",
+ "tags": [
+  "baby",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Today the baby tries carrot mash for the first time. The verdict: a look of pure betrayal.",
+ "choices": [
+  {
+   "label": "One more spoon",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Suspicion turns to joy. carrot mash is officially approved."
+    }
+   ]
+  },
+  {
+   "label": "Back to milk",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rejected with drama. Milk wins again. No shame in retreat."
+    }
+   ]
+  }
+ ]
+}

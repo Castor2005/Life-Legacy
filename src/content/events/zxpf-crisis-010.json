@@ -1,0 +1,68 @@
+{
+ "id": "zxpf-crisis-010",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "nurse crisis shift",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Everyone looks at you. Of course. At the warehouse, the day goes sideways.",
+ "choices": [
+  {
+   "label": "Save the day",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "1500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "6"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The nurse crisis bends. At the warehouse, they tell this story."
+    }
+   ]
+  },
+  {
+   "label": "Document everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Paper trail perfect. The crisis shift becomes a case study."
+    }
+   ]
+  }
+ ]
+}

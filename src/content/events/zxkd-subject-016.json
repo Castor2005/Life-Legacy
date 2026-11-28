@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-016",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Times tables science demo",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A surprise worksheet lands on every desk. Priya sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Times tables bends to your will. Priya copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Priya",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Priya gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "id": "zxsr-travel60-025",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Slow Morocco on foot",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "No itinerary survives contact with wonder. Idris keeps the same unhurried pace.",
+ "choices": [
+  {
+   "label": "First class slow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(4000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Slow Morocco on foot. Idris naps through the best valley."
+    }
+   ]
+  },
+  {
+   "label": "Group tour",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1800)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New friends, shared buses. Morocco on foot with laughter."
+    }
+   ]
+  }
+ ]
+}

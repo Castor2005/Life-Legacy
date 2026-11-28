@@ -1,0 +1,54 @@
+{
+ "id": "zxad-health30-026",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Annual physical numbers",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The waiting room magazine is from 2019. The parking costs more than the visit.",
+ "choices": [
+  {
+   "label": "Follow the plan",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(250)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Annual physical handled like an adult. The numbers please the doctor."
+    }
+   ]
+  },
+  {
+   "label": "Fix one habit",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Walking meetings and less sugar. Annual physical will show it next year."
+    }
+   ]
+  }
+ ]
+}

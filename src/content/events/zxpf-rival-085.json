@@ -1,0 +1,64 @@
+{
+ "id": "zxpf-rival-085",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "accountant races your promotion",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "The coworker smiles with too many teeth. Maya from another department warns you.",
+ "choices": [
+  {
+   "label": "Outshine openly",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "set",
+       "path": "prestige",
+       "value": "s.prestige+(5)"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Results silence the accountant. Maya applauds from the safe zone."
+    }
+   ]
+  },
+  {
+   "label": "Befriend them",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lunch disarms everything. The accountant becomes an ally."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "id": "zxfa-trial-030",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "Hard reckoning season",
+ "tags": [
+  "adult-life",
+  "fate"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "stats.karma",
+  "lte": 25
+ },
+ "text": "Chickens, roosting, home. Debts come due in strange coin. The call comes at dinner.",
+ "choices": [
+  {
+   "label": "Make amends",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Apologies, restitution, change. Hard reckoning becomes tuition."
+    }
+   ]
+  },
+  {
+   "label": "Endure it",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You take the hit standing. Hard reckoning passes like weather."
+    }
+   ]
+  }
+ ]
+}

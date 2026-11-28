@@ -1,0 +1,53 @@
+{
+ "id": "zxsr-travel60-042",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Slow South Africa by coastal road",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Linger longer. That is the whole plan. Reyes keeps the same unhurried pace.",
+ "choices": [
+  {
+   "label": "First class slow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(4000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Slow South Africa by coastal road. Reyes naps through the best valley."
+    }
+   ]
+  },
+  {
+   "label": "Group tour",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1800)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New friends, shared buses. South Africa by coastal road with laughter."
+    }
+   ]
+  }
+ ]
+}

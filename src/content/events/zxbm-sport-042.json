@@ -1,0 +1,68 @@
+{
+ "id": "zxbm-sport-042",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "open-water swimming lessons",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "New gear, new hope. Koa is annoyingly better at this.",
+ "choices": [
+  {
+   "label": "Train weekly",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.25",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "open-water swimming clicks. Koa demands a rematch you will win."
+    }
+   ]
+  },
+  {
+   "label": "Social league",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Beers after open-water swimming. Koa brings the whole crew."
+    }
+   ]
+  }
+ ]
+}

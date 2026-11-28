@@ -1,0 +1,57 @@
+{
+ "id": "zxpf-funny-077",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "paramedic karaoke night",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Someone is filming. Everyone poses. At the warehouse, legend is born.",
+ "choices": [
+  {
+   "label": "Lean into it",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The paramedic karaoke night enters company lore. You star in it."
+    }
+   ]
+  },
+  {
+   "label": "Play it cool",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Calm amid chaos. At the warehouse, they remember composure."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "zxad-school30-049",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Paloma's kid makes varsity",
+ "tags": [
+  "adult-life",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Front row seats, flowers ready. Your own kids watch how you react.",
+ "choices": [
+  {
+   "label": "Celebrate big",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(100)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Paloma's kid glows. Your kids take notes on joy."
+    }
+   ]
+  },
+  {
+   "label": "Mentor yours",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Inspired practice sessions. Your kids chase their own makes varsity."
+    }
+   ]
+  }
+ ]
+}

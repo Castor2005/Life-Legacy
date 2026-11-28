@@ -1,0 +1,50 @@
+{
+ "id": "zxyg-grad-048",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Night classes defense day",
+ "tags": [
+  "adult-life",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The cohort group chat never sleeps. Loans loom like weather.",
+ "choices": [
+  {
+   "label": "Ace it",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(7))"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The Night classes credential lands. Doors quietly unlock."
+    }
+   ]
+  },
+  {
+   "label": "Network hard",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cohort group chat for life. Jobs flow through friends."
+    }
+   ]
+  }
+ ]
+}

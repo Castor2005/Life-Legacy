@@ -1,0 +1,68 @@
+{
+ "id": "zxtn-rival-030",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Priya dates your crush",
+ "tags": [
+  "teen",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The whole grade picks sides.",
+ "choices": [
+  {
+   "label": "Outwork them",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "You close the gap. Priya respects the grind."
+    }
+   ]
+  },
+  {
+   "label": "Befriend them",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rivals make the best allies. Priya agrees over fries."
+    }
+   ]
+  }
+ ]
+}

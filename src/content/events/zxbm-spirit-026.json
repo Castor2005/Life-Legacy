@@ -1,0 +1,55 @@
+{
+ "id": "zxbm-spirit-026",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Silent retreat season",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Stillness teaches loudly. Maya walks the path beside you.",
+ "choices": [
+  {
+   "label": "Go deeper",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "9"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Silent retreat reshapes the weeks. Maya notices the calm first."
+    }
+   ]
+  },
+  {
+   "label": "Serve others",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bowls filled, floors swept. Silent retreat lives in the hands."
+    }
+   ]
+  }
+ ]
+}

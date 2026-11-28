@@ -1,0 +1,53 @@
+{
+ "id": "zxad-house-060",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "The house floods slightly",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The toolbox gets a workout. The mortgage hums in the background. It started in the basement.",
+ "choices": [
+  {
+   "label": "Renovate right",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(6000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The house floods slightly no longer. Equity and pride both rise."
+    }
+   ]
+  },
+  {
+   "label": "DIY weekends",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1200)"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "YouTube tutorials and sore thumbs. The house floods slightly — fixed by you."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,45 @@
+{
+ "id": "zxbb-step-007",
+ "minAge": 0,
+ "maxAge": 2,
+ "title": "First tooth day",
+ "tags": [
+  "baby",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A tiny white dot. Chewing everything now. Nobody else saw, but you know.",
+ "choices": [
+  {
+   "label": "Celebrate big",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cake for the adults, mush for the star. A perfect day."
+    }
+   ]
+  },
+  {
+   "label": "Write it down",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Date, time, witnesses. The baby book grows heavier with love."
+    }
+   ]
+  }
+ ]
+}

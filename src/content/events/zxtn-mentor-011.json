@@ -1,0 +1,49 @@
+{
+ "id": "zxtn-mentor-011",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The debate coach takes notice",
+ "tags": [
+  "teen",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "An invitation to the advanced group. Freya is jealous in the good way.",
+ "choices": [
+  {
+   "label": "Accept guidance",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Freya\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "The debate coach opens doors. Freya gets pulled along too."
+    }
+   ]
+  },
+  {
+   "label": "Prove it solo",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You deliver anyway. The debate coach smiles like this was the plan."
+    }
+   ]
+  }
+ ]
+}

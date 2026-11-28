@@ -1,0 +1,70 @@
+{
+ "id": "zxpf-switch-030",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "gardener calling",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Restlessness has a salary band. Anika made the same leap last year.",
+ "choices": [
+  {
+   "label": "Jump fields",
+   "hint": "career+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "8000"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(2000)"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "6"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "gardener life begins. Anika shows you the ropes."
+    }
+   ]
+  },
+  {
+   "label": "Freelance first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1500"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Weekend gardener gigs test the water. Warm enough."
+    }
+   ]
+  }
+ ]
+}

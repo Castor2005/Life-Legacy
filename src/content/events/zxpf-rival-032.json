@@ -1,0 +1,64 @@
+{
+ "id": "zxpf-rival-032",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "electrician poaches clients",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "The coworker smiles with too many teeth. Vera from another department warns you.",
+ "choices": [
+  {
+   "label": "Outshine openly",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "set",
+       "path": "prestige",
+       "value": "s.prestige+(5)"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Results silence the electrician. Vera applauds from the safe zone."
+    }
+   ]
+  },
+  {
+   "label": "Befriend them",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lunch disarms everything. The electrician becomes an ally."
+    }
+   ]
+  }
+ ]
+}

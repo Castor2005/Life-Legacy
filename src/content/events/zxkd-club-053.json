@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-club-053",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Comic club regionals",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "After school: Comic club. Today brings auditions for the spring showcase.",
+ "choices": [
+  {
+   "label": "Take the lead",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You run the meeting. Comic club has a new captain."
+    }
+   ]
+  },
+  {
+   "label": "Master the craft",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hours vanish. Your Comic skills jump a full level."
+    }
+   ]
+  }
+ ]
+}

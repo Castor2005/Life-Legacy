@@ -1,4 +1,4 @@
-// Life & Legacy - Life Simulator (v0.1.07)
+// Life & Legacy - Life Simulator (v0.1.07.006)
 // Lists used by the game for random names (also duplicated in JS as fallback)
 
 generateText = {import:ai-text-plugin}

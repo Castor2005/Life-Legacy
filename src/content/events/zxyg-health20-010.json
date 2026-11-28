@@ -1,0 +1,54 @@
+{
+ "id": "zxyg-health20-010",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Tennis elbow at 24",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The eyes demand a break.",
+ "choices": [
+  {
+   "label": "See a doctor",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Treatable, fixable, fine. Tennis elbow retreats before the pros."
+    }
+   ]
+  },
+  {
+   "label": "Lifestyle overhaul",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sleep, greens, walks. Tennis elbow meets its match: routine."
+    }
+   ]
+  }
+ ]
+}

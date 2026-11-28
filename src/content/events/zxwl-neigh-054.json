@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-054",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Cleo loses a cat",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Suburbia stages its daily drama. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Cleo\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cleo becomes a real friend over loses a cat fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The loses a cat saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

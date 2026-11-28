@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-mastery-002",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "pottery obsession",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The garage becomes a studio. Aisha shares the obsession.",
+ "choices": [
+  {
+   "label": "Teach it",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(5)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Students gather. pottery flows through you to Aisha."
+    }
+   ]
+  },
+  {
+   "label": "Exhibit it",
+   "hint": "fame+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "fame",
+     "value": "min(100,s.fame+(6))"
+    },
+    {
+     "op": "money",
+     "amount": "800"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The pottery show sells out. Aisha buys piece one."
+    }
+   ]
+  }
+ ]
+}

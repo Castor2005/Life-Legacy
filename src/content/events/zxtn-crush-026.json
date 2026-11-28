@@ -1,0 +1,86 @@
+{
+ "id": "zxtn-crush-026",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Nico laughs at your joke",
+ "tags": [
+  "teen",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Every hallway crossing feels choreographed by fate.",
+ "choices": [
+  {
+   "label": "Say hi first",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "5"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "1"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "-1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nico smiles back. The hallway glows a little brighter."
+    }
+   ]
+  },
+  {
+   "label": "Play it cool",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mystery preserved. Nico wonders about you instead."
+    }
+   ]
+  }
+ ]
+}

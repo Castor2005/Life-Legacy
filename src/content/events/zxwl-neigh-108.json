@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-108",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Willa feuds over the fence",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Suburbia stages its daily drama. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Willa\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Willa becomes a real friend over feuds over the fence fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The feuds over the fence saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

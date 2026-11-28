@@ -1,0 +1,45 @@
+{
+ "id": "zxbb-step-009",
+ "minAge": 0,
+ "maxAge": 2,
+ "title": "First wave day",
+ "tags": [
+  "baby",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Goodbye now means waving at strangers.  witnessed by two grandparents on speakerphone.",
+ "choices": [
+  {
+   "label": "Celebrate big",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cake for the adults, mush for the star. A perfect day."
+    }
+   ]
+  },
+  {
+   "label": "Write it down",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Date, time, witnesses. The baby book grows heavier with love."
+    }
+   ]
+  }
+ ]
+}

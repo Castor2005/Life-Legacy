@@ -1,0 +1,53 @@
+{
+ "id": "zxyg-fest-026",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "the kite carnival road trip",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Glitter, bass, questionable sleep. Tessa has the tickets.",
+ "choices": [
+  {
+   "label": "Front row",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the kite carnival peak moment. Tessa screams the lyrics wrong."
+    }
+   ]
+  },
+  {
+   "label": "Work the gate",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "150"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Wristbands and free entry. the kite carnival from the inside."
+    }
+   ]
+  }
+ ]
+}

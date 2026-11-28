@@ -1,0 +1,65 @@
+{
+ "id": "zxyg-hustle-005",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Video editing side hustle",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Spreadsheets of dreams. Vera wants in as co-founder.",
+ "choices": [
+  {
+   "label": "Scale it",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "money",
+       "amount": "2500"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "600"
+      }
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The Video editing hustle pays. Vera gets a fair cut."
+    }
+   ]
+  },
+  {
+   "label": "Keep it small",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "400"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pocket money, zero stress. The Video editing gig stays fun."
+    }
+   ]
+  }
+ ]
+}

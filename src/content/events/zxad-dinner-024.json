@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-024",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Lena's wine tasting dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Candles lit, playlist perfect. Your partner Cleo charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Lena raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Lena\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lena opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "zxbm-craft-061",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Making a canoe paddle masterclass",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Sawdust and satisfaction. Talia wants one for their hallway.",
+ "choices": [
+  {
+   "label": "Sell a few",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "600"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "a canoe paddle sells to strangers. Talia takes three."
+    }
+   ]
+  },
+  {
+   "label": "Gift them",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Handmade beats bought. a canoe paddle grace three homes."
+    }
+   ]
+  }
+ ]
+}

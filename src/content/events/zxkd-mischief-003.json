@@ -1,0 +1,68 @@
+{
+ "id": "zxkd-mischief-003",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The chalkboard message works too well",
+ "tags": [
+  "kid",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The plan took eleven seconds to form. Omar was there. Omar saw everything.",
+ "choices": [
+  {
+   "label": "Own up",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Confession, apology, detention. The legend softens into a lesson."
+    }
+   ]
+  },
+  {
+   "label": "Deny everything",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-5"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "-3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Omar keeps your secret. The guilt keeps you."
+    }
+   ]
+  }
+ ]
+}

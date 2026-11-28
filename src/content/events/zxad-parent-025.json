@@ -1,0 +1,54 @@
+{
+ "id": "zxad-parent-025",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Growth spurt era",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Parenting: the ultimate logistics startup. Your partner Paloma handles bedtime with military grace.",
+ "choices": [
+  {
+   "label": "Show up fully",
+   "hint": "family+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Growth spurt resolved with hugs. Paloma winks over the chaos."
+    }
+   ]
+  },
+  {
+   "label": "Hire help",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A sitter saves the week. Growth spurt barely notice the upgrade."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "id": "zxmd-mentor-012",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Mentoring a young founder",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "They remind you of you, twenty years back. You meet over bench talks; an introduction email flies.",
+ "choices": [
+  {
+   "label": "Open doors",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "a young founder lands the role. Your name carried weight."
+    }
+   ]
+  },
+  {
+   "label": "Tough love",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hard feedback, kindly given. a young founder thanks you within a year."
+    }
+   ]
+  }
+ ]
+}

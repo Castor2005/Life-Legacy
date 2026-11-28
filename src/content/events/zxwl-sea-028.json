@@ -1,0 +1,50 @@
+{
+ "id": "zxwl-sea-028",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the strait dawn kayak",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Gulls narrate everything. Salt air fixes what cities break. A seal judges your stroke.",
+ "choices": [
+  {
+   "label": "Dive in",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the strait dawn kayak. The ocean returns you to yourself."
+    }
+   ]
+  },
+  {
+   "label": "Shore slow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tide pools and novels. the strait at walking pace."
+    }
+   ]
+  }
+ ]
+}

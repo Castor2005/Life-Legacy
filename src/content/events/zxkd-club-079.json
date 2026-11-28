@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-club-079",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Garden club a guest coach",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "After school: Garden club. Today brings a mystery box of supplies.",
+ "choices": [
+  {
+   "label": "Take the lead",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You run the meeting. Garden club has a new captain."
+    }
+   ]
+  },
+  {
+   "label": "Master the craft",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hours vanish. Your Garden skills jump a full level."
+    }
+   ]
+  }
+ ]
+}

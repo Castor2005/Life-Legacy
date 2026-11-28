@@ -1,0 +1,49 @@
+{
+ "id": "zxad-school30-046",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Priya's kid wins the spelling bee",
+ "tags": [
+  "adult-life",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Front row seats, flowers ready. Your own kids watch how you react.",
+ "choices": [
+  {
+   "label": "Celebrate big",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(100)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Priya's kid glows. Your kids take notes on joy."
+    }
+   ]
+  },
+  {
+   "label": "Mentor yours",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Inspired practice sessions. Your kids chase their own wins the spelling bee."
+    }
+   ]
+  }
+ ]
+}

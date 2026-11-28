@@ -1,0 +1,70 @@
+{
+ "id": "zxpf-switch-115",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "pilot beckons",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The listing glows on the screen. Nico made the same leap last year.",
+ "choices": [
+  {
+   "label": "Jump fields",
+   "hint": "career+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "8000"
+      },
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "6"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(2000)"
+      },
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "pilot life begins. Nico shows you the ropes."
+    }
+   ]
+  },
+  {
+   "label": "Freelance first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "1500"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Weekend pilot gigs test the water. Warm enough."
+    }
+   ]
+  }
+ ]
+}

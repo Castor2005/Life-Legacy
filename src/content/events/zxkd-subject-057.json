@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-057",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Fractions math race",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A surprise worksheet lands on every desk. Nico sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fractions bends to your will. Nico copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Nico",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Nico gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

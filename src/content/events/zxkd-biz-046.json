@@ -1,0 +1,57 @@
+{
+ "id": "zxkd-biz-046",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The dog wash stand",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Grand opening. The neighbors are curious. Startup capital: allowance money.",
+ "choices": [
+  {
+   "label": "Hustle all day",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "35"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The dog wash stand clears $35. Capitalism tastes sweet."
+    }
+   ]
+  },
+  {
+   "label": "Split with Talia",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "20"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Talia\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Talia handles marketing. Profits split, friendship doubled."
+    }
+   ]
+  }
+ ]
+}

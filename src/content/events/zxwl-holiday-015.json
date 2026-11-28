@@ -1,0 +1,54 @@
+{
+ "id": "zxwl-holiday-015",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Winter lights table",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Recipes older than you emerge. Kofi brings the chaos and the pie.",
+ "choices": [
+  {
+   "label": "Host everyone",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Winter lights table at yours. Kofi does dishes without asking."
+    }
+   ]
+  },
+  {
+   "label": "Quiet version",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Small Winter lights, deep peace. Kofi understands completely."
+    }
+   ]
+  }
+ ]
+}

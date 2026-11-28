@@ -1,0 +1,58 @@
+{
+ "id": "zxsr-health60-019",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "New knee verdict",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Recovery comes with daytime TV. The doctor Ellery knows you by name now.",
+ "choices": [
+  {
+   "label": "Top surgeon",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(3000)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New knee perfect. Dr. Ellery works miracles on schedule."
+    }
+   ]
+  },
+  {
+   "label": "Steady rehab",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Exercises thrice daily. New knee earns its keep."
+    }
+   ]
+  }
+ ]
+}

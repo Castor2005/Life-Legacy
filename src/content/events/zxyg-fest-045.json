@@ -1,0 +1,53 @@
+{
+ "id": "zxyg-fest-045",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "the harvest fair road trip",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Glitter, bass, questionable sleep. Koa has the tickets.",
+ "choices": [
+  {
+   "label": "Front row",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(200)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the harvest fair peak moment. Koa screams the lyrics wrong."
+    }
+   ]
+  },
+  {
+   "label": "Work the gate",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "150"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Wristbands and free entry. the harvest fair from the inside."
+    }
+   ]
+  }
+ ]
+}

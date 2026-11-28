@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-051",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The solar system show-and-tell",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The classroom smells of glue and ambition. Callum sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The solar system bends to your will. Callum copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Callum",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Callum gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

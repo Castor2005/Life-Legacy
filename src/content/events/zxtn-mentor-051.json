@@ -1,0 +1,49 @@
+{
+ "id": "zxtn-mentor-051",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The shop instructor takes notice",
+ "tags": [
+  "teen",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A book pressed into your hands. Sofia is jealous in the good way.",
+ "choices": [
+  {
+   "label": "Accept guidance",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Sofia\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "The shop instructor opens doors. Sofia gets pulled along too."
+    }
+   ]
+  },
+  {
+   "label": "Prove it solo",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You deliver anyway. The shop instructor smiles like this was the plan."
+    }
+   ]
+  }
+ ]
+}

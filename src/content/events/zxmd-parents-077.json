@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-parents-077",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Mom need a ride to everything",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "You notice the small slips. The roles reverse gently, then all at once. Sunday dinners stretch longer.",
+ "choices": [
+  {
+   "label": "Step up",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mom lean on you now. need a ride to everything — handled with grace."
+    }
+   ]
+  },
+  {
+   "label": "Organize care",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Aides, schedules, check-ins. Mom stay safe and proud."
+    }
+   ]
+  }
+ ]
+}

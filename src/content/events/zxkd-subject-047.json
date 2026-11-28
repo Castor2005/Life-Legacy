@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-047",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The solar system poster contest",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Today's lesson crackles with chalk dust. Nico sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The solar system bends to your will. Nico copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Nico",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Nico gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

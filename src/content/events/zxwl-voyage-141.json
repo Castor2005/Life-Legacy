@@ -1,0 +1,58 @@
+{
+ "id": "zxwl-voyage-141",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Canada food pilgrimage",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Borders stamp the passport like applause. Stellan packs three outfits too many.",
+ "choices": [
+  {
+   "label": "Splurge well",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Canada food pilgrimage with Stellan. The stories pay dividends forever."
+    }
+   ]
+  },
+  {
+   "label": "Travel slow",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(700)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Markets, backstreets, long lunches. Canada seeps into you."
+    }
+   ]
+  }
+ ]
+}

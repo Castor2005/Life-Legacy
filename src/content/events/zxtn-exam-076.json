@@ -1,0 +1,70 @@
+{
+ "id": "zxtn-exam-076",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Midterms season",
+ "tags": [
+  "teen",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The honor roll glitters on the wall. Cleo is stress-highlighting the textbook.",
+ "choices": [
+  {
+   "label": "Grind nightly",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(6))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.discipline>50"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "6"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Midterms conquered. Cleo owes you one for the notes."
+    }
+   ]
+  },
+  {
+   "label": "Study with Cleo",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(3))"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Half studying, half laughing. Midterms still goes fine."
+    }
+   ]
+  }
+ ]
+}

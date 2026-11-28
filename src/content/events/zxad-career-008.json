@@ -1,0 +1,71 @@
+{
+ "id": "zxad-career-008",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Bonus season heats up",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Your track record speaks — loudly, you hope. Your rival Umarov circles the same prize.",
+ "choices": [
+  {
+   "label": "Take the shot",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "money",
+       "amount": "9000"
+      },
+      {
+       "op": "perf",
+       "delta": "8"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "2000"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bonus season lands. Umarov sends a gracious, furious email."
+    }
+   ]
+  },
+  {
+   "label": "Build allies",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "perf",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lunches, credit shared, favors banked. The Bonus season can wait."
+    }
+   ]
+  }
+ ]
+}

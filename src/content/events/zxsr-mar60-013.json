@@ -1,0 +1,54 @@
+{
+ "id": "zxsr-mar60-013",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Twenty-fifth anniversary dance",
+ "tags": [
+  "adult-life",
+  "love"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "partner": "married"
+ },
+ "text": "Decades distilled to a look across the table. Your partner Amara still steals the blankets.",
+ "choices": [
+  {
+   "label": "Renew the vows",
+   "hint": "love+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1000)"
+    },
+    {
+     "op": "partnerRel",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Amara cries again. The Twenty-fifth anniversary outshines the wedding."
+    }
+   ]
+  },
+  {
+   "label": "Quiet ritual",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "partnerRel",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Same restaurant, same table. Amara orders for both of you."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,68 @@
+{
+ "id": "zxkd-mischief-051",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The whoopee cushion works too well",
+ "tags": [
+  "kid",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The plan took eleven seconds to form. Nico was there. Nico saw everything.",
+ "choices": [
+  {
+   "label": "Own up",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Confession, apology, detention. The legend softens into a lesson."
+    }
+   ]
+  },
+  {
+   "label": "Deny everything",
+   "hint": "risky",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "6"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "karma",
+       "delta": "-5"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "-4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Nico keeps your secret. The guilt keeps you."
+    }
+   ]
+  }
+ ]
+}

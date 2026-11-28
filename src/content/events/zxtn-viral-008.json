@@ -1,0 +1,55 @@
+{
+ "id": "zxtn-viral-008",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Ines's skit channel blows up",
+ "tags": [
+  "teen",
+  "fame"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Ten thousand views overnight. Ines is suddenly school-famous.",
+ "choices": [
+  {
+   "label": "Ride the wave",
+   "hint": "fame+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "fame",
+     "value": "min(100,s.fame+(6))"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cameo in the sequel. Ines splits the glory fairly."
+    }
+   ]
+  },
+  {
+   "label": "Stay offline",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You watch from the sidelines. Fame looks exhausting up close."
+    }
+   ]
+  }
+ ]
+}

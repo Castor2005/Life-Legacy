@@ -1,0 +1,58 @@
+{
+ "id": "zxyg-move-045",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Move to Quebec City",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "One-way ticket, two suitcases. Idris already lives there and promises a couch.",
+ "choices": [
+  {
+   "label": "Leap",
+   "hint": "life+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "-2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Quebec City or bust. Idris meets you with keys and noodles."
+    }
+   ]
+  },
+  {
+   "label": "Visit first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Recon week in Quebec City. The fantasy survives contact."
+    }
+   ]
+  }
+ ]
+}

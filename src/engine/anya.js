@@ -31,6 +31,7 @@ function anyaContext(){
     else parts.push("life: none started yet");
   }catch(e){ parts.push("life: unknown"); }
   try{ parts.push("AI art: "+(artEnabled()?"on":"off")+", music: "+((window.LLUI&&LLUI.music===false)?"off":"on")); }catch(e){}
+  try{ if(window.S&&S.alive){ var __w=""; try{ __w=fateTideWord(); }catch(e){} var __om=""; try{ __om=(S.fate&&S.fate.omen)||"none yet"; }catch(e){} var __hh=""; try{ __hh=historyHeadline(S.year); }catch(e){} parts.push("Universe Will: "+__w+" (omen: "+String(__om).slice(0,80)+"; real "+S.year+": "+String(__hh).slice(0,80)+")"); } }catch(e){}
   return parts.join(" · ");
 }
 /* ---- compact game manual baked into every AI prompt ---- */
@@ -81,6 +82,7 @@ var ANYA_FALLBACKS=[
 [["guestbook","community","comment","player"], "Help → 💬 Load guestbook opens the community board — legends and tips from fellow players, fetched on demand so it never slows the game."],
 [["custom life","create","design","dob","birth","country","trait"], "🧬 Custom life designs everything — but set your DOB first: country, region and city unlock from it and are era-accurate. Then background, up to 3 traits + 1 congenital ★, attribute points and an ambition."],
 [["world","timeline","history","news","divergence"], "🌍 World ticks yearly: regime, GDP, inflation, 10 stocks, housing. 📜 World Timeline is searchable by text, year and status, with AI divergence analysis."],
+[["fate","universe will","omen","boon","trial","tide","luck","karma","historical"], "The 🌌 Universe Will watches your life from the dynbar (radiant → dark) — a luminous life (high karma, prestige, renown) draws boons, a dark one draws trials, and hinge ages (18/21/30…) bring fate omens. The 🌍 World tab shows its current omen plus this year's real-history headline — long lives live through real eras."],
 [["help","how","what","play","start","begin","stuck","?"], "The loop: ✨ begin a life → ⏳ Age + (or Space) each year → use tabs between birthdays → marry, found a company, name an heir → die a legend. Ask me anything specific — money, heirs, Director, Focus — and I'll point at the exact button."]
 ];
 function anyaFallback(q){

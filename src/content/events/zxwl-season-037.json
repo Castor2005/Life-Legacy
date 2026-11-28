@@ -1,0 +1,45 @@
+{
+ "id": "zxwl-season-037",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Golden autumn ritual",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The year turns its great wheel. Freya declares it the best one yet.",
+ "choices": [
+  {
+   "label": "Mark the day",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Golden autumn ritual with Freya. Traditions start exactly like this."
+    }
+   ]
+  },
+  {
+   "label": "Photograph it",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Golden hour captured. Golden autumn framed above the mantel."
+    }
+   ]
+  }
+ ]
+}

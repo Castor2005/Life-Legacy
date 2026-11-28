@@ -1,0 +1,55 @@
+{
+ "id": "zxsr-club60-019",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Woodshop social",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "New friends at an age when that is rare gold. Silas recruited you over pie.",
+ "choices": [
+  {
+   "label": "Run for president",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(7)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Woodshop elects you unanimously. Silas runs the campaign."
+    }
+   ]
+  },
+  {
+   "label": "Happy member",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Show up, pitch in, belong. Woodshop is the week's highlight."
+    }
+   ]
+  }
+ ]
+}

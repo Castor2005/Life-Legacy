@@ -1,0 +1,63 @@
+{
+ "id": "zxwl-cook-011",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "lasagna first attempt",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The kitchen smells like a promise. Emmett claims their version is better.",
+ "choices": [
+  {
+   "label": "Follow the recipe",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "lasagna triumphs. Emmett demands the recipe, gets it."
+    }
+   ]
+  },
+  {
+   "label": "Improvise wildly",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.6",
+     "then": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "6"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-1"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "lasagna first attempt goes experimental. Emmett eats it anyway."
+    }
+   ]
+  }
+ ]
+}

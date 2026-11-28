@@ -1,0 +1,58 @@
+{
+ "id": "zxyg-move-024",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Move to Marrakech",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Restlessness wins the vote. Omar already lives there and promises a couch.",
+ "choices": [
+  {
+   "label": "Leap",
+   "hint": "life+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(1500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "-1"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Marrakech or bust. Omar meets you with keys and noodles."
+    }
+   ]
+  },
+  {
+   "label": "Visit first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(300)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Recon week in Marrakech. The fantasy survives contact."
+    }
+   ]
+  }
+ ]
+}

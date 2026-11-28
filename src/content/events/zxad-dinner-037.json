@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-037",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Koa's rooftop grill dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Candles lit, playlist perfect. Your partner Kenji charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Koa raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Koa\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Koa opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

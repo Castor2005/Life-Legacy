@@ -1,0 +1,45 @@
+{
+ "id": "zxwl-season-014",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Monsoon break feast",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The year turns its great wheel. Aisha declares it the best one yet.",
+ "choices": [
+  {
+   "label": "Mark the day",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Monsoon break feast with Aisha. Traditions start exactly like this."
+    }
+   ]
+  },
+  {
+   "label": "Photograph it",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Golden hour captured. Monsoon break framed above the mantel."
+    }
+   ]
+  }
+ ]
+}

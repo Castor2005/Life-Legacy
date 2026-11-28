@@ -1,0 +1,50 @@
+{
+ "id": "zxbb-night-000",
+ "minAge": 0,
+ "maxAge": 2,
+ "title": "Nap strike",
+ "tags": [
+  "baby",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Naps are suddenly for other babies. Warm milk, cool room, low lights.",
+ "choices": [
+  {
+   "label": "Rock and hum",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The old songs still work. Sleep finally lands like snow."
+    }
+   ]
+  },
+  {
+   "label": "Tag-team shifts",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shifts assigned, earplugs distributed. Parenting is logistics."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-screen-005",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Joint scan at last",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Prep day is the worst part. Everyone says so. Fifty is when the manual gets serious. Dr. Marsh is brisk and kind.",
+ "choices": [
+  {
+   "label": "Do it all",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Joint scan clear. The at last bring relief and a sticker."
+    }
+   ]
+  },
+  {
+   "label": "One change",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Walking daily, smirking at elevators. Joint scan approves."
+    }
+   ]
+  }
+ ]
+}

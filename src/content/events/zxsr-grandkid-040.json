@@ -1,0 +1,54 @@
+{
+ "id": "zxsr-grandkid-040",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Cookie baking rules",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The circle of life has excellent snacks. Marco brags about theirs louder.",
+ "choices": [
+  {
+   "label": "Spoil away",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cookie baking peak. Marco admits defeat gracefully."
+    }
+   ]
+  },
+  {
+   "label": "Teach a skill",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Knots, songs, card tricks. Cookie baking inherit everything."
+    }
+   ]
+  }
+ ]
+}

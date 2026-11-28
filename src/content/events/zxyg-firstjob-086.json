@@ -1,0 +1,51 @@
+{
+ "id": "zxyg-firstjob-086",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "The entry-level grind week three",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "The coffee machine is your oracle. Your manager Quade watches like a hawk with a spreadsheet.",
+ "choices": [
+  {
+   "label": "Outperform",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Quade notes your name twice. The The entry-level grind bends in your favor."
+    }
+   ]
+  },
+  {
+   "label": "Learn everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shadow every team. Skills compound quietly."
+    }
+   ]
+  }
+ ]
+}

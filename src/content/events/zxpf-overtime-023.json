@@ -1,0 +1,61 @@
+{
+ "id": "zxpf-overtime-023",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "plumber overtime month",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "The project eats weekends whole. The vending machine knows your order.",
+ "choices": [
+  {
+   "label": "Bank the hours",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "3000"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-6"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "overtime month pays triple. The plumber grind leaves marks and money."
+    }
+   ]
+  },
+  {
+   "label": "Set boundaries",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You log off at six. The overtime month survives without you."
+    }
+   ]
+  }
+ ]
+}

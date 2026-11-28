@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-004",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Willa asks about money",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "You earned this answer the hard way. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Willa listens hard. Your answer about about money lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Willa\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Willa retells it for years."
+    }
+   ]
+  }
+ ]
+}

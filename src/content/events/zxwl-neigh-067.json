@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-067",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Otto starts a tool library",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Suburbia stages its daily drama. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Otto\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Otto becomes a real friend over starts a tool library fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The starts a tool library saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

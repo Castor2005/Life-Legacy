@@ -1,0 +1,68 @@
+{
+ "id": "zxpf-crisis-095",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "writer disaster client",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Everyone looks at you. Of course. At the clinic, the day goes sideways.",
+ "choices": [
+  {
+   "label": "Save the day",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "1500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The writer crisis bends. At the clinic, they tell this story."
+    }
+   ]
+  },
+  {
+   "label": "Document everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Paper trail perfect. The disaster client becomes a case study."
+    }
+   ]
+  }
+ ]
+}

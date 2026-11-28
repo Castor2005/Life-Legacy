@@ -1,0 +1,55 @@
+{
+ "id": "zxbm-spirit-061",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Gratitude practice season",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Stillness teaches loudly. Jasper walks the path beside you.",
+ "choices": [
+  {
+   "label": "Go deeper",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "8"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Gratitude practice reshapes the weeks. Jasper notices the calm first."
+    }
+   ]
+  },
+  {
+   "label": "Serve others",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bowls filled, floors swept. Gratitude practice lives in the hands."
+    }
+   ]
+  }
+ ]
+}

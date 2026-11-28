@@ -1,0 +1,67 @@
+{
+ "id": "zxbb-toy-019",
+ "minAge": 1,
+ "maxAge": 4,
+ "title": "The xylephone era",
+ "tags": [
+  "baby",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The xylephone is now the center of the universe. Today it goes into the bathtub.",
+ "choices": [
+  {
+   "label": "Play along",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "stat",
+       "key": "creativity",
+       "delta": "3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "An hour of pure xylephone bliss. The giggles recharge everyone."
+    }
+   ]
+  },
+  {
+   "label": "Buy a spare",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(15)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "A backup xylephone hides in the closet. Future crisis averted for $15."
+    }
+   ]
+  }
+ ]
+}

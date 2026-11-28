@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-068",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Ines's cook-off dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The guest list is a social chessboard. Your partner Marco charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Ines raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Ines\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Ines opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

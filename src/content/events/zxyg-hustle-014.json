@@ -1,0 +1,65 @@
+{
+ "id": "zxyg-hustle-014",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Tutoring nights side hustle",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The laptop glows past midnight. Noor wants in as co-founder.",
+ "choices": [
+  {
+   "label": "Scale it",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "money",
+       "amount": "2500"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "600"
+      }
+     ]
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The Tutoring nights hustle pays. Noor gets a fair cut."
+    }
+   ]
+  },
+  {
+   "label": "Keep it small",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "400"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Pocket money, zero stress. The Tutoring nights gig stays fun."
+    }
+   ]
+  }
+ ]
+}

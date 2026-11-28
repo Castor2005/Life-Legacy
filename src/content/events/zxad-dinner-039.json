@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-039",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Mira's dinner party dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Someone brings gossip as a side dish. Your partner Omar charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Mira raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Mira\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mira opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

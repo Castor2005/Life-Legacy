@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-market-058",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the lantern festival discovery",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Stalls stretch down the whole street. Sofia knows every vendor by name.",
+ "choices": [
+  {
+   "label": "Buy local",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bags heavy with good things. the lantern festival delivers again."
+    }
+   ]
+  },
+  {
+   "label": "Meet makers",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Sofia introduces you around. The discovery becomes a social tour."
+    }
+   ]
+  }
+ ]
+}

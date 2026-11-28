@@ -1,0 +1,54 @@
+{
+ "id": "zxyg-roomie-009",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Aisha runs a 5am blender",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The group chat for the apartment heats up.",
+ "choices": [
+  {
+   "label": "House meeting",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Rules posted on the fridge. Aisha signs in fancy script."
+    }
+   ]
+  },
+  {
+   "label": "Move out",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(900)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "New place, no runs a 5am blender. Peace has a price: $900."
+    }
+   ]
+  }
+ ]
+}

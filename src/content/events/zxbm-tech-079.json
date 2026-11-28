@@ -1,0 +1,53 @@
+{
+ "id": "zxbm-tech-079",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "AI assistant experiment",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The future arrives in a cardboard box. Otto adopted it months ago, insufferably.",
+ "choices": [
+  {
+   "label": "Early adopter",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(800)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "AI assistant hums along. Otto asks YOU for help now."
+    }
+   ]
+  },
+  {
+   "label": "Wait and see",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "money",
+     "amount": "200"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Prices drop, bugs vanish. Patience funds the AI assistant fund."
+    }
+   ]
+  }
+ ]
+}

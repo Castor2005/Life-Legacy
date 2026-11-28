@@ -1,0 +1,58 @@
+{
+ "id": "zxwl-voyage-077",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Japan rail pass",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The flight lands at dawn. Tessa packs three outfits too many.",
+ "choices": [
+  {
+   "label": "Splurge well",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Japan rail pass with Tessa. The stories pay dividends forever."
+    }
+   ]
+  },
+  {
+   "label": "Travel slow",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(700)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Markets, backstreets, long lunches. Japan seeps into you."
+    }
+   ]
+  }
+ ]
+}

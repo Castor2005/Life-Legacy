@@ -1,0 +1,53 @@
+{
+ "id": "zxmd-grandtour-017",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Vietnam solo at last",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Business class. Earned. Every mile of it. Finally: the trip you postponed for decades.",
+ "choices": [
+  {
+   "label": "No budget",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(6000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Vietnam solo at last. The photos need no filter and get none."
+    }
+   ]
+  },
+  {
+   "label": "Smart splurge",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Vietnam done wisely. solo at last — every penny a memory."
+    }
+   ]
+  }
+ ]
+}

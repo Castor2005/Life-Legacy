@@ -1,0 +1,67 @@
+{
+ "id": "zxpf-raise-082",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "florist bonus talk",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Numbers season arrives. Marsh holds the budget like a dragon.",
+ "choices": [
+  {
+   "label": "Make the case",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "money",
+       "amount": "5000"
+      },
+      {
+       "op": "perf",
+       "delta": "6"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "800"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "3"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Marsh blinks first. The florist bonus talk pays out."
+    }
+   ]
+  },
+  {
+   "label": "Skill up first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Certified, sharpened, undeniable. Next bonus talk, no contest."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-032",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Mira asks about joy",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The porch is the right venue. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Mira listens hard. Your answer about about joy lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Mira\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Mira retells it for years."
+    }
+   ]
+  }
+ ]
+}

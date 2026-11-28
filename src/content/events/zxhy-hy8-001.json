@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy8-001",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Oil shock on the news",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 1973
+   },
+   {
+    "p": "year",
+    "lte": 1974
+   }
+  ]
+ },
+ "text": "Gas lines snake around blocks. Thermostats drop; sweaters rise. You feel the hinge of history swing.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Oil shock lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Oil shock observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

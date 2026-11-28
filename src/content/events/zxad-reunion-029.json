@@ -1,0 +1,49 @@
+{
+ "id": "zxad-reunion-029",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "The tenth high school reunion",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Someone rented the old gym. Koa organized the whole thing and looks tired but proud.",
+ "choices": [
+  {
+   "label": "Work the room",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Every table gets a story. Koa declares you the reunion MVP."
+    }
+   ]
+  },
+  {
+   "label": "Find your people",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Koa\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "The old circle reforms instantly. Koa never really left."
+    }
+   ]
+  }
+ ]
+}

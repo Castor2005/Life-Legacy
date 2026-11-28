@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-050",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Koa asks about marriage",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "You earned this answer the hard way. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Koa listens hard. Your answer about about marriage lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Koa\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Koa retells it for years."
+    }
+   ]
+  }
+ ]
+}

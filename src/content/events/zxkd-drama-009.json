@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-drama-009",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Sana loses the finals",
+ "tags": [
+  "kid",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Whispers travel at the speed of gossip.",
+ "choices": [
+  {
+   "label": "Talk it out",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Honest words on the swings. The friendship survives stronger."
+    }
+   ]
+  },
+  {
+   "label": "Write a letter",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three pages, one drawing. Sana keeps it for years."
+    }
+   ]
+  }
+ ]
+}

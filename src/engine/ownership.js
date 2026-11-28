@@ -312,13 +312,12 @@ function deliverPreg(p){
     pushLog(S.age,"🕊️","A pregnancy with "+p.carrier+" ends too soon, in a quiet clinic room. Grief, then each other.","bad");
     return "lost";
   }
-  var n=rName();
+  var pFemale=(S.gender==="female"), cFemale=true;
   /* GENETICS PATCH: the mother draws the odds (twins run maternal), then every
    * child draws one allele per locus from each parent — probable, never copy.
    * Genetic roles come from the PARTICIPANTS, not the player: the carrier is
    * the mother unless proven male (female player + male partner → she is the
    * mother, he the father); same-sex edges use a founder donor/surrogate. */
-  var pFemale=(S.gender==="female"), cFemale=true;
   try{ cFemale=carrierFemaleFor(p.carrier); }catch(e){}
   var pG=null, cG=null;
   try{ pG=S.genes||founderGenes(pFemale?"female":"male"); }catch(e){ pG=founderGenes("male"); }
@@ -334,8 +333,10 @@ function deliverPreg(p){
   var dadT=dadIsPlayer?(S.traits||[]):[], momT=momIsPlayer?(S.traits||[]):[];
   var dadCog=dadIsPlayer?((S.genes&&S.genes.P&&S.genes.P.cog)||0):((dadG&&dadG.P&&dadG.P.cog)||0);
   var momCog=momIsPlayer?((S.genes&&S.genes.P&&S.genes.P.cog)||0):((momG&&momG.P&&momG.P.cog)||0);
-  function makeKid(nm){
+  function makeKid(){
     var ks=pick(["male","female"]);
+    /* kids carry the House name — siblings share it, heirs inherit it */
+    var nm=rNameG(ks).split(" ")[0]+" "+(S.lastName||pick(LAST));
     var kb=kidDefault(nm,0); kb.rel=90; kb.legit=p.legit; kb.sex=ks;
     try{
       kb.genes=inheritGenes(dadG,momG,ks);
@@ -344,10 +345,10 @@ function deliverPreg(p){
     }catch(e){}
     return kb;
   }
-  var kb=makeKid(n);
+  var kb=makeKid(), n=kb.name;
   var kids=[kb];
   var twinP=0.12; try{ twinP=twinChance(momG); }catch(e){}
-  if(rnd()<twinP){ var t2=rName(), kt=makeKid(t2); kids.push(kt); }
+  if(rnd()<twinP){ var kt=makeKid(); kids.push(kt); }
   for(var k=0;k<kids.length;k++)S.relationships.children.push(kids[k]);
   S.prestige+=p.legit?10:0;
   var x=sexEnsure();

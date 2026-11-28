@@ -1,0 +1,49 @@
+{
+ "id": "zxad-reunion-022",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "The team championship reunion",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The playlist is pure nostalgia. Vera organized the whole thing and looks tired but proud.",
+ "choices": [
+  {
+   "label": "Work the room",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Every table gets a story. Vera declares you the reunion MVP."
+    }
+   ]
+  },
+  {
+   "label": "Find your people",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Vera\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "The old circle reforms instantly. Vera never really left."
+    }
+   ]
+  }
+ ]
+}

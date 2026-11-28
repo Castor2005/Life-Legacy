@@ -1,0 +1,54 @@
+{
+ "id": "zxsr-retire-058",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "The last commute era",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Thirty years distilled to one speech. The gold watch is real. So is the freedom. The rival firm sends flowers. Grandkids on speed dial.",
+ "choices": [
+  {
+   "label": "Consult back",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "3000"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two days a week, triple the rate. The last commute pays twice."
+    }
+   ]
+  },
+  {
+   "label": "Full stop",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Alarm: deleted. The last commute begins with a long nap."
+    }
+   ]
+  }
+ ]
+}

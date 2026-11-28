@@ -1,0 +1,65 @@
+{
+ "id": "zxkd-subject-079",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Long division history skit",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "A surprise worksheet lands on every desk. Umar sits nearby.",
+ "choices": [
+  {
+   "label": "Go all in",
+   "hint": "grades+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "education.grades",
+     "value": "clamp(s.education.grades+(5))"
+    },
+    {
+     "op": "branch",
+     "cond": {
+      "expr": "s.stats.smarts>55"
+     },
+     "then": [
+      {
+       "op": "stat",
+       "key": "smarts",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Long division bends to your will. Umar copies your notes."
+    }
+   ]
+  },
+  {
+   "label": "Help Umar",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You explain it twice. Umar gets it — and never forgets who helped."
+    }
+   ]
+  }
+ ]
+}

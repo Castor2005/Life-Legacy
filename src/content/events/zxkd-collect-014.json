@@ -1,0 +1,49 @@
+{
+ "id": "zxkd-collect-014",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The great marble collection",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The playground market is volatile today. Luz is your rival and trading partner.",
+ "choices": [
+  {
+   "label": "Trade smart",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "money",
+     "amount": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Two commons for one holographic. The marble market rewards patience."
+    }
+   ]
+  },
+  {
+   "label": "Gift the rare one",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Luz stares, speechless. Generosity is the rarest card."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "id": "zxsr-health60-025",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Cataract fix upgrade",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Modern medicine is a marvel. The doctor Novak knows you by name now.",
+ "choices": [
+  {
+   "label": "Top surgeon",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(3000)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cataract fix perfect. Dr. Novak works miracles on schedule."
+    }
+   ]
+  },
+  {
+   "label": "Steady rehab",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Exercises thrice daily. Cataract fix earns its keep."
+    }
+   ]
+  }
+ ]
+}

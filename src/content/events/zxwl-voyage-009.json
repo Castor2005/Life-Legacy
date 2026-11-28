@@ -1,0 +1,58 @@
+{
+ "id": "zxwl-voyage-009",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Portugal old town week",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Borders stamp the passport like applause. Petra packs three outfits too many.",
+ "choices": [
+  {
+   "label": "Splurge well",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Portugal old town week with Petra. The stories pay dividends forever."
+    }
+   ]
+  },
+  {
+   "label": "Travel slow",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(700)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Markets, backstreets, long lunches. Portugal seeps into you."
+    }
+   ]
+  }
+ ]
+}

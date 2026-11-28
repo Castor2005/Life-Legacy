@@ -1,0 +1,50 @@
+{
+ "id": "zxbm-read-029",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "The memoir everyone cites club",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The margins fill with arguments. Diego presses it into your hands.",
+ "choices": [
+  {
+   "label": "Finish and discuss",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The memoir everyone cites rewires something. Diego debates you till midnight."
+    }
+   ]
+  },
+  {
+   "label": "Read widely",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three books at once. The memoir everyone cites is just the start."
+    }
+   ]
+  }
+ ]
+}

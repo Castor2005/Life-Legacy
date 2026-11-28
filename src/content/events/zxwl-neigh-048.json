@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-048",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Callum hosts a block party",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The group chat lights up. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Callum\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Callum becomes a real friend over hosts a block party fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The hosts a block party saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

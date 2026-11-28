@@ -1,0 +1,61 @@
+{
+ "id": "zxpf-overtime-060",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "florist launch crunch",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Week three of late nights. The vending machine knows your order.",
+ "choices": [
+  {
+   "label": "Bank the hours",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "3000"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "-6"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "launch crunch pays triple. The florist grind leaves marks and money."
+    }
+   ]
+  },
+  {
+   "label": "Set boundaries",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You log off at six. The launch crunch survives without you."
+    }
+   ]
+  }
+ ]
+}

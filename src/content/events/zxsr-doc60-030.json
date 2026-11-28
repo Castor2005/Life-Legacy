@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-doc60-030",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "The gray muzzle plan",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The vet speaks gently. Socks has gray around the muzzle now.",
+ "choices": [
+  {
+   "label": "Spare nothing",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(800)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Socks gets the best care. Every extra month is gold."
+    }
+   ]
+  },
+  {
+   "label": "Comfort care",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Soft beds, short walks. Socks is content — so are you."
+    }
+   ]
+  }
+ ]
+}

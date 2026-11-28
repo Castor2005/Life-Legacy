@@ -46,14 +46,22 @@ function gainKarma(n){
  * (named person records with traits + genomes drawn from THEIR parents), and
  * you + your siblings all draw from the same two genomes. momAge/dadAge stay
  * the numeric truth every legacy reader uses; the records mirror them. */
-function fam0(sex){
+function fam0(sex,famSurname){
   var R={momAge:22+rnd()*18|0,dadAge:24+rnd()*18|0,parentRel:70,friends:[],partner:null,children:[],grandkids:[],pets:[],siblings:[],grandparents:[]};
+  /* ONE family name: the bloodline reads as a bloodline. Dad's line carries
+   * famSurname (the player's birth name); mom's line carries her maiden name.
+   * (Dream: families you can trace by name — World Beyond Player.) */
+  var dadSn=famSurname||pick(LAST), momSn=pick(LAST), guard=0;
+  while(momSn===dadSn&&guard++<20)momSn=pick(LAST);
+  R.momMaiden=momSn;
+  function firstG(g){ return rNameG(g).split(" ")[0]; }
   var nsib=rnd()<0.25?0:(rnd()<0.55?1:(rnd()<0.8?2:3));
-  for(var i=0;i<nsib;i++){ R.siblings.push({name:rName(),age:2+Math.floor(rnd()*9),rel:70+Math.floor(rnd()*20)}); }
+  for(var i=0;i<nsib;i++){ R.siblings.push({name:firstG(pick(["male","female"]))+" "+dadSn,age:2+Math.floor(rnd()*9),rel:70+Math.floor(rnd()*20)}); }
   var gps=[["maternal","female"],["maternal","male"],["paternal","female"],["paternal","male"]];
   for(var g2=0;g2<gps.length;g2++){ var pa=gps[g2][0]==="maternal"?R.momAge:R.dadAge;
     var ga=pa+24+Math.floor(rnd()*12);
-    R.grandparents.push({name:rNameG(gps[g2][1]),side:gps[g2][0],sex:gps[g2][1],age:ga,rel:60+Math.floor(rnd()*25),alive:rnd()<(ga>75?0.35:0.9),npcId:null,genes:founderGenes(gps[g2][1])}); }
+    var gsn=gps[g2][0]==="maternal"?momSn:dadSn;
+    R.grandparents.push({name:firstG(gps[g2][1])+" "+gsn,side:gps[g2][0],sex:gps[g2][1],age:ga,rel:60+Math.floor(rnd()*25),alive:rnd()<(ga>75?0.35:0.9),npcId:null,genes:founderGenes(gps[g2][1])}); }
   function sideGenes(side,needSex){
     var f=null,m=null;
     for(var i=0;i<R.grandparents.length;i++){ var g=R.grandparents[i];
@@ -62,8 +70,8 @@ function fam0(sex){
     return inheritGenes(m||founderGenes("male"),f||founderGenes("female"),needSex);
   }
   function parentTraits(){ return rollTraits().filter(function(t){return t!=="nemesis"&&t!=="trustfund";}); }
-  R.mom={name:rNameG("female"),sex:"female",age:R.momAge,rel:R.parentRel,traits:parentTraits(),genes:sideGenes("maternal","female"),alive:R.momAge>-100,npcId:null};
-  R.dad={name:rNameG("male"),sex:"male",age:R.dadAge,rel:R.parentRel,traits:parentTraits(),genes:sideGenes("paternal","male"),alive:R.dadAge>-100,npcId:null};
+  R.mom={name:firstG("female")+" "+dadSn,sex:"female",age:R.momAge,rel:R.parentRel,traits:parentTraits(),genes:sideGenes("maternal","female"),alive:R.momAge>-100,npcId:null};
+  R.dad={name:firstG("male")+" "+dadSn,sex:"male",age:R.dadAge,rel:R.parentRel,traits:parentTraits(),genes:sideGenes("paternal","male"),alive:R.dadAge>-100,npcId:null};
   /* siblings share the parental draw: resemblance is real, not scripted */
   for(var s2=0;s2<R.siblings.length;s2++){ var sb=R.siblings[s2];
     sb.sex=pick(["male","female"]);
@@ -223,7 +231,7 @@ function newLife(opts){
     money:wealth==="rich"?800:(wealth==="middle"?150:20),
     debt:0,salary:0,jobId:"unemployed",jobLevel:1,performance:50,business:null,company:null,underworld:null,groomed:null,sex:null,
     education:{stage:"Baby",grades:70+rnd()*20|0,highest:"none",inCollege:false,collegeYears:0},
-    relationships:fam0(gender),
+    relationships:fam0(gender,last),
     assets:{houseId:"none",carId:"none",stocks:0,crypto:0,savings:0,houseVal:0,carVal:0,houseYears:0},
     heirId:null,will:false,
     ach:{vacations:0,jobs:0,partners:0,feasts:0,crimes:0,wishes:0},

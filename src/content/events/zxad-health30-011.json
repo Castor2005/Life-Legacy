@@ -1,0 +1,54 @@
+{
+ "id": "zxad-health30-011",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Annual physical verdict",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Paper gown dignity: zero. You stop for soup on the way home.",
+ "choices": [
+  {
+   "label": "Follow the plan",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(250)"
+    },
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Annual physical handled like an adult. The verdict please the doctor."
+    }
+   ]
+  },
+  {
+   "label": "Fix one habit",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Walking meetings and less sugar. Annual physical will show it next year."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "id": "zxmd-mentor-005",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Mentoring a neighbor kid",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Raw talent, rough edges. You meet over long walks; a bookshelf gets raided.",
+ "choices": [
+  {
+   "label": "Open doors",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "a neighbor kid lands the role. Your name carried weight."
+    }
+   ]
+  },
+  {
+   "label": "Tough love",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "4"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hard feedback, kindly given. a neighbor kid thanks you within a year."
+    }
+   ]
+  }
+ ]
+}

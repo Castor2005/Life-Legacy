@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-club-058",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Robotics club a guest coach",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "After school: Robotics club. Today brings sign-ups for the big competition.",
+ "choices": [
+  {
+   "label": "Take the lead",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You run the meeting. Robotics club has a new captain."
+    }
+   ]
+  },
+  {
+   "label": "Master the craft",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hours vanish. Your Robotics skills jump a full level."
+    }
+   ]
+  }
+ ]
+}

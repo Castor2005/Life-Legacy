@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-005",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Bram's cook-off dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Candles lit, playlist perfect. Your partner Lena charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Bram raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Bram\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Bram opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

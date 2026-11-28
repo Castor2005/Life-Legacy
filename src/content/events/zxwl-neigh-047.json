@@ -1,0 +1,49 @@
+{
+ "id": "zxwl-neigh-047",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Liam starts a tool library",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The group chat lights up. The street watches through curtains.",
+ "choices": [
+  {
+   "label": "Get involved",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Liam\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Liam becomes a real friend over starts a tool library fallout."
+    }
+   ]
+  },
+  {
+   "label": "Stay neutral",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Switzerland with a smile. The starts a tool library saga resolves itself."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,53 @@
+{
+ "id": "zxmd-grandtour-021",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Greece with your partner",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Business class. Earned. Every mile of it. Finally: the trip you postponed for decades.",
+ "choices": [
+  {
+   "label": "No budget",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(6000)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "10"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Greece with your partner. The photos need no filter and get none."
+    }
+   ]
+  },
+  {
+   "label": "Smart splurge",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2500)"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Greece done wisely. with your partner — every penny a memory."
+    }
+   ]
+  }
+ ]
+}

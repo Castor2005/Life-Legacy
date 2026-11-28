@@ -1,0 +1,68 @@
+{
+ "id": "zxyg-gym20-047",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Climbing gym era",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The soreness is a lifestyle now. Vera drags you along.",
+ "choices": [
+  {
+   "label": "Train serious",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-2"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The Climbing gym era transforms you. Vera can't keep up."
+    }
+   ]
+  },
+  {
+   "label": "Social pace",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Workouts plus gossip. Vera never misses leg day chat."
+    }
+   ]
+  }
+ ]
+}

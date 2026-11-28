@@ -1,0 +1,50 @@
+{
+ "id": "zxad-crisis30-042",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "The gray hairs at 35",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The mirror asks pointed questions. Luz calls it the reckoning. Luz is thriving, annoyingly.",
+ "choices": [
+  {
+   "label": "New challenge",
+   "hint": "growth+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The gray hairs answered with action. Luz signs up too."
+    }
+   ]
+  },
+  {
+   "label": "Gratitude audit",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Count the wins: health, Luz, home. The gray hairs quiets down."
+    }
+   ]
+  }
+ ]
+}

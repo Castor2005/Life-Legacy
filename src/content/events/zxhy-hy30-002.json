@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy30-002",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "Power bills bite on the radio",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 2023
+   },
+   {
+    "p": "year",
+    "lte": 2025
+   }
+  ]
+ },
+ "text": "Grids strain, rates climb. Rooftops sprout panels. You feel the hinge of history swing.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Power bills bite lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Power bills bite observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

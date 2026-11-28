@@ -1,0 +1,63 @@
+{
+ "id": "zxwl-peak-021",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the canyon rim sunrise",
+ "tags": [
+  "adult-life",
+  "health"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The trail tests knees and resolve. Tariq trained all spring for this.",
+ "choices": [
+  {
+   "label": "Summit push",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.3",
+     "then": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-3"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "the canyon rim sunrise with Tariq. The photo barely captures it."
+    }
+   ]
+  },
+  {
+   "label": "Base camp joy",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Soup, stars, stories. the canyon rim from below is plenty."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+{
+ "id": "zxpf-funny-055",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "electrician potluck",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Monday will never live this down. At the clinic, legend is born.",
+ "choices": [
+  {
+   "label": "Lean into it",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The electrician potluck enters company lore. You star in it."
+    }
+   ]
+  },
+  {
+   "label": "Play it cool",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Calm amid chaos. At the clinic, they remember composure."
+    }
+   ]
+  }
+ ]
+}

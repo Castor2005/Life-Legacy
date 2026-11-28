@@ -1,0 +1,53 @@
+{
+ "id": "zxtn-drive-000",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Highway merge day",
+ "tags": [
+  "teen",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The manual is thicker than expected. Liv failed twice and lived to joke about it.",
+ "choices": [
+  {
+   "label": "Nail it",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(60)"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "License photo: terrible. Freedom: total. Worth every $60."
+    }
+   ]
+  },
+  {
+   "label": "Practice more",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(30)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Empty parking lots on Sundays. Liv rides shotgun."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-mastery-006",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "beekeeping obsession",
+ "tags": [
+  "adult-life",
+  "creativity"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Amateurs admire; masters tinker. Petra shares the obsession.",
+ "choices": [
+  {
+   "label": "Teach it",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(5)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Students gather. beekeeping flows through you to Petra."
+    }
+   ]
+  },
+  {
+   "label": "Exhibit it",
+   "hint": "fame+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "fame",
+     "value": "min(100,s.fame+(6))"
+    },
+    {
+     "op": "money",
+     "amount": "800"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The beekeeping show sells out. Petra buys piece one."
+    }
+   ]
+  }
+ ]
+}

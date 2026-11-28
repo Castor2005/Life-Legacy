@@ -1,0 +1,68 @@
+{
+ "id": "zxpf-crisis-021",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "librarian equipment failure",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "The schedule collapses by noon. At the clinic, the day goes sideways.",
+ "choices": [
+  {
+   "label": "Save the day",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "8"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "1500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "7"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The librarian crisis bends. At the clinic, they tell this story."
+    }
+   ]
+  },
+  {
+   "label": "Document everything",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Paper trail perfect. The equipment failure becomes a case study."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-club-014",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Glee club a field trip",
+ "tags": [
+  "kid",
+  "school"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "After school: Glee club. Today brings a visiting expert with wild stories.",
+ "choices": [
+  {
+   "label": "Take the lead",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You run the meeting. Glee club has a new captain."
+    }
+   ]
+  },
+  {
+   "label": "Master the craft",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Hours vanish. Your Glee skills jump a full level."
+    }
+   ]
+  }
+ ]
+}

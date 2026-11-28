@@ -1,0 +1,64 @@
+{
+ "id": "zxpf-rival-084",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "mechanic races your promotion",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Credit flows uphill, away from you. Petra from another department warns you.",
+ "choices": [
+  {
+   "label": "Outshine openly",
+   "hint": "promotion+",
+   "effects": [
+    {
+     "op": "perf",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "set",
+       "path": "prestige",
+       "value": "s.prestige+(5)"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "stress",
+       "delta": "5"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Results silence the mechanic. Petra applauds from the safe zone."
+    }
+   ]
+  },
+  {
+   "label": "Befriend them",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Lunch disarms everything. The mechanic becomes an ally."
+    }
+   ]
+  }
+ ]
+}

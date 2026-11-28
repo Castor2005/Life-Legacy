@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-037",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Priya asks about marriage",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The porch is the right venue. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Priya listens hard. Your answer about about marriage lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "5"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Priya\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Priya retells it for years."
+    }
+   ]
+  }
+ ]
+}

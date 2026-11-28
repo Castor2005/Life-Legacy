@@ -1,0 +1,67 @@
+{
+ "id": "zxpf-raise-114",
+ "minAge": 18,
+ "maxAge": 100,
+ "title": "teacher pay review",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Your file is thick with wins. Zamora holds the budget like a dragon.",
+ "choices": [
+  {
+   "label": "Make the case",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.55",
+     "then": [
+      {
+       "op": "money",
+       "amount": "5000"
+      },
+      {
+       "op": "perf",
+       "delta": "6"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "800"
+      },
+      {
+       "op": "stat",
+       "key": "discipline",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Zamora blinks first. The teacher pay review pays out."
+    }
+   ]
+  },
+  {
+   "label": "Skill up first",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Certified, sharpened, undeniable. Next pay review, no contest."
+    }
+   ]
+  }
+ ]
+}

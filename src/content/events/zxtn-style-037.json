@@ -1,0 +1,50 @@
+{
+ "id": "zxtn-style-037",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "The band tee phase",
+ "tags": [
+  "teen",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The mirror gets a long look. Nico approves cautiously.",
+ "choices": [
+  {
+   "label": "Commit fully",
+   "hint": "looks+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "looks",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The band tee phase rules. Compliments from unexpected people."
+    }
+   ]
+  },
+  {
+   "label": "Keep one piece",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Subtle nod to the trend. Nico calls it tasteful."
+    }
+   ]
+  }
+ ]
+}

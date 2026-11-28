@@ -1,0 +1,56 @@
+{
+ "id": "zxmd-summit-047",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Leadership offsite invitation",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "job": "employed"
+ },
+ "text": "Badges, buffets, big talk. Driscoll from the rival firm attends too.",
+ "choices": [
+  {
+   "label": "Own the stage",
+   "hint": "prestige+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "prestige",
+     "value": "s.prestige+(10)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Standing ovation, three card offers. Driscoll takes notes."
+    }
+   ]
+  },
+  {
+   "label": "Deal in halls",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "4000"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Handshake deals between sessions. The Leadership offsite pays off."
+    }
+   ]
+  }
+ ]
+}

@@ -542,4 +542,18 @@ canvas.spark{width:100%;height:56px;display:block}
 .auth-or{display:flex;align-items:center;gap:10px;margin:14px 0 10px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#8a93b2}
 .auth-or::before,.auth-or::after{content:"";flex:1;height:1px;background:rgba(201,164,92,.25)}
 .google-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;border-color:rgba(201,164,92,.45)}
+/* ---- Action-Event Engine: outcome card pinned atop the panel ---- */
+.actout{grid-column:1/-1;border:1px solid rgba(255,120,150,.4);border-radius:12px;padding:10px 12px;margin-bottom:8px;background:linear-gradient(180deg,rgba(255,90,130,.12),rgba(255,90,130,.03));box-shadow:0 0 18px rgba(255,80,130,.18)}
+.actout .acted{font-size:15px;margin-bottom:4px;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.actout .aitag{font-size:10px;font-weight:800;letter-spacing:.1em;color:#ffd9e0;background:rgba(255,90,130,.25);border:1px solid rgba(255,120,150,.5);border-radius:999px;padding:1px 7px}
+.actout .actxt{font-size:14px;line-height:1.45}
+.actout .actside{margin-top:6px;font-size:13px;opacity:.92;border-top:1px dashed rgba(255,120,150,.3);padding-top:6px}
+/* ---- NPC faces: circular glow-ring portraits ---- */
+.npcface{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:#ffd9e0;background:radial-gradient(circle at 35% 30%,#3a1420,#160a10);box-shadow:0 0 0 2px #4a0e1e,0 0 14px 2px rgba(255,60,110,.55);overflow:hidden;flex:none;vertical-align:middle;margin-right:2px}
+.npcface img{width:100%;height:100%;object-fit:cover}
+.npcface.big{width:84px;height:84px;font-size:30px;margin:2px auto 6px;box-shadow:0 0 0 3px #4a0e1e,0 0 22px 4px rgba(255,60,110,.6)}
+.suitface .suitname{display:block;font-size:16px;letter-spacing:.06em;margin-top:4px}
+.suitface .suitvibe{display:block;font-size:12px;opacity:.85;line-height:1.5}
+.suitface .npcface.big+button,.suitface button[data-paintnpc]{margin-top:4px}
+
 

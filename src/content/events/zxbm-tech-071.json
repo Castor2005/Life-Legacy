@@ -1,0 +1,53 @@
+{
+ "id": "zxbm-tech-071",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "Smart home era",
+ "tags": [
+  "adult-life",
+  "smarts"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The future arrives in a cardboard box. Rosa adopted it months ago, insufferably.",
+ "choices": [
+  {
+   "label": "Early adopter",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(800)"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Smart home hums along. Rosa asks YOU for help now."
+    }
+   ]
+  },
+  {
+   "label": "Wait and see",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "2"
+    },
+    {
+     "op": "money",
+     "amount": "200"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Prices drop, bugs vanish. Patience funds the Smart home fund."
+    }
+   ]
+  }
+ ]
+}

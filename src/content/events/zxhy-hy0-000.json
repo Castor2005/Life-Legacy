@@ -1,0 +1,73 @@
+{
+ "id": "zxhy-hy0-000",
+ "minAge": 5,
+ "maxAge": 115,
+ "title": "The boom years on the news",
+ "tags": [
+  "history",
+  "world"
+ ],
+ "weight": 2,
+ "preconditions": {
+  "all": [
+   {
+    "p": "year",
+    "gte": 1950
+   },
+   {
+    "p": "year",
+    "lte": 1954
+   }
+  ]
+ },
+ "text": "New houses rise in rows. Everyone knows a veteran starting over. Your diary entry writes itself.",
+ "choices": [
+  {
+   "label": "Dive into it",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "5"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The boom years lived fully. You tell this story for decades."
+    }
+   ]
+  },
+  {
+   "label": "Watch and note",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "money",
+       "amount": "500"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "The boom years observed well. History pays small dividends."
+    }
+   ]
+  }
+ ]
+}

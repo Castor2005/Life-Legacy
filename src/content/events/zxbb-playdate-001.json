@@ -1,0 +1,49 @@
+{
+ "id": "zxbb-playdate-001",
+ "minAge": 2,
+ "maxAge": 4,
+ "title": "Playdate with Petra",
+ "tags": [
+  "baby",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Petra from down the street comes over. Two toddlers, one ball.",
+ "choices": [
+  {
+   "label": "Share the toys",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Petra\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Petra trades a block for a truck. Diplomacy begins early."
+    }
+   ]
+  },
+  {
+   "label": "Parallel play",
+   "hint": "—",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Side by side, separate worlds. Perfectly normal, perfectly sweet."
+    }
+   ]
+  }
+ ]
+}

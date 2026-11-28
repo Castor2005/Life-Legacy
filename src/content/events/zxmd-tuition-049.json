@@ -1,0 +1,60 @@
+{
+ "id": "zxmd-tuition-049",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Tuition bills arrive",
+ "tags": [
+  "adult-life",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The numbers have many zeros. The FAFSA forms breed overnight. A small grant covers the books.",
+ "choices": [
+  {
+   "label": "Pay and plan",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(5000)"
+    },
+    {
+     "op": "set",
+     "path": "assets.savings",
+     "value": "max(0,s.assets.savings-3000)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tuition bills handled. Education: the priciest gift."
+    }
+   ]
+  },
+  {
+   "label": "Scholarship blitz",
+   "hint": "smarts+",
+   "effects": [
+    {
+     "op": "chance",
+     "p": "0.5",
+     "then": [
+      {
+       "op": "money",
+       "amount": "3000"
+      }
+     ],
+     "else": [
+      {
+       "op": "money",
+       "amount": "-(1000)"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Essays by the dozen. Tuition bills shrink a little."
+    }
+   ]
+  }
+ ]
+}

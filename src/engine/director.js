@@ -36,7 +36,8 @@ function directorMechState(){
     +" | Partner: "+(rel.partner?rel.partner.name+(rel.partner.married?" (married)":" (dating)"):"single")+", friends: "+fr+", children: "+ch
     +" | Active effects: "+(on.length?on.join(","):"none")
     +" | Sex&Ownership: "+(function(){ try{ var x=sexEnsure(); return "skill "+x.skill+", stamina "+x.stamina+", corruption "+x.corruption+"/100, fav ["+favActs().join("/")+"]"+", protection "+(x.protection?"on":"OFF")+", law: "+ownLaw().label+", alpha "+(x.alpha||"none")+", tension "+x.haremTension+", netori "+x.netori.taken+"/"+x.netori.lost+"/"+x.netori.revenges+", claims "+(x.claims.map(function(c){return c.name+"("+c.mode+" st"+c.stage+" ob"+c.obedience+" own"+c.own+" corr"+c.corr+" r"+c.rank+" j"+c.jealousy+")";}).join("; ")||"none")+", leverageOn "+x.leverageOn.length+", leverageOff "+x.leverageOff.length+", addiction "+x.addiction+", scandal "+x.scandal+", xp "+x.xp; }catch(e){ return "none"; } })()
-    +" | Valid jobIds: "+jobs+" | Valid houseIds: "+houses+" | Valid carIds: "+cars+" | Valid traitIds: "+traits+" | Valid kinkIds: "+SEX_KINKS.join(",");
+    +" | Valid jobIds: "+jobs+" | Valid houseIds: "+houses+" | Valid carIds: "+cars+" | Valid traitIds: "+traits+" | Valid kinkIds: "+SEX_KINKS.join(",")
+    +(function(){ try{ var w=""; try{ w=fateTideWord(); }catch(e){} var om=""; try{ om=(S.fate&&S.fate.omen)||""; }catch(e){} var hh=""; try{ hh=historyHeadline(S.year); }catch(e){} var er=""; try{ er=historyEra(S.year); }catch(e){} return " | Universe Will: "+w+" (boons "+((S.fate&&S.fate.boons)||0)+", trials "+((S.fate&&S.fate.trials)||0)+")"+(om?"; omen: "+String(om).slice(0,90):"")+" | Real history "+S.year+" ("+er+"): "+String(hh).slice(0,120); }catch(e){ return ""; } })();
 }
 function directorRules(){
   return "1) Scale money to wealth: a broke nobody cannot net $100k without a cost (karma -10 or worse, prestige risk, heat). Losses beyond cash on hand become debt. "

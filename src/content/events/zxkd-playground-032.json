@@ -1,0 +1,68 @@
+{
+ "id": "zxkd-playground-032",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "freeze tag remix rules",
+ "tags": [
+  "kid",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Recess. freeze tag is underway when the eighth graders challenge you.",
+ "choices": [
+  {
+   "label": "Play hard",
+   "hint": "fitness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "7"
+    },
+    {
+     "op": "chance",
+     "p": "0.35",
+     "then": [
+      {
+       "op": "stat",
+       "key": "social",
+       "delta": "4"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "health",
+       "delta": "-2"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Legends are born at recess. Scraped knees and glory."
+    }
+   ]
+  },
+  {
+   "label": "Referee it",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Fair calls, firm whistle. freeze tag has never run smoother."
+    }
+   ]
+  }
+ ]
+}

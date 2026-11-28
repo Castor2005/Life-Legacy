@@ -1,0 +1,68 @@
+{
+ "id": "zxyg-wedplus-013",
+ "minAge": 18,
+ "maxAge": 29,
+ "title": "Kenji's wedding dance circle",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The venue glows with fairy lights. Open bar. Dangerous dance floor.",
+ "choices": [
+  {
+   "label": "Give the speech",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "chance",
+     "p": "0.4",
+     "then": [
+      {
+       "op": "set",
+       "path": "fame",
+       "value": "min(100,s.fame+(3))"
+      }
+     ],
+     "else": [
+      {
+       "op": "stat",
+       "key": "happiness",
+       "delta": "4"
+      }
+     ]
+    },
+    {
+     "op": "outcome",
+     "tpl": "Kenji cries laughing. The speech enters family lore."
+    }
+   ]
+  },
+  {
+   "label": "Dance all night",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "fitness",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Shoes off by midnight. Kenji approves from the sweetheart table."
+    }
+   ]
+  }
+ ]
+}

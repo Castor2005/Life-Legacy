@@ -1,0 +1,54 @@
+{
+ "id": "zxmd-parents-048",
+ "minAge": 45,
+ "maxAge": 59,
+ "title": "Both parents move closer",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Love becomes logistics. The roles reverse gently, then all at once. Sunday dinners stretch longer.",
+ "choices": [
+  {
+   "label": "Step up",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "7"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Both parents lean on you now. move closer — handled with grace."
+    }
+   ]
+  },
+  {
+   "label": "Organize care",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(2000)"
+    },
+    {
+     "op": "stat",
+     "key": "stress",
+     "delta": "-4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Aides, schedules, check-ins. Both parents stay safe and proud."
+    }
+   ]
+  }
+ ]
+}

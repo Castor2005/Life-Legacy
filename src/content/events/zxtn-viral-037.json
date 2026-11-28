@@ -1,0 +1,55 @@
+{
+ "id": "zxtn-viral-037",
+ "minAge": 13,
+ "maxAge": 17,
+ "title": "Anika's trick shots blows up",
+ "tags": [
+  "teen",
+  "fame"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Ten thousand views overnight. Anika is suddenly school-famous.",
+ "choices": [
+  {
+   "label": "Ride the wave",
+   "hint": "fame+",
+   "effects": [
+    {
+     "op": "set",
+     "path": "fame",
+     "value": "min(100,s.fame+(6))"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cameo in the sequel. Anika splits the glory fairly."
+    }
+   ]
+  },
+  {
+   "label": "Stay offline",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "stat",
+     "key": "smarts",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You watch from the sidelines. Fame looks exhausting up close."
+    }
+   ]
+  }
+ ]
+}

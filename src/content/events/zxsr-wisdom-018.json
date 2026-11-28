@@ -1,0 +1,49 @@
+{
+ "id": "zxsr-wisdom-018",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Luz asks about joy",
+ "tags": [
+  "adult-life",
+  "karma"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The porch is the right venue. Young eyes, old question.",
+ "choices": [
+  {
+   "label": "Tell the truth",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Luz listens hard. Your answer about about joy lands deep."
+    }
+   ]
+  },
+  {
+   "label": "Tell the story",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Luz\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "One tale says it all. Luz retells it for years."
+    }
+   ]
+  }
+ ]
+}

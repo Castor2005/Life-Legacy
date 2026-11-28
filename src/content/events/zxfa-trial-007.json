@@ -1,0 +1,57 @@
+{
+ "id": "zxfa-trial-007",
+ "minAge": 18,
+ "maxAge": 120,
+ "title": "Cold shoulder week",
+ "tags": [
+  "adult-life",
+  "fate"
+ ],
+ "weight": 1,
+ "preconditions": {
+  "p": "stats.karma",
+  "lte": 25
+ },
+ "text": "The past sends its invoice. Debts come due in strange coin. The letter arrives Monday.",
+ "choices": [
+  {
+   "label": "Make amends",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "9"
+    },
+    {
+     "op": "money",
+     "amount": "-(500)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Apologies, restitution, change. Cold shoulder becomes tuition."
+    }
+   ]
+  },
+  {
+   "label": "Endure it",
+   "hint": "discipline+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "You take the hit standing. Cold shoulder passes like weather."
+    }
+   ]
+  }
+ ]
+}

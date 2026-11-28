@@ -1,0 +1,50 @@
+{
+ "id": "zxkd-drama-030",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "Luz moves away",
+ "tags": [
+  "kid",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Whispers travel at the speed of gossip.",
+ "choices": [
+  {
+   "label": "Talk it out",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "8"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Honest words on the swings. The friendship survives stronger."
+    }
+   ]
+  },
+  {
+   "label": "Write a letter",
+   "hint": "creativity+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "5"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "4"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Three pages, one drawing. Luz keeps it for years."
+    }
+   ]
+  }
+ ]
+}

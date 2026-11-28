@@ -1,0 +1,57 @@
+{
+ "id": "zxkd-biz-078",
+ "minAge": 5,
+ "maxAge": 12,
+ "title": "The snow shovel stand",
+ "tags": [
+  "kid",
+  "money"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Cardboard sign, prime sidewalk, big dreams. Startup capital: allowance money.",
+ "choices": [
+  {
+   "label": "Hustle all day",
+   "hint": "money+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "35"
+    },
+    {
+     "op": "stat",
+     "key": "discipline",
+     "delta": "3"
+    },
+    {
+     "op": "outcome",
+     "tpl": "The snow shovel stand clears $35. Capitalism tastes sweet."
+    }
+   ]
+  },
+  {
+   "label": "Split with Tariq",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "20"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "6"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Tariq\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tariq handles marketing. Profits split, friendship doubled."
+    }
+   ]
+  }
+ ]
+}

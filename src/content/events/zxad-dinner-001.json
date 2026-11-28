@@ -1,0 +1,53 @@
+{
+ "id": "zxad-dinner-001",
+ "minAge": 30,
+ "maxAge": 44,
+ "title": "Silas's game night dinner",
+ "tags": [
+  "adult-life",
+  "social"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The guest list is a social chessboard. Your partner Maya charms the table.",
+ "choices": [
+  {
+   "label": "Host next",
+   "hint": "social+",
+   "effects": [
+    {
+     "op": "money",
+     "amount": "-(150)"
+    },
+    {
+     "op": "stat",
+     "key": "social",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Your table, your rules. Silas raves for weeks."
+    }
+   ]
+  },
+  {
+   "label": "Deep talk",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "4"
+    },
+    {
+     "op": "addFriend",
+     "name": "\"Silas\""
+    },
+    {
+     "op": "outcome",
+     "tpl": "Silas opens up past midnight. Real friendship, real wine."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,54 @@
+{
+ "id": "zxsr-grandkid-031",
+ "minAge": 60,
+ "maxAge": 120,
+ "title": "Cookie baking season",
+ "tags": [
+  "adult-life",
+  "family"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "Small hands, big questions. Bram brags about theirs louder.",
+ "choices": [
+  {
+   "label": "Spoil away",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "9"
+    },
+    {
+     "op": "money",
+     "amount": "-(120)"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Cookie baking peak. Bram admits defeat gracefully."
+    }
+   ]
+  },
+  {
+   "label": "Teach a skill",
+   "hint": "karma+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "karma",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "creativity",
+     "delta": "2"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Knots, songs, card tricks. Cookie baking inherit everything."
+    }
+   ]
+  }
+ ]
+}

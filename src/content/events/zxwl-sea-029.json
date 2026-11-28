@@ -1,0 +1,50 @@
+{
+ "id": "zxwl-sea-029",
+ "minAge": 18,
+ "maxAge": 110,
+ "title": "the atoll storm watch",
+ "tags": [
+  "adult-life",
+  "joy"
+ ],
+ "weight": 1,
+ "preconditions": null,
+ "text": "The water is impossibly clear. Salt air fixes what cities break. The lighthouse blinks approval.",
+ "choices": [
+  {
+   "label": "Dive in",
+   "hint": "health+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "health",
+     "delta": "6"
+    },
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "6"
+    },
+    {
+     "op": "outcome",
+     "tpl": "the atoll storm watch. The ocean returns you to yourself."
+    }
+   ]
+  },
+  {
+   "label": "Shore slow",
+   "hint": "happiness+",
+   "effects": [
+    {
+     "op": "stat",
+     "key": "happiness",
+     "delta": "7"
+    },
+    {
+     "op": "outcome",
+     "tpl": "Tide pools and novels. the atoll at walking pace."
+    }
+   ]
+  }
+ ]
+}
